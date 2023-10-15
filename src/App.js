@@ -18,12 +18,11 @@ const InnerContainer = styled.div`
   background: linear-gradient(to top right, #090c16, #12182d, #242f5a);
   width: 90%;
   min-height: 85vh;
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   flex-direction: row;
   border-radius: 10px;
-  border: 2px solid black;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
 `;
 
 const ResumeContainer = styled.div`
@@ -38,7 +37,7 @@ const TimelineContainer = styled.div`
   padding: 10px;
   display: flex;
   justify-content: center;
-  border-inline: 2px solid black;
+  border-inline: 2px solid yellow;
 `;
 
 const AboutMeContainer = styled.div`

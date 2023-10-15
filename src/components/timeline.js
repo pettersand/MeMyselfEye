@@ -4,7 +4,7 @@ import styled from "styled-components";
 const TimelineWrapper = styled.div`
   height: 100%;
   width: 2px;
-  background-color: #333;
+  background: linear-gradient(#b4475e, #47b467);
   position: relative;
 `;
 
