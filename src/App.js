@@ -21,13 +21,12 @@ const InnerContainer = styled.div`
   margin-top: 5px;
   display: flex;
   flex-direction: row;
-  border-radius: 10px;
   box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
 `;
 
 const ResumeContainer = styled.div`
   flex: 2.5;
-  padding: 10px;
+
   display: flex;
   justify-content: center;
 `;
@@ -42,7 +41,6 @@ const TimelineContainer = styled.div`
 
 const AboutMeContainer = styled.div`
   flex: 2.5;
-  padding: 10px;
   display: flex;
   justify-content: center;
 `;

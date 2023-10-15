@@ -38,11 +38,11 @@ const milestones = [
     color: "#47B467",
   },
   {
-    title: "Python",
-    date: "May 2023",
-    description: "I started my first course.",
+    title: "CS50x",
+    date: "July 2023",
+    description: "Started CS50x Course",
     thumbnail: "image",
-    position: "20%",
+    position: "40%",
     color: "#47B49E",
   },
   {
@@ -50,7 +50,7 @@ const milestones = [
     date: "May 2023",
     description: "I started my first course.",
     thumbnail: "image",
-    position: "30%",
+    position: "60%",
     color: "#4794B4",
   },
   {
@@ -58,7 +58,7 @@ const milestones = [
     date: "May 2023",
     description: "I started my first course.",
     thumbnail: "image",
-    position: "40%",
+    position: "70%",
     color: "#475EB4",
   },
   {
@@ -66,7 +66,7 @@ const milestones = [
     date: "May 2023",
     description: "I started my first course.",
     thumbnail: "image",
-    position: "50%",
+    position: "80%",
     color: "#6647B4",
   },
   {
@@ -74,7 +74,7 @@ const milestones = [
     date: "May 2023",
     description: "I started my first course.",
     thumbnail: "image",
-    position: "60%",
+    position: "90%",
     color: "#9D47B4",
   },
   {
@@ -82,7 +82,7 @@ const milestones = [
     date: "May 2023",
     description: "I started my first course.",
     thumbnail: "image",
-    position: "70%",
+    position: "95%",
     color: "#B44795",
   },
   {
@@ -90,7 +90,7 @@ const milestones = [
     date: "May 2023",
     description: "I started my first course.",
     thumbnail: "image",
-    position: "80%",
+    position: "99%",
     color: "#B4475E",
   },
 ];
