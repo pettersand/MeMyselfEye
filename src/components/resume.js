@@ -95,7 +95,7 @@ const SkillsGrid = styled.div`
 `;
 
 const GridHeader = styled.div`
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.3em;
   padding: 5px;
   display: flex;
@@ -152,7 +152,7 @@ const Resume = () => {
         <GridItem spanRows borderRight borderBottom>
           Backend
         </GridItem>
-        <GridItem>
+        <GridItem borderRight>
           <IconWithLabel IconComponent={SiPython} size="40" label="Python" />
           <IconWithLabel IconComponent={SiFlask} size="40" label="Flask" />
           <IconWithLabel IconComponent={SiDjango} size="40" label="Django" />
@@ -161,7 +161,7 @@ const Resume = () => {
           <IconWithLabel IconComponent={SiCsharp} size="40" label="C#" />
           <IconWithLabel IconComponent={SiSqlite} size="40" label="SQLite" />
         </GridItem>
-        <GridItem borderBottom>
+        <GridItem borderBottom borderRight>
           <IconWithLabel IconComponent={PiFileSql} size="40" label="SQL" />
           <IconWithLabel
             IconComponent={SiPostgresql}
@@ -174,14 +174,14 @@ const Resume = () => {
         <GridItem spanRows borderRight borderBottom>
           Frontend
         </GridItem>
-        <GridItem>
+        <GridItem borderRight>
           <IconWithLabel IconComponent={SiSvelte} size="40" label="Svelte" />
           <IconWithLabel IconComponent={SiHtml5} size="40" label="HTML" />
         </GridItem>
         <GridItem>
           <IconWithLabel IconComponent={SiReact} size="40" label="React" />
         </GridItem>
-        <GridItem borderBottom>
+        <GridItem borderBottom borderRight>
           <IconWithLabel IconComponent={SiCss3} size="40" label="CSS" />
           <IconWithLabel
             IconComponent={SiTailwindcss}
@@ -206,7 +206,7 @@ const Resume = () => {
         <GridItem spanRows borderRight>
           DevOps / Other
         </GridItem>
-        <GridItem spanRows>
+        <GridItem spanRows borderRight>
           <IconWithLabel IconComponent={SiGit} size="40" label="Git" />
           <IconWithLabel
             IconComponent={SiMicrosoftexcel}
