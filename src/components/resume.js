@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { HiOutlineDocumentText } from "react-icons/hi2";
-import { HiCodeBracket } from "react-icons/hi2";
-import { DiPython } from "react-icons/di";
-import { DiDjango } from "react-icons/di";
+import { HiOutlineDocumentText, HiCodeBracket } from "react-icons/hi2";
+import { DiPython, DiDjango, DiDatabase, DiPostgresql } from "react-icons/di";
 import { SiFlask } from "react-icons/si";
-import { DiDatabase } from "react-icons/di";
-import { DiPostgresql } from "react-icons/di";
+import { PiFileSql } from "react-icons/pi";
 
 const ResumeWrapper = styled.div`
   color: white;
@@ -51,24 +48,62 @@ const IconBackground = styled.div`
   border-color: black;
 `;
 
-const ContainerItem = styled.div`
+const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  &:hover .icon-label {
+    visibility: visible;
+    opacity: 1;
+  }
 `;
 
-const SkillsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
+const IconLabel = styled.div`
+  margin-top: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out;
 `;
 
-const LangSet = styled.div`
-  border-right: 1px solid grey;
-  padding-inline: 5px;
+const SkillsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  margin-top: 10px;
+  width: 90%;
+`;
+
+const GridHeader = styled.div`
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 5px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid grey;
 `;
+
+const GridItem = styled.div`
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  border-right: ${({ borderRight }) =>
+    borderRight ? "1px solid grey" : "none"};
+  border-bottom: ${({ borderBottom }) =>
+    borderBottom ? "1px solid grey" : "none"};
+  grid-row-end: ${({ spanRows }) => (spanRows ? "span 2" : "span 1")};
+`;
+
+function IconWithLabel({ IconComponent, size, label }) {
+  return (
+    <IconWrapper>
+      <IconComponent size={size} />
+      <IconLabel className="icon-label">{label}</IconLabel>
+    </IconWrapper>
+  );
+}
 
 const Resume = () => {
   return (
@@ -80,44 +115,67 @@ const Resume = () => {
             size={34}
           />
         </IconBackground>
-
         <h1>Resume</h1>
       </ResumeHeader>
-      <ResumeContainer color="yellow">
-        <ContainerHeader>
+
+      <SkillsGrid>
+        {/* Headers */}
+        <GridHeader>
           <IconBackground color="yellow" size="2em">
             <HiCodeBracket style={{ zIndex: 2, color: "black" }} size={24} />
           </IconBackground>
-          <h2>Skills:</h2>
-        </ContainerHeader>
-        <ContainerItem>
-          <h4>Backend:</h4>
-          <SkillsContainer>
-            <LangSet>
-              <DiPython size={40} />
-              Python
-            </LangSet>
-            <DiDjango size={40} />
-            <SiFlask size={34} />
-          </SkillsContainer>
-          <SkillsContainer>
-            <LangSet>
-              <DiDatabase size={40} /> SQL
-            </LangSet>
-            <DiPostgresql size={40} />
-          </SkillsContainer>
-           <h4>Frontend:</h4>
-           <SkillsContainer>
-            <LangSet>
-              
-            </LangSet>
-           </SkillsContainer>
-          <h4>Working Experience</h4>
-        </ContainerItem>
-      </ResumeContainer>
+        </GridHeader>
+        <GridHeader>Skills</GridHeader>
+        <GridHeader>Working Experience</GridHeader>
+
+        {/* Backend */}
+        <GridItem spanRows borderRight borderBottom>
+          Backend
+        </GridItem>
+        <GridItem>
+          <IconWithLabel IconComponent={DiPython} size="40" label="Python" />
+          <IconWithLabel IconComponent={SiFlask} size="40" label="Flask" />
+          <IconWithLabel IconComponent={DiDjango} size="50" label="Django" />
+        </GridItem>
+        <GridItem spanRows borderBottom>
+          C#, SQLite
+        </GridItem>
+        <GridItem borderBottom>
+          <IconWithLabel IconComponent={PiFileSql} size="40" label="SQL" />
+          <IconWithLabel
+            IconComponent={DiPostgresql}
+            size="40"
+            label="PostgreSQL"
+          />
+        </GridItem>
+
+        {/* Frontend */}
+        <GridItem spanRows borderRight borderBottom>
+          Frontend
+        </GridItem>
+        <GridItem>Svelte, HTML</GridItem>
+        <GridItem>React</GridItem>
+        <GridItem borderBottom>CSS, Tailwind CSS</GridItem>
+        <GridItem borderBottom>JavaScript, TypeScript</GridItem>
+
+        {/* DevOps & Others */}
+        <GridItem spanRows borderRight>
+          DevOps / Other
+        </GridItem>
+        <GridItem spanRows>Git, Excel, C</GridItem>
+        <GridItem>GitHub Actions CI/CD, Docker</GridItem>
+        <GridItem>C# WPF .NET, Linux VPS</GridItem>
+      </SkillsGrid>
+
       <ResumeContainer color="purple">
         <h2>Projects</h2>
       </ResumeContainer>
+      <ContainerHeader>
+        <IconBackground color="yellow" size="2em">
+          <HiCodeBracket style={{ zIndex: 2, color: "black" }} size={24} />
+        </IconBackground>
+        <h2>Skills</h2>
+      </ContainerHeader>
       <ResumeContainer color="red">
         <h2>Courses</h2>
       </ResumeContainer>
