@@ -1,8 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { HiOutlineDocumentText, HiCodeBracket } from "react-icons/hi2";
-import { DiPython, DiDjango, DiDatabase, DiPostgresql } from "react-icons/di";
-import { SiFlask } from "react-icons/si";
+import {
+  SiFlask,
+  SiCsharp,
+  SiSqlite,
+  SiSvelte,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiReact,
+  SiJavascript,
+  SiTypescript,
+  SiGit,
+  SiMicrosoftexcel,
+  SiGithubactions,
+  SiDocker,
+  SiLinux,
+  SiPostgresql,
+  SiDjango,
+  SiPython,
+  SiC,
+} from "react-icons/si";
 import { PiFileSql } from "react-icons/pi";
 
 const ResumeWrapper = styled.div`
@@ -50,8 +69,10 @@ const IconBackground = styled.div`
 
 const IconWrapper = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
+  padding-top: 10px;
 
   &:hover .icon-label {
     visibility: visible;
@@ -84,11 +105,10 @@ const GridHeader = styled.div`
 `;
 
 const GridItem = styled.div`
-  padding: 5px;
+  padding-top: 10px;
   display: flex;
-  gap: 5px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border-right: ${({ borderRight }) =>
     borderRight ? "1px solid grey" : "none"};
   border-bottom: ${({ borderBottom }) =>
@@ -133,17 +153,18 @@ const Resume = () => {
           Backend
         </GridItem>
         <GridItem>
-          <IconWithLabel IconComponent={DiPython} size="40" label="Python" />
+          <IconWithLabel IconComponent={SiPython} size="40" label="Python" />
           <IconWithLabel IconComponent={SiFlask} size="40" label="Flask" />
-          <IconWithLabel IconComponent={DiDjango} size="50" label="Django" />
+          <IconWithLabel IconComponent={SiDjango} size="40" label="Django" />
         </GridItem>
         <GridItem spanRows borderBottom>
-          C#, SQLite
+          <IconWithLabel IconComponent={SiCsharp} size="40" label="C#" />
+          <IconWithLabel IconComponent={SiSqlite} size="40" label="SQLite" />
         </GridItem>
         <GridItem borderBottom>
           <IconWithLabel IconComponent={PiFileSql} size="40" label="SQL" />
           <IconWithLabel
-            IconComponent={DiPostgresql}
+            IconComponent={SiPostgresql}
             size="40"
             label="PostgreSQL"
           />
@@ -153,18 +174,58 @@ const Resume = () => {
         <GridItem spanRows borderRight borderBottom>
           Frontend
         </GridItem>
-        <GridItem>Svelte, HTML</GridItem>
-        <GridItem>React</GridItem>
-        <GridItem borderBottom>CSS, Tailwind CSS</GridItem>
-        <GridItem borderBottom>JavaScript, TypeScript</GridItem>
+        <GridItem>
+          <IconWithLabel IconComponent={SiSvelte} size="40" label="Svelte" />
+          <IconWithLabel IconComponent={SiHtml5} size="40" label="HTML" />
+        </GridItem>
+        <GridItem>
+          <IconWithLabel IconComponent={SiReact} size="40" label="React" />
+        </GridItem>
+        <GridItem borderBottom>
+          <IconWithLabel IconComponent={SiCss3} size="40" label="CSS" />
+          <IconWithLabel
+            IconComponent={SiTailwindcss}
+            size="40"
+            label="Tailwind CSS"
+          />
+        </GridItem>
+        <GridItem borderBottom>
+          <IconWithLabel
+            IconComponent={SiJavascript}
+            size="40"
+            label="JavaScript"
+          />
+          <IconWithLabel
+            IconComponent={SiTypescript}
+            size="40"
+            label="TypeScript"
+          />
+        </GridItem>
 
         {/* DevOps & Others */}
         <GridItem spanRows borderRight>
           DevOps / Other
         </GridItem>
-        <GridItem spanRows>Git, Excel, C</GridItem>
-        <GridItem>GitHub Actions CI/CD, Docker</GridItem>
-        <GridItem>C# WPF .NET, Linux VPS</GridItem>
+        <GridItem spanRows>
+          <IconWithLabel IconComponent={SiGit} size="40" label="Git" />
+          <IconWithLabel
+            IconComponent={SiMicrosoftexcel}
+            size="40"
+            label="Excel"
+          />
+          <IconWithLabel IconComponent={SiC} size="40" label="C" />
+        </GridItem>
+        <GridItem>
+          <IconWithLabel
+            IconComponent={SiGithubactions}
+            size="40"
+            label="GitHub Actions"
+          />
+          <IconWithLabel IconComponent={SiDocker} size="40" label="Docker" />
+        </GridItem>
+        <GridItem>
+          <IconWithLabel IconComponent={SiLinux} size="40" label="Linux VPS" />
+        </GridItem>
       </SkillsGrid>
 
       <ResumeContainer color="purple">
