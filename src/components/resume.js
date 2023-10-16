@@ -106,6 +106,7 @@ const GridHeader = styled.div`
 
 const GridItem = styled.div`
   padding-top: 10px;
+  font-size: 1.1em;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
