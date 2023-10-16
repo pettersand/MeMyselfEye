@@ -25,10 +25,25 @@ const ResumeHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
 `;
 
 const ContainerHeader = styled.div`
   display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+const IconBackground = styled.div`
+  height: ${(props) => props.size || "3em"};
+  width: ${(props) => props.size || "3em"};
+  border-radius: 50%;
+  background-color: ${(props) => props.color || "white"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-color: black;
 `;
 
 const ContainerItem = styled.div``;
@@ -37,17 +52,21 @@ const Resume = () => {
   return (
     <ResumeWrapper>
       <ResumeHeader>
-        <h1>
-          <HiOutlineDocumentText />
-        </h1>
+        <IconBackground color="orange">
+          <HiOutlineDocumentText
+            style={{ zIndex: 2, color: "black" }}
+            size={34}
+          />
+        </IconBackground>
+
         <h1>Resume</h1>
       </ResumeHeader>
       <ResumeContainer color="yellow">
         <ContainerHeader>
-          <h2>
-            <HiCodeBracket />
-            Skills:
-          </h2>
+          <IconBackground color="yellow" size="2em">
+            <HiCodeBracket style={{ zIndex: 2, color: "black" }} size={24} />
+          </IconBackground>
+          <h2>Skills:</h2>
         </ContainerHeader>
 
         <h4>Main</h4>
