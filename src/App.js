@@ -15,7 +15,12 @@ const AppContainer = styled.div`
 `;
 
 const InnerContainer = styled.div`
-  background: linear-gradient(to top right, #090c16, #12182d, #242f5a);
+  background: linear-gradient(
+    to top right,
+    rgba(9, 12, 22, 0.9),
+    rgba(18, 24, 45, 0.9),
+    rgba(36, 47, 90, 0.9)
+  );
   width: 90%;
   min-height: 85vh;
   margin-top: 5px;
@@ -36,7 +41,7 @@ const TimelineContainer = styled.div`
   padding: 10px;
   display: flex;
   justify-content: center;
-  border-inline: 2px solid yellow;
+  box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.75);
 `;
 
 const AboutMeContainer = styled.div`
