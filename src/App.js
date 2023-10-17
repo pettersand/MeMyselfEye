@@ -1,15 +1,15 @@
 import "./App.css";
 import Header from "./components/header";
-import Resume from "./components/resume";
 import AboutMe from "./components/aboutMe";
 import Timeline from "./components/timeline";
+import Skills from "./components/skills";
 import styled from "styled-components";
 
 const AppContainer = styled.div`
   background: linear-gradient(0deg, black 20%, transparent 40%),
     url("Background2.png") no-repeat center center;
   background-size: cover;
-  background-position: center -150px;
+  background-position: center -200px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,6 +32,7 @@ const MiddleContainer = styled.div`
   width: 30%;
   min-height: 75vh;
   margin-top: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -76,12 +77,19 @@ const ContentContainer = styled.div`
   flex-direction: row;
 `;
 
+const NameContainer = styled.div`
+  flex: 1;
+`;
+
 function App() {
   return (
     <AppContainer>
       <TopContainer>
         <LeftContainer></LeftContainer>
-        <MiddleContainer></MiddleContainer>
+        <MiddleContainer>
+          <NameContainer />
+          <Skills />
+        </MiddleContainer>
         <RightContainer></RightContainer>
       </TopContainer>
       <BottomContainer>

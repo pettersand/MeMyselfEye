@@ -24,6 +24,18 @@ import {
 } from "react-icons/si";
 import { PiFileSql } from "react-icons/pi";
 
+const IconBackground = styled.div`
+  height: ${(props) => props.size || "3em"};
+  width: ${(props) => props.size || "3em"};
+  border-radius: 50%;
+  background-color: ${(props) => props.color || "white"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-color: black;
+`;
+
 const IconWrapper = styled.div`
   display: flex;
   flex: 1;
@@ -48,12 +60,14 @@ const SkillsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
   margin-top: 10px;
-  width: 90%;
+  width: 100%;
+  justify-content: center;
+  color: white;
 `;
 
 const GridHeader = styled.div`
   font-weight: 700;
-  font-size: 1.3em;
+
   padding: 5px;
   display: flex;
   align-items: center;
@@ -62,8 +76,7 @@ const GridHeader = styled.div`
 `;
 
 const GridItem = styled.div`
-  padding-top: 10px;
-  font-size: 1.1em;
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -83,76 +96,98 @@ function IconWithLabel({ IconComponent, size, label }) {
   );
 }
 
-<SkillsGrid>
-  {/* Headers */}
-  <GridHeader>
-    <IconBackground color="yellow" size="2em">
-      <HiCodeBracket style={{ zIndex: 2, color: "black" }} size={24} />
-    </IconBackground>
-  </GridHeader>
-  <GridHeader>Skills</GridHeader>
-  <GridHeader>Working Experience</GridHeader>
+const Skills = () => {
+  return (
+    <SkillsGrid>
+      {/* Headers */}
+      <GridHeader>
+        <IconBackground color="yellow" size="2em">
+          <HiCodeBracket style={{ zIndex: 2, color: "black" }} size={24} />
+        </IconBackground>
+      </GridHeader>
+      <GridHeader>Skills</GridHeader>
+      <GridHeader>Working Experience</GridHeader>
 
-  {/* Backend */}
-  <GridItem spanRows borderRight borderBottom>
-    Backend
-  </GridItem>
-  <GridItem borderRight>
-    <IconWithLabel IconComponent={SiPython} size="40" label="Python" />
-    <IconWithLabel IconComponent={SiFlask} size="40" label="Flask" />
-    <IconWithLabel IconComponent={SiDjango} size="40" label="Django" />
-  </GridItem>
-  <GridItem spanRows borderBottom>
-    <IconWithLabel IconComponent={SiCsharp} size="40" label="C#" />
-    <IconWithLabel IconComponent={SiSqlite} size="40" label="SQLite" />
-  </GridItem>
-  <GridItem borderBottom borderRight>
-    <IconWithLabel IconComponent={PiFileSql} size="40" label="SQL" />
-    <IconWithLabel IconComponent={SiPostgresql} size="40" label="PostgreSQL" />
-  </GridItem>
+      {/* Backend */}
+      <GridItem spanRows borderRight borderBottom>
+        Backend
+      </GridItem>
+      <GridItem borderRight>
+        <IconWithLabel IconComponent={SiPython} size="25" label="Python" />
+        <IconWithLabel IconComponent={SiFlask} size="25" label="Flask" />
+        <IconWithLabel IconComponent={SiDjango} size="25" label="Django" />
+      </GridItem>
+      <GridItem spanRows borderBottom>
+        <IconWithLabel IconComponent={SiCsharp} size="25" label="C#" />
+        <IconWithLabel IconComponent={SiSqlite} size="25" label="SQLite" />
+      </GridItem>
+      <GridItem borderBottom borderRight>
+        <IconWithLabel IconComponent={PiFileSql} size="25" label="SQL" />
+        <IconWithLabel
+          IconComponent={SiPostgresql}
+          size="25"
+          label="PostgreSQL"
+        />
+      </GridItem>
 
-  {/* Frontend */}
-  <GridItem spanRows borderRight borderBottom>
-    Frontend
-  </GridItem>
-  <GridItem borderRight>
-    <IconWithLabel IconComponent={SiSvelte} size="40" label="Svelte" />
-    <IconWithLabel IconComponent={SiHtml5} size="40" label="HTML" />
-  </GridItem>
-  <GridItem>
-    <IconWithLabel IconComponent={SiReact} size="40" label="React" />
-  </GridItem>
-  <GridItem borderBottom borderRight>
-    <IconWithLabel IconComponent={SiCss3} size="40" label="CSS" />
-    <IconWithLabel
-      IconComponent={SiTailwindcss}
-      size="40"
-      label="Tailwind CSS"
-    />
-  </GridItem>
-  <GridItem borderBottom>
-    <IconWithLabel IconComponent={SiJavascript} size="40" label="JavaScript" />
-    <IconWithLabel IconComponent={SiTypescript} size="40" label="TypeScript" />
-  </GridItem>
+      {/* Frontend */}
+      <GridItem spanRows borderRight borderBottom>
+        Frontend
+      </GridItem>
+      <GridItem borderRight>
+        <IconWithLabel IconComponent={SiSvelte} size="25" label="Svelte" />
+        <IconWithLabel IconComponent={SiHtml5} size="25" label="HTML" />
+      </GridItem>
+      <GridItem>
+        <IconWithLabel IconComponent={SiReact} size="25" label="React" />
+      </GridItem>
+      <GridItem borderBottom borderRight>
+        <IconWithLabel IconComponent={SiCss3} size="25" label="CSS" />
+        <IconWithLabel
+          IconComponent={SiTailwindcss}
+          size="25"
+          label="Tailwind"
+        />
+      </GridItem>
+      <GridItem borderBottom>
+        <IconWithLabel
+          IconComponent={SiJavascript}
+          size="25"
+          label="JavaScript"
+        />
+        <IconWithLabel
+          IconComponent={SiTypescript}
+          size="25"
+          label="TypeScript"
+        />
+      </GridItem>
 
-  {/* DevOps & Others */}
-  <GridItem spanRows borderRight>
-    DevOps / Other
-  </GridItem>
-  <GridItem spanRows borderRight>
-    <IconWithLabel IconComponent={SiGit} size="40" label="Git" />
-    <IconWithLabel IconComponent={SiMicrosoftexcel} size="40" label="Excel" />
-    <IconWithLabel IconComponent={SiC} size="40" label="C" />
-  </GridItem>
-  <GridItem>
-    <IconWithLabel
-      IconComponent={SiGithubactions}
-      size="40"
-      label="GitHub Actions"
-    />
-    <IconWithLabel IconComponent={SiDocker} size="40" label="Docker" />
-  </GridItem>
-  <GridItem>
-    <IconWithLabel IconComponent={SiLinux} size="40" label="Linux VPS" />
-  </GridItem>
-</SkillsGrid>;
+      {/* DevOps & Others */}
+      <GridItem spanRows borderRight>
+        DevOps / Other
+      </GridItem>
+      <GridItem spanRows borderRight>
+        <IconWithLabel IconComponent={SiGit} size="25" label="Git" />
+        <IconWithLabel
+          IconComponent={SiMicrosoftexcel}
+          size="25"
+          label="Excel"
+        />
+        <IconWithLabel IconComponent={SiC} size="25" label="C" />
+      </GridItem>
+      <GridItem>
+        <IconWithLabel
+          IconComponent={SiGithubactions}
+          size="25"
+          label="GitHub Actions"
+        />
+        <IconWithLabel IconComponent={SiDocker} size="25" label="Docker" />
+      </GridItem>
+      <GridItem>
+        <IconWithLabel IconComponent={SiLinux} size="25" label="Linux VPS" />
+      </GridItem>
+    </SkillsGrid>
+  );
+};
+
+export default Skills;
