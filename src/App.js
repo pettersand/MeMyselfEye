@@ -4,6 +4,7 @@ import AboutMe from "./components/aboutMe";
 import Timeline from "./components/timeline";
 import Skills from "./components/skills";
 import styled from "styled-components";
+import ControlPanel from "./components/controlPanel";
 
 const AppContainer = styled.div`
   background: linear-gradient(0deg, black 20%, transparent 40%),
@@ -15,6 +16,7 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: white;
 `;
 
 const TopContainer = styled.div`
@@ -79,18 +81,47 @@ const ContentContainer = styled.div`
 
 const NameContainer = styled.div`
   flex: 1;
+  border-bottom: 2px solid teal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 500;
+  color: white;
+  h1,
+  h2 {
+    margin: 5px;
+  }
+`;
+
+const DetailToggle = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  font-weight: 200;
 `;
 
 function App() {
   return (
     <AppContainer>
       <TopContainer>
-        <LeftContainer></LeftContainer>
+        <LeftContainer>
+          <AboutMe />
+        </LeftContainer>
         <MiddleContainer>
-          <NameContainer />
+          <NameContainer>
+            <h1>Petter Sand Austnes</h1>
+            <h2>Software Developer</h2>
+          </NameContainer>
           <Skills />
+          <DetailToggle>
+            <h4>o Minimalist</h4>
+            <h4>Detailed o</h4>
+          </DetailToggle>
         </MiddleContainer>
-        <RightContainer></RightContainer>
+        <RightContainer>
+          <ControlPanel />
+        </RightContainer>
       </TopContainer>
       <BottomContainer>
         <ContentContainer></ContentContainer>

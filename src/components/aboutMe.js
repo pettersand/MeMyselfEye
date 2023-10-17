@@ -10,7 +10,9 @@ const AboutMeWrapper = styled.div`
 `;
 
 const AboutMeHeader = styled.div`
-  h1 {
+  h1,
+  h2 {
+    margin: 5px;
     align-items: center;
     justify-content: flex-start;
   }

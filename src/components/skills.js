@@ -67,7 +67,6 @@ const SkillsGrid = styled.div`
 
 const GridHeader = styled.div`
   font-weight: 700;
-
   padding: 5px;
   display: flex;
   align-items: center;
@@ -76,7 +75,7 @@ const GridHeader = styled.div`
 `;
 
 const GridItem = styled.div`
-  font-size: 1em;
+  font-size: 0.9em;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
