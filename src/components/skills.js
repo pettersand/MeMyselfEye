@@ -71,7 +71,7 @@ const GridHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid teal;
 `;
 
 const GridItem = styled.div`
@@ -80,9 +80,9 @@ const GridItem = styled.div`
   align-items: center;
   justify-content: space-evenly;
   border-right: ${({ borderRight }) =>
-    borderRight ? "1px solid grey" : "none"};
+    borderRight ? "1px solid teal" : "none"};
   border-bottom: ${({ borderBottom }) =>
-    borderBottom ? "1px solid grey" : "none"};
+    borderBottom ? "1px solid teal" : "none"};
   grid-row-end: ${({ spanRows }) => (spanRows ? "span 2" : "span 1")};
 `;
 

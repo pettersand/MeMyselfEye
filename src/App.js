@@ -8,7 +8,7 @@ import ControlPanel from "./components/controlPanel";
 
 const AppContainer = styled.div`
   background: linear-gradient(0deg, black 20%, transparent 40%),
-    url("Background2.png") no-repeat center center;
+    url("bg_int_cv1.png") no-repeat center center;
   background-size: cover;
   background-position: center -200px;
   min-height: 100vh;
@@ -70,6 +70,7 @@ const BottomContainer = styled.div`
   justify-content: center;
   gap: 10px;
 `;
+
 const ContentContainer = styled.div`
   background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
   width: 100%;
