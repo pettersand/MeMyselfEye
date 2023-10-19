@@ -58,25 +58,29 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
     display: ${(props) => (props.isSelected ? "block" : "none")};
   }
 
-  &:hover {
-    box-shadow: 0 0 5px 1px darkcyan;
-    transform: scale(1.2);
-  }
-
-  @keyframes pulse {
+  @keyframes spin {
     0% {
-      box-shadow: 0 0 0 0 rgba(0, 128, 128, 0.7);
+      transform: rotate(0deg);
+      border-color: darkblue;
     }
-    70% {
-      box-shadow: 0 0 0 10px rgba(0, 128, 128, 0);
+    25% {
+      border-color: purple;
+    }
+    50% {
+      transform: rotate(180deg);
+      border-color: gold;
+    }
+    75% {
+      border-color: pink;
     }
     100% {
-      box-shadow: 0 0 0 0 rgba(0, 128, 128, 0);
+      transform: rotate(360deg);
+      border-color: darkcyan;
     }
   }
 
-  &:active {
-    animation: pulse infinite;
+  &:hover {
+    animation: spin 1.5s linear infinite;
   }
 `;
 
