@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { useAppState } from "../App";
 import ProjectsEng from "./infoComponents/projectsEng";
+import ProjectsNor from "./infoComponents/projectsNor";
 import AboutMeEng from "./infoComponents/aboutMeEng";
+import AboutMeNor from "./infoComponents/aboutMeNor";
 
 const ContentContainer = styled.div`
   background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
@@ -18,7 +20,10 @@ const componentMap = {
     projects: ProjectsEng,
     aboutMe: AboutMeEng,
   },
-  nor: {},
+  nor: {
+    projects: ProjectsNor,
+    aboutMe: AboutMeNor,
+  },
 };
 
 const InfoContainer = () => {

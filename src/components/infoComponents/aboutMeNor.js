@@ -21,41 +21,41 @@ const AboutMeContainer = styled.div`
   box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
 `;
 
-const AboutMeEng = () => {
+const AboutMeNor = () => {
   const { state } = useAppState();
   const { detailLevel } = state;
 
   return (
     <AboutMeWrapper>
       <AboutMeContainer visible={detailLevel === "minimal"}>
-        <h4>Changing Careers</h4>
+        <h4>Ny Karriere</h4>
       </AboutMeContainer>
       <AboutMeContainer visible={detailLevel === "detailed"}>
-        <h4>Changing Careers</h4>
+        <h4>Ny Karriere</h4>
       </AboutMeContainer>
 
       <AboutMeContainer visible={detailLevel === "minimal"}>
-        <h4>Learning Process</h4>
+        <h4>Læringsprosessen</h4>
       </AboutMeContainer>
       <AboutMeContainer visible={detailLevel === "detailed"}>
-        <h4>Learning Process</h4>
+        <h4>Læringsprosessen</h4>
       </AboutMeContainer>
 
       <AboutMeContainer visible={detailLevel === "minimal"}>
-        <h4>Motivations</h4>
+        <h4>Motivasjon</h4>
       </AboutMeContainer>
       <AboutMeContainer visible={detailLevel === "detailed"}>
-        <h4>Motivations</h4>
+        <h4>Motivasjon</h4>
       </AboutMeContainer>
 
       <AboutMeContainer visible={detailLevel === "minimal"}>
-        <h4>Passions</h4>
+        <h4>Lidenskap</h4>
       </AboutMeContainer>
       <AboutMeContainer visible={detailLevel === "detailed"}>
-        <h4>Passions</h4>
+        <h4>Lidenskap</h4>
       </AboutMeContainer>
     </AboutMeWrapper>
   );
 };
 
-export default AboutMeEng;
+export default AboutMeNor;

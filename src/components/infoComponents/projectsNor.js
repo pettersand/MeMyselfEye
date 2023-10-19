@@ -23,7 +23,7 @@ const ProjectContainer = styled.div`
 
 const ProjectItem = styled.div``;
 
-const ProjectsEng = () => {
+const ProjectsNor = () => {
   const { state } = useAppState();
   const { detailLevel } = state;
 
@@ -51,13 +51,13 @@ const ProjectsEng = () => {
       </ProjectContainer>
 
       <ProjectContainer visible={detailLevel === "minimal"}>
-        <h4>Portfolio</h4>
+        <h4>Nettside</h4>
       </ProjectContainer>
       <ProjectContainer visible={detailLevel === "detailed"}>
-        <h4>Portfolio</h4>
+        <h4>Nettside</h4>
       </ProjectContainer>
     </ProjectWrapper>
   );
 };
 
-export default ProjectsEng;
+export default ProjectsNor;

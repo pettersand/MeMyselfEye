@@ -31,6 +31,7 @@ const RadioWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+  margin-top: 5px;
 `;
 
 const HiddenRadio = styled.input.attrs({ type: "radio" })`
@@ -53,7 +54,7 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background-color: teal;
+    background-color: silver;
     transition: background-color 0.3s;
     display: ${(props) => (props.isSelected ? "block" : "none")};
   }
@@ -82,6 +83,12 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
   &:hover {
     animation: spin 1.5s linear infinite;
   }
+
+  ${(props) =>
+    props.isSelected &&
+    `
+    box-shadow: 0 0 5px 1px teal;
+`}
 `;
 
 const MenuItems = () => {
