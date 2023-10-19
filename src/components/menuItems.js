@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppState } from "../App";
 import styled from "styled-components";
+import ToggleButton from "../utils/ToggleButton";
 
 const MenuContainer = styled.div`
   display: flex;
@@ -38,59 +39,6 @@ const HiddenRadio = styled.input.attrs({ type: "radio" })`
   display: none;
 `;
 
-const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
-  width: 10px;
-  height: 10px;
-  border: 2px solid teal;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin: 5px;
-
-  &:before {
-    content: "";
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: silver;
-    transition: background-color 0.3s;
-    display: ${(props) => (props.isSelected ? "block" : "none")};
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-      border-color: darkblue;
-    }
-    25% {
-      border-color: purple;
-    }
-    50% {
-      transform: rotate(180deg);
-      border-color: gold;
-    }
-    75% {
-      border-color: pink;
-    }
-    100% {
-      transform: rotate(360deg);
-      border-color: darkcyan;
-    }
-  }
-
-  &:hover {
-    animation: spin 1.5s linear infinite;
-  }
-
-  ${(props) =>
-    props.isSelected &&
-    `
-    box-shadow: 0 0 5px 1px teal;
-`}
-`;
-
 const MenuItems = () => {
   const { state, setState } = useAppState();
 
@@ -114,7 +62,7 @@ const MenuItems = () => {
     <MenuContainer>
       <LanguageToggle>
         <RadioWrapper>
-          <StyledRadio
+          <ToggleButton
             isSelected={state.language === "eng"}
             onClick={() => toggleLanguage("eng")}
           >
@@ -126,12 +74,12 @@ const MenuItems = () => {
               checked={state.language === "eng"}
               onChange={handleLanguage}
             />
-          </StyledRadio>
+          </ToggleButton>
           English
         </RadioWrapper>
         <RadioWrapper>
           Norsk
-          <StyledRadio
+          <ToggleButton
             isSelected={state.language === "nor"}
             onClick={() => toggleLanguage("nor")}
           >
@@ -143,13 +91,13 @@ const MenuItems = () => {
               checked={state.language === "nor"}
               onChange={handleLanguage}
             />
-          </StyledRadio>
+          </ToggleButton>
         </RadioWrapper>
       </LanguageToggle>
 
       <DetailToggle>
         <RadioWrapper>
-          <StyledRadio
+          <ToggleButton
             isSelected={state.detailLevel === "minimal"}
             onClick={() => toggleDetail("minimal")}
           >
@@ -161,13 +109,13 @@ const MenuItems = () => {
               checked={state.detailLevel === "minimal"}
               onChange={handleDetail}
             />
-          </StyledRadio>
+          </ToggleButton>
           Minimal
         </RadioWrapper>
 
         <RadioWrapper>
           Detailed
-          <StyledRadio
+          <ToggleButton
             isSelected={state.detailLevel === "detailed"}
             onClick={() => toggleDetail("detailed")}
           >
@@ -180,7 +128,7 @@ const MenuItems = () => {
               checked={state.detailLevel === "detailed"}
               onChange={handleDetail}
             />
-          </StyledRadio>
+          </ToggleButton>
         </RadioWrapper>
       </DetailToggle>
     </MenuContainer>

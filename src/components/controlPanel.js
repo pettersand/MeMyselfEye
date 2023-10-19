@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import ToggleButton from "../utils/ToggleButton";
+import { useAppState } from "../App";
 
 const ControlWrapper = styled.div`
   color: white;
@@ -37,19 +39,52 @@ const ControlItem = styled.div`
   font-size: 1.25em;
 `;
 
+const RadioWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+`;
+
+const HiddenRadio = styled.input.attrs({ type: "radio" })`
+  display: none;
+`;
 
 const ControlPanel = () => {
+  const { state, setState } = useAppState();
+  const { activeInfo } = state;
+
+  const toggleActiveInfo = (value) => {
+    handleActiveInfo({ target: { value } });
+  };
+
+  const handleActiveInfo = (e) => {
+    setState((prevState) => ({ ...prevState, activeInfo: e.target.value }));
+  };
+
   return (
     <ControlWrapper>
       <ControlHeader>
-        <h1>Control Panel</h1>
+        <h2>Control Panel</h2>
       </ControlHeader>
       <ControlContainer>
         <ControlRow>
-          <ControlItem>
-
+          <RadioWrapper>
+            <ToggleButton
+              isSelected={state.activeInfo === "projects"}
+              onClick={() => toggleActiveInfo("projects")}
+            >
+              <HiddenRadio
+                type="radio"
+                name="info"
+                id="projects"
+                value="projects"
+                checked={state.activeInfo === "projects"}
+                onChange={handleActiveInfo}
+              />
+            </ToggleButton>
             Projects
-          </ControlItem>
+          </RadioWrapper>
           <ControlItem>Courses o</ControlItem>
         </ControlRow>
         <ControlRow></ControlRow>

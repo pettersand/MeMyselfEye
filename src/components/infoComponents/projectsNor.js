@@ -11,8 +11,9 @@ const ProjectWrapper = styled.div`
   gap: 5px;
 `;
 
-const ProjectContainer = styled.div`
-  display: ${({ visible }) => (visible ? "flex" : "none")};
+const ProjectContainer = styled(({ isVisible, ...props }) => (
+  <div {...props} style={{ display: isVisible ? "flex" : "none" }} />
+))`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -29,31 +30,31 @@ const ProjectsNor = () => {
 
   return (
     <ProjectWrapper>
-      <ProjectContainer visible={detailLevel === "minimal"}>
+      <ProjectContainer isVisible={detailLevel === "minimal"}>
         <h4>Builder</h4>
       </ProjectContainer>
-      <ProjectContainer visible={detailLevel === "detailed"}>
+      <ProjectContainer isVisible={detailLevel === "detailed"}>
         <h4>Builder</h4>
       </ProjectContainer>
 
-      <ProjectContainer visible={detailLevel === "minimal"}>
+      <ProjectContainer isVisible={detailLevel === "minimal"}>
         <h4>Tripple-P</h4>
       </ProjectContainer>
-      <ProjectContainer visible={detailLevel === "detailed"}>
+      <ProjectContainer isVisible={detailLevel === "detailed"}>
         <h4>Tripple-P</h4>
       </ProjectContainer>
 
-      <ProjectContainer visible={detailLevel === "minimal"}>
+      <ProjectContainer isVisible={detailLevel === "minimal"}>
         <h4>Salloc</h4>
       </ProjectContainer>
-      <ProjectContainer visible={detailLevel === "detailed"}>
+      <ProjectContainer isVisible={detailLevel === "detailed"}>
         <h4>Salloc</h4>
       </ProjectContainer>
 
-      <ProjectContainer visible={detailLevel === "minimal"}>
+      <ProjectContainer isVisible={detailLevel === "minimal"}>
         <h4>Nettside</h4>
       </ProjectContainer>
-      <ProjectContainer visible={detailLevel === "detailed"}>
+      <ProjectContainer isVisible={detailLevel === "detailed"}>
         <h4>Nettside</h4>
       </ProjectContainer>
     </ProjectWrapper>

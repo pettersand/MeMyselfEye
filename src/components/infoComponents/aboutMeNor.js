@@ -11,8 +11,9 @@ const AboutMeWrapper = styled.div`
   gap: 5px;
 `;
 
-const AboutMeContainer = styled.div`
-  display: ${({ visible }) => (visible ? "flex" : "none")};
+const AboutMeContainer = styled(({ isVisible, ...props }) => (
+  <div {...props} style={{ display: isVisible ? "flex" : "none" }} />
+))`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -27,31 +28,31 @@ const AboutMeNor = () => {
 
   return (
     <AboutMeWrapper>
-      <AboutMeContainer visible={detailLevel === "minimal"}>
+      <AboutMeContainer isVisible={detailLevel === "minimal"}>
         <h4>Ny Karriere</h4>
       </AboutMeContainer>
-      <AboutMeContainer visible={detailLevel === "detailed"}>
+      <AboutMeContainer isVisible={detailLevel === "detailed"}>
         <h4>Ny Karriere</h4>
       </AboutMeContainer>
 
-      <AboutMeContainer visible={detailLevel === "minimal"}>
+      <AboutMeContainer isVisible={detailLevel === "minimal"}>
         <h4>Læringsprosessen</h4>
       </AboutMeContainer>
-      <AboutMeContainer visible={detailLevel === "detailed"}>
+      <AboutMeContainer isVisible={detailLevel === "detailed"}>
         <h4>Læringsprosessen</h4>
       </AboutMeContainer>
 
-      <AboutMeContainer visible={detailLevel === "minimal"}>
+      <AboutMeContainer isVisible={detailLevel === "minimal"}>
         <h4>Motivasjon</h4>
       </AboutMeContainer>
-      <AboutMeContainer visible={detailLevel === "detailed"}>
+      <AboutMeContainer isVisible={detailLevel === "detailed"}>
         <h4>Motivasjon</h4>
       </AboutMeContainer>
 
-      <AboutMeContainer visible={detailLevel === "minimal"}>
+      <AboutMeContainer isVisible={detailLevel === "minimal"}>
         <h4>Lidenskap</h4>
       </AboutMeContainer>
-      <AboutMeContainer visible={detailLevel === "detailed"}>
+      <AboutMeContainer isVisible={detailLevel === "detailed"}>
         <h4>Lidenskap</h4>
       </AboutMeContainer>
     </AboutMeWrapper>
