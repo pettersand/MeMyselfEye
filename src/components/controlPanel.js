@@ -136,6 +136,7 @@ const ControlPanel = () => {
             </ToggleButton>
           </RadioWrapper>
         </ControlRow>
+        <ControlRow>Quiz</ControlRow>
       </ControlContainer>
     </ControlWrapper>
   );

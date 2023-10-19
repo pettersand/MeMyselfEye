@@ -41,20 +41,6 @@ const AboutMeNor = () => {
       <AboutMeContainer isVisible={detailLevel === "detailed"}>
         <h4>Læringsprosessen</h4>
       </AboutMeContainer>
-
-      <AboutMeContainer isVisible={detailLevel === "minimal"}>
-        <h4>Motivasjon</h4>
-      </AboutMeContainer>
-      <AboutMeContainer isVisible={detailLevel === "detailed"}>
-        <h4>Motivasjon</h4>
-      </AboutMeContainer>
-
-      <AboutMeContainer isVisible={detailLevel === "minimal"}>
-        <h4>Lidenskap</h4>
-      </AboutMeContainer>
-      <AboutMeContainer isVisible={detailLevel === "detailed"}>
-        <h4>Lidenskap</h4>
-      </AboutMeContainer>
     </AboutMeWrapper>
   );
 };

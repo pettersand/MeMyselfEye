@@ -5,7 +5,7 @@ import ToggleButton from "../utils/ToggleButton";
 
 const MenuContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   align-items: center;
   border-top: 2px solid teal;
@@ -16,7 +16,7 @@ const MenuContainer = styled.div`
 const LanguageToggle = styled.div`
   width: 80%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `;
@@ -24,6 +24,7 @@ const LanguageToggle = styled.div`
 const DetailToggle = styled.div`
   width: 80%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `;
@@ -78,7 +79,6 @@ const MenuItems = () => {
           English
         </RadioWrapper>
         <RadioWrapper>
-          Norsk
           <ToggleButton
             isSelected={state.language === "nor"}
             onClick={() => toggleLanguage("nor")}
@@ -92,11 +92,13 @@ const MenuItems = () => {
               onChange={handleLanguage}
             />
           </ToggleButton>
+          Norsk
         </RadioWrapper>
       </LanguageToggle>
 
       <DetailToggle>
         <RadioWrapper>
+          Minimal
           <ToggleButton
             isSelected={state.detailLevel === "minimal"}
             onClick={() => toggleDetail("minimal")}
@@ -110,7 +112,6 @@ const MenuItems = () => {
               onChange={handleDetail}
             />
           </ToggleButton>
-          Minimal
         </RadioWrapper>
 
         <RadioWrapper>

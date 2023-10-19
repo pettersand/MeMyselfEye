@@ -13,6 +13,8 @@ import PriorCareerEng from "./infoComponents/priorCareerEng";
 import PriorCareerNor from "./infoComponents/priorCareerNor";
 import SoftSkillsEng from "./infoComponents/softSkillsEng";
 import SoftSkillsNor from "./infoComponents/softSkillsNor";
+import MotivationEng from "./infoComponents/motivationEng";
+import MotivationNor from "./infoComponents/motivationNor";
 
 const ContentContainer = styled.div`
   background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
@@ -31,6 +33,7 @@ const componentMap = {
     skills: SkillsEng,
     priorCareer: PriorCareerEng,
     softSkills: SoftSkillsEng,
+    motivations: MotivationEng,
   },
   nor: {
     projects: ProjectsNor,
@@ -39,6 +42,7 @@ const componentMap = {
     skills: SkillsNor,
     priorCareer: PriorCareerNor,
     softSkills: SoftSkillsNor,
+    motivations: MotivationNor,
   },
 };
 
