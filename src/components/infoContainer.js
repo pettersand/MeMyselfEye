@@ -7,6 +7,10 @@ import AboutMeEng from "./infoComponents/aboutMeEng";
 import AboutMeNor from "./infoComponents/aboutMeNor";
 import CoursesEng from "./infoComponents/coursesEng";
 import CoursesNor from "./infoComponents/coursesNor";
+import SkillsEng from "./infoComponents/skillsEng";
+import SkillsNor from "./infoComponents/skillsNor";
+import PriorCareerEng from "./infoComponents/priorCareerEng";
+import PriorCareerNor from "./infoComponents/priorCareerNor";
 
 const ContentContainer = styled.div`
   background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
@@ -22,11 +26,15 @@ const componentMap = {
     projects: ProjectsEng,
     aboutMe: AboutMeEng,
     courses: CoursesEng,
+    skills: SkillsEng,
+    priorCareer: PriorCareerEng,
   },
   nor: {
     projects: ProjectsNor,
     aboutMe: AboutMeNor,
     courses: CoursesNor,
+    skills: SkillsNor,
+    priorCareer: PriorCareerNor,
   },
 };
 
