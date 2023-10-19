@@ -11,6 +11,8 @@ import SkillsEng from "./infoComponents/skillsEng";
 import SkillsNor from "./infoComponents/skillsNor";
 import PriorCareerEng from "./infoComponents/priorCareerEng";
 import PriorCareerNor from "./infoComponents/priorCareerNor";
+import SoftSkillsEng from "./infoComponents/softSkillsEng";
+import SoftSkillsNor from "./infoComponents/softSkillsNor";
 
 const ContentContainer = styled.div`
   background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
@@ -28,6 +30,7 @@ const componentMap = {
     courses: CoursesEng,
     skills: SkillsEng,
     priorCareer: PriorCareerEng,
+    softSkills: SoftSkillsEng,
   },
   nor: {
     projects: ProjectsNor,
@@ -35,6 +38,7 @@ const componentMap = {
     courses: CoursesNor,
     skills: SkillsNor,
     priorCareer: PriorCareerNor,
+    softSkills: SoftSkillsNor,
   },
 };
 
