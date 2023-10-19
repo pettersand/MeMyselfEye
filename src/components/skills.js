@@ -74,16 +74,16 @@ const GridHeader = styled.div`
   border-bottom: 1px solid teal;
 `;
 
-const GridItem = styled.div`
+const GridItem = styled(({ borderRight, borderBottom, spanRows, ...props }) => (
+  <div {...props} />
+))`
   font-size: 0.9em;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border-right: ${({ borderRight }) =>
-    borderRight ? "1px solid teal" : "none"};
-  border-bottom: ${({ borderBottom }) =>
-    borderBottom ? "1px solid teal" : "none"};
-  grid-row-end: ${({ spanRows }) => (spanRows ? "span 2" : "span 1")};
+  border-right: ${(props) => (props.borderRight ? "1px solid teal" : "none")};
+  border-bottom: ${(props) => (props.borderBottom ? "1px solid teal" : "none")};
+  grid-row-end: ${(props) => (props.spanRows ? "span 2" : "span 1")};
 `;
 
 function IconWithLabel({ IconComponent, size, label }) {

@@ -9,60 +9,83 @@ const MenuContainer = styled.div`
   align-items: center;
   border-top: 2px solid teal;
   border-radius: 5px;
+  gap: 10px;
 `;
 
 const LanguageToggle = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
 `;
 
 const DetailToggle = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
 `;
 
-const RadioButton = styled.input`
+const RadioWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+const HiddenRadio = styled.input.attrs({ type: "radio" })`
   display: none;
-  + label {
-    cursor: pointer;
-    position: relative;
-    padding-left: 20px;
-  }
+`;
 
-  + label:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    border: 2px solid teal;
-    border-radius: 50%;
-    background-color: transparent;
-  }
+const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
+  width: 10px;
+  height: 10px;
+  border: 2px solid teal;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px;
 
-  :checked + label:after {
+  &:before {
     content: "";
-    position: absolute;
-    left: 6px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: teal;
+    transition: background-color 0.3s;
+    display: ${(props) => (props.isSelected ? "block" : "none")};
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px 1px darkcyan;
+    transform: scale(1.2);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 128, 128, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 128, 128, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 128, 128, 0);
+    }
+  }
+
+  &:active {
+    animation: pulse infinite;
   }
 `;
 
 const MenuItems = () => {
   const { state, setState } = useAppState();
+
+  const toggleLanguage = (value) => {
+    handleLanguage({ target: { value } });
+  };
 
   const handleLanguage = (e) => {
     setState((prevState) => ({ ...prevState, language: e.target.value }));
@@ -75,46 +98,69 @@ const MenuItems = () => {
   return (
     <MenuContainer>
       <LanguageToggle>
-        <RadioButton
-          type="radio"
-          name="language"
-          id="english"
-          value="eng"
-          checked={state.language === "eng"}
-          onChange={handleLanguage}
-        />
-        <label htmlFor="english">English</label>
-        <RadioButton
-          type="radio"
-          name="language"
-          id="norwegian"
-          value="nor"
-          checked={state.language === "nor"}
-          onChange={handleLanguage}
-        />
-        <label htmlFor="norwegian">Norsk</label>
+        <RadioWrapper>
+          <StyledRadio
+            isSelected={state.language === "eng"}
+            onClick={() => toggleLanguage("eng")}
+          >
+            <HiddenRadio
+              type="radio"
+              name="language"
+              id="english"
+              value="eng"
+              checked={state.language === "eng"}
+              onChange={handleLanguage}
+            />
+          </StyledRadio>
+          English
+        </RadioWrapper>
+        <RadioWrapper>
+          Norsk
+          <StyledRadio
+            isSelected={state.language === "nor"}
+            onClick={() => toggleLanguage("nor")}
+          >
+            <HiddenRadio
+              type="radio"
+              name="language"
+              id="norwegian"
+              value="nor"
+              checked={state.language === "nor"}
+              onChange={handleLanguage}
+            />
+          </StyledRadio>
+        </RadioWrapper>
       </LanguageToggle>
 
       <DetailToggle>
-        <RadioButton
-          type="radio"
-          name="detailLevel"
-          id="minimal"
-          value="minimal"
-          checked={state.detailLevel === "minimal"}
-          onChange={handleDetail}
-        />
-        <label htmlFor="minimal">Minimal</label>
+        <RadioWrapper>
+          <label>
+            <HiddenRadio
+              type="radio"
+              name="detailLevel"
+              id="minimal"
+              value="minimal"
+              checked={state.detailLevel === "minimal"}
+              onChange={handleDetail}
+            />
+            Minimal
+          </label>
+        </RadioWrapper>
 
-        <RadioButton
-          type="radio"
-          name="detailLevel"
-          id="detailed"
-          value="detailed"
-          checked={state.detailLevel === "detailed"}
-          onChange={handleDetail}
-        />
-        <label htmlFor="detailed">Detailed</label>
+        <RadioWrapper>
+          <label>
+            Detailed
+            <HiddenRadio
+              $position="right"
+              type="radio"
+              name="detailLevel"
+              id="detailed"
+              value="detailed"
+              checked={state.detailLevel === "detailed"}
+              onChange={handleDetail}
+            />
+          </label>
+        </RadioWrapper>
       </DetailToggle>
     </MenuContainer>
   );
