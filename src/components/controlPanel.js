@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import App from "../App";
 
 const ControlWrapper = styled.div`
   color: white;
@@ -37,6 +38,8 @@ const ControlItem = styled.div`
   font-size: 1.25em;
 `;
 
+const { state, setState } = userAppState();
+
 const ControlPanel = () => {
   return (
     <ControlWrapper>
@@ -45,7 +48,18 @@ const ControlPanel = () => {
       </ControlHeader>
       <ControlContainer>
         <ControlRow>
-          <ControlItem>o Projects</ControlItem>
+          <ControlItem>
+            <input
+              type="radio"
+              value="projects"
+              name="info"
+              checked={state.activeInfo === "projects"}
+              onChange={() =>
+                setState((prev) => ({ ...prev, activeInfo: "projects" }))
+              }
+            />
+            Projects
+          </ControlItem>
           <ControlItem>Courses o</ControlItem>
         </ControlRow>
         <ControlRow></ControlRow>

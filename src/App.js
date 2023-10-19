@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { createContext, useContext, useState } from "react";
 import Header from "./components/header";
 import AboutMe from "./components/aboutMe";
 import Timeline from "./components/timeline";
@@ -7,8 +8,7 @@ import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
 
 const AppContainer = styled.div`
-  background: linear-gradient(0deg, black 20%, transparent 40%),
-    url("bg_int_cv1.png") no-repeat center center;
+  background-color: black;
   background-size: cover;
   background-position: center -200px;
   min-height: 100vh;
@@ -102,32 +102,53 @@ const DetailToggle = styled.div`
   font-weight: 200;
 `;
 
+export const AppStateContext = createContext();
+
+export const useAppState = () => {
+  return useContext(AppStateContext);
+};
+
+export const AppStateProvider = ({ children }) => {
+  const [state, setState] = useState({
+    activeInfo: "default",
+    detailLevel: "minimal",
+  });
+
+  return (
+    <AppStateContext.Provider value={{ state, setState }}>
+      {children}
+    </AppStateContext.Provider>
+  );
+};
+
 function App() {
   return (
-    <AppContainer>
-      <TopContainer>
-        <LeftContainer>
-          <AboutMe />
-        </LeftContainer>
-        <MiddleContainer>
-          <NameContainer>
-            <h1>Petter Sand Austnes</h1>
-            <h2>Software Developer</h2>
-          </NameContainer>
-          <Skills />
-          <DetailToggle>
-            <h4>o Minimalist</h4>
-            <h4>Detailed o</h4>
-          </DetailToggle>
-        </MiddleContainer>
-        <RightContainer>
-          <ControlPanel />
-        </RightContainer>
-      </TopContainer>
-      <BottomContainer>
-        <ContentContainer></ContentContainer>
-      </BottomContainer>
-    </AppContainer>
+    <AppStateProvider>
+      <AppContainer>
+        <TopContainer>
+          <LeftContainer>
+            <AboutMe />
+          </LeftContainer>
+          <MiddleContainer>
+            <NameContainer>
+              <h1>Petter Sand Austnes</h1>
+              <h2>Software Developer</h2>
+            </NameContainer>
+            <Skills />
+            <DetailToggle>
+              <h4>o Minimalist</h4>
+              <h4>Detailed o</h4>
+            </DetailToggle>
+          </MiddleContainer>
+          <RightContainer>
+            <ControlPanel />
+          </RightContainer>
+        </TopContainer>
+        <BottomContainer>
+          <ContentContainer></ContentContainer>
+        </BottomContainer>
+      </AppContainer>
+    </AppStateProvider>
   );
 }
 
