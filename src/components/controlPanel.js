@@ -85,9 +85,57 @@ const ControlPanel = () => {
             </ToggleButton>
             Projects
           </RadioWrapper>
-          <ControlItem>Courses o</ControlItem>
+          <RadioWrapper>
+            Courses
+            <ToggleButton
+              isSelected={state.activeInfo === "courses"}
+              onClick={() => toggleActiveInfo("courses")}
+            >
+              <HiddenRadio
+                type="radio"
+                name="info"
+                id="courses"
+                value="courses"
+                checked={state.activeInfo === "courses"}
+                onChange={handleActiveInfo}
+              />
+            </ToggleButton>
+          </RadioWrapper>
         </ControlRow>
-        <ControlRow></ControlRow>
+        <ControlRow>
+          <RadioWrapper>
+            <ToggleButton
+              isSelected={state.activeInfo === "priorCareer"}
+              onClick={() => toggleActiveInfo("priorCareer")}
+            >
+              <HiddenRadio
+                type="radio"
+                name="info"
+                id="priorCareer"
+                value="priorCareer"
+                checked={state.activeInfo === "priorCareer"}
+                onChange={handleActiveInfo}
+              />
+            </ToggleButton>
+            Prior Career
+          </RadioWrapper>
+          <RadioWrapper>
+            Soft Skills
+            <ToggleButton
+              isSelected={state.activeInfo === "softSkills"}
+              onClick={() => toggleActiveInfo("softSkills")}
+            >
+              <HiddenRadio
+                type="radio"
+                name="info"
+                id="softSkills"
+                value="softSkills"
+                checked={state.activeInfo === "softSkills"}
+                onChange={handleActiveInfo}
+              />
+            </ToggleButton>
+          </RadioWrapper>
+        </ControlRow>
       </ControlContainer>
     </ControlWrapper>
   );

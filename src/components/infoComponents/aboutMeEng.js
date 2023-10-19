@@ -41,20 +41,6 @@ const AboutMeEng = () => {
       <AboutMeContainer isVisible={detailLevel === "detailed"}>
         <h4>Learning Process</h4>
       </AboutMeContainer>
-
-      <AboutMeContainer isVisible={detailLevel === "minimal"}>
-        <h4>Motivations</h4>
-      </AboutMeContainer>
-      <AboutMeContainer isVisible={detailLevel === "detailed"}>
-        <h4>Motivations</h4>
-      </AboutMeContainer>
-
-      <AboutMeContainer isVisible={detailLevel === "minimal"}>
-        <h4>Passions</h4>
-      </AboutMeContainer>
-      <AboutMeContainer isVisible={detailLevel === "detailed"}>
-        <h4>Passions</h4>
-      </AboutMeContainer>
     </AboutMeWrapper>
   );
 };
