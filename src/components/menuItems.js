@@ -91,6 +91,10 @@ const MenuItems = () => {
     handleLanguage({ target: { value } });
   };
 
+  const toggleDetail = (value) => {
+    handleDetail({ target: { value } });
+  };
+
   const handleLanguage = (e) => {
     setState((prevState) => ({ ...prevState, language: e.target.value }));
   };
@@ -138,7 +142,10 @@ const MenuItems = () => {
 
       <DetailToggle>
         <RadioWrapper>
-          <label>
+          <StyledRadio
+            isSelected={state.detailLevel === "minimal"}
+            onClick={() => toggleDetail("minimal")}
+          >
             <HiddenRadio
               type="radio"
               name="detailLevel"
@@ -147,13 +154,16 @@ const MenuItems = () => {
               checked={state.detailLevel === "minimal"}
               onChange={handleDetail}
             />
-            Minimal
-          </label>
+          </StyledRadio>
+          Minimal
         </RadioWrapper>
 
         <RadioWrapper>
-          <label>
-            Detailed
+          Detailed
+          <StyledRadio
+            isSelected={state.detailLevel === "detailed"}
+            onClick={() => toggleDetail("detailed")}
+          >
             <HiddenRadio
               $position="right"
               type="radio"
@@ -163,7 +173,7 @@ const MenuItems = () => {
               checked={state.detailLevel === "detailed"}
               onChange={handleDetail}
             />
-          </label>
+          </StyledRadio>
         </RadioWrapper>
       </DetailToggle>
     </MenuContainer>
