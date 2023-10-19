@@ -1,11 +1,10 @@
 import "./App.css";
 import React, { createContext, useContext, useState } from "react";
-import Header from "./components/header";
 import AboutMe from "./components/aboutMe";
-import Timeline from "./components/timeline";
 import Skills from "./components/skills";
 import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
+import InfoContainer from "./components/infoContainer";
 
 const AppContainer = styled.div`
   background-color: black;
@@ -71,18 +70,10 @@ const BottomContainer = styled.div`
   gap: 10px;
 `;
 
-const ContentContainer = styled.div`
-  background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
-  width: 100%;
-  border-radius: 10px;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: row;
-`;
-
 const NameContainer = styled.div`
   flex: 1;
   border-bottom: 2px solid teal;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,6 +91,8 @@ const DetailToggle = styled.div`
   width: 100%;
   justify-content: space-evenly;
   font-weight: 200;
+  border-top: 2px solid teal;
+  border-radius: 5px;
 `;
 
 export const AppStateContext = createContext();
@@ -110,8 +103,9 @@ export const useAppState = () => {
 
 export const AppStateProvider = ({ children }) => {
   const [state, setState] = useState({
-    activeInfo: "default",
+    activeInfo: "projects",
     detailLevel: "minimal",
+    language: "eng",
   });
 
   return (
@@ -145,7 +139,7 @@ function App() {
           </RightContainer>
         </TopContainer>
         <BottomContainer>
-          <ContentContainer></ContentContainer>
+          <InfoContainer />
         </BottomContainer>
       </AppContainer>
     </AppStateProvider>
