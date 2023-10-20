@@ -80,7 +80,7 @@ const AboutMe = () => {
     <AboutMeWrapper>
       <AboutMeContainer isVisible={language === "eng"}>
         <AboutMeHeader>
-          <h2>About Me</h2>
+          <h2>The Story Starts HERE</h2>
         </AboutMeHeader>
 
         <AboutMeText>
@@ -140,12 +140,27 @@ const AboutMe = () => {
 
       <AboutMeContainer isVisible={language === "nor"}>
         <AboutMeHeader>
-          <h2>Litt Om Meg</h2>
+          <h2>Reisen Starter HER</h2>
         </AboutMeHeader>
 
         <AboutMeText>
-          <p>Her en historien om hvordan livet mitt ble snudd på hodet.</p>
-          <p>Her skriver jeg mer om nettopp dette. Okidoki</p>
+          <p>
+            Dette er historien on hvordan livet mitt ble snudd på hodet. Jeg
+            ønsker å ta et minutt, så sett deg til rette, så skal jeg fortelle
+            om hvordan jeg endte opp som en utvikler, med en dose flair.
+          </p>
+          <p>
+            Jeg ønsker deg velkommen! Følg kake-smulene for å finne veien
+            gjennom denne interaktive reisen.
+          </p>
+          <p>
+            Jeg er en selvlært utvikler med en appetitt for kunnskap og
+            ambisjoner om kontinuerlig faglig utvikling. Jeg er typen til å
+            ville utforske stien der de færreste har gått. Dette har ledet meg
+            på flere unike eventyr gjennom livet. Heng på deg, og la meg ta deg
+            med på reisen om meg, meg selv, og .. jeg. (Dette funker bedre på
+            engelsk...)
+          </p>
         </AboutMeText>
 
         <Toggle>
