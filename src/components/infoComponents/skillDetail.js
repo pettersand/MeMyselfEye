@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { SiPython } from "react-icons/si";
+import { PiFileSql, PiArrowElbowLeftDownBold } from "react-icons/pi";
 
 const SkillDetailWrapper = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-around;
   border-bottom: 1px solid teal;
 `;
 
@@ -27,10 +30,15 @@ const Icon = styled.div`
 const UsedInContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  padding: 5px;
+  h3 {
+    margin-top: 5px;
+  }
   ul {
-    align-items: center;
+    list-style-position: inside;
+    padding-left: 5px;
   }
 `;
 
@@ -39,6 +47,24 @@ const UsedForContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 5px;
+  h3 {
+    margin-top: 5px;
+  }
+  ul {
+    list-style-position: inside;
+    padding-left: 5px;
+  }
+`;
+
+const BoxHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+
+const CloseButton = styled.div`
+  font-size: 1.8em;
 `;
 
 export const detailMap = {
@@ -79,14 +105,19 @@ const SkillDetail = ({ skill, onClose }) => {
         </ul>
       </UsedInContainer>
       <UsedForContainer>
-        <h3>Used For:</h3>
+        <BoxHeader>
+          <h3>Used For:</h3>
+          <CloseButton>
+            <PiArrowElbowLeftDownBold onClick={onClose} />
+          </CloseButton>
+        </BoxHeader>
+
         <ul>
           {skillDetail.usedFor.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
       </UsedForContainer>
-      <button onClick={onClose}>Close</button>
     </SkillDetailWrapper>
   );
 };

@@ -22,7 +22,7 @@ import {
   SiPython,
   SiC,
 } from "react-icons/si";
-import { PiFileSql } from "react-icons/pi";
+import { PiFileSql, PiArrowElbowLeftDownBold } from "react-icons/pi";
 import { TbBrandCSharp } from "react-icons/tb";
 import SkillDetail from "./infoComponents/skillDetail";
 import { detailMap } from "./infoComponents/skillDetail";
@@ -57,7 +57,6 @@ const CategoryCell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid teal;
   border-bottom: 1px solid teal;
 `;
 
@@ -79,7 +78,6 @@ const WorkingCell = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border-right: 1px solid teal;
   border-bottom: 1px solid teal;
 `;
 
