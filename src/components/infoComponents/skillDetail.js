@@ -5,33 +5,47 @@ import { SiPython } from "react-icons/si";
 const SkillDetailWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  border-bottom: 1px solid teal;
 `;
 
 const DetailsContainer = styled.div`
   display: flex;
-  align-items: center;
-  /* Add additional styling as needed */
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
 `;
 
 const Icon = styled.div`
-  margin-right: 10px; // Adjust as necessary
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 `;
 
 const UsedInContainer = styled.div`
-  /* Styling for the usedIn container */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  ul {
+    align-items: center;
+  }
 `;
 
 const UsedForContainer = styled.div`
-  /* Styling for the usedFor container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-const detailMap = {
+export const detailMap = {
   python: {
     icon: SiPython,
     label: "Python",
-    startDate: "May 1st",
+    startDate: "01/05-23",
     frameworks: ["Flask", "Django"],
     usedIn: ["Builder", "Salloc", "Portfolio"],
     usedFor: ["API", "Backend SQL", "Data Analysis"],
@@ -39,9 +53,39 @@ const detailMap = {
 };
 
 const SkillDetail = ({ skill, onClose }) => {
+  const skillDetail = detailMap[skill];
+
+  if (!skillDetail) {
+    return null;
+  }
+
   return (
     <SkillDetailWrapper>
-      <p>Python</p>
+      <DetailsContainer>
+        <Icon>
+          <skillDetail.icon size="2.5em" color="teal" />
+          <h2>{skillDetail.label}</h2>
+        </Icon>
+
+        <p>Since: {skillDetail.startDate}</p>
+        <p>Frameworks: {skillDetail.frameworks.join(", ")}</p>
+      </DetailsContainer>
+      <UsedInContainer>
+        <h3>Used In:</h3>
+        <ul>
+          {skillDetail.usedIn.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </UsedInContainer>
+      <UsedForContainer>
+        <h3>Used For:</h3>
+        <ul>
+          {skillDetail.usedFor.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </UsedForContainer>
       <button onClick={onClose}>Close</button>
     </SkillDetailWrapper>
   );

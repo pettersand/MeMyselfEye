@@ -25,6 +25,7 @@ import {
 import { PiFileSql } from "react-icons/pi";
 import { TbBrandCSharp } from "react-icons/tb";
 import SkillDetail from "./infoComponents/skillDetail";
+import { detailMap } from "./infoComponents/skillDetail";
 
 const SkillsWrapper = styled.div`
   display: flex;
@@ -119,10 +120,10 @@ const Icon = styled.div`
   }
 `;
 
-function TechIcon({ IconComponent, size, color, onMouseEnter }) {
+function TechIcon({ IconComponent, size, color, onMouseEnter, onClick }) {
   return (
     <Icon size={size} onMouseEnter={onMouseEnter}>
-      <IconComponent size={size} color={color || "black"} />
+      <IconComponent size={size} color={color || "black"} onClick={onClick} />
     </Icon>
   );
 }
@@ -141,7 +142,10 @@ const SkillsCellGroup = ({ icons, onIconClick }) => {
             size="2.1em"
             color="teal"
             onMouseEnter={() => setCurrentLabel(icon.label)}
-            onClick={() => onIconClick(icon.label)}
+            onClick={() => {
+              console.log("Icon clicked:", icon.label);
+              onIconClick(icon.label);
+            }}
           />
         ))}
       </IconRow>
@@ -176,8 +180,9 @@ const SkillsNew = () => {
   const [currentLabel, setCurrentLabel] = useState("Hover over an icon!");
 
   const handleIconClick = (label) => {
+    console.log("Handle Icon Click triggered with:", label);
     setIsDetailVisible(true);
-    setCurrentSkillDetail(detailMap[label.toLowerCase()]);
+    setCurrentSkillDetail(label.toLowerCase());
   };
 
   return (
@@ -201,6 +206,7 @@ const SkillsNew = () => {
               { component: PiFileSql, label: "SQL" },
               { component: SiPostgresql, label: "PostgreSQL" },
             ]}
+            onIconClick={handleIconClick}
           />
 
           <WorkingCellGroup
@@ -208,6 +214,7 @@ const SkillsNew = () => {
               { component: TbBrandCSharp, label: "C#" },
               { component: SiSqlite, label: "SQLite" },
             ]}
+            onIconClick={handleIconClick}
           />
         </SkillsRow>
         <SkillsRow>
@@ -220,12 +227,14 @@ const SkillsNew = () => {
               { component: SiCss3, label: "CSS" },
               { component: SiTailwindcss, label: "Tailwind CSS" },
             ]}
+            onIconClick={handleIconClick}
           />
           <WorkingCellGroup
             icons={[
               { component: SiJavascript, label: "JavaScript" },
               { component: SiTypescript, label: "TypeScript" },
             ]}
+            onIconClick={handleIconClick}
           />
         </SkillsRow>
         <SkillsRow>
@@ -236,6 +245,7 @@ const SkillsNew = () => {
               { component: SiMicrosoftexcel, label: "Excel" },
               { component: SiC, label: "C" },
             ]}
+            onIconClick={handleIconClick}
           />
           <WorkingCellGroup
             icons={[
@@ -243,6 +253,7 @@ const SkillsNew = () => {
               { component: SiDocker, label: "Docker" },
               { component: SiLinux, label: "Linux" },
             ]}
+            onIconClick={handleIconClick}
           />
         </SkillsRow>
       </SkillsContainer>
