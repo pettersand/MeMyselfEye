@@ -24,6 +24,7 @@ import {
 } from "react-icons/si";
 import { PiFileSql } from "react-icons/pi";
 import { TbBrandCSharp } from "react-icons/tb";
+import SkillDetail from "./infoComponents/skillDetail";
 
 const SkillsWrapper = styled.div`
   display: flex;
@@ -169,11 +170,26 @@ const WorkingCellGroup = ({ icons }) => {
 };
 
 const SkillsNew = () => {
+  const [isDetailVisible, setIsDetailVisible] = useState(false);
+  const [currentSkillDetail, setCurrentSkillDetail] = useState(null);
   const [currentLabel, setCurrentLabel] = useState("Hover over an icon!");
+
+  const handleIconClick = (skill) => {
+    setIsDetailVisible(true);
+    setCurrentSkillDetail(skill);
+  };
 
   return (
     <SkillsWrapper>
       <SkillsContainer>
+        <SkillsRow>
+          {isDetailVisible && (
+            <SkillDetail
+              skill={currentSkillDetail}
+              onClose={() => setIsDetailVisible(false)}
+            />
+          )}
+        </SkillsRow>
         <SkillsRow>
           <CategoryCell>Backend</CategoryCell>
           <SkillsCellGroup
