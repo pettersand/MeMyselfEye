@@ -34,7 +34,7 @@ const UsedInContainer = styled.div`
   justify-content: center;
   padding: 5px;
   h3 {
-    margin-top: 5px;
+    margin: 5px;
   }
   ul {
     list-style-position: inside;
@@ -49,7 +49,7 @@ const UsedForContainer = styled.div`
   justify-content: center;
   padding: 5px;
   h3 {
-    margin-top: 5px;
+    margin: 5px;
   }
   ul {
     list-style-position: inside;
@@ -61,10 +61,12 @@ const BoxHeader = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 10px;
 `;
 
 const CloseButton = styled.div`
   font-size: 1.8em;
+  cursor: pointer;
 `;
 
 export const detailMap = {

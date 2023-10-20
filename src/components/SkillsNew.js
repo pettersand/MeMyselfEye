@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { HiOutlineDocumentText, HiCodeBracket } from "react-icons/hi2";
 import {
   SiFlask,
@@ -81,13 +81,6 @@ const WorkingCell = styled.div`
   border-bottom: 1px solid teal;
 `;
 
-const DetailContainer = styled.div`
-  margin-top: 5px;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-`;
-
 const IconLabel = styled.div`
   margin-top: 5px;
   padding: 5px;
@@ -116,6 +109,17 @@ const Icon = styled.div`
     cursor: pointer;
     filter: drop-shadow(0 0 5px rgba(0, 128, 128, 0.4));
   }
+`;
+
+const DetailContainer = styled.div`
+  margin-top: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  max-height: ${(props) => (props.opening ? "1000px" : "0")};
+  opacity: ${(props) => (props.opening ? "1" : "0")};
+  overflow: hidden;
+  transition: max-height 0.7s ease-out, opacity 0.7s ease-out;
 `;
 
 function TechIcon({ IconComponent, size, color, onMouseEnter, onClick }) {
@@ -177,23 +181,32 @@ const SkillsNew = () => {
   const [currentSkillDetail, setCurrentSkillDetail] = useState(null);
   const [currentLabel, setCurrentLabel] = useState("Hover over an icon!");
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenDetail = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseDetail = () => {
+    setIsOpen(false);
+  };
+
   const handleIconClick = (label) => {
-    console.log("Handle Icon Click triggered with:", label);
-    setIsDetailVisible(true);
+    handleOpenDetail();
     setCurrentSkillDetail(label.toLowerCase());
   };
 
   return (
     <SkillsWrapper>
       <SkillsContainer>
-        <SkillsRow>
-          {isDetailVisible && (
+        <DetailContainer opening={isOpen}>
+          {isOpen && (
             <SkillDetail
               skill={currentSkillDetail}
-              onClose={() => setIsDetailVisible(false)}
+              onClose={handleCloseDetail}
             />
           )}
-        </SkillsRow>
+        </DetailContainer>
         <SkillsRow>
           <CategoryCell>Backend</CategoryCell>
           <SkillsCellGroup
