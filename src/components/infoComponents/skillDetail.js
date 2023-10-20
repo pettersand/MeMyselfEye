@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SiPython } from "react-icons/si";
 
 const SkillDetailWrapper = styled.div`
   display: flex;
@@ -8,15 +9,27 @@ const SkillDetailWrapper = styled.div`
   align-items: center;
 `;
 
-const DescriptionContainer = styled.div``;
+const DetailsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  /* Add additional styling as needed */
+`;
 
-const UsedInContainer = styled.div``;
+const Icon = styled.div`
+  margin-right: 10px; // Adjust as necessary
+`;
 
-const UsedForContainer = styled.div``;
+const UsedInContainer = styled.div`
+  /* Styling for the usedIn container */
+`;
+
+const UsedForContainer = styled.div`
+  /* Styling for the usedFor container */
+`;
 
 const detailMap = {
   python: {
-    icon: "SiPython",
+    icon: SiPython,
     label: "Python",
     startDate: "May 1st",
     frameworks: ["Flask", "Django"],
@@ -28,7 +41,7 @@ const detailMap = {
 const SkillDetail = ({ skill, onClose }) => {
   return (
     <SkillDetailWrapper>
-      <p>{skill.description}</p>
+      <p>Python</p>
       <button onClick={onClose}>Close</button>
     </SkillDetailWrapper>
   );

@@ -127,7 +127,7 @@ function TechIcon({ IconComponent, size, color, onMouseEnter }) {
   );
 }
 
-const SkillsCellGroup = ({ icons }) => {
+const SkillsCellGroup = ({ icons, onIconClick }) => {
   const [currentLabel, setCurrentLabel] = useState("Hover & Click!");
 
   return (
@@ -141,6 +141,7 @@ const SkillsCellGroup = ({ icons }) => {
             size="2.1em"
             color="teal"
             onMouseEnter={() => setCurrentLabel(icon.label)}
+            onClick={() => onIconClick(icon.label)}
           />
         ))}
       </IconRow>
@@ -174,9 +175,9 @@ const SkillsNew = () => {
   const [currentSkillDetail, setCurrentSkillDetail] = useState(null);
   const [currentLabel, setCurrentLabel] = useState("Hover over an icon!");
 
-  const handleIconClick = (skill) => {
+  const handleIconClick = (label) => {
     setIsDetailVisible(true);
-    setCurrentSkillDetail(skill);
+    setCurrentSkillDetail(detailMap[label.toLowerCase()]);
   };
 
   return (
