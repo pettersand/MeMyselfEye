@@ -16,10 +16,10 @@ const SkillsContainer = styled(({ isVisible, ...props }) => (
 ))`
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex: 1;
   height: 100%;
-  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
 `;
 
 const SkillsEng = () => {

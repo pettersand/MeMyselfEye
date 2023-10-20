@@ -6,6 +6,7 @@ import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
 import InfoContainer from "./components/infoContainer";
 import MenuItems from "./components/menuItems";
+import SkillsNew from "./components/SkillsNew";
 
 const AppContainer = styled.div`
   background-color: black;
@@ -31,7 +32,7 @@ const TopContainer = styled.div`
 
 const MiddleContainer = styled.div`
   background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.6));
-  width: 30%;
+  width: 35%;
   min-height: 75vh;
   margin-top: 5px;
   padding: 10px;
@@ -120,7 +121,7 @@ function App() {
               <h1>Petter Sand Austnes</h1>
               <h2>Software Developer</h2>
             </NameContainer>
-            <Skills />
+            <SkillsNew />
 
             <MenuItems />
           </MiddleContainer>
