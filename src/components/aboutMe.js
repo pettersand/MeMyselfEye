@@ -37,10 +37,11 @@ const AboutMeText = styled.div`
   align-items: center;
   justify-content: center;
   padding: 10px;
-  gap: 5px;
+  gap: 10px;
 
   p {
     font-weight: 100;
+    font-size: 0.9em;
     margin: auto;
   }
 `;
@@ -84,12 +85,20 @@ const AboutMe = () => {
 
         <AboutMeText>
           <p>
-            Heres a little story all about how my life got flipped turned upside
-            down.
+            Now this is a story all about how my life got flipped-turned upside
+            down. And I'd like to take a minute, just sit right there, I'll tell
+            you how I became a dev, with a little dose of flair.
           </p>
           <p>
-            So this is where I write all the initial stuffs about myself.
-            Curious? Read more!
+            Welcome! I hope you enjoy my interactive resume. Follow the cookie
+            crumbs, they will lead you on your way.
+          </p>
+          <p>
+            I am a self taught developer with an appetite for knowledge and
+            ambitions of continuous improvement. I'm the type to travel the path
+            least travelled, which has lead on some unique journeys throughout
+            my life. Tag along, and let me walk you through the journey of Me
+            Myself, and I.
           </p>
         </AboutMeText>
 
