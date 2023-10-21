@@ -110,7 +110,12 @@ const SkillDetail = ({ skill, onClose }) => {
         <BoxHeader>
           <h3>Used For:</h3>
           <CloseButton>
-            <PiArrowElbowLeftDownBold onClick={onClose} />
+            <PiArrowElbowLeftDownBold
+              onClick={() => {
+                console.log("Close button clicked");
+                onClose();
+              }}
+            />
           </CloseButton>
         </BoxHeader>
 

@@ -116,10 +116,12 @@ const DetailContainer = styled.div`
   padding: 5px;
   display: flex;
   flex-direction: column;
-  max-height: ${(props) => (props.opening ? "1000px" : "0")};
-  opacity: ${(props) => (props.opening ? "1" : "0")};
+  max-height: ${(props) => (props.opening === "true" ? "1000px" : "0")};
   overflow: hidden;
-  transition: max-height 0.7s ease-out, opacity 0.7s ease-out;
+  transition: max-height 0.7s ease-in-out;
+  visibility: ${(props) => (props.visible === "true" ? "visible" : "hidden")};
+  opacity: ${(props) => (props.visible === "true" ? "1" : "0")};
+  transition: opacity 0.7s ease-in-out;
 `;
 
 function TechIcon({ IconComponent, size, color, onMouseEnter, onClick }) {
@@ -185,10 +187,14 @@ const SkillsNew = () => {
 
   const handleOpenDetail = () => {
     setIsOpen(true);
+    setIsDetailVisible(true);
   };
 
   const handleCloseDetail = () => {
     setIsOpen(false);
+    setTimeout(() => {
+      setIsDetailVisible(false);
+    }, 700);
   };
 
   const handleIconClick = (label) => {
@@ -199,7 +205,10 @@ const SkillsNew = () => {
   return (
     <SkillsWrapper>
       <SkillsContainer>
-        <DetailContainer opening={isOpen}>
+        <DetailContainer
+          opening={isOpen ? "true" : "false"}
+          visible={isDetailVisible ? "true" : "false"}
+        >
           {isOpen && (
             <SkillDetail
               skill={currentSkillDetail}
