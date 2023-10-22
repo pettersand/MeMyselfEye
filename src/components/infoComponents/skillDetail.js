@@ -112,7 +112,6 @@ const SkillDetail = ({ skill, onClose }) => {
           <CloseButton>
             <PiArrowElbowLeftDownBold
               onClick={() => {
-                console.log("Close button clicked");
                 onClose();
               }}
             />

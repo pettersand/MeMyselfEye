@@ -116,9 +116,35 @@ const DetailContainer = styled.div`
   padding: 5px;
   display: flex;
   flex-direction: column;
-  max-height: ${(props) => (props.opening === "true" ? "500px" : "0")};
   overflow: hidden;
-  transition: max-height 0.7s ease-in-out;
+  max-height: ${({ isOpening, isClosing }) => {
+    if (isOpening || !isClosing) return "300px";
+    return "0px";
+  }};
+  visibility: ${({ isOpening, isClosing }) => {
+    if (isOpening || !isClosing) return "visible";
+    return "hidden";
+  }};
+  transition: max-height 2s ease-in-out, opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
+`;
+
+const slideOpen = keyframes`
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 300px;
+  }
+`;
+
+const slideClose = keyframes`
+  from {
+    max-height: 300px; 
+  }
+  to {
+    max-height: 0px; 
+  }
 `;
 
 function TechIcon({ IconComponent, size, color, onMouseEnter, onClick }) {
@@ -177,20 +203,41 @@ const WorkingCellGroup = ({ icons }) => {
 
 const SkillsNew = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
   const [currentSkillDetail, setCurrentSkillDetail] = useState(null);
   const [currentLabel, setCurrentLabel] = useState("Hover over an icon!");
+  const [isClosing, setIsClosing] = useState(false);
 
   const handleIconClick = (label) => {
-    setIsOpen(true);
-    setCurrentSkillDetail(label.toLowerCase());
+    setIsClosing(false);
+    setIsOpening(true);
+    setTimeout(() => {
+      setIsOpen(true);
+      setIsOpening(false);
+      setCurrentSkillDetail(label.toLowerCase());
+    }, 500);
+  };
+
+  const handleCloseDetail = () => {
+    setIsOpening(false);
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 2000);
   };
 
   return (
     <SkillsWrapper>
       <SkillsContainer>
-        <DetailContainer opening={isOpen ? "true" : "false"}>
-          {isOpen && <SkillDetail skill={currentSkillDetail} />}
-        </DetailContainer>
+        {(isOpen || isClosing) && (
+          <DetailContainer isOpening={isOpening} isClosing={isClosing}>
+            <SkillDetail
+              skill={currentSkillDetail}
+              onClose={handleCloseDetail}
+            />
+          </DetailContainer>
+        )}
         <SkillsRow>
           <CategoryCell>Backend</CategoryCell>
           <SkillsCellGroup
