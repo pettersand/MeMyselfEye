@@ -116,12 +116,9 @@ const DetailContainer = styled.div`
   padding: 5px;
   display: flex;
   flex-direction: column;
-  max-height: ${(props) => (props.opening === "true" ? "1000px" : "0")};
+  max-height: ${(props) => (props.opening === "true" ? "500px" : "0")};
   overflow: hidden;
   transition: max-height 0.7s ease-in-out;
-  visibility: ${(props) => (props.visible === "true" ? "visible" : "hidden")};
-  opacity: ${(props) => (props.visible === "true" ? "1" : "0")};
-  transition: opacity 0.7s ease-in-out;
 `;
 
 function TechIcon({ IconComponent, size, color, onMouseEnter, onClick }) {
@@ -179,42 +176,20 @@ const WorkingCellGroup = ({ icons }) => {
 };
 
 const SkillsNew = () => {
-  const [isDetailVisible, setIsDetailVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [currentSkillDetail, setCurrentSkillDetail] = useState(null);
   const [currentLabel, setCurrentLabel] = useState("Hover over an icon!");
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleOpenDetail = () => {
-    setIsOpen(true);
-    setIsDetailVisible(true);
-  };
-
-  const handleCloseDetail = () => {
-    setIsOpen(false);
-    setTimeout(() => {
-      setIsDetailVisible(false);
-    }, 700);
-  };
-
   const handleIconClick = (label) => {
-    handleOpenDetail();
+    setIsOpen(true);
     setCurrentSkillDetail(label.toLowerCase());
   };
 
   return (
     <SkillsWrapper>
       <SkillsContainer>
-        <DetailContainer
-          opening={isOpen ? "true" : "false"}
-          visible={isDetailVisible ? "true" : "false"}
-        >
-          {isOpen && (
-            <SkillDetail
-              skill={currentSkillDetail}
-              onClose={handleCloseDetail}
-            />
-          )}
+        <DetailContainer opening={isOpen ? "true" : "false"}>
+          {isOpen && <SkillDetail skill={currentSkillDetail} />}
         </DetailContainer>
         <SkillsRow>
           <CategoryCell>Backend</CategoryCell>
