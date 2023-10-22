@@ -23,6 +23,7 @@ import { PiFileSql, PiArrowElbowLeftDownBold } from "react-icons/pi";
 const SkillDetailWrapper = styled.div`
   display: flex;
   width: 100%;
+  padding: 5px;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;

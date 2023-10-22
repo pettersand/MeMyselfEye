@@ -114,10 +114,10 @@ const Icon = styled.div`
 const DetailContainer = styled(({ isOpening, isClosing, isOpen, ...props }) => (
   <div {...props} />
 ))`
-  margin-top: 5px;
-  padding: 5px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+
   overflow: hidden;
   max-height: ${(props) => {
     if (props.isOpening) return "0px";
