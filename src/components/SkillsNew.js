@@ -268,10 +268,7 @@ const SkillsNew = () => {
           />
 
           <WorkingCellGroup
-            icons={[
-              { component: TbBrandCSharp, label: "C#" },
-              { component: SiSqlite, label: "SQLite" },
-            ]}
+            icons={[{ component: TbBrandCSharp, label: "C Sharp" }]}
             onIconClick={handleIconClick}
           />
         </SkillsRow>
