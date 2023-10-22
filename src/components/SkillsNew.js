@@ -128,7 +128,7 @@ const DetailContainer = styled(({ isOpening, isClosing, isOpen, ...props }) => (
   animation: ${({ isOpening, isClosing }) => {
     if (isOpening)
       return css`
-        ${slideOpen} 1s ease-in-out forwards
+        ${slideOpen} 0.8s ease-in-out forwards
       `;
     if (isClosing)
       return css`
@@ -226,7 +226,7 @@ const SkillsNew = () => {
       setTimeout(() => {
         setIsOpen(true);
         setIsOpening(false);
-      }, 1000);
+      }, 800);
     }
   };
 
