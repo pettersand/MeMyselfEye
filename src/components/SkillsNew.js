@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { HiOutlineDocumentText, HiCodeBracket } from "react-icons/hi2";
 import {
   SiFlask,
@@ -111,22 +111,32 @@ const Icon = styled.div`
   }
 `;
 
-const DetailContainer = styled.div`
+const DetailContainer = styled(({ isOpening, isClosing, isOpen, ...props }) => (
+  <div {...props} />
+))`
   margin-top: 5px;
   padding: 5px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  max-height: ${({ isOpening, isClosing }) => {
-    if (isOpening || !isClosing) return "300px";
+  max-height: ${(props) => {
+    if (props.isOpening) return "0px";
+    if (props.isOpen) return "300px";
     return "0px";
   }};
-  visibility: ${({ isOpening, isClosing }) => {
-    if (isOpening || !isClosing) return "visible";
-    return "hidden";
+
+  animation: ${({ isOpening, isClosing }) => {
+    if (isOpening)
+      return css`
+        ${slideOpen} 1s ease-in-out forwards
+      `;
+    if (isClosing)
+      return css`
+        ${slideClose} 0.8s ease-in-out forwards
+      `;
+    return "none";
   }};
-  transition: max-height 2s ease-in-out, opacity 0.5s ease-in-out,
-    visibility 0.5s ease-in-out;
+  transition: none;
 `;
 
 const slideOpen = keyframes`
@@ -215,7 +225,7 @@ const SkillsNew = () => {
       setIsOpen(true);
       setIsOpening(false);
       setCurrentSkillDetail(label.toLowerCase());
-    }, 500);
+    }, 1000);
   };
 
   const handleCloseDetail = () => {
@@ -224,14 +234,18 @@ const SkillsNew = () => {
     setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
-    }, 2000);
+    }, 725);
   };
 
   return (
     <SkillsWrapper>
       <SkillsContainer>
-        {(isOpen || isClosing) && (
-          <DetailContainer isOpening={isOpening} isClosing={isClosing}>
+        {(isOpen || isOpening || isClosing) && (
+          <DetailContainer
+            isOpening={isOpening}
+            isClosing={isClosing}
+            isOpen={isOpen}
+          >
             <SkillDetail
               skill={currentSkillDetail}
               onClose={handleCloseDetail}
