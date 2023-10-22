@@ -219,13 +219,15 @@ const SkillsNew = () => {
   const [isClosing, setIsClosing] = useState(false);
 
   const handleIconClick = (label) => {
-    setIsClosing(false);
-    setIsOpening(true);
-    setTimeout(() => {
-      setIsOpen(true);
-      setIsOpening(false);
-      setCurrentSkillDetail(label.toLowerCase());
-    }, 1000);
+    setCurrentSkillDetail(label.toLowerCase());
+    if (!isOpen) {
+      setIsClosing(false);
+      setIsOpening(true);
+      setTimeout(() => {
+        setIsOpen(true);
+        setIsOpening(false);
+      }, 1000);
+    }
   };
 
   const handleCloseDetail = () => {

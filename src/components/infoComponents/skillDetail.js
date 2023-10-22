@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SiPython } from "react-icons/si";
+import { SiDjango, SiPython, SiFlask, SiPostgresql } from "react-icons/si";
 import { PiFileSql, PiArrowElbowLeftDownBold } from "react-icons/pi";
 
 const SkillDetailWrapper = styled.div`
@@ -73,10 +73,42 @@ export const detailMap = {
   python: {
     icon: SiPython,
     label: "Python",
-    startDate: "01/05-23",
+    startDate: "May '23",
     frameworks: ["Flask", "Django"],
     usedIn: ["Builder", "Salloc", "Portfolio"],
     usedFor: ["API", "Backend SQL", "Data Analysis"],
+  },
+  django: {
+    icon: SiDjango,
+    label: "Django",
+    startDate: "Aug '23",
+    frameworks: ["DRF"],
+    usedIn: ["Builder"],
+    usedFor: ["API", "Backend SQL", "Security"],
+  },
+  flask: {
+    icon: SiFlask,
+    label: "Flask",
+    startDate: "July '23",
+    frameworks: ["-"],
+    usedIn: ["Salloc", "Web Portfolio"],
+    usedFor: ["API", "Backend SQL", "Authentication"],
+  },
+  sql: {
+    icon: PiFileSql,
+    label: "SQL",
+    startDate: "July '23",
+    frameworks: ["SQLite", "PostgreSQL"],
+    usedIn: ["Salloc", "Builder"],
+    usedFor: ["Database", "Data Analysis", "Authentication"],
+  },
+  postgresql: {
+    icon: SiPostgresql,
+    label: "PostgreSQL",
+    startDate: "July '23",
+    frameworks: [""],
+    usedIn: ["Salloc", "Builder"],
+    usedFor: ["Database", "Data Analysis", "Authentication"],
   },
 };
 
