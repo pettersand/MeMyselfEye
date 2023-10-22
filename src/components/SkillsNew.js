@@ -50,17 +50,18 @@ const SkillsRow = styled.div`
   flex-direction: row;
   flex: 1;
   font-size: 0.8em;
-  border-bottom: 1px solid teal;
+  border-top: 1px solid teal;
 `;
 
 const HeaderRow = styled.div`
   display: flex;
   margin-top: 5px;
+  padding-bottom: 5px;
   width: 100%;
   flex-direction: row;
   flex: 1;
-  font-size: 0.8em;
-  border-bottom: 1px solid teal;
+  font-size: 0.9em;
+  font-weight: 600;
 `;
 
 const HeaderCat = styled.div`
