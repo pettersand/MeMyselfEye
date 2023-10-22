@@ -50,6 +50,41 @@ const SkillsRow = styled.div`
   flex-direction: row;
   flex: 1;
   font-size: 0.8em;
+  border-bottom: 1px solid teal;
+`;
+
+const HeaderRow = styled.div`
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+  flex-direction: row;
+  flex: 1;
+  font-size: 0.8em;
+  border-bottom: 1px solid teal;
+`;
+
+const HeaderCat = styled.div`
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const HeaderSkills = styled.div`
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const HeaderWorking = styled.div`
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CategoryCell = styled.div`
@@ -57,7 +92,6 @@ const CategoryCell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid teal;
 `;
 
 const SkillsCell = styled.div`
@@ -68,7 +102,6 @@ const SkillsCell = styled.div`
   justify-content: center;
   gap: 5px;
   border-inline: 1px solid teal;
-  border-bottom: 1px solid teal;
 `;
 
 const WorkingCell = styled.div`
@@ -78,7 +111,6 @@ const WorkingCell = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border-bottom: 1px solid teal;
 `;
 
 const IconLabel = styled.div`
@@ -254,6 +286,11 @@ const SkillsNew = () => {
             />
           </DetailContainer>
         )}
+        <HeaderRow>
+          <HeaderCat>Category</HeaderCat>
+          <HeaderSkills>Skills</HeaderSkills>
+          <HeaderWorking>Working Exp</HeaderWorking>
+        </HeaderRow>
         <SkillsRow>
           <CategoryCell>Backend</CategoryCell>
           <SkillsCellGroup
@@ -293,7 +330,7 @@ const SkillsNew = () => {
           />
         </SkillsRow>
         <SkillsRow>
-          <CategoryCell>DevOps/Other</CategoryCell>
+          <CategoryCell>Other</CategoryCell>
           <SkillsCellGroup
             icons={[
               { component: SiGit, label: "Git" },
