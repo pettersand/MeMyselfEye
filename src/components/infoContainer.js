@@ -17,7 +17,8 @@ import MotivationEng from "./infoComponents/motivationEng";
 import MotivationNor from "./infoComponents/motivationNor";
 
 const ContentContainer = styled.div`
-  background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
+  background-color: var(--bg2);
+  color: var(--headline);
   width: 100%;
   height: 100%;
   border-radius: 10px;

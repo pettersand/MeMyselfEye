@@ -75,7 +75,6 @@ const BottomContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 24px;
 `;
 
 const NameContainer = styled.div`
@@ -146,7 +145,9 @@ function App() {
           <ControlPanel />
         </RightContainer>
 
-        <BottomContainer></BottomContainer>
+        <BottomContainer>
+          <InfoContainer />
+        </BottomContainer>
       </AppContainer>
     </AppStateProvider>
   );
