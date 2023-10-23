@@ -16,21 +16,28 @@ const CoursesContainer = styled(({ isVisible, ...props }) => (
 ))`
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex: 1;
   padding: 16px;
   height: 100%;
   gap: 16px;
 `;
 
+const Divider = styled.div`
+  height: 80%;
+  border: 1px solid var(--bg);
+`;
+
 const CourseHeader = styled.div`
   display: flex;
-  width: 100%;
+  width: 90%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: 600;
   padding: 4px;
+  border-bottom: 1px solid var(--accent);
 `;
 
 const HeaderTitle = styled.div`
@@ -56,10 +63,17 @@ const DescriptionContainer = styled.div`
 
 const ListContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 95%;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  h3 {
+    border-bottom: 1px solid var(--accent);
+    margin: 4px 0 4px 0;
+  }
+  p {
+    color: var(--paragraph);
+  }
 `;
 
 const ListItem = styled.div`
@@ -67,10 +81,6 @@ const ListItem = styled.div`
   flex: 1;
   flex-direction: column;
   align-items: center;
-
-  h3 {
-    margin: 4px 0 4px 0;
-  }
 
   li {
     margin-bottom: 4px;
@@ -84,13 +94,8 @@ const CoursesEng = () => {
   return (
     <CoursesWrapper>
       <CoursesContainer isVisible={detailLevel === "minimal"}>
-        <CourseHeader>
-          <HeaderItem>01/05-25/05</HeaderItem>
-          <HeaderTitle>Python for Everybody Specialization</HeaderTitle>
-          <HeaderItem>Link</HeaderItem>
-        </CourseHeader>
+        <CourseHeader>Python for Everybody Specialization</CourseHeader>
         <DescriptionContainer>
-          Description:{" "}
           <p>
             This course introduces fundamental programming concepts including
             data structures, networked application program interfaces, and
@@ -127,19 +132,11 @@ const CoursesEng = () => {
       <CoursesContainer isVisible={detailLevel === "detailed"}>
         <h4>Python for Everybody</h4>
       </CoursesContainer>
+      <Divider />
 
       <CoursesContainer isVisible={detailLevel === "minimal"}>
-        <CourseHeader>
-          <HeaderItem>26/05 - 10/08</HeaderItem>
-          <HeaderTitle>Harvard CS50x</HeaderTitle>
-          <HeaderItem>
-            <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science">
-              Link
-            </a>
-          </HeaderItem>
-        </CourseHeader>
+        <CourseHeader>Harvard CS50x</CourseHeader>
         <DescriptionContainer>
-          Description:{" "}
           <p>
             Harvard University's introduction to the intellectual enterprises of
             computer science and the art of programming for majors and

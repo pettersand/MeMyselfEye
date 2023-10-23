@@ -32,12 +32,13 @@ const TopContainer = styled.div`
 const MainContainer = styled.div`
   background-color: var(--bg2);
   grid-column: 1;
-  grid-row: 1 / 3;
-  margin: 24px 16px 16px 24px;
+  grid-row: 1 / 4;
+  margin: 24px 16px 24px 24px;
   padding: 16px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  box-sizing: border-box;
+
   border-radius: 8px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
@@ -78,13 +79,12 @@ const BottomContainer = styled.div`
 `;
 
 const NameContainer = styled.div`
-  flex: 1;
   border-bottom: 2px solid var(--accent);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   font-weight: 500;
   color: var(--headline);
   h1,
@@ -135,7 +135,6 @@ function App() {
 
           <MenuItems />
         </MainContainer>
-        <SocialsContainer>Socials</SocialsContainer>
 
         <LeftContainer>
           <AboutMe />
