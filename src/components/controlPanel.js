@@ -209,6 +209,40 @@ const ControlPanel = () => {
               </ToggleButton>
             </RadioWrapper>
           </ControlToggle>
+          <ControlToggle>
+            <RadioWrapper>
+              Changing Careers
+              <ToggleButton
+                isSelected={state.activeInfo === "aboutMe"}
+                onClick={() => toggleActiveInfo("aboutMe")}
+              >
+                <HiddenRadio
+                  type="radio"
+                  name="info"
+                  id="aboutMe"
+                  value="aboutMe"
+                  checked={state.activeInfo === "aboutMe"}
+                  onChange={handleActiveInfo}
+                />
+              </ToggleButton>
+            </RadioWrapper>
+            <RadioWrapper>
+              Passions & Motivations
+              <ToggleButton
+                isSelected={state.activeInfo === "motivations"}
+                onClick={() => toggleActiveInfo("motivations")}
+              >
+                <HiddenRadio
+                  type="radio"
+                  name="info"
+                  id="motivations"
+                  value="motivations"
+                  checked={state.activeInfo === "motivations"}
+                  onChange={handleActiveInfo}
+                />
+              </ToggleButton>
+            </RadioWrapper>
+          </ControlToggle>
         </ControlRow>
       </ControlContainer>
 

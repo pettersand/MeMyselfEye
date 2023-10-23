@@ -102,40 +102,7 @@ const AboutMe = () => {
           </p>
         </AboutMeText>
 
-        <Toggle>
-          <RadioWrapper>
-            <ToggleButton
-              isSelected={state.activeInfo === "aboutMe"}
-              onClick={() => toggleActiveInfo("aboutMe")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="aboutMe"
-                value="aboutMe"
-                checked={state.activeInfo === "aboutMe"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-            Changing Careers
-          </RadioWrapper>
-          <RadioWrapper>
-            Passions & Motivations
-            <ToggleButton
-              isSelected={state.activeInfo === "motivations"}
-              onClick={() => toggleActiveInfo("motivations")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="motivations"
-                value="motivations"
-                checked={state.activeInfo === "motivations"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-        </Toggle>
+        
       </AboutMeContainer>
 
       <AboutMeContainer isVisible={language === "nor"}>

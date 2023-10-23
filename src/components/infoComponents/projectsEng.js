@@ -29,6 +29,8 @@ const ProjectContainer = styled(({ isVisible, ...props }) => (
   justify-content: flex-start;
   flex: 1;
   height: 100%;
+  padding: 16px;
+  gap: 4px;
   p {
     font-size: 0.9em;
   }
@@ -51,7 +53,13 @@ const ProjectHeader = styled.div`
   border-bottom: 1px solid var(--accent);
 `;
 
-const ProjectItem = styled.div``;
+const ProjectItem = styled.div`
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+`;
 
 const TechStack = styled.div``;
 
@@ -59,11 +67,11 @@ const Features = styled.div``;
 
 const ImageContainer = styled.div`
   background-image: url(${(props) => props.bgImage});
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
   background-position: center;
   height: 80%;
-  width: 80%;
+  width: 100%;
   overflow: hidden;
 `;
 
@@ -76,12 +84,16 @@ const ProjectsEng = () => {
       <ProjectRow>
         <ProjectContainer isVisible={detailLevel === "minimal"}>
           <ProjectHeader>Builder</ProjectHeader>
-          <p>
-            Streamlines the creation and management of personalized workout
-            programs. The "one-stop-shop" app I wish I had while working in the
-            fitness industry.
-          </p>
-          <ImageContainer bgImage="/ExercisePlanner.png" />
+          <ProjectItem>
+            <p>
+              Streamlines the creation and management of personalized workout
+              programs. The "one-stop-shop" app I wish I had while working in
+              the fitness industry.
+            </p>
+            <ImageContainer bgImage="/ExercisePlanner.png" />
+          </ProjectItem>
+          <ProjectItem>Tech Stack</ProjectItem>
+          <ProjectItem>Features</ProjectItem>
         </ProjectContainer>
         <ProjectContainer isVisible={detailLevel === "detailed"}>
           <ProjectHeader>Builder</ProjectHeader>
@@ -100,13 +112,17 @@ const ProjectsEng = () => {
       <ProjectRow>
         <ProjectContainer isVisible={detailLevel === "minimal"}>
           <ProjectHeader>Salloc</ProjectHeader>
-          <p>
-            Helping individuals achieve financial goals by efficiently
-            allocating savings. Allows the user to set savings targets, and
-            determine a percentage of future deposits to be allocated towards
-            specific posts.
-          </p>
-          <ImageContainer bgImage="/Salloc.png" />
+          <ProjectItem>
+            <ImageContainer bgImage="/Salloc.png" />
+            <p>
+              Helping individuals achieve financial goals by efficiently
+              allocating savings. Allows the user to set savings targets, and
+              determine a percentage of future deposits to be allocated towards
+              specific posts.
+            </p>
+          </ProjectItem>
+          <ProjectItem>Tech Stack</ProjectItem>
+          <ProjectItem>Features</ProjectItem>
         </ProjectContainer>
         <ProjectContainer isVisible={detailLevel === "detailed"}>
           <h4>Salloc</h4>
