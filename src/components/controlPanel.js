@@ -4,7 +4,7 @@ import ToggleButton from "../utils/ToggleButton";
 import { useAppState } from "../App";
 
 const ControlWrapper = styled.div`
-  color: white;
+  color: var(--text-light);
   width: 100%;
   display: flex;
   flex-direction: column;

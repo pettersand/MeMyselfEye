@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
   width: 10px;
   height: 10px;
-  border: 2px solid teal;
+  border: 2px solid var(--contrast);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -50,7 +50,7 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
   ${(props) =>
     props.isSelected &&
     `
-    box-shadow: 0 0 5px 1px teal;
+    box-shadow: 0 0 5px 1px var(--contrast);
 `}
 `;
 

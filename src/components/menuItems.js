@@ -8,8 +8,9 @@ const MenuContainer = styled.div`
   flex-direction: row;
   width: 100%;
   align-items: center;
-  border-top: 2px solid teal;
+  border-top: 2px solid var(--accent);
   border-radius: 5px;
+  color: var(--text-light);
   gap: 10px;
 `;
 

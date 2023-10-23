@@ -62,7 +62,7 @@ const SkillsGrid = styled.div`
   margin-top: 10px;
   width: 100%;
   justify-content: center;
-  color: white;
+  color: var(--text-light);
 `;
 
 const GridHeader = styled.div`

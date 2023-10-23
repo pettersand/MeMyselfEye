@@ -33,6 +33,7 @@ const SkillsWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: var(--text-light);
 `;
 
 const SkillsContainer = styled.div`
@@ -50,7 +51,7 @@ const SkillsRow = styled.div`
   flex-direction: row;
   flex: 1;
   font-size: 0.8em;
-  border-top: 1px solid teal;
+  border-top: 1px solid var(--paragraph);
 `;
 
 const HeaderRow = styled.div`
@@ -102,7 +103,7 @@ const SkillsCell = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border-inline: 1px solid teal;
+  border-inline: 1px solid var(--paragraph);
 `;
 
 const WorkingCell = styled.div`
@@ -210,7 +211,7 @@ const SkillsCellGroup = ({ icons, onIconClick }) => {
             key={icon.label}
             IconComponent={icon.component}
             size="2.1em"
-            color="teal"
+            color="var(--accent-neutral)"
             onMouseEnter={() => setCurrentLabel(icon.label)}
             onClick={() => {
               console.log("Icon clicked:", icon.label);
@@ -235,7 +236,7 @@ const WorkingCellGroup = ({ icons }) => {
             key={icon.label}
             IconComponent={icon.component}
             size="2.1em"
-            color="teal"
+            color="var(--accent-neutral)"
             onMouseEnter={() => setCurrentLabel(icon.label)}
           />
         ))}

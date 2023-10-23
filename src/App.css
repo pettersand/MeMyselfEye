@@ -1,3 +1,23 @@
+:root {
+  /* Base colors */
+  --primary-dark: #bb86fc;
+  --primary-light: ;
+
+  --base-dark: #16161a;
+  --background: #242629;
+  --accent-neutral: #2cb67d;
+  --text-light: #fffffe;
+
+  --bg: #242629;
+  --bg2: #16161a;
+  --headline: #e2e2e2;
+  --paragraph: #94a1b2;
+  --accent: #2cb67d;
+  --accent-text: #fffffe;
+  --contrast: #7f5af0;
+  --secondary: #010101;
+}
+
 .App {
   text-align: center;
 }
@@ -21,7 +41,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text-light);
 }
 
 .App-link {
@@ -38,7 +58,6 @@
 body {
   font-family: "Onest", sans-serif;
   font-weight: 300;
-  background: black;
 }
 
 @keyframes App-logo-spin {

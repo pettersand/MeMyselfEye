@@ -9,14 +9,14 @@ import MenuItems from "./components/menuItems";
 import SkillsNew from "./components/SkillsNew";
 
 const AppContainer = styled.div`
-  background-color: #1f2833;
+  background-color: var(--bg);
+  color: var(--text-light)
   background-size: cover;
   background-position: center -200px;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1.5fr 3fr;
   grid-template-rows: repeat(3, 1fr);
-  color: white;
 `;
 
 const TopContainer = styled.div`
@@ -30,64 +30,64 @@ const TopContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  background-color: #0b0c10;
+  background-color: var(--bg2);
   grid-column: 1;
   grid-row: 1 / 3;
-  margin: 16px 8px 8px 16px;
-  padding: 8px;
+  margin: 24px 16px 16px 24px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border-radius: 10px;
-  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
 
 const LeftContainer = styled.div`
-  background-color: #0b0c10;
+  background-color: var(--bg2);
   grid-column: 3;
   grid-row: 1;
-  margin: 16px 16px 8px 8px;
+  margin: 24px 24px 16px 16px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
 
 const RightContainer = styled.div`
-  background-color: #0b0c10;
+  background-color: var(--bg2);
   grid-column: 2;
   grid-row: 1;
-  margin: 16px 8px 8px 8px;
+  margin: 24px 16px 16px 16px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
 
 const BottomContainer = styled.div`
-  background-color: #0b0c10;
+  background-color: var(--bg2);
   border-radius: 10px;
-  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
   grid-column: 2 / 4;
   grid-row: 2 / 4;
-  margin: 8px 16px 16px 8px;
+  margin: 16px 24px 24px 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
 `;
 
 const NameContainer = styled.div`
   flex: 1;
-  border-bottom: 2px solid teal;
+  border-bottom: 2px solid var(--accent);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   font-weight: 500;
-  color: white;
+  color: var(--headline);
   h1,
   h2 {
     margin: 5px;
@@ -97,10 +97,10 @@ const NameContainer = styled.div`
 const SocialsContainer = styled.div`
   grid-column: 1;
   grid-row: 3;
-  margin: 8px 8px 16px 16px;
-  background-color: #0b0c10;
+  margin: 16px 16px 24px 24px;
+  background-color: var(--base-dark);
   border-radius: 10px;
-  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
 
 export const AppStateContext = createContext();
@@ -146,9 +146,7 @@ function App() {
           <ControlPanel />
         </RightContainer>
 
-        <BottomContainer>
-          <InfoContainer />
-        </BottomContainer>
+        <BottomContainer></BottomContainer>
       </AppContainer>
     </AppStateProvider>
   );
