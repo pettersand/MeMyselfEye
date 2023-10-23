@@ -16,7 +16,7 @@ const ControlContainer = styled.div`
   flex-direction: column;
   flex: 2;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border-inline: 1px solid var(--bg);
 `;
 
@@ -45,18 +45,18 @@ const ContainerHeader = styled.div`
   justify-content: center;
 `;
 
-const LanguageToggle = styled.div`
-  width: 80%;
+const ControlRow = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 `;
 
-const DetailToggle = styled.div`
-  width: 80%;
+const ControlToggle = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 const RadioWrapper = styled.div`
@@ -102,7 +102,7 @@ const ControlPanel = () => {
     <ControlWrapper>
       <LanguageContainer>
         <ContainerHeader>Language</ContainerHeader>
-        <LanguageToggle>
+        <ControlToggle>
           <RadioWrapper>
             English
             <ToggleButton
@@ -135,79 +135,86 @@ const ControlPanel = () => {
               />
             </ToggleButton>
           </RadioWrapper>
-        </LanguageToggle>
+        </ControlToggle>
       </LanguageContainer>
-      <ControlContainer>
-        <RadioWrapper>
-          <ToggleButton
-            isSelected={state.activeInfo === "projects"}
-            onClick={() => toggleActiveInfo("projects")}
-          >
-            <HiddenRadio
-              type="radio"
-              name="info"
-              id="projects"
-              value="projects"
-              checked={state.activeInfo === "projects"}
-              onChange={handleActiveInfo}
-            />
-          </ToggleButton>
-          Projects
-        </RadioWrapper>
-        <RadioWrapper>
-          Courses
-          <ToggleButton
-            isSelected={state.activeInfo === "courses"}
-            onClick={() => toggleActiveInfo("courses")}
-          >
-            <HiddenRadio
-              type="radio"
-              name="info"
-              id="courses"
-              value="courses"
-              checked={state.activeInfo === "courses"}
-              onChange={handleActiveInfo}
-            />
-          </ToggleButton>
-        </RadioWrapper>
 
-        <RadioWrapper>
-          <ToggleButton
-            isSelected={state.activeInfo === "priorCareer"}
-            onClick={() => toggleActiveInfo("priorCareer")}
-          >
-            <HiddenRadio
-              type="radio"
-              name="info"
-              id="priorCareer"
-              value="priorCareer"
-              checked={state.activeInfo === "priorCareer"}
-              onChange={handleActiveInfo}
-            />
-          </ToggleButton>
-          Prior Career
-        </RadioWrapper>
-        <RadioWrapper>
-          Soft Skills
-          <ToggleButton
-            isSelected={state.activeInfo === "softSkills"}
-            onClick={() => toggleActiveInfo("softSkills")}
-          >
-            <HiddenRadio
-              type="radio"
-              name="info"
-              id="softSkills"
-              value="softSkills"
-              checked={state.activeInfo === "softSkills"}
-              onChange={handleActiveInfo}
-            />
-          </ToggleButton>
-        </RadioWrapper>
+      <ControlContainer>
+        <ContainerHeader>Topics</ContainerHeader>
+        <ControlRow>
+          <ControlToggle>
+            <RadioWrapper>
+              Projects
+              <ToggleButton
+                isSelected={state.activeInfo === "projects"}
+                onClick={() => toggleActiveInfo("projects")}
+              >
+                <HiddenRadio
+                  type="radio"
+                  name="info"
+                  id="projects"
+                  value="projects"
+                  checked={state.activeInfo === "projects"}
+                  onChange={handleActiveInfo}
+                />
+              </ToggleButton>
+            </RadioWrapper>
+            <RadioWrapper>
+              Courses
+              <ToggleButton
+                isSelected={state.activeInfo === "courses"}
+                onClick={() => toggleActiveInfo("courses")}
+              >
+                <HiddenRadio
+                  type="radio"
+                  name="info"
+                  id="courses"
+                  value="courses"
+                  checked={state.activeInfo === "courses"}
+                  onChange={handleActiveInfo}
+                />
+              </ToggleButton>
+            </RadioWrapper>
+          </ControlToggle>
+          <ControlToggle>
+            <RadioWrapper>
+              Prior Career
+              <ToggleButton
+                isSelected={state.activeInfo === "priorCareer"}
+                onClick={() => toggleActiveInfo("priorCareer")}
+              >
+                <HiddenRadio
+                  type="radio"
+                  name="info"
+                  id="priorCareer"
+                  value="priorCareer"
+                  checked={state.activeInfo === "priorCareer"}
+                  onChange={handleActiveInfo}
+                />
+              </ToggleButton>
+            </RadioWrapper>
+            <RadioWrapper>
+              Soft Skills
+              <ToggleButton
+                isSelected={state.activeInfo === "softSkills"}
+                onClick={() => toggleActiveInfo("softSkills")}
+              >
+                <HiddenRadio
+                  type="radio"
+                  name="info"
+                  id="softSkills"
+                  value="softSkills"
+                  checked={state.activeInfo === "softSkills"}
+                  onChange={handleActiveInfo}
+                />
+              </ToggleButton>
+            </RadioWrapper>
+          </ControlToggle>
+        </ControlRow>
       </ControlContainer>
 
       <DetailContainer>
         <ContainerHeader>Details</ContainerHeader>
-        <DetailToggle>
+        <ControlToggle>
           <RadioWrapper>
             Minimal
             <ToggleButton
@@ -242,7 +249,7 @@ const ControlPanel = () => {
               />
             </ToggleButton>
           </RadioWrapper>
-        </DetailToggle>
+        </ControlToggle>
       </DetailContainer>
     </ControlWrapper>
   );
