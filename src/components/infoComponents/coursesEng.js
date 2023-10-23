@@ -41,7 +41,7 @@ const HeaderTitle = styled.div`
 
 const HeaderItem = styled.div`
   font-weight: 200;
-  font-size: 1em;
+  font-size: 0.8em;
 `;
 
 const DescriptionContainer = styled.div`
@@ -60,7 +60,7 @@ const ListContainer = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const ListItem = styled.div`
@@ -86,7 +86,7 @@ const CoursesEng = () => {
     <CoursesWrapper>
       <CoursesContainer isVisible={detailLevel === "minimal"}>
         <CourseHeader>
-          <HeaderItem>May 1st - 25th</HeaderItem>
+          <HeaderItem>01/05-25/05</HeaderItem>
           <HeaderTitle>Python for Everybody Specialization</HeaderTitle>
           <HeaderItem>Link</HeaderItem>
         </CourseHeader>

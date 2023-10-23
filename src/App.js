@@ -9,14 +9,13 @@ import MenuItems from "./components/menuItems";
 import SkillsNew from "./components/SkillsNew";
 
 const AppContainer = styled.div`
-  background-color: black;
+  background-color: #1f2833;
   background-size: cover;
   background-position: center -200px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 3fr;
+  grid-template-rows: repeat(3, 1fr);
   color: white;
 `;
 
@@ -30,22 +29,24 @@ const TopContainer = styled.div`
   gap: 10px;
 `;
 
-const MiddleContainer = styled.div`
-  background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.6));
-  width: 35%;
-  min-height: 75vh;
-  margin-top: 5px;
-  padding: 10px;
+const MainContainer = styled.div`
+  background-color: #0b0c10;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  margin: 16px 8px 8px 16px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   border-radius: 10px;
   box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
 `;
 
 const LeftContainer = styled.div`
-  background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
-  width: 35%;
-  min-height: 35vh;
+  background-color: #0b0c10;
+  grid-column: 3;
+  grid-row: 1;
+  margin: 16px 16px 8px 8px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -53,9 +54,10 @@ const LeftContainer = styled.div`
 `;
 
 const RightContainer = styled.div`
-  background: linear-gradient(rgba(3, 41, 57, 0.95), rgba(0, 0, 0, 0.8));
-  width: 35%;
-  min-height: 35vh;
+  background-color: #0b0c10;
+  grid-column: 2;
+  grid-row: 1;
+  margin: 16px 8px 8px 8px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -63,13 +65,17 @@ const RightContainer = styled.div`
 `;
 
 const BottomContainer = styled.div`
-  width: 80%;
-  height: 50%;
+  background-color: #0b0c10;
+  border-radius: 10px;
+  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  margin: 8px 16px 16px 8px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 10px;
+  gap: 16px;
 `;
 
 const NameContainer = styled.div`
@@ -86,6 +92,15 @@ const NameContainer = styled.div`
   h2 {
     margin: 5px;
   }
+`;
+
+const SocialsContainer = styled.div`
+  grid-column: 1;
+  grid-row: 3;
+  margin: 8px 8px 16px 16px;
+  background-color: #0b0c10;
+  border-radius: 10px;
+  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
 `;
 
 export const AppStateContext = createContext();
@@ -112,23 +127,25 @@ function App() {
   return (
     <AppStateProvider>
       <AppContainer>
-        <TopContainer>
-          <LeftContainer>
-            <AboutMe />
-          </LeftContainer>
-          <MiddleContainer>
-            <NameContainer>
-              <h1>Petter Sand Austnes</h1>
-              <h2>Software Developer</h2>
-            </NameContainer>
-            <SkillsNew />
+        <MainContainer>
+          <NameContainer>
+            <h1>Petter Sand Austnes</h1>
+            <h2>Software Developer</h2>
+          </NameContainer>
+          <SkillsNew />
 
-            <MenuItems />
-          </MiddleContainer>
-          <RightContainer>
-            <ControlPanel />
-          </RightContainer>
-        </TopContainer>
+          <MenuItems />
+        </MainContainer>
+        <SocialsContainer>Socials</SocialsContainer>
+
+        <LeftContainer>
+          <AboutMe />
+        </LeftContainer>
+
+        <RightContainer>
+          <ControlPanel />
+        </RightContainer>
+
         <BottomContainer>
           <InfoContainer />
         </BottomContainer>
