@@ -4,11 +4,21 @@ import styled from "styled-components";
 
 const ProjectWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 10px;
+  padding: 16px;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 8px;
+`;
+
+const ProjectRow = styled.div`
+  display: flex;
+  width: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ProjectContainer = styled(({ isVisible, ...props }) => (
@@ -19,10 +29,43 @@ const ProjectContainer = styled(({ isVisible, ...props }) => (
   justify-content: flex-start;
   flex: 1;
   height: 100%;
-  box-shadow: -10px 10px 8px rgba(0, 0, 0, 0.75);
+  p {
+    font-size: 0.9em;
+  }
+`;
+
+const Divider = styled.div`
+  height: 80%;
+  border: 1px solid var(--bg);
+`;
+
+const ProjectHeader = styled.div`
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 4px;
+  border-bottom: 1px solid var(--accent);
 `;
 
 const ProjectItem = styled.div``;
+
+const TechStack = styled.div``;
+
+const Features = styled.div``;
+
+const ImageContainer = styled.div`
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80%;
+  width: 80%;
+  overflow: hidden;
+`;
 
 const ProjectsEng = () => {
   const { state } = useAppState();
@@ -30,33 +73,54 @@ const ProjectsEng = () => {
 
   return (
     <ProjectWrapper>
-      <ProjectContainer isVisible={detailLevel === "minimal"}>
-        <h4>Builder</h4>
-      </ProjectContainer>
-      <ProjectContainer isVisible={detailLevel === "detailed"}>
-        <h4>Builder</h4>
-      </ProjectContainer>
+      <ProjectRow>
+        <ProjectContainer isVisible={detailLevel === "minimal"}>
+          <ProjectHeader>Builder</ProjectHeader>
+          <p>
+            Streamlines the creation and management of personalized workout
+            programs. The "one-stop-shop" app I wish I had while working in the
+            fitness industry.
+          </p>
+          <ImageContainer bgImage="/ExercisePlanner.png" />
+        </ProjectContainer>
+        <ProjectContainer isVisible={detailLevel === "detailed"}>
+          <ProjectHeader>Builder</ProjectHeader>
+        </ProjectContainer>
 
-      <ProjectContainer isVisible={detailLevel === "minimal"}>
-        <h4>Tripple-P</h4>
-      </ProjectContainer>
-      <ProjectContainer isVisible={detailLevel === "detailed"}>
-        <h4>Tripple-P</h4>
-      </ProjectContainer>
+        <Divider />
 
-      <ProjectContainer isVisible={detailLevel === "minimal"}>
-        <h4>Salloc</h4>
-      </ProjectContainer>
-      <ProjectContainer isVisible={detailLevel === "detailed"}>
-        <h4>Salloc</h4>
-      </ProjectContainer>
+        <ProjectContainer isVisible={detailLevel === "minimal"}>
+          <ProjectHeader>Tripple-P</ProjectHeader>
+        </ProjectContainer>
+        <ProjectContainer isVisible={detailLevel === "detailed"}>
+          <h4>Tripple-P</h4>
+        </ProjectContainer>
+      </ProjectRow>
 
-      <ProjectContainer isVisible={detailLevel === "minimal"}>
-        <h4>Portfolio</h4>
-      </ProjectContainer>
-      <ProjectContainer isVisible={detailLevel === "detailed"}>
-        <h4>Portfolio</h4>
-      </ProjectContainer>
+      <ProjectRow>
+        <ProjectContainer isVisible={detailLevel === "minimal"}>
+          <ProjectHeader>Salloc</ProjectHeader>
+          <p>
+            Helping individuals achieve financial goals by efficiently
+            allocating savings. Allows the user to set savings targets, and
+            determine a percentage of future deposits to be allocated towards
+            specific posts.
+          </p>
+          <ImageContainer bgImage="/Salloc.png" />
+        </ProjectContainer>
+        <ProjectContainer isVisible={detailLevel === "detailed"}>
+          <h4>Salloc</h4>
+        </ProjectContainer>
+
+        <Divider />
+
+        <ProjectContainer isVisible={detailLevel === "minimal"}>
+          <ProjectHeader>Portfolio</ProjectHeader>
+        </ProjectContainer>
+        <ProjectContainer isVisible={detailLevel === "detailed"}>
+          <h4>Portfolio</h4>
+        </ProjectContainer>
+      </ProjectRow>
     </ProjectWrapper>
   );
 };

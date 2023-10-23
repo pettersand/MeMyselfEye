@@ -16,7 +16,7 @@ const AppContainer = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1.5fr 3fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 0.5fr 1fr 1fr;
 `;
 
 const TopContainer = styled.div`
@@ -36,7 +36,7 @@ const MainContainer = styled.div`
   margin: 24px 16px 24px 24px;
   padding: 16px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
 
   border-radius: 8px;
@@ -56,11 +56,11 @@ const LeftContainer = styled.div`
 
 const RightContainer = styled.div`
   background-color: var(--bg2);
-  grid-column: 2;
+  grid-column: 2 / 4;
   grid-row: 1;
   margin: 24px 16px 16px 16px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-radius: 10px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
@@ -80,7 +80,7 @@ const BottomContainer = styled.div`
 
 const NameContainer = styled.div`
   border-bottom: 2px solid var(--accent);
-  border-radius: 5px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,14 +131,9 @@ function App() {
             <h1>Petter Sand Austnes</h1>
             <h2>Software Developer</h2>
           </NameContainer>
-          <SkillsNew />
-
-          <MenuItems />
-        </MainContainer>
-
-        <LeftContainer>
           <AboutMe />
-        </LeftContainer>
+          <SkillsNew />
+        </MainContainer>
 
         <RightContainer>
           <ControlPanel />

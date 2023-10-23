@@ -7,36 +7,56 @@ const ControlWrapper = styled.div`
   color: var(--text-light);
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ControlHeader = styled.div`
-  h1 {
-    align-items: center;
-    justify-content: flex-start;
-    margin: 5px;
-  }
+  flex-direction: row;
+  align-items: stretch;
 `;
 
 const ControlContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  width: 100%;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+  border-inline: 1px solid var(--bg);
 `;
 
-const ControlRow = styled.div`
+const LanguageContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
   flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
 `;
 
-const ControlItem = styled.div`
+const DetailContainer = styled.div`
   display: flex;
-  gap: 5px;
-  font-size: 1.25em;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const ContainerHeader = styled.div`
+  width: 90%;
+  border-bottom: 1px solid var(--accent);
+  font-size: 1.1em;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+`;
+
+const LanguageToggle = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const DetailToggle = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const RadioWrapper = styled.div`
@@ -62,82 +82,168 @@ const ControlPanel = () => {
     setState((prevState) => ({ ...prevState, activeInfo: e.target.value }));
   };
 
+  const toggleLanguage = (value) => {
+    handleLanguage({ target: { value } });
+  };
+
+  const toggleDetail = (value) => {
+    handleDetail({ target: { value } });
+  };
+
+  const handleLanguage = (e) => {
+    setState((prevState) => ({ ...prevState, language: e.target.value }));
+  };
+
+  const handleDetail = (e) => {
+    setState((prevState) => ({ ...prevState, detailLevel: e.target.value }));
+  };
+
   return (
     <ControlWrapper>
-      <ControlHeader>
-        <h2>Control Panel</h2>
-      </ControlHeader>
+      <LanguageContainer>
+        <ContainerHeader>Language</ContainerHeader>
+        <LanguageToggle>
+          <RadioWrapper>
+            English
+            <ToggleButton
+              isSelected={state.language === "eng"}
+              onClick={() => toggleLanguage("eng")}
+            >
+              <HiddenRadio
+                type="radio"
+                name="language"
+                id="english"
+                value="eng"
+                checked={state.language === "eng"}
+                onChange={handleLanguage}
+              />
+            </ToggleButton>
+          </RadioWrapper>
+          <RadioWrapper>
+            Norsk
+            <ToggleButton
+              isSelected={state.language === "nor"}
+              onClick={() => toggleLanguage("nor")}
+            >
+              <HiddenRadio
+                type="radio"
+                name="language"
+                id="norwegian"
+                value="nor"
+                checked={state.language === "nor"}
+                onChange={handleLanguage}
+              />
+            </ToggleButton>
+          </RadioWrapper>
+        </LanguageToggle>
+      </LanguageContainer>
       <ControlContainer>
-        <ControlRow>
-          <RadioWrapper>
-            <ToggleButton
-              isSelected={state.activeInfo === "projects"}
-              onClick={() => toggleActiveInfo("projects")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="projects"
-                value="projects"
-                checked={state.activeInfo === "projects"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-            Projects
-          </RadioWrapper>
-          <RadioWrapper>
-            Courses
-            <ToggleButton
-              isSelected={state.activeInfo === "courses"}
-              onClick={() => toggleActiveInfo("courses")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="courses"
-                value="courses"
-                checked={state.activeInfo === "courses"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-        </ControlRow>
-        <ControlRow>
-          <RadioWrapper>
-            <ToggleButton
-              isSelected={state.activeInfo === "priorCareer"}
-              onClick={() => toggleActiveInfo("priorCareer")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="priorCareer"
-                value="priorCareer"
-                checked={state.activeInfo === "priorCareer"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-            Prior Career
-          </RadioWrapper>
-          <RadioWrapper>
-            Soft Skills
-            <ToggleButton
-              isSelected={state.activeInfo === "softSkills"}
-              onClick={() => toggleActiveInfo("softSkills")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="softSkills"
-                value="softSkills"
-                checked={state.activeInfo === "softSkills"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-        </ControlRow>
-        <ControlRow>Quiz</ControlRow>
+        <RadioWrapper>
+          <ToggleButton
+            isSelected={state.activeInfo === "projects"}
+            onClick={() => toggleActiveInfo("projects")}
+          >
+            <HiddenRadio
+              type="radio"
+              name="info"
+              id="projects"
+              value="projects"
+              checked={state.activeInfo === "projects"}
+              onChange={handleActiveInfo}
+            />
+          </ToggleButton>
+          Projects
+        </RadioWrapper>
+        <RadioWrapper>
+          Courses
+          <ToggleButton
+            isSelected={state.activeInfo === "courses"}
+            onClick={() => toggleActiveInfo("courses")}
+          >
+            <HiddenRadio
+              type="radio"
+              name="info"
+              id="courses"
+              value="courses"
+              checked={state.activeInfo === "courses"}
+              onChange={handleActiveInfo}
+            />
+          </ToggleButton>
+        </RadioWrapper>
+
+        <RadioWrapper>
+          <ToggleButton
+            isSelected={state.activeInfo === "priorCareer"}
+            onClick={() => toggleActiveInfo("priorCareer")}
+          >
+            <HiddenRadio
+              type="radio"
+              name="info"
+              id="priorCareer"
+              value="priorCareer"
+              checked={state.activeInfo === "priorCareer"}
+              onChange={handleActiveInfo}
+            />
+          </ToggleButton>
+          Prior Career
+        </RadioWrapper>
+        <RadioWrapper>
+          Soft Skills
+          <ToggleButton
+            isSelected={state.activeInfo === "softSkills"}
+            onClick={() => toggleActiveInfo("softSkills")}
+          >
+            <HiddenRadio
+              type="radio"
+              name="info"
+              id="softSkills"
+              value="softSkills"
+              checked={state.activeInfo === "softSkills"}
+              onChange={handleActiveInfo}
+            />
+          </ToggleButton>
+        </RadioWrapper>
       </ControlContainer>
+
+      <DetailContainer>
+        <ContainerHeader>Details</ContainerHeader>
+        <DetailToggle>
+          <RadioWrapper>
+            Minimal
+            <ToggleButton
+              isSelected={state.detailLevel === "minimal"}
+              onClick={() => toggleDetail("minimal")}
+            >
+              <HiddenRadio
+                type="radio"
+                name="detailLevel"
+                id="minimal"
+                value="minimal"
+                checked={state.detailLevel === "minimal"}
+                onChange={handleDetail}
+              />
+            </ToggleButton>
+          </RadioWrapper>
+
+          <RadioWrapper>
+            Detailed
+            <ToggleButton
+              isSelected={state.detailLevel === "detailed"}
+              onClick={() => toggleDetail("detailed")}
+            >
+              <HiddenRadio
+                $position="right"
+                type="radio"
+                name="detailLevel"
+                id="detailed"
+                value="detailed"
+                checked={state.detailLevel === "detailed"}
+                onChange={handleDetail}
+              />
+            </ToggleButton>
+          </RadioWrapper>
+        </DetailToggle>
+      </DetailContainer>
     </ControlWrapper>
   );
 };
