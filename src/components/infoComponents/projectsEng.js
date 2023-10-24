@@ -150,9 +150,12 @@ const TechIcon = styled.div`
 `;
 
 const DescriptionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   max-height: ${(props) => (props.expanded ? "500px" : "0")};
   overflow: hidden;
-  transition: max-height 0.4s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
 `;
 
 const FeaturesContainer = styled.div`
@@ -173,8 +176,8 @@ const SubHeader = styled.div`
   font-weight: 600;
   padding: 4px;
   border-bottom: 1px solid
-    ${(props) => (props.expanded ? "var(--accent)" : "var(--contrast)")};
-  transition: border-color 0.4s ease-in-out;
+    ${(props) => (props.expanded ? "var(--accent)" : "var(--complement)")};
+  transition: border-color 0.5s ease-in-out;
   cursor: pointer;
 
   h4 {
@@ -216,8 +219,14 @@ const ConceptContainer = styled.div`
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-evenly;
-  gap: 24px;
-  padding: 16px;
+  gap: 16px;
+`;
+
+const ConceptContent = styled.div`
+  display: flex;
+  max-height: ${(props) => (props.expanded ? "500px" : "0")};
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
 `;
 
 const Concept = styled.div`
@@ -310,7 +319,7 @@ const ProjectsEng = () => {
               </TechColumn>
             </TechStack>
           </ImageContainer>
-          <SubHeader>
+          <SubHeader expanded={descriptionExpanded}>
             <h4 onClick={toggleDescription}>
               Description {descriptionExpanded ? <HiMinus /> : <HiPlus />}
             </h4>
@@ -321,26 +330,45 @@ const ProjectsEng = () => {
               personalized workout programs. The "one-stop-shop" app I wish I
               had while working in the fitness industry.
             </p>
-              <DescriptionContent expanded={descriptionExpanded}>
-                <p>Testing</p>
-              </DescriptionContent>
+            <DescriptionContent expanded={descriptionExpanded}>
+              <p>
+                This project will likely be in development for while, seeing as
+                it is quite the undertaking and ambitions are set high. The
+                vision is for Builder to be a staple for every fitness
+                professional's toolbox. It will allow them to efficiently create
+                custom workout programs for their clients, track their progress,
+                make adjustments, and improve their client management.
+              </p>
+              <p>
+                Coming from a long career as a personal trainer, i was stuck
+                with endless Excel spreadsheets, that got the job done, though
+                not to the full potential of my vision. This project aims to fix
+                that.
+              </p>
+            </DescriptionContent>
           </ProjectStack>
-          <SubHeader>
-            <h4>Concepts Used</h4>
+          <SubHeader expanded={conceptsExpanded}>
+            <h4 onClick={toggleConcepts}>
+              Concepts Applied {conceptsExpanded ? <HiMinus /> : <HiPlus />}
+            </h4>
           </SubHeader>
           <ProjectItem>
             <ProjectStack>
               <ConceptContainer>
                 <Concept>REST API</Concept>
-                <Concept>Data Analysis</Concept>
-                <Concept>Secure Data Flow</Concept>
-                <Concept>Front+Backend Validation</Concept>
-                <Concept>SPA</Concept>
                 <Concept>CI/CD</Concept>
+                <Concept>SPA</Concept>
                 <Concept>Unit Tests</Concept>
-                <Concept>State Management</Concept>
-                <Concept>Data Visualization</Concept>
-                <Concept>Containers</Concept>
+
+                <ConceptContent expanded={conceptsExpanded}>
+                  <ConceptContainer>
+                    <Concept>Data Analysis</Concept>
+                    <Concept>Front+Backend Validation</Concept>
+                    <Concept>State Management</Concept>
+                    <Concept>Data Visualization</Concept>
+                    <Concept>Containers</Concept>
+                  </ConceptContainer>
+                </ConceptContent>
               </ConceptContainer>
             </ProjectStack>
           </ProjectItem>
