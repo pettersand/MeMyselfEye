@@ -168,6 +168,19 @@ const FeaturesContainer = styled.div`
   gap: 8px;
 `;
 
+const FeaturesConditional = styled(({ expanded, ...props }) => (
+  <div {...props} />
+))`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  max-height: ${(props) => (props.expanded ? "500px" : "0")};
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+`;
+
 const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
   position: relative;
   display: flex;
@@ -375,8 +388,10 @@ const ProjectsEng = () => {
             </ProjectStack>
           </ProjectItem>
 
-          <SubHeader>
-            <h4>Features</h4>
+          <SubHeader expanded={featuresExpanded}>
+            <h4 onClick={toggleFeatures}>
+              Features {featuresExpanded ? <HiMinus /> : <HiPlus />}
+            </h4>
           </SubHeader>
           <ProjectItem>
             <ProjectStack>
@@ -395,37 +410,40 @@ const ProjectsEng = () => {
                     elements for advanced users.
                   </span>
                 </Features>
-                <Features>
-                  <h5>Track Your Progress</h5>
-                  <span>
-                    Track and define your goals with a comprehensive user
-                    dashboard. Access graphs, statistics, and feedback on your
-                    training.
-                  </span>
-                </Features>
-                <Features>
-                  <h5>Calculate Loading</h5>
-                  <span>
-                    Use advanced Builder tools to calculate weights for each
-                    set, or exercise. Or don't! The choice is yours.
-                  </span>
-                </Features>
-                <Features>
-                  <h5>Update Your Workout Plan</h5>
-                  <span>
-                    The workout plan is interactive. Mark exercises and training
-                    days as complete to easily stay on top of where you are in
-                    your program.
-                  </span>
-                </Features>
-                <Features>
-                  <h5>Personal Trainer Dashboard</h5>
-                  <span>
-                    For the fitness professional. Track your clients, create and
-                    send programs, get weekly notifications on their progress,
-                    and gain unique insight into your business metrics.
-                  </span>
-                </Features>
+                <FeaturesConditional expanded={featuresExpanded}>
+                  <Features>
+                    <h5>Track Your Progress</h5>
+                    <span>
+                      Track and define your goals with a comprehensive user
+                      dashboard. Access graphs, statistics, and feedback on your
+                      training.
+                    </span>
+                  </Features>
+                  <Features>
+                    <h5>Calculate Loading</h5>
+                    <span>
+                      Use advanced Builder tools to calculate weights for each
+                      set, or exercise. Or don't! The choice is yours.
+                    </span>
+                  </Features>
+                  <Features>
+                    <h5>Update Your Workout Plan</h5>
+                    <span>
+                      The workout plan is interactive. Mark exercises and
+                      training days as complete to easily stay on top of where
+                      you are in your program.
+                    </span>
+                  </Features>
+                  <Features>
+                    <h5>Personal Trainer Dashboard</h5>
+                    <span>
+                      For the fitness professional. Track your clients, create
+                      and send programs, get weekly notifications on their
+                      progress, and gain unique insight into your business
+                      metrics.
+                    </span>
+                  </Features>
+                </FeaturesConditional>
               </FeaturesContainer>
             </ProjectStack>
           </ProjectItem>
