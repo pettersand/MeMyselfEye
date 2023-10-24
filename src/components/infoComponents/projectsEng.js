@@ -121,10 +121,23 @@ const TechIcon = styled.div`
   }
 `;
 
+const FeaturesContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 8px;
+`;
+
 const Features = styled.div`
   display: flex;
+  flex: 1;
+  min-width: 40%;
   flex-direction: column;
   gap: 8px;
+  background-color: var(--bg);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 0;
 
   h5 {
     color: var(--headline);
@@ -209,18 +222,33 @@ const ProjectsEng = () => {
           <ProjectItem>
             <ProjectStack>
               <h4>Features:</h4>
-              <Features>
-                <h5>Write Exercise Programs:</h5>
-                <span>
-                  Create advanced programs for yourself or your clients
-                </span>
-              </Features>
-              <Features>
-                <h5>Write Exercise Programs:</h5>
-                <span>
-                  Create advanced programs for yourself or your clients
-                </span>
-              </Features>
+              <FeaturesContainer>
+                <Features>
+                  <h5>Write Exercise Programs</h5>
+                  <span>
+                    Create advanced programs for yourself or your clients. Send
+                    them, save them, or share them!
+                  </span>
+                </Features>
+                <Features>
+                  <h5>Customize Templates</h5>
+                  <span>Save your own custom exercise templates with full customiza</span>
+                </Features>
+                <Features>
+                  <h5>Track Your Progress</h5>
+                  <span>
+                    Track and define your goals with a comprehensive user
+                    dashboard
+                  </span>
+                </Features>
+                <Features>
+                  <h5>Calculate Loading</h5>
+                  <span>
+                    Use advanced Builder tools to calculate weights for each
+                    set, or exercise
+                  </span>
+                </Features>
+              </FeaturesContainer>
             </ProjectStack>
           </ProjectItem>
         </ProjectContainer>
