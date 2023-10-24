@@ -98,7 +98,7 @@ const TechStack = styled.div`
   width: 100%;
   gap: 16px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
 `;
 
 const TechColumn = styled.div`
@@ -124,8 +124,23 @@ const TechIcon = styled.div`
 const FeaturesContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   width: 100%;
   gap: 8px;
+`;
+
+const SubHeader = styled.div`
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 4px;
+  border-bottom: 1px solid var(--contrast);
+  h4 {
+    margin: 0;
+  }
 `;
 
 const Features = styled.div`
@@ -133,6 +148,8 @@ const Features = styled.div`
   flex: 1;
   min-width: 40%;
   flex-direction: column;
+
+  justify-content: center;
   gap: 8px;
   background-color: var(--bg);
   border-radius: 8px;
@@ -149,12 +166,26 @@ const Features = styled.div`
   }
 `;
 
+const ConceptContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 24px;
+  padding: 16px;
+`;
+
+const Concept = styled.div`
+  display: flex;
+  color: var(--paragraph);
+`;
+
 const ImageContainer = styled.div`
   background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 80%;
+  height: 60%;
   width: 100%;
   overflow: hidden;
 `;
@@ -183,7 +214,6 @@ const ProjectsEng = () => {
                 programs. The "one-stop-shop" app I wish I had while working in
                 the fitness industry.
               </p>
-              <h4>Tech Stack:</h4>
               <TechStack>
                 <TechColumn>
                   <TechIcon>
@@ -219,9 +249,31 @@ const ProjectsEng = () => {
 
             <ImageContainer bgImage="/BuilderLogo.png" />
           </ProjectItem>
+          <SubHeader>
+            <h4>Concepts Used</h4>
+          </SubHeader>
           <ProjectItem>
             <ProjectStack>
-              <h4>Features:</h4>
+              <ConceptContainer>
+                <Concept>REST API</Concept>
+                <Concept>Data Analysis</Concept>
+                <Concept>Secure Data Flow</Concept>
+                <Concept>Front+Backend Validation</Concept>
+                <Concept>SPA</Concept>
+                <Concept>CI/CD</Concept>
+                <Concept>Unit Tests</Concept>
+                <Concept>State Management</Concept>
+                <Concept>Data Visualization</Concept>
+                <Concept>Containers</Concept>
+              </ConceptContainer>
+            </ProjectStack>
+          </ProjectItem>
+
+          <SubHeader>
+            <h4>Features</h4>
+          </SubHeader>
+          <ProjectItem>
+            <ProjectStack>
               <FeaturesContainer>
                 <Features>
                   <h5>Write Exercise Programs</h5>
@@ -232,20 +284,40 @@ const ProjectsEng = () => {
                 </Features>
                 <Features>
                   <h5>Customize Templates</h5>
-                  <span>Save your own custom exercise templates with full customiza</span>
+                  <span>
+                    Save your own custom exercise templates, or even individual
+                    elements for advanced users.
+                  </span>
                 </Features>
                 <Features>
                   <h5>Track Your Progress</h5>
                   <span>
                     Track and define your goals with a comprehensive user
-                    dashboard
+                    dashboard. Access graphs, statistics, and feedback on your
+                    training.
                   </span>
                 </Features>
                 <Features>
                   <h5>Calculate Loading</h5>
                   <span>
                     Use advanced Builder tools to calculate weights for each
-                    set, or exercise
+                    set, or exercise. Or don't! The choice is yours.
+                  </span>
+                </Features>
+                <Features>
+                  <h5>Update Your Workout Plan</h5>
+                  <span>
+                    The workout plan is interactive. Mark exercises and training
+                    days as complete to easily stay on top of where you are in
+                    your program.
+                  </span>
+                </Features>
+                <Features>
+                  <h5>Personal Trainer Dashboard</h5>
+                  <span>
+                    For the fitness professional. Track your clients, create and
+                    send programs, get weekly notifications on their progress,
+                    and gain unique insight into your business metrics.
                   </span>
                 </Features>
               </FeaturesContainer>
