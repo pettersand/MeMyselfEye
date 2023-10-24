@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAppState } from "../../App";
 import styled from "styled-components";
 import {
@@ -10,6 +10,7 @@ import {
   SiSvelte,
   SiTypescript,
 } from "react-icons/si";
+import { HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
 
 const ProjectWrapper = styled.div`
   display: flex;
@@ -148,6 +149,12 @@ const TechIcon = styled.div`
   }
 `;
 
+const DescriptionContent = styled.div`
+  max-height: ${(props) => (props.expanded ? "500px" : "0")};
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+`;
+
 const FeaturesContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -157,6 +164,7 @@ const FeaturesContainer = styled.div`
 `;
 
 const SubHeader = styled.div`
+  position: relative;
   display: flex;
   width: 50%;
   align-items: center;
@@ -164,9 +172,20 @@ const SubHeader = styled.div`
   font-size: 1em;
   font-weight: 600;
   padding: 4px;
-  border-bottom: 1px solid var(--contrast);
+  border-bottom: 1px solid
+    ${(props) => (props.expanded ? "var(--accent)" : "var(--contrast)")};
+  transition: border-color 0.4s ease-in-out;
+  cursor: pointer;
+
   h4 {
     margin: 0;
+
+    svg {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 `;
 
@@ -226,6 +245,21 @@ const ImageContainer = styled.div`
 const ProjectsEng = () => {
   const { state } = useAppState();
   const { detailLevel } = state;
+  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [conceptsExpanded, setConceptsExpanded] = useState(false);
+  const [featuresExpanded, setFeaturesExpanded] = useState(false);
+
+  const toggleDescription = () => {
+    setDescriptionExpanded(!descriptionExpanded);
+  };
+
+  const toggleConcepts = () => {
+    setConceptsExpanded(!conceptsExpanded);
+  };
+
+  const toggleFeatures = () => {
+    setFeaturesExpanded(!featuresExpanded);
+  };
 
   return (
     <ProjectWrapper>
@@ -240,7 +274,9 @@ const ProjectsEng = () => {
               </DetailsItem>
               <DetailsItem className="link">
                 <SiGithub />
-                <a href="">GitHub</a>
+                <a href="https://github.com/pettersand/builder" target="_blank">
+                  Link
+                </a>
               </DetailsItem>
             </DetailsBar>
             <TechStack>
@@ -275,14 +311,19 @@ const ProjectsEng = () => {
             </TechStack>
           </ImageContainer>
           <SubHeader>
-            <h4>Description</h4>
+            <h4 onClick={toggleDescription}>
+              Description {descriptionExpanded ? <HiMinus /> : <HiPlus />}
+            </h4>
           </SubHeader>
           <ProjectStack>
             <p>
-              Streamlines the creation and management of personalized workout
-              programs. The "one-stop-shop" app I wish I had while working in
-              the fitness industry.
+              This web application streamlines the creation and management of
+              personalized workout programs. The "one-stop-shop" app I wish I
+              had while working in the fitness industry.
             </p>
+              <DescriptionContent expanded={descriptionExpanded}>
+                <p>Testing</p>
+              </DescriptionContent>
           </ProjectStack>
           <SubHeader>
             <h4>Concepts Used</h4>
