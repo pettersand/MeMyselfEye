@@ -70,7 +70,7 @@ const BottomContainer = styled.div`
   border-radius: 10px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
   grid-column: 2 / 4;
-  grid-row: 2 / 4;
+  grid-row: 2 / 5;
   margin: 16px 24px 24px 16px;
   display: flex;
   flex-direction: column;
