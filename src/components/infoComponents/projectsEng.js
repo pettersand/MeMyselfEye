@@ -72,7 +72,31 @@ const DetailsBar = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 16px;
+`;
+
+const DetailsItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  &.date {
+    font-size: 0.8em;
+    font-style: italic;
+  }
+
+  &.link {
+    font-size: 1.5em;
+    color: var(--accent);
+    a {
+      font-size: 0.7em;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--headline);
+    }
+  }
 `;
 
 const ProjectItem = styled.div`
@@ -96,15 +120,16 @@ const TechStack = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  gap: 16px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
 `;
 
 const TechColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
 `;
 
 const TechIcon = styled.div`
@@ -113,10 +138,12 @@ const TechIcon = styled.div`
   font-size: 1.5em;
   margin-right: 4px;
   color: var(--accent);
+  background: linear-gradient(to right, rgba(50, 50, 50, 0.6), transparent);
+  border-radius: 8px;
   gap: 8px;
   span {
     font-size: 0.6em;
-    color: var(--paragraph);
+    color: var(--headline);
     margin-right: 8px;
   }
 `;
@@ -134,7 +161,7 @@ const SubHeader = styled.div`
   width: 50%;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 600;
   padding: 4px;
   border-bottom: 1px solid var(--contrast);
@@ -148,8 +175,7 @@ const Features = styled.div`
   flex: 1;
   min-width: 40%;
   flex-direction: column;
-
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
   background-color: var(--bg);
   border-radius: 8px;
@@ -157,9 +183,9 @@ const Features = styled.div`
   margin: 0;
 
   h5 {
-    color: var(--headline);
     margin: 0;
   }
+
   span {
     color: var(--paragraph);
     font-size: 0.9em;
@@ -178,6 +204,7 @@ const ConceptContainer = styled.div`
 const Concept = styled.div`
   display: flex;
   color: var(--paragraph);
+  font-size: 0.9em;
 `;
 
 const ImageContainer = styled.div`
@@ -185,9 +212,15 @@ const ImageContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 60%;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px;
+  gap: 16px;
+  height: 25vh;
   width: 100%;
-  overflow: hidden;
+  box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
 `;
 
 const ProjectsEng = () => {
@@ -199,56 +232,58 @@ const ProjectsEng = () => {
       <ProjectRow>
         <ProjectContainer isVisible={detailLevel === "minimal"}>
           <ProjectHeader>Builder</ProjectHeader>
-          <DetailsBar>
-            <span>26/08 -</span>
-            <span>
-              GitHub
-              <SiGithub />
-            </span>
-            <span>Link</span>
-          </DetailsBar>
-          <ProjectItem>
-            <ProjectStack>
-              <p>
-                Streamlines the creation and management of personalized workout
-                programs. The "one-stop-shop" app I wish I had while working in
-                the fitness industry.
-              </p>
-              <TechStack>
-                <TechColumn>
-                  <TechIcon>
-                    <SiPython />
-                    <span>Python</span>
-                  </TechIcon>
 
-                  <TechIcon>
-                    <SiDjango />
-                    <span>Django</span>
-                  </TechIcon>
-                  <TechIcon>
-                    <SiSvelte />
-                    <span>Svelte</span>
-                  </TechIcon>
-                </TechColumn>
-                <TechColumn>
-                  <TechIcon>
-                    <SiTypescript />
-                    <span>TypeScript</span>
-                  </TechIcon>
-                  <TechIcon>
-                    <SiDocker />
-                    <span>Docker</span>
-                  </TechIcon>
-                  <TechIcon>
-                    <SiGithubactions />
-                    <span>GitHub Actions</span>
-                  </TechIcon>
-                </TechColumn>
-              </TechStack>
-            </ProjectStack>
+          <ImageContainer bgImage="/Builder1.png">
+            <DetailsBar>
+              <DetailsItem className="date">
+                Under Development: 26/08 - Present
+              </DetailsItem>
+              <DetailsItem className="link">
+                <SiGithub />
+                <a href="">GitHub</a>
+              </DetailsItem>
+            </DetailsBar>
+            <TechStack>
+              <TechColumn>
+                <TechIcon>
+                  <SiPython />
+                  <span>Python</span>
+                </TechIcon>
 
-            <ImageContainer bgImage="/BuilderLogo.png" />
-          </ProjectItem>
+                <TechIcon>
+                  <SiDjango />
+                  <span>Django</span>
+                </TechIcon>
+                <TechIcon>
+                  <SiSvelte />
+                  <span>Svelte</span>
+                </TechIcon>
+
+                <TechIcon>
+                  <SiTypescript />
+                  <span>TypeScript</span>
+                </TechIcon>
+                <TechIcon>
+                  <SiDocker />
+                  <span>Docker</span>
+                </TechIcon>
+                <TechIcon>
+                  <SiGithubactions />
+                  <span>GitHub Actions</span>
+                </TechIcon>
+              </TechColumn>
+            </TechStack>
+          </ImageContainer>
+          <SubHeader>
+            <h4>Description</h4>
+          </SubHeader>
+          <ProjectStack>
+            <p>
+              Streamlines the creation and management of personalized workout
+              programs. The "one-stop-shop" app I wish I had while working in
+              the fitness industry.
+            </p>
+          </ProjectStack>
           <SubHeader>
             <h4>Concepts Used</h4>
           </SubHeader>
