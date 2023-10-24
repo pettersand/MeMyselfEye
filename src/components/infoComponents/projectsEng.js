@@ -149,7 +149,9 @@ const TechIcon = styled.div`
   }
 `;
 
-const DescriptionContent = styled.div`
+const DescriptionContent = styled(({ expanded, ...props }) => (
+  <div {...props} />
+))`
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -166,7 +168,7 @@ const FeaturesContainer = styled.div`
   gap: 8px;
 `;
 
-const SubHeader = styled.div`
+const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
   position: relative;
   display: flex;
   width: 50%;
@@ -222,7 +224,7 @@ const ConceptContainer = styled.div`
   gap: 16px;
 `;
 
-const ConceptContent = styled.div`
+const ConceptContent = styled(({ expanded, ...props }) => <div {...props} />)`
   display: flex;
   max-height: ${(props) => (props.expanded ? "500px" : "0")};
   overflow: hidden;
@@ -235,7 +237,7 @@ const Concept = styled.div`
   font-size: 0.9em;
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(({ bgImage, ...props }) => <div {...props} />)`
   background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-repeat: no-repeat;
