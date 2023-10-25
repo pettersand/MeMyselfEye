@@ -248,7 +248,7 @@ const MeMyself = () => {
   return (
     <MeMyselfWrapper>
       <ProjectHeader>Me, Myself, & I</ProjectHeader>
-      <ImageContainer bgImage="/memyself2.png">
+      <ImageContainer bgImage="/memyself3.png">
         <DetailsBar>
           <DetailsItem className="date">
             Under Development: 18/10 - Present

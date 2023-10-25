@@ -6,6 +6,7 @@ import { useAppState } from "../App";
 const ControlWrapper = styled.div`
   color: var(--text-light);
   width: 100%;
+  padding: 16px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
