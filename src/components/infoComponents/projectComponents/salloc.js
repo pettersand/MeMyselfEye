@@ -321,6 +321,7 @@ const Salloc = () => {
         </h4>
       </SubHeader>
       <DescriptionContainer>
+        <p>Salloc: Your Savings Allocation App!</p>
         <p>
           Helping individuals achieve financial goals by efficiently allocating
           savings. Allows the user to set savings targets, and determine a

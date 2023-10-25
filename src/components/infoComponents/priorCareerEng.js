@@ -220,7 +220,7 @@ const experienceData = {
   teachingAssistant: [
     {
       company: "Ullern VGS",
-      duration: "2020-2022",
+      duration: "2020-2023",
       location: "Oslo",
     },
     {
@@ -238,7 +238,7 @@ const PriorCareerEng = () => {
       <Disclaimer>
         Disclaimer: Not all of the contents of this section are relevant to the
         developer field. Therefore the specific contents of each section will
-        not be highlighted.
+        not be explored in-depth.
       </Disclaimer>
       <RowContainer>
         <EducationContainer>

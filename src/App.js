@@ -79,6 +79,7 @@ const NameContainer = styled.div`
 
   h2 {
     font-family: "Onest";
+    font-weight: 500;
   }
 `;
 
