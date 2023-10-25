@@ -45,12 +45,11 @@ const ImageContainer = styled(({ bgImage, ...props }) => <div {...props} />)`
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
-  flex: 2;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 8px;
   gap: 16px;
-  height: 25vh;
+  height: 300px;
   width: 100%;
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
 `;
@@ -63,11 +62,20 @@ const DetailsBar = styled.div`
   gap: 16px;
 `;
 
+const LinksColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+`;
+
 const DetailsItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
+  font-weight: 500;
 
   &.date {
     font-size: 0.8em;
@@ -90,8 +98,9 @@ const TechStack = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 60%;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 `;
 
 const TechColumn = styled.div`
@@ -108,13 +117,32 @@ const TechIcon = styled.div`
   font-size: 1.5em;
   margin-right: 4px;
   color: var(--accent);
-  background: linear-gradient(to right, rgba(50, 50, 50, 0.6), transparent);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
   border-radius: 8px;
   gap: 8px;
   span {
     font-size: 0.6em;
+    font-weight: 400;
     color: var(--headline);
     margin-right: 8px;
+  }
+`;
+
+const LinkIcon = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  margin-left: 4px;
+  color: var(--accent);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.7), transparent);
+  border-radius: 8px;
+  gap: 8px;
+  a {
+    font-size: 0.7em;
+    font-weight: 400;
+    color: var(--headline);
+    margin-left: 8px;
+    text-decoration: none;
   }
 `;
 
@@ -253,12 +281,6 @@ const MeMyself = () => {
           <DetailsItem className="date">
             Under Development: 18/10 - Present
           </DetailsItem>
-          <DetailsItem className="link">
-            <SiGithub />
-            <a href="https://github.com/pettersand/MeMyselfEye" target="_blank">
-              Link
-            </a>
-          </DetailsItem>
         </DetailsBar>
         <TechStack>
           <TechColumn>
@@ -276,6 +298,17 @@ const MeMyself = () => {
               <span>Styled Components</span>
             </TechIcon>
           </TechColumn>
+          <LinksColumn>
+            <LinkIcon>
+              <a
+                href="https://github.com/pettersand/MeMyselfEye"
+                target="_blank"
+              >
+                Repo
+              </a>
+              <SiGithub />
+            </LinkIcon>
+          </LinksColumn>
         </TechStack>
       </ImageContainer>
 

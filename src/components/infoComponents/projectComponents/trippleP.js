@@ -41,12 +41,11 @@ const ImageContainer = styled(({ bgImage, ...props }) => <div {...props} />)`
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
-  flex: 2;
   flex-direction: column;
   justify-content: center;
   padding: 8px;
   gap: 16px;
-  height: 25vh;
+  height: 300px;
   width: 100%;
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
 `;
