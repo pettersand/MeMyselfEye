@@ -1,19 +1,17 @@
 import "./App.css";
 import React, { createContext, useContext, useState } from "react";
 import AboutMe from "./components/aboutMe";
-import Skills from "./components/skills";
 import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
 import InfoContainer from "./components/infoContainer";
-import MenuItems from "./components/menuItems";
 import SkillsNew from "./components/SkillsNew";
 
 const AppContainer = styled.div`
   background-color: var(--bg);
-  color: var(--headline)
+  color: var(--headline);
   min-height: 100vh;
-  padding: 24px;
-  gap: 16px;
+  padding: 32px;
+  gap: 24px;
   display: flex;
   flex-direction: row;
 `;

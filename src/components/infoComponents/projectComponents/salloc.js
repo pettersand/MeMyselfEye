@@ -98,7 +98,7 @@ const TechStack = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 60%;
+  height: 80%;
   align-items: center;
   justify-content: space-between;
 `;
@@ -117,9 +117,10 @@ const TechIcon = styled.div`
   font-size: 1.5em;
   margin-right: 4px;
   color: var(--accent);
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
-  border-radius: 8px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+  border-radius: 12px;
   gap: 8px;
+  padding: 1px 0;
   span {
     font-size: 0.6em;
     font-weight: 400;
@@ -134,9 +135,10 @@ const LinkIcon = styled.div`
   font-size: 1.5em;
   margin-left: 4px;
   color: var(--accent);
-  background: linear-gradient(to left, rgba(0, 0, 0, 1), transparent);
-  border-radius: 8px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+  border-radius: 12px;
   gap: 8px;
+  padding: 1px 0;
   a {
     font-size: 0.7em;
     font-weight: 400;
