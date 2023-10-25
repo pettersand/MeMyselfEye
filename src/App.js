@@ -62,17 +62,23 @@ const BottomContainer = styled.div`
 `;
 
 const NameContainer = styled.div`
+  font-family: "Nothing";
+  font-size: 1.2em;
   border-bottom: 2px solid var(--accent);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
+
   color: var(--headline);
   h1,
   h2 {
     margin: 5px;
+  }
+
+  h2 {
+    font-family: "Onest";
   }
 `;
 

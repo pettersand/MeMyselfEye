@@ -102,7 +102,7 @@ const EducationItem = styled.div`
   }
 `;
 
-const EducationRow = styled.div`
+const ItemRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -159,7 +159,77 @@ const WorkContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: flex-start;
+  padding: 16px;
+  gap: 16px;
 `;
+
+const JsonLike = styled.div`
+  font-family: "Courier New", Courier, monospace;
+  width: 90%;
+  background-color: #030303;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre-line;
+  tab-size: 2;
+  & .key {
+    color: var(--complement);
+  }
+  & .string-value {
+    color: var(--accent);
+  }
+  & .brace {
+    color: var(--contrast);
+  }
+
+  & .level-1 {
+    margin-left: 15px;
+  }
+  & .level-2 {
+    margin-left: 30px;
+  }
+
+  & .indent-keys {
+    margin-left: 10px;
+  }
+`;
+
+const experienceData = {
+  personalTrainer: [
+    {
+      company: "SATS Bislett",
+      duration: "2017-2023",
+      location: "Oslo",
+    },
+    {
+      company: "Fitness Renegades",
+      duration: "2014-2017",
+      location: "Perth",
+    },
+    {
+      company: "SATS LHG",
+      duration: "2010-2013",
+      location: "Bergen",
+    },
+    {
+      company: "Five55",
+      duration: "2010",
+      location: "Asker",
+    },
+  ],
+  teachingAssistant: [
+    {
+      company: "Ullern VGS",
+      duration: "2020-2022",
+      location: "Oslo",
+    },
+    {
+      company: "Marienlyst School",
+      duration: "2020",
+      location: "Oslo",
+    },
+  ],
+};
 
 const PriorCareerEng = () => {
   return (
@@ -175,10 +245,10 @@ const PriorCareerEng = () => {
           <SubHeader>Education</SubHeader>
           <EducationItem>
             <EducationDetails>
-              <EducationRow>
+              <ItemRow>
                 <h4>Master of Exercise Science</h4>
                 <p>2016-2017</p>
-              </EducationRow>
+              </ItemRow>
 
               <p className="university">Edith Cowan University</p>
 
@@ -202,10 +272,10 @@ const PriorCareerEng = () => {
 
           <EducationItem>
             <EducationDetails>
-              <EducationRow>
+              <ItemRow>
                 <h4>Bachelor of Science</h4>
                 <p>2013-2016</p>
-              </EducationRow>
+              </ItemRow>
               <p className="university">Edith Cowan University</p>
               <p className="location">Perth, Australia</p>
             </EducationDetails>
@@ -227,10 +297,10 @@ const PriorCareerEng = () => {
 
           <EducationItem>
             <EducationDetails>
-              <EducationRow>
+              <ItemRow>
                 <h4>Diploma of Psychology</h4>
                 <p>2010-2012</p>
-              </EducationRow>
+              </ItemRow>
               <p className="university">University of Bergen</p>
               <p className="location">Bergen, Norway</p>
             </EducationDetails>
@@ -250,6 +320,49 @@ const PriorCareerEng = () => {
         <Divider />
         <WorkContainer>
           <SubHeader>Work Experience</SubHeader>
+          <JsonLike>
+            {"{"}
+            <br />
+            {Object.entries(experienceData).map(([role, jobs], idx) => (
+              <div key={idx} className="level-1">
+                <span className="key">"{role}":</span> <br />
+                <span className="level-1">[</span>
+                <br />
+                {jobs.map((job, jIdx) => (
+                  <div key={jIdx} className="level-2">
+                    {"{"}
+                    <br />
+                    <div className="indent-keys">
+                      <span className="key">"company":</span>{" "}
+                      <span className="string-value">"{job.company}",</span>
+                      <br />
+                      <span className="key">"duration":</span>{" "}
+                      <span className="string-value">"{job.duration}",</span>
+                      <br />
+                      <span className="key">"location":</span>{" "}
+                      <span className="string-value">"{job.location}"</span>
+                    </div>
+                    <br />
+                    {"}"}
+                    {jIdx !== jobs.length - 1 && (
+                      <>
+                        ,<br />
+                      </>
+                    )}
+                  </div>
+                ))}
+                <br />
+                <span className="level-1">]</span>
+                {idx !== Object.keys(experienceData).length - 1 && (
+                  <>
+                    ,<br />
+                  </>
+                )}
+              </div>
+            ))}
+            <br />
+            {"}"}
+          </JsonLike>
         </WorkContainer>
       </RowContainer>
     </PriorCareerWrapper>

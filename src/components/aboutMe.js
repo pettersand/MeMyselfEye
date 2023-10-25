@@ -80,7 +80,7 @@ const AboutMe = () => {
     <AboutMeWrapper>
       <AboutMeContainer isVisible={language === "eng"}>
         <AboutMeHeader>
-          <h1>Hey! Over Here!</h1>
+          <h2>Hey! Over Here!</h2>
         </AboutMeHeader>
 
         <AboutMeText>
