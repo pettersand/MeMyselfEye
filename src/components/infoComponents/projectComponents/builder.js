@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import {
-  SiCsharp,
   SiDjango,
   SiDocker,
   SiGithub,
@@ -10,9 +9,8 @@ import {
   SiSvelte,
   SiTailwindcss,
   SiTypescript,
-  SiWindows,
 } from "react-icons/si";
-import { HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
+import { HiMinus, HiPlus } from "react-icons/hi2";
 
 const BuilderWrapper = styled.div`
   display: flex;

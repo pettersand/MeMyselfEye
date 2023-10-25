@@ -1,21 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import {
-  SiCsharp,
-  SiCss3,
-  SiDjango,
-  SiDocker,
   SiGithub,
-  SiGithubactions,
   SiJavascript,
-  SiPython,
   SiReact,
   SiStyledcomponents,
-  SiSvelte,
-  SiTypescript,
-  SiWindows,
 } from "react-icons/si";
-import { HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
+import { HiMinus, HiPlus } from "react-icons/hi2";
 
 const MeMyselfWrapper = styled.div`
   display: flex;

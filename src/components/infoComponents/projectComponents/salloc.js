@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import {
-  SiCsharp,
   SiCss3,
-  SiDjango,
-  SiDocker,
   SiFlask,
   SiGithub,
-  SiGithubactions,
   SiHtml5,
   SiJavascript,
   SiPython,
-  SiSvelte,
-  SiTypescript,
-  SiWindows,
 } from "react-icons/si";
-import { HiLink, HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
+import { HiLink, HiMinus, HiPlus } from "react-icons/hi2";
 
 const SallocWrapper = styled.div`
   display: flex;

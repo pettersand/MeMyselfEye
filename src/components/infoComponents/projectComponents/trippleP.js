@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {
-  SiCsharp,
-  SiDjango,
-  SiDocker,
-  SiGithub,
-  SiGithubactions,
-  SiPython,
-  SiSvelte,
-  SiTypescript,
-  SiWindows,
-} from "react-icons/si";
-import { HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
+import { SiCsharp, SiGithub, SiWindows } from "react-icons/si";
+import { HiMinus, HiPlus } from "react-icons/hi2";
 
 const TrippleWrapper = styled.div`
   display: flex;
