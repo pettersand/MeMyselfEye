@@ -37,6 +37,18 @@ const Divider = styled.div`
   height: 80%;
   border: 1px solid var(--bg);
   margin-inline: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DividerHorizontal = styled.div`
+  width: 80%;
+  border: 1px solid var(--bg);
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const RowContainer = styled.div`
@@ -48,6 +60,7 @@ const RowContainer = styled.div`
 const SubHeader = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 1.2em;
   font-weight: 500;
   width: 50%;
@@ -60,6 +73,84 @@ const EducationContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: flex-start;
+  padding: 16px;
+  gap: 16px;
+`;
+
+const EducationItem = styled.div`
+  display: flex;
+  width: 90%;
+  align-items: stretch;
+  flex-flow: column wrap;
+  background-color: var(--bg);
+  border-radius: 8px;
+  padding: 16px;
+  gap: 8px;
+
+  p {
+    color: var(--paragraph);
+    margin: 0;
+
+    &.university {
+      font-weight: 400;
+    }
+
+    &.location {
+      font-style: italic;
+      font-size: 0.9em;
+    }
+  }
+`;
+
+const EducationRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+
+  h4 {
+    color: var(--headline);
+    margin: 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--contrast);
+    padding-right: 24px;
+  }
+
+  p {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+`;
+
+const EducationDetails = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 8px;
+`;
+
+const EducationTopics = styled.div`
+  display: flex;
+  max-height: 40%;
+  flex-direction: column;
+
+  ul {
+    column-count: 2;
+    padding-inline-start: 18px;
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--paragraph);
+    li {
+      break-inside: avoid;
+      margin-bottom: 8px;
+    }
+  }
+
+  h5 {
+    margin: 8px 0;
+    color: var(--headline);
+    font-size: 1em;
+  }
 `;
 
 const WorkContainer = styled.div`
@@ -82,6 +173,79 @@ const PriorCareerEng = () => {
       <RowContainer>
         <EducationContainer>
           <SubHeader>Education</SubHeader>
+          <EducationItem>
+            <EducationDetails>
+              <EducationRow>
+                <h4>Master of Exercise Science</h4>
+                <p>2016-2017</p>
+              </EducationRow>
+
+              <p className="university">Edith Cowan University</p>
+
+              <p className="location">Perth, Australia</p>
+            </EducationDetails>
+
+            <EducationTopics>
+              <h5>Topics of Relevance:</h5>
+              <ul>
+                <li>Research & Computer Methods</li>
+                <li>Statistics</li>
+                <li>Ethics</li>
+                <li>Leadership & Coaching</li>
+                <li>Advanced Program Design</li>
+                <li>Data Tracking & Analysis</li>
+              </ul>
+            </EducationTopics>
+          </EducationItem>
+
+          <DividerHorizontal />
+
+          <EducationItem>
+            <EducationDetails>
+              <EducationRow>
+                <h4>Bachelor of Science</h4>
+                <p>2013-2016</p>
+              </EducationRow>
+              <p className="university">Edith Cowan University</p>
+              <p className="location">Perth, Australia</p>
+            </EducationDetails>
+
+            <EducationTopics>
+              <h5>Topics of Relevance:</h5>
+              <ul>
+                <li>Statistical Research Methods</li>
+                <li>Data Analysis</li>
+                <li>Data Monitoring</li>
+                <li>Leadership & Coaching</li>
+                <li>Social Psychology</li>
+                <li>Skill Acquisition</li>
+              </ul>
+            </EducationTopics>
+          </EducationItem>
+
+          <DividerHorizontal />
+
+          <EducationItem>
+            <EducationDetails>
+              <EducationRow>
+                <h4>Diploma of Psychology</h4>
+                <p>2010-2012</p>
+              </EducationRow>
+              <p className="university">University of Bergen</p>
+              <p className="location">Bergen, Norway</p>
+            </EducationDetails>
+
+            <EducationTopics>
+              <h5>Topics of Relevance:</h5>
+              <ul>
+                <li>Psychology 101</li>
+                <li>Behvavioural Psychology</li>
+                <li>Scientific Method</li>
+                <li>Social Psychology</li>
+                <li>Motivation Psychology</li>
+              </ul>
+            </EducationTopics>
+          </EducationItem>
         </EducationContainer>
         <Divider />
         <WorkContainer>
