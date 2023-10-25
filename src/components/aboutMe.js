@@ -20,6 +20,8 @@ const AboutMeContainer = styled(({ isVisible, ...props }) => (
 `;
 
 const AboutMeHeader = styled.div`
+  color: var(--complement);
+
   h1,
   h2 {
     margin: 5px;
@@ -36,13 +38,11 @@ const AboutMeText = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  gap: 10px;
+  padding: 8px;
 
   p {
-    font-weight: 100;
-    font-size: 0.9em;
-    margin: auto;
+    font-weight: 200;
+    margin: 8px;
   }
 `;
 
@@ -80,29 +80,22 @@ const AboutMe = () => {
     <AboutMeWrapper>
       <AboutMeContainer isVisible={language === "eng"}>
         <AboutMeHeader>
-          <h2>The Story Starts HERE</h2>
+          <h1>Hey! Over Here!</h1>
         </AboutMeHeader>
 
         <AboutMeText>
           <p>
-            Now this is a story all about how my life got flipped-turned upside
-            down. And I'd like to take a minute, just sit right there, I'll tell
-            you how I became a dev, with a little dose of flair.
+            Welcome to my interactive resume, aka, "Me, Myself, & I". This web
+            app houses everything you would want to know about me;
+            professionally, and personally.
           </p>
           <p>
-            Welcome! I hope you enjoy my interactive resume. Follow the cookie
-            crumbs, they will lead you on your way.
-          </p>
-          <p>
-            I am a self taught developer with an appetite for knowledge and
-            ambitions of continuous improvement. I'm the type to travel the path
-            least travelled, which has lead on some unique journeys throughout
-            my life. Tag along, and let me walk you through the journey of Me
-            Myself, and I.
+            I invite you to explore any topic of relevance to the motivations
+            behind your visit. Select a radiobutton to change the contents of
+            the main container. Look out for ( + ) signs, which reveal in-depth
+            information about individual topics.
           </p>
         </AboutMeText>
-
-        
       </AboutMeContainer>
 
       <AboutMeContainer isVisible={language === "nor"}>
