@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import {
   SiCsharp,
+  SiCss3,
   SiDjango,
   SiDocker,
   SiGithub,
   SiGithubactions,
+  SiJavascript,
   SiPython,
+  SiReact,
+  SiStyledcomponents,
   SiSvelte,
   SiTypescript,
   SiWindows,
 } from "react-icons/si";
 import { HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
 
-const TrippleWrapper = styled.div`
+const MeMyselfWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,7 +228,7 @@ const FeaturesConditional = styled(({ expanded, ...props }) => (
   transition: max-height 0.5s ease-in-out;
 `;
 
-const TrippleP = () => {
+const MeMyself = () => {
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
   const [conceptsExpanded, setConceptsExpanded] = useState(false);
   const [featuresExpanded, setFeaturesExpanded] = useState(false);
@@ -242,16 +246,16 @@ const TrippleP = () => {
   };
 
   return (
-    <TrippleWrapper>
-      <ProjectHeader>Tripple-P</ProjectHeader>
-      <ImageContainer bgImage="/tripplep1.png">
+    <MeMyselfWrapper>
+      <ProjectHeader>Me, Myself, & I</ProjectHeader>
+      <ImageContainer bgImage="/memyself2.png">
         <DetailsBar>
           <DetailsItem className="date">
-            Under Development: 04/09 - Present
+            Under Development: 18/10 - Present
           </DetailsItem>
           <DetailsItem className="link">
             <SiGithub />
-            <a href="https://github.com/pettersand/Tripple-P" target="_blank">
+            <a href="https://github.com/pettersand/MeMyselfEye" target="_blank">
               Link
             </a>
           </DetailsItem>
@@ -259,13 +263,17 @@ const TrippleP = () => {
         <TechStack>
           <TechColumn>
             <TechIcon>
-              <SiCsharp />
-              <span>C#</span>
+              <SiReact />
+              <span>React</span>
             </TechIcon>
 
             <TechIcon>
-              <SiWindows />
-              <span>WPF</span>
+              <SiJavascript />
+              <span>JavaScript</span>
+            </TechIcon>
+            <TechIcon>
+              <SiStyledcomponents />
+              <span>Styled Components</span>
             </TechIcon>
           </TechColumn>
         </TechStack>
@@ -278,11 +286,11 @@ const TrippleP = () => {
       </SubHeader>
       <DescriptionContainer>
         <p>
-          When planning my projects I've felt the need for a project planning
-          tool stronger than Excel. So why not build one myself? Built as a
-          desktop application, it will allow the user to plan and progress their
-          projects in a tab-based interface. This is Tripple-P; Petters Project
-          Planner!
+          The hardest part about breaking into a new industry isn't acquiring
+          the knowledge of the technical aspects. It's figuring out how to show
+          what you know. This project, and thus, this site - aims to show myself
+          as a fresh breath of air. I've always enjoyed creating from scratch
+          and doing things differently, of which this is a testament.
         </p>
         <DescriptionContent expanded={descriptionExpanded}>
           <p>TODO</p>
@@ -296,9 +304,9 @@ const TrippleP = () => {
         </h4>
       </SubHeader>
       <ConceptContainer>
-        <Concept>Desktop App</Concept>
-        <Concept>MaterialDesign</Concept>
-        <Concept>JSON metadata</Concept>
+        <Concept>Reactive UI</Concept>
+        <Concept>Modular Design</Concept>
+        <Concept>Conditional Rendering</Concept>
 
         <ConceptContent expanded={conceptsExpanded}>
           <ConceptContainer></ConceptContainer>
@@ -357,8 +365,8 @@ const TrippleP = () => {
           </Features>
         </FeaturesConditional>
       </FeaturesContainer>
-    </TrippleWrapper>
+    </MeMyselfWrapper>
   );
 };
 
-export default TrippleP;
+export default MeMyself;

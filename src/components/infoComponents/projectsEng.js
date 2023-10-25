@@ -14,6 +14,9 @@ import {
 } from "react-icons/si";
 import { HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
 import Builder from "./projectComponents/builder";
+import TrippleP from "./projectComponents/trippleP";
+import Salloc from "./projectComponents/salloc";
+import MeMyself from "./projectComponents/memyself";
 
 const ProjectWrapper = styled.div`
   display: flex;
@@ -298,131 +301,7 @@ const ProjectsEng = () => {
         <Divider />
 
         <ProjectContainer isVisible={detailLevel === "minimal"}>
-          <ProjectHeader>Tripple-P</ProjectHeader>
-
-          <ImageContainer bgImage="/tripplep1.png">
-            <DetailsBar>
-              <DetailsItem className="date">
-                Under Development: 26/08 - Present
-              </DetailsItem>
-              <DetailsItem className="link">
-                <SiGithub />
-                <a href="https://github.com/pettersand/builder" target="_blank">
-                  Link
-                </a>
-              </DetailsItem>
-            </DetailsBar>
-            <TechStack>
-              <TechColumn>
-                <TechIcon>
-                  <SiCsharp />
-                  <span>C#</span>
-                </TechIcon>
-
-                <TechIcon>
-                  <SiWindows />
-                  <span>WPF</span>
-                </TechIcon>
-              </TechColumn>
-            </TechStack>
-          </ImageContainer>
-          <SubHeader expanded={descriptionExpanded}>
-            <h4 onClick={toggleDescription}>
-              Description {descriptionExpanded ? <HiMinus /> : <HiPlus />}
-            </h4>
-          </SubHeader>
-          <ProjectStack>
-            <p>
-              When planning my projects I've felt the need for a project
-              planning tool stronger than Excel. So why not build one myself?
-              Built as a desktop application, it will allow the user to plan and
-              progress their projects in a tab-based interface. This is
-              Tripple-P; Petters Project Planner!
-            </p>
-            <DescriptionContent expanded={descriptionExpanded}>
-              <p>TODO</p>
-              <p>TODO</p>
-            </DescriptionContent>
-          </ProjectStack>
-          <SubHeader expanded={conceptsExpanded}>
-            <h4 onClick={toggleConcepts}>
-              Concepts Applied {conceptsExpanded ? <HiMinus /> : <HiPlus />}
-            </h4>
-          </SubHeader>
-          <ProjectItem>
-            <ProjectStack>
-              <ConceptContainer>
-                <Concept>Desktop App</Concept>
-                <Concept>MaterialDesign</Concept>
-                <Concept>JSON metadata</Concept>
-
-                <ConceptContent expanded={conceptsExpanded}>
-                  <ConceptContainer></ConceptContainer>
-                </ConceptContent>
-              </ConceptContainer>
-            </ProjectStack>
-          </ProjectItem>
-
-          <SubHeader expanded={featuresExpanded}>
-            <h4 onClick={toggleFeatures}>
-              Features {featuresExpanded ? <HiMinus /> : <HiPlus />}
-            </h4>
-          </SubHeader>
-          <ProjectItem>
-            <ProjectStack>
-              <FeaturesContainer>
-                <Features>
-                  <h5>Plan Your Project</h5>
-                  <span>
-                    Follow the Tripple-P project planning formula - Planning,
-                    Progress, Production
-                  </span>
-                </Features>
-                <Features>
-                  <h5>Production Ready Code</h5>
-                  <span>
-                    Use customizable checklists to ensure all files are
-                    production ready. Step by step watch your project get closer
-                    to release.
-                  </span>
-                </Features>
-                <FeaturesConditional expanded={featuresExpanded}>
-                  <Features>
-                    <h5>Track Your Progress</h5>
-                    <span>
-                      Track and define your goals with a comprehensive user
-                      dashboard. Access graphs, statistics, and feedback on your
-                      training.
-                    </span>
-                  </Features>
-                  <Features>
-                    <h5>Calculate Loading</h5>
-                    <span>
-                      Use advanced Builder tools to calculate weights for each
-                      set, or exercise. Or don't! The choice is yours.
-                    </span>
-                  </Features>
-                  <Features>
-                    <h5>Update Your Workout Plan</h5>
-                    <span>
-                      The workout plan is interactive. Mark exercises and
-                      training days as complete to easily stay on top of where
-                      you are in your program.
-                    </span>
-                  </Features>
-                  <Features>
-                    <h5>Personal Trainer Dashboard</h5>
-                    <span>
-                      For the fitness professional. Track your clients, create
-                      and send programs, get weekly notifications on their
-                      progress, and gain unique insight into your business
-                      metrics.
-                    </span>
-                  </Features>
-                </FeaturesConditional>
-              </FeaturesContainer>
-            </ProjectStack>
-          </ProjectItem>
+          <TrippleP />
         </ProjectContainer>
         <ProjectContainer isVisible={detailLevel === "detailed"}>
           <h4>Tripple-P</h4>
@@ -431,27 +310,13 @@ const ProjectsEng = () => {
 
       <ProjectRow>
         <ProjectContainer isVisible={detailLevel === "minimal"}>
-          <ProjectHeader>Salloc</ProjectHeader>
-          <ProjectItem>
-            <ImageContainer bgImage="/Salloc.png" />
-            <p>
-              Helping individuals achieve financial goals by efficiently
-              allocating savings. Allows the user to set savings targets, and
-              determine a percentage of future deposits to be allocated towards
-              specific posts.
-            </p>
-          </ProjectItem>
-          <ProjectItem>Tech Stack</ProjectItem>
-          <ProjectItem>Features</ProjectItem>
-        </ProjectContainer>
-        <ProjectContainer isVisible={detailLevel === "detailed"}>
-          <h4>Salloc</h4>
+          <Salloc />
         </ProjectContainer>
 
         <Divider />
 
         <ProjectContainer isVisible={detailLevel === "minimal"}>
-          <Builder />
+          <MeMyself />
         </ProjectContainer>
         <ProjectContainer isVisible={detailLevel === "detailed"}>
           <h4>Portfolio</h4>
