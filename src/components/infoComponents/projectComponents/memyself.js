@@ -279,7 +279,7 @@ const MeMyself = () => {
       <ImageContainer bgImage="/memyself3.png">
         <DetailsBar>
           <DetailsItem className="date">
-            Under Development: 18/10 - Present
+            18/10 - Present
           </DetailsItem>
         </DetailsBar>
         <TechStack>
