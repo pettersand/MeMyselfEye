@@ -13,6 +13,7 @@ import {
   SiWindows,
 } from "react-icons/si";
 import { HiMinus, HiPlus, HiPlusCircle } from "react-icons/hi2";
+import Builder from "./projectComponents/builder";
 
 const ProjectWrapper = styled.div`
   display: flex;
@@ -451,7 +452,7 @@ const ProjectsEng = () => {
           </ProjectItem>
         </ProjectContainer>
         <ProjectContainer isVisible={detailLevel === "detailed"}>
-          <ProjectHeader>Builder</ProjectHeader>
+          <Builder />
         </ProjectContainer>
 
         <Divider />
@@ -610,7 +611,7 @@ const ProjectsEng = () => {
         <Divider />
 
         <ProjectContainer isVisible={detailLevel === "minimal"}>
-          <ProjectHeader>Portfolio</ProjectHeader>
+          <Builder />
         </ProjectContainer>
         <ProjectContainer isVisible={detailLevel === "detailed"}>
           <h4>Portfolio</h4>
