@@ -42,6 +42,8 @@ const SkillsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
 `;
 
@@ -56,12 +58,12 @@ const SkillsRow = styled.div`
 
 const HeaderRow = styled.div`
   display: flex;
-  margin-top: 5px;
-  padding-bottom: 5px;
+  margin-top: 16px;
+  padding-bottom: 8px;
   width: 100%;
   flex-direction: row;
   flex: 1;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 600;
 `;
 
@@ -94,6 +96,7 @@ const CategoryCell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
 `;
 
 const SkillsCell = styled.div`

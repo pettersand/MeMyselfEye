@@ -85,9 +85,8 @@ const AboutMe = () => {
 
         <AboutMeText>
           <p>
-            Welcome to my interactive resume, aka, "Me, Myself, & I". This web
-            app houses everything you would want to know about me;
-            professionally, and personally.
+            Welcome to my interactive resume! This web app houses everything you
+            might want to know about me; professionally, and personally.
           </p>
           <p>
             I invite you to explore any topic of relevance to the motivations

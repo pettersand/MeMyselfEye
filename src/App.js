@@ -27,15 +27,15 @@ const ColumnContainer = styled.div`
 
 const MainContainer = styled.div`
   background-color: var(--bg2);
-  max-height: 90vh;
+  max-height: 100vh;
   min-width: 400px;
   max-width: 25vw;
   padding: 16px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-
+  gap: 24px;
   border-radius: 8px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
