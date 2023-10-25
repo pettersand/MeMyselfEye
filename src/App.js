@@ -19,15 +19,17 @@ const AppContainer = styled.div`
 const ColumnContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
+  width: 75vw;
   gap: 16px;
 `;
 
 const MainContainer = styled.div`
   background-color: var(--bg2);
-  max-height: 100vh;
-  min-width: 25vw;
+  max-height: 90vh;
+  min-width: 400px;
+  max-width: 25vw;
   padding: 16px;
   display: flex;
   justify-content: space-evenly;
