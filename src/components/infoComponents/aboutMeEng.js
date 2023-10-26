@@ -97,6 +97,11 @@ const ContentBox = styled.div`
   flex: 1;
   align-items: center;
   justify-content: flex-start;
+  gap: 8px;
+
+  p {
+    margin: 0;
+  }
 `;
 
 const AboutMeEng = () => {
@@ -106,10 +111,18 @@ const AboutMeEng = () => {
         <MainContent>
           <ProjectHeader>About Me</ProjectHeader>
           <TopContent>
-            <p>Yayuh, this is the first paragraph for the about me section.</p>
+            <p>
+              Basic information about me. Self taught hungry and curious
+              developer. Poised and ready to jump into this new expansive world
+              and ready to get hurt.
+            </p>
           </TopContent>
           <TopContent>
-            <p>Second paragraph goes here</p>
+            <p>
+              Always been interested in tech. Hobbies from a young age included
+              Dreamweaver HTML, graphic design photoshop, gaming and performance
+              tracking data gathering, cubase and music editing,{" "}
+            </p>
           </TopContent>
           <TopContent>
             <p>Third row here</p>
@@ -119,34 +132,82 @@ const AboutMeEng = () => {
         <MainContent>
           <ProjectHeader>Changing Careers</ProjectHeader>
           <TopContent>
-            <p>Yayuh, this is the first paragraph for changing careers.</p>
+            <p>
+              After 13 years, and a masters degree in the training industry, i
+              finally realized...
+            </p>
           </TopContent>
           <TopContent>
-            <p>Second paragraph goes here</p>
+            <p>
+              When I stumbled upon the idea of coding and programming everything
+              clicked. Specifically once I realized the wealth of information
+              available online, and the fact that it was indeed possible to not
+              only learn it on your own, but break into the industry
+              professionally.
+            </p>
           </TopContent>
           <TopContent>
-            <p>Third row here</p>
+            <p>
+              Now I'm at the point where I have resigned from my former job in
+              order to focus all my attention on improving my knowledge and
+              skills as a developer.
+            </p>
           </TopContent>
         </MainContent>
       </TopRow>
       <BottomRow>
         <ExtraContent>
           <ProjectHeader>My Learning Process</ProjectHeader>
-          <TopContent>
-            <ContentBox>Step by Step</ContentBox>
-            <ContentBox>Focus & Thought Process</ContentBox>
-            <ContentBox>Approach</ContentBox>
-          </TopContent>
+          <BottomContent>
+            <ContentBox>
+              Approach & Thought Process
+              <p>Accountability</p>
+              <p>Initial Courses</p>
+              <p>Learning by doing</p>
+              <p>Using Generative AI</p>
+              <p>MidJourney & ChatGPT</p>
+            </ContentBox>
+            <ContentBox>
+              Projects Step by Step
+              <p>Salloc</p>
+              <p>Portfolio</p>
+              <p>VPS Hosting</p>
+              <p>Builder</p>
+              <p>Tripple-P Project Planner</p>
+              <p>Interactive Resume</p>
+            </ContentBox>
+            <ContentBox>
+              Focus & Thought Process
+              <p>Self designed projects rather than tutorials</p>
+              <p>
+                Structured work, mimicing real world environments to the best of
+                my ability.
+              </p>
+              <p>Dipping my toe in several languages and concepts</p>
+            </ContentBox>
+          </BottomContent>
         </ExtraContent>
         <ExtraContent>
           <ProjectHeader>Passions & Motivations</ProjectHeader>
           <BottomContent>
-            <ContentBox>Innovation</ContentBox>
-            <ContentBox>Creating</ContentBox>
             <ContentBox>
-              Other Interests & Hobbies <p>Music</p>
+              Innovation
+              <p>
+                Every problem has a solution, and every solution has room for
+                improvement.
+              </p>
+            </ContentBox>
+            <ContentBox>
+              Creating
+              <p>I love making stuff from scratch</p>
+            </ContentBox>
+            <ContentBox>
+              Other Interests & Hobbies
+              <p>Music</p>
               <p>Gaming</p>
               <p>Financial Markets</p>
+              <p>Drawing</p>
+              <p>Cooking</p>
             </ContentBox>
           </BottomContent>
         </ExtraContent>
