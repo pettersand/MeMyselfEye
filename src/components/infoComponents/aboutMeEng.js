@@ -104,6 +104,10 @@ const ContentBox = styled.div`
   p {
     margin: 0;
   }
+
+  h4 {
+    margin-bottom: 0;
+  }
 `;
 
 const AboutMeEng = () => {
@@ -199,104 +203,73 @@ const AboutMeEng = () => {
           <ProjectHeader>My Learning Process</ProjectHeader>
           <BottomContent>
             <ContentBox>
-              Approach & Thought Process
+              <h4>My Evolution in Tech</h4>
               <p>
-                Accountability is at the base of my life philosophy. I truly
-                believe the key to improvement is defining what is within your
-                power to do, and then doing it. By taking accountability for my
-                own effort and actions I have been able to learn complex skills
-                in a short amount of time. And I realize there is yet much to
-                learn, and thus its up to me to put in the work. Nobody else
-                will do it for me.
+                Central to my ethos is the principle of accountability.
+                Recognizing that growth is a product of both vision and effort,
+                I've persistently worked to turn gaps in knowledge into mastery.
+                I am the captain of my learning journey, and every project,
+                every course, every challenge faced is a testament to my drive
+                and adaptability.
+              </p>
+              <h4>Beginning Steps</h4>
+              <p>
+                My quest commenced with diligent research, seeking the best
+                foundational programming language. Understanding the
+                effectiveness of structured education for my learning style, I
+                embarked on the "Python for Everybody" course from the
+                University of Michigan. Soon after, I navigated the complexities
+                of Harvard's CS50x. But theory was just the start; I'm a firm
+                believer in learning through creation.
+              </p>
+              <h4>Hands-On Experience</h4>
+              <p>
+                Salloc emerged as my maiden voyage into full-stack development.
+                It was more than a project; it was the metamorphosis of an old
+                excel spreadsheet into a dynamic web application, utilizing SQL
+                and Python in the backend and delivering an aesthetic frontend.
               </p>
               <p>
-                Initial Courses: I started my journey by researching what the
-                general concensus was on the ideal programming language to
-                learn, and what courses to take. I knew I had to get the ball
-                rolling, and presentation-based learning has always been an
-                effective way for me to learn. I enrolled in University of
-                Michigans online course "Python for Everybody".
-              </p>
-              <p>
-                After completing my second course, Harvard's CS50x, I jumped
-                into my preferred way of acquiring knowledge; learning by doing.
-                Rather than copying and completing tutorial based projects I
-                decided to lean on my creativity and need for creation instead.
-                My first project, which also served as the final assignment of
-                CS50x, was Salloc. An old excel spreadsheet that I knew I could
-                transform into a web application.
-              </p>
-              <p>
-                I believe there is immense value in using powerful tools to aid
-                in the learning process. I was curious on the world of
-                generative AI and started using ChatGPT early on. I quickly
-                realized that there are dangers involved with becoming reliant
-                on ChatGPT for programming, so I refined my approach by ensuring
-                I didn't simply let it do the work for me. Instead I used
-                ChatGPT as my own pocket Senior Developer. Someone to brainstorm
-                with and ask questions. My experience has shown that it can be
-                an incredible learning tool when used in this manner.
+                Recognizing the need for a digital portfolio, I designed a
+                personal site to house my projects. This initiative led me to
+                explore the domains of hosting, diving deep into the workings of
+                Linux, Ubuntu, and Nginx with a VPS on Hostinger.
               </p>
             </ContentBox>
             <ContentBox>
-              Projects Step by Step
+              <h4>Innovations & Challenges</h4>
               <p>
-                Salloc: My first real full-stack project. My aim was to expand
-                my limited knowledge by creating a full-stack application using
-                SQL and Python for the backend, while also delivering a clean
-                and pleasing frontend experience.
+                Builder, my capstone endeavor, stood as the amalgamation of my
+                roots in exercise science and my blossoming programming acumen.
+                Originating from a sophisticated Excel tool, the project evolved
+                into an ambitious personal trainer management application.
+                Prioritizing clean code, security, and robust testing, I
+                ventured into DevOps, acquainting myself with containers and
+                CI/CD pipelines.
               </p>
               <p>
-                Portfolio: I needed somewhere to show off my projects as I got
-                closer to sending out my first job applications. So I created a
-                personal portfolio website. Which now has been replaced by a
-                landing page and this interactive resume.
+                Tripple-P, influenced by my affinity for Excel, emerged as a
+                brainchild during the development of Builder. Venturing into C#
+                and the .NET framework, this tool epitomized my commitment to
+                efficiency, organization, and quality in the software
+                development process.
               </p>
+              <h4>Standing Out</h4>
               <p>
-                VPS Hosting: Once that was done, I knew I wanted to host it
-                online. I purchased a domain and researched hosting options.
-                Since I was using PostgreSQL it seemed I had to use VPS for
-                hosting. I purchased a plan from Hostinger and set it up from
-                scratch in order to gain some insight into Linux with
-                Ubuntu/Nginx.
+                The challenge of pivoting careers in a tumultuous economic
+                climate made it clear: I had to be distinctive. This interactive
+                resume is not just a testament to my determination but also my
+                maiden voyage with React. It reflects my proactive approach to
+                obstacles, always seeking unique solutions while expanding my
+                tech repertoire.
               </p>
+              <h4>A Guiding Hand</h4>
               <p>
-                Builder: This project is what I might coin my capstone. I wanted
-                to create something ambitious and comprehensive where I could
-                combine my expertise within the exercise science field and my
-                new found love of programming. I have previously created a
-                complex excel spreadsheet that calculates training loads for my
-                clients, and knew I wanted to improve upon that idea. What
-                initially started as a workout planning tool turned into an idea
-                of a all-in-one personal trainer management app. Since I have
-                real ambitions of one day launching this project as a full blown
-                application, I knew I had to take my time and do things right. I
-                focused on clean, readable, and maintainable code, on the back
-                of robust testing, security, and reusability. Along with DevOps
-                tools such as Containers and CI/CD pipeline.
-              </p>
-              <p>
-                Tripple-P: Excel seems to be the muse of all my projects. After
-                planning and brainstorming my projects ive been left with many
-                excel spreadsheets with many tabs. So the idea for this project
-                came to mind as a tool for improving the development of my
-                Builder App. I wanted a planning tool and project tracker that
-                adhered to my need for organization and quality. So I jumped on
-                the opportunity to get my feet wet with C# and the .NET
-                framework. The development process will trail the development
-                and needs of my main project.
-              </p>
-              <p>
-                Interactive Resume: After applying for jobs as a self-taught
-                developer, with no prior relevant experience, for a while I
-                realized I needed to stand out from the crowd. The difficulty in
-                breaking in to a new career was only amplified by an uneasy
-                global economy with increased loan rates and inflation. I
-                envisioned my application being hastily discarded through lack
-                of experience, and knew I had to stand out and do things
-                differently. And thus this website was born. At the same time, I
-                wanted to get my feet wet with React, which has been a rather
-                pleasant experience.
+                Along this journey, I found an ally in ChatGPT. However, instead
+                of being a crutch, I harnessed it as a pocket mentor – a
+                sounding board for brainstorming and a guide for queries. Used
+                judiciously, it's been an instrumental companion in my
+                self-taught voyage.
               </p>
             </ContentBox>
           </BottomContent>
