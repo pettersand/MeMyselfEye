@@ -672,15 +672,24 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("adaptive")}
                 expanded={skillState.adaptive}
               >
-                Adaptive {skillState.adaptive ? <HiMinus /> : <HiPlus />}
+                Adaptivity {skillState.adaptive ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.adaptive}>
                 <SkillItem>
-                  Description:<p>Description goes here</p>
+                  Description:
+                  <p>
+                    Capacity to adjust to new situations, challenges, or
+                    environments with ease.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    Faced with unfamiliar scenarios, I don't let feelings of
+                    uncertainty hinder me. Instead, I lean on my ability to
+                    adapt, wearing different hats as the situation demands. The
+                    world keeps changing, and so must we.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -694,11 +703,22 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.publicSpeaking}>
                 <SkillItem>
-                  Description:<p>Description goes here</p>
+                  Description:
+                  <p>
+                    Effectively conveying information or ideas to an audience,
+                    captivating their attention and ensuring comprehension.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    With confidence and clarity, I engage audiences, delivering
+                    messages in a way that ensures understanding. I have always
+                    been comfortable in front of crowds, and have extensive
+                    experience from public speaking from my work as a personal
+                    trainer, be it in a group training setting, or holding
+                    presentations for peers.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -712,11 +732,22 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.ambitious}>
                 <SkillItem>
-                  Description:<p>Description goes here</p>
+                  Description:
+                  <p>
+                    Inner drive to achieve and exceed goals, continuously
+                    pushing oneself to new heights and striving for improvement
+                    and progress.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    My ambition fuels my journey into the tech industry. Not
+                    content with the mediocrity, I'm always seeking ways to
+                    grow, innovate, and achieve more. This drive ensures I'm not
+                    just meeting expectations but consistently aiming to surpass
+                    them.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
