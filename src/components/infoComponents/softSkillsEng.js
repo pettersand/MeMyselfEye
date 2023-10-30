@@ -369,14 +369,21 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.positive}>
                 <SkillItem>
-                  Description:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Maintain an optimistic and constructive outlook, even during
+                    set-backs or challenging situations.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    In work and personal situations, I approach challenges with
+                    a "glass half full" mindset. Recognizing the downsides of
+                    negativity, I choose to focus on the potential and uplift
+                    those around me, ensuring enhanced performance and fostering
+                    a collaborative environment.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -390,14 +397,19 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.curious}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>Strong desire to learn or understand something new.</p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    In my role as a developer, my innate curiosity pushes me to
+                    delve deeper than just solutions. I seek to understand the
+                    "why" behind them. This drive not only bolsters my own
+                    understanding but also prompts peers to re-evaluate
+                    processes, potentially unveiling inefficiencies and
+                    fostering improvement.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -406,19 +418,27 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("quickLearner")}
                 expanded={skillState.quickLearner}
               >
-                Quick Learner{" "}
+                Quick Learner
                 {skillState.quickLearner ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.quickLearner}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Capacity to rapidly assimilate and apply new knowledge or
+                    skills.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    In development, my aptitude for hyper-focus and systematic
+                    learning allows me to understand complex subjects piece by
+                    piece. Having mastered diverse fields like stock market
+                    speculation, 3D modeling, and special needs education, I can
+                    quickly adapt and become proficient in new domains, ensuring
+                    I keep up with any requirements.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -432,38 +452,26 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.empathetic}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
-                </SkillItem>
-                <SkillItem>
-                  Application:
-                  <p>How I apply this trait in a job environment</p>
-                </SkillItem>
-              </SkillDetails>
-            </SkillContainer>
-            <SkillContainer>
-              <SubHeader
-                onClick={() => toggleSkill("emotionalIntelligence")}
-                expanded={skillState.emotionalIntelligence}
-              >
-                Emotional Intelligence
-                {skillState.emotionalIntelligence ? <HiMinus /> : <HiPlus />}
-              </SubHeader>
-              <SkillDetails expanded={skillState.emotionalIntelligence}>
-                <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Ability to understand and share the feelings of another.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    Recognizing and addressing the perspectives and emotions of
+                    teammates ensures a harmonious work environment. This
+                    deep-rooted empathy, evident through roles in personal
+                    training and assisting students with special needs, equips
+                    me to support and uplift colleagues, enhancing team dynamics
+                    and project outcomes. Everyone deserves to be seen and
+                    heard.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
+
             <SkillContainer>
               <SubHeader
                 onClick={() => toggleSkill("patient")}
@@ -474,14 +482,23 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.patient}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Capacity to tolerate or endure difficulties without becoming
+                    annoyed or anxious.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    In software development, patience is crucial when tackling
+                    complex challenges or debugging intricate code. My ability
+                    to remain patient ensures a thorough and meticulous
+                    approach. A skill honed through my work with hundreds of
+                    personal training clients from all walks of life, and
+                    through my work as a teaching assistant for youth with
+                    special needs.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -501,19 +518,26 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("communicative")}
                 expanded={skillState.communicative}
               >
-                Communicative{" "}
+                Communicative
                 {skillState.communicative ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.communicative}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Expressing ideas clearly and actively listening to others,
+                    ensuring mutual understanding and collaboration.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    In software development, effective communication is key. My
+                    emphasis on both speaking and listening guarantees that
+                    project requirements are understood, mistakes are minimized,
+                    and the entire team remains aligned and informed throughout
+                    the development process.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -527,14 +551,21 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.amicable}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Possessing a pleasant and agreeable nature, and the absence
+                    of antagonism.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    In the context of a development team, my easy-going nature
+                    ensures smooth team dynamics. I prioritize creating positive
+                    interactions, avoiding unnecessary tensions, and ensuring
+                    that I contribute to a constructive and cohesive work
+                    environment.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -548,14 +579,21 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.sociable}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Ability to form connections and interact comfortably with
+                    various individuals, often thriving in diverse group
+                    settings.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    As an outgoing person I build relationships quickly,
+                    bolstering team synergy. My knack for making strong first
+                    impressions allows for smooth interactions with
+                    stakeholders, clients, and team members alike.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -569,10 +607,7 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.leadership}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:<p>Description goes here</p>
                 </SkillItem>
                 <SkillItem>
                   Application:
