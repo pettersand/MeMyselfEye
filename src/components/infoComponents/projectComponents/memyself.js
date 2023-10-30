@@ -190,6 +190,7 @@ const ConceptContainer = styled.div`
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-evenly;
+  width: 90%;
   gap: 16px;
 `;
 
@@ -271,7 +272,7 @@ const MeMyself = () => {
       <ProjectHeader>Me, Myself, & I</ProjectHeader>
       <ImageContainer bgImage="/memyself3.png">
         <DetailsBar>
-          <DetailsItem className="date">18/10 - Present</DetailsItem>
+          <DetailsItem className="date">18/10 - 02/11</DetailsItem>
         </DetailsBar>
         <TechStack>
           <TechColumn>
@@ -313,12 +314,18 @@ const MeMyself = () => {
           The hardest part about breaking into a new industry isn't acquiring
           the knowledge of the technical aspects. It's figuring out how to show
           what you know. This project, and thus, this site - aims to show myself
-          as a fresh breath of air. I've always enjoyed creating from scratch
-          and doing things differently, of which this is a testament.
+          as a fresh breath of air; something different (I hope). I've always
+          enjoyed creating from scratch and doing things differently, of which
+          this website is a testament.
         </p>
         <DescriptionContent expanded={descriptionExpanded}>
-          <p>TODO</p>
-          <p>TODO</p>
+          <p>
+            For this project I wanted to remove the guess-work of what to
+            include in my application process. You never know exactly what a
+            recruiter or hiring manager are looking for. So I thought; why not
+            make all the information available, and let them, or you, make the
+            decisions on what to view.
+          </p>
         </DescriptionContent>
       </DescriptionContainer>
 
@@ -331,11 +338,13 @@ const MeMyself = () => {
         <Concept>Reactive UI</Concept>
         <Concept>Modular Design</Concept>
         <Concept>Conditional Rendering</Concept>
-
-        <ConceptContent expanded={conceptsExpanded}>
-          <ConceptContainer></ConceptContainer>
-        </ConceptContent>
       </ConceptContainer>
+      <ConceptContent expanded={conceptsExpanded}>
+        <ConceptContainer>
+          <Concept>MidJourney AI</Concept>
+          <Concept>Transitions</Concept>
+        </ConceptContainer>
+      </ConceptContent>
 
       <SubHeader expanded={featuresExpanded}>
         <h4 onClick={toggleFeatures}>

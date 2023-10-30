@@ -185,6 +185,7 @@ const ConceptContainer = styled.div`
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-evenly;
+  width: 90%;
   gap: 16px;
 `;
 
@@ -319,11 +320,10 @@ const TrippleP = () => {
         <Concept>Desktop App</Concept>
         <Concept>MaterialDesign</Concept>
         <Concept>JSON metadata</Concept>
-
-        <ConceptContent expanded={conceptsExpanded}>
-          <ConceptContainer></ConceptContainer>
-        </ConceptContent>
       </ConceptContainer>
+      <ConceptContent expanded={conceptsExpanded}>
+        <ConceptContainer></ConceptContainer>
+      </ConceptContent>
 
       <SubHeader expanded={featuresExpanded}>
         <h4 onClick={toggleFeatures}>

@@ -143,11 +143,8 @@ const SoftSkillsEng = () => {
 
   const [skillState, setSkillState] = useState({
     analytical: true,
-
     positive: true,
-
     communicative: true,
-
     accountable: true,
   });
 
@@ -161,7 +158,6 @@ const SoftSkillsEng = () => {
     }));
 
     // If category is currently expanded, collapse all skills within it
-    // If category is currently collapsed, expand all skills within it
     const updatedSkills = categorySkillsMap[category].reduce((acc, skill) => {
       acc[skill] = !categoryIsExpanded;
       return acc;
