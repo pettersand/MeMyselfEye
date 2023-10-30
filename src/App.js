@@ -5,6 +5,8 @@ import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
 import InfoContainer from "./components/infoContainer";
 import SkillsNew from "./components/SkillsNew";
+import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
+import { HiPhone } from "react-icons/hi2";
 
 const AppContainer = styled.div`
   background-color: var(--bg);
@@ -63,7 +65,7 @@ const BottomContainer = styled.div`
 
 const NameContainer = styled.div`
   font-family: "Nothing";
-  font-size: 1.2em;
+  font-size: 1.3em;
   border-bottom: 2px solid var(--accent);
   border-radius: 4px;
   display: flex;
@@ -84,12 +86,25 @@ const NameContainer = styled.div`
 `;
 
 const SocialsContainer = styled.div`
-  grid-column: 1;
-  grid-row: 3;
-  margin: 16px 16px 24px 24px;
-  background-color: var(--base-dark);
-  border-radius: 10px;
-  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  gap: 16px;
+`;
+
+const SocialsItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  svg {
+    font-size: 1.5em;
+    color: var(--accent);
+  }
 `;
 
 export const AppStateContext = createContext();
@@ -121,6 +136,21 @@ function App() {
             <h1>Petter Sand Austnes</h1>
             <h2>Software Developer</h2>
           </NameContainer>
+          <SocialsContainer>
+            <SocialsItem>
+              <SiLinkedin />
+              LinkedIn
+            </SocialsItem>
+            <SocialsItem>
+              <SiGithub /> GitHub
+            </SocialsItem>
+            <SocialsItem>
+              <SiGmail /> Email
+            </SocialsItem>
+            <SocialsItem>
+              <HiPhone /> Phone
+            </SocialsItem>
+          </SocialsContainer>
           <AboutMe />
           <SkillsNew />
           <ControlPanel />

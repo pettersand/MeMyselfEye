@@ -65,7 +65,7 @@ const SkillContainer = styled.div`
   align-items: flex-start;
   border-radius: 8px;
   background-color: var(--bg);
-  flex: 1 1 100;
+  max-width: 45%;
 `;
 
 const SkillItem = styled.div`
@@ -178,7 +178,7 @@ const SoftSkillsEng = () => {
       <ContainerRow>
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("problemSolving")}>
-            Problem Solving & Innovation{" "}
+            Problem Solving & Innovation
             {categoryState.problemSolving ? <HiMinus /> : <HiPlus />}
           </CategoryHeader>
           <CategorySkills>
@@ -191,14 +191,21 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.analytical}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Analytical thinking involves breaking down complex
+                    information to draw informed conclusions and make decisions.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    Armed with a Master's in Exercise Science, I've used
+                    analytical tools to boost sales as a personal trainer. By
+                    interpreting performance data, I customize workout plans,
+                    ensuring data-driven results for clients and informed
+                    choices in my strategies.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
