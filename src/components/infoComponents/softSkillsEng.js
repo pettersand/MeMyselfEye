@@ -126,7 +126,9 @@ const categorySkillsMap = {
 const SoftSkillsEng = () => {
   const [categoryState, setCategoryState] = useState({
     problemSolving: false,
-    personalAttributes: false,
+    personal: false,
+    teamwork: false,
+    professional: false,
   });
 
   const [skillState, setSkillState] = useState({
@@ -382,125 +384,181 @@ const SoftSkillsEng = () => {
 
       <ContainerRow>
         <CategoryContainer>
-          <CategoryHeader>Teamwork & Collaboration</CategoryHeader>
+          <CategoryHeader onClick={() => toggleCategory("teamwork")}>
+            Teamwork & Collaboration
+            {categoryState.teamwork ? <HiMinus /> : <HiPlus />}
+          </CategoryHeader>
           <CategorySkills>
             <SkillContainer>
-              <SubHeader>Communicative</SubHeader>
-
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("communicative")}>
+                Communicative{" "}
+                {skillState.communicative ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.communicative}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
 
             <SkillContainer>
-              <SubHeader>Amicable</SubHeader>
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("amicable")}>
+                Amicable {skillState.amicable ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.amicable}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader>Sociable/Outgoing</SubHeader>
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("sociable")}>
+                Sociable
+                {skillState.sociable ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.sociable}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader>Leadership</SubHeader>
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("leadership")}>
+                Leadership
+                {skillState.leadership ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.leadership}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader>Patient</SubHeader>
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("patient")}>
+                Patient
+                {skillState.patient ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.patient}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
           </CategorySkills>
         </CategoryContainer>
 
         <CategoryContainer>
-          <CategoryHeader>Professional Attributes</CategoryHeader>
+          <CategoryHeader onClick={() => toggleCategory("professional")}>
+            Professional Attributes
+            {categoryState.professional ? <HiMinus /> : <HiPlus />}
+          </CategoryHeader>
           <CategorySkills>
             <SkillContainer>
-              <SubHeader>Accountable</SubHeader>
-
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("accountable")}>
+                Accountable
+                {skillState.accountable ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.accountable}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
 
             <SkillContainer>
-              <SubHeader>Adaptive</SubHeader>
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("adaptive")}>
+                Adaptive {skillState.adaptive ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.adaptive}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader>Ambitious</SubHeader>
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("publicSpeaking")}>
+                Public Speaking
+                {skillState.publicSpeaking ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.publicSpeaking}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader>Public Speaking</SubHeader>
-              <SkillItem>
-                Desc:<p>Description goes here</p>
-              </SkillItem>
-              <SkillItem>
-                Demonstrated: <p>Demonstrate skill here</p>
-              </SkillItem>
-              <SkillItem>
-                Application: <p>How I apply this trait in a job environment</p>
-              </SkillItem>
+              <SubHeader onClick={() => toggleSkill("ambitious")}>
+                Ambitious
+                {skillState.ambitious ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.ambitious}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
             </SkillContainer>
           </CategorySkills>
         </CategoryContainer>
