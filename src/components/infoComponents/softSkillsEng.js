@@ -286,10 +286,9 @@ const SoftSkillsEng = () => {
                   Application:
                   <p>
                     I love the puzzle-like nature of coding. Each hurdle is an
-                    opportunity, and there's a unique thrill in orchestrating
-                    pieces of code to synchronize harmoniously. My love for this
-                    intricate dance is evident every time a solution falls into
-                    place, fueling my passion and ensuring effective outcomes.
+                    opportunity for learning, and there's a unique satisfaction
+                    when all the pieces assemble and you're met with a
+                    completely new error.
                   </p>
                 </SkillItem>
               </SkillDetails>
@@ -304,14 +303,22 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.criticalThinker}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Analyze, evaluate, and improve upon ideas or solutions
+                    through reasoned judgement.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    I always question and evaluate new concepts and ideas,
+                    ensuring no glaring mistakes, and for my own understanding.
+                    Every choice should be approached with critical reflection
+                    and based on solid reasoning. If you cannot explain the
+                    thought process of your choices, there was no thought
+                    process at all.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -324,14 +331,23 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.resourceful}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Find and use available resources to solve problems or
+                    achieve goals.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    Whether diving into documentation, reading articles, or
+                    tapping into the knowledge of peers, I ensure that I have
+                    the tools and understanding necessary to move forward with a
+                    challenge. This approach ensures I always have a starting
+                    point and path forward. I believe anything can be learned if
+                    you simply define the end result and figure out its
+                    components.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -353,7 +369,7 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.positive}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
+                  Description:<p>Description goes here</p>
                 </SkillItem>
                 <SkillItem>
                   Demonstrated: <p>Demonstrate skill here</p>
