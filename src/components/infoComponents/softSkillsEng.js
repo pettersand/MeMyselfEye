@@ -216,7 +216,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("innovative")}
                 expanded={skillState.innovative}
               >
-                Innovative {skillState.innovative ? <HiMinus /> : <HiPlus />}
+                Innovation {skillState.innovative ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.innovative}>
                 <SkillItem>
@@ -244,7 +244,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("creative")}
                 expanded={skillState.creative}
               >
-                Creative {skillState.creative ? <HiMinus /> : <HiPlus />}
+                Creativity {skillState.creative ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.creative}>
                 <SkillItem>
@@ -271,7 +271,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("problemSolver")}
                 expanded={skillState.problemSolver}
               >
-                Problem Solver
+                Problem Solving
                 {skillState.problemSolver ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.problemSolver}>
@@ -298,7 +298,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("criticalThinker")}
                 expanded={skillState.criticalThinker}
               >
-                Critical Thinker
+                Critical Thinking
                 {skillState.criticalThinker ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.criticalThinker}>
@@ -327,7 +327,8 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("resourceful")}
                 expanded={skillState.resourceful}
               >
-                Resourceful {skillState.resourceful ? <HiMinus /> : <HiPlus />}
+                Resourceful
+                {skillState.resourceful ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.resourceful}>
                 <SkillItem>
@@ -365,7 +366,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("positive")}
                 expanded={skillState.positive}
               >
-                Positive {skillState.positive ? <HiMinus /> : <HiPlus />}
+                Positivity {skillState.positive ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.positive}>
                 <SkillItem>
@@ -393,7 +394,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("curious")}
                 expanded={skillState.curious}
               >
-                Curious {skillState.curious ? <HiMinus /> : <HiPlus />}
+                Curiosity {skillState.curious ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.curious}>
                 <SkillItem>
@@ -447,7 +448,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("empathetic")}
                 expanded={skillState.empathetic}
               >
-                Empathetic
+                Empathy
                 {skillState.empathetic ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.empathetic}>
@@ -477,7 +478,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("patient")}
                 expanded={skillState.patient}
               >
-                Patient
+                Patience
                 {skillState.patient ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.patient}>
@@ -518,7 +519,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("communicative")}
                 expanded={skillState.communicative}
               >
-                Communicative
+                Communication
                 {skillState.communicative ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.communicative}>
@@ -547,7 +548,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("amicable")}
                 expanded={skillState.amicable}
               >
-                Amicable {skillState.amicable ? <HiMinus /> : <HiPlus />}
+                Amicability {skillState.amicable ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.amicable}>
                 <SkillItem>
@@ -574,7 +575,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("sociable")}
                 expanded={skillState.sociable}
               >
-                Sociable
+                Sociability
                 {skillState.sociable ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.sociable}>
@@ -642,7 +643,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("accountable")}
                 expanded={skillState.accountable}
               >
-                Accountable
+                Accountability
                 {skillState.accountable ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.accountable}>
@@ -727,7 +728,7 @@ const SoftSkillsEng = () => {
                 onClick={() => toggleSkill("ambitious")}
                 expanded={skillState.ambitious}
               >
-                Ambitious
+                Ambition
                 {skillState.ambitious ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.ambitious}>
