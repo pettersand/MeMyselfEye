@@ -143,13 +143,12 @@ const SoftSkillsEng = () => {
 
   const [skillState, setSkillState] = useState({
     analytical: true,
-    problemSolver: true,
+
     positive: true,
-    empathetic: true,
+
     communicative: true,
-    amicable: true,
+
     accountable: true,
-    adaptive: true,
   });
 
   const toggleCategory = (category) => {
