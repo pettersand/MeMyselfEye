@@ -298,16 +298,29 @@ const TrippleP = () => {
         </h4>
       </SubHeader>
       <DescriptionContainer>
+        <p>Tripple-P: Petter's Project Planner!</p>
         <p>
           When planning my projects I've felt the need for a project planning
-          tool stronger than Excel. So why not build one myself? Built as a
-          desktop application, it will allow the user to plan and progress their
-          projects in a tab-based interface. This is Tripple-P; Petters Project
-          Planner!
+          tool stronger than Excel. So why not build one myself and learn
+          something new along the way? Built as a desktop application, it will
+          allow the user to plan and progress their projects in a tab-based
+          interface based on three phases: Planning, Progress, and Production.
         </p>
         <DescriptionContent expanded={descriptionExpanded}>
-          <p>TODO</p>
-          <p>TODO</p>
+          <p>
+            Planning: Allows the user to navigate and plan out their project
+            step-by-step. Define rules, styles, and features. Brainstorm your
+            idea and make notes along the way.
+          </p>
+          <p>
+            Progress: Track your projects progress with To Do lists, progress
+            tracker, file references and dependencies.
+          </p>
+          <p>
+            Production: Ensure production ready code with comprehensive
+            checklists covering security concerns, styling, documentation,
+            performance, and refactoring.
+          </p>
         </DescriptionContent>
       </DescriptionContainer>
 
@@ -322,7 +335,12 @@ const TrippleP = () => {
         <Concept>JSON metadata</Concept>
       </ConceptContainer>
       <ConceptContent expanded={conceptsExpanded}>
-        <ConceptContainer></ConceptContainer>
+        <ConceptContainer>
+          <Concept>Tabular Design</Concept>
+          <Concept>Local Folder Storage</Concept>
+          <Concept>Maintainable Code</Concept>
+          <Concept>Clean Code</Concept>
+        </ConceptContainer>
       </ConceptContent>
 
       <SubHeader expanded={featuresExpanded}>
