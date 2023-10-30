@@ -310,6 +310,7 @@ const MeMyself = () => {
         </h4>
       </SubHeader>
       <DescriptionContainer>
+        <p>My, Myself, an Interactive Resume</p>
         <p>
           The hardest part about breaking into a new industry isn't acquiring
           the knowledge of the technical aspects. It's figuring out how to show

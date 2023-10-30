@@ -324,13 +324,25 @@ const Salloc = () => {
       <DescriptionContainer>
         <p>Salloc: Your Savings Allocation App!</p>
         <p>
-          Helping individuals achieve financial goals by efficiently allocating
-          savings. Allows the user to set savings targets, and determine a
-          percentage of future deposits to be allocated towards specific posts.
+          Have you ever felt the shame of making big purchases with money from
+          your savings account? The uneasy feeling of whether you should
+          purchase an item or not? Salloc solves this problem by defining how
+          much of your current savings are allocated towards specific posts or
+          categories.
         </p>
         <DescriptionContent expanded={descriptionExpanded}>
-          <p>TODO</p>
-          <p>TODO</p>
+          <p>
+            Salloc helps individuals achieve financial goals by efficiently
+            allocating savings. Allowing the user to set savings targets, and
+            determine a percentage of future deposits to be allocated towards
+            specific posts.
+          </p>
+          <p>
+            This project was based on an old excel spreadsheet I've been using
+            to track the state of my savings. The idea is to really define what
+            your savings are for, and how much you can spend on certain "posts"
+            such as vacation, gadgets, or home improvement.
+          </p>
         </DescriptionContent>
       </DescriptionContainer>
 
@@ -341,11 +353,17 @@ const Salloc = () => {
       </SubHeader>
       <ConceptContainer>
         <Concept>Authentication</Concept>
-        <Concept>MaterialDesign</Concept>
-        <Concept>JSON metadata</Concept>
+        <Concept>Dashboard</Concept>
+        <Concept>Data Visualization</Concept>
       </ConceptContainer>
       <ConceptContent expanded={conceptsExpanded}>
-        <ConceptContainer></ConceptContainer>
+        <ConceptContainer>
+          <Concept>Real-Time Feedback</Concept>
+          <Concept>Interactive Components</Concept>
+          <Concept>Screen Reactivity</Concept>
+          <Concept>Cookie Management</Concept>
+          <Concept>Privacy Policy</Concept>
+        </ConceptContainer>
       </ConceptContent>
 
       <SubHeader expanded={featuresExpanded}>
@@ -355,47 +373,52 @@ const Salloc = () => {
       </SubHeader>
       <FeaturesContainer>
         <Features>
-          <h5>Plan Your Project</h5>
+          <h5>Customizable Savings Posts</h5>
           <span>
-            Follow the Tripple-P project planning formula - Planning, Progress,
-            Production
+            Create personalized savings categories, such as "Emergency Fund,"
+            "Travel," "Shopping," and more. Allocate specific percentages to
+            each post based on your financial priorities.
           </span>
         </Features>
         <Features>
-          <h5>Production Ready Code</h5>
+          <h5>Automated Fund Distribution</h5>
           <span>
-            Use customizable checklists to ensure all files are production
-            ready. Step by step watch your project get closer to release.
+            Salloc automatically distributes deposits and income to different
+            posts according to the allocated percentages. This ensures that your
+            funds are consistently directed toward your savings goals.
           </span>
         </Features>
         <FeaturesConditional expanded={featuresExpanded}>
           <Features>
-            <h5>Track Your Progress</h5>
+            <h5>Budget-Focused Spending</h5>
             <span>
-              Setup your expandable To Do list, and never forget what the next
-              step is.
+              Stay on track with your spending by checking the available funds
+              in each savings post. Make informed decisions about your purchases
+              and prioritize your financial objectives.
             </span>
           </Features>
           <Features>
-            <h5>User Stories</h5>
+            <h5>Goal Tracking and Motivation</h5>
             <span>
-              Define your user stories to improve your understanding of how your
-              users would explore the product.
+              Set savings targets for each category and track your progress over
+              time. Salloc's visualizations and progress indicators provide
+              motivation and encouragement to reach your financial milestones.
             </span>
           </Features>
           <Features>
-            <h5>Documentation</h5>
+            <h5>Secure and Private</h5>
             <span>
-              Create documentation for your project as you go, letting others
-              jump on board easily.
+              Salloc prioritizes the security and privacy of your financial
+              information. Your data is encrypted and stored securely, giving
+              you peace of mind while using the app.
             </span>
           </Features>
           <Features>
-            <h5>Architecture</h5>
+            <h5>Flexibility and Control</h5>
             <span>
-              Vizualize your data flow and how elements interact. Stay on top of
-              what files and functions are referenced where. Also plan your
-              folder structure and what goes where.
+              Enjoy the flexibility to modify your savings goals, allocations,
+              and contributions at any time. Adapt your plan to changing
+              financial circumstances and make adjustments as needed.
             </span>
           </Features>
         </FeaturesConditional>

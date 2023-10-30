@@ -327,6 +327,7 @@ const Builder = () => {
         </h4>
       </SubHeader>
       <DescriptionContainer>
+        <p>Builder: Exercise Programmer & Personal Training Management Tool</p>
         <p>
           This web application streamlines the creation and management of
           personalized workout programs. The "one-stop-shop" app I wish I had
