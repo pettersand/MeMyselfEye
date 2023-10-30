@@ -343,6 +343,7 @@ const MeMyself = () => {
         <ConceptContainer>
           <Concept>MidJourney AI</Concept>
           <Concept>Transitions</Concept>
+          <Concept>GIMP</Concept>
         </ConceptContainer>
       </ConceptContent>
 
@@ -353,47 +354,30 @@ const MeMyself = () => {
       </SubHeader>
       <FeaturesContainer>
         <Features>
-          <h5>Plan Your Project</h5>
+          <h5>Get to Know Me!</h5>
           <span>
-            Follow the Tripple-P project planning formula - Planning, Progress,
-            Production
+            Dive into my present, past, and become the future. Topics include my
+            previous career and experiences, projects, soft skills, and more!
           </span>
         </Features>
         <Features>
-          <h5>Production Ready Code</h5>
+          <h5>Explore Projects</h5>
           <span>
-            Use customizable checklists to ensure all files are production
-            ready. Step by step watch your project get closer to release.
+            Get an overview of my projects and what they can do, as well as what
+            I've used to make them. Take a look at the live application, or
+            check out the GitHub repository.
           </span>
         </Features>
         <FeaturesConditional expanded={featuresExpanded}>
           <Features>
-            <h5>Track Your Progress</h5>
-            <span>
-              Setup your expandable To Do list, and never forget what the next
-              step is.
-            </span>
+            <h5>Reach Out</h5>
+            <span>Reach out to me through any of my social media links.</span>
           </Features>
           <Features>
-            <h5>User Stories</h5>
+            <h5>In-depth Information</h5>
             <span>
-              Define your user stories to improve your understanding of how your
-              users would explore the product.
-            </span>
-          </Features>
-          <Features>
-            <h5>Documentation</h5>
-            <span>
-              Create documentation for your project as you go, letting others
-              jump on board easily.
-            </span>
-          </Features>
-          <Features>
-            <h5>Architecture</h5>
-            <span>
-              Vizualize your data flow and how elements interact. Stay on top of
-              what files and functions are referenced where. Also plan your
-              folder structure and what goes where.
+              Expand components to learn more about them. You choose what you
+              want to explore.
             </span>
           </Features>
         </FeaturesConditional>
