@@ -607,11 +607,24 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.leadership}>
                 <SkillItem>
-                  Description:<p>Description goes here</p>
+                  Description:
+                  <p>
+                    Guide, influence, and inspire a team towards achieving a
+                    common goal, coupled with taking responsibility for
+                    outcomes.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    Drawing from my roles as a head coach at a gym and a
+                    leadership position in the military, I've cultivated a
+                    leadership style rooted in extreme ownership. I believe a
+                    leader should be accountable and take responsibility for all
+                    mistakes, while simultaneously not taking the credit for
+                    success. I prioritize the well-being and recognition of my
+                    team members, ensuring they are valued and heard.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -634,14 +647,22 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.accountable}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Willingness to take responsibility for one's actions,
+                    ensuring that commitments and duties are met without
+                    deflecting blame onto others.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    Living by the belief that we can only influence factors
+                    within our control, I consistently take ownership of my
+                    actions, efforts, and performance. This ensures a reliable
+                    and transparent work ethic, fostering trust with peers and
+                    superiors.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -655,10 +676,7 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.adaptive}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:<p>Description goes here</p>
                 </SkillItem>
                 <SkillItem>
                   Application:
@@ -676,10 +694,7 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.publicSpeaking}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:<p>Description goes here</p>
                 </SkillItem>
                 <SkillItem>
                   Application:
@@ -697,10 +712,7 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.ambitious}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:<p>Description goes here</p>
                 </SkillItem>
                 <SkillItem>
                   Application:
