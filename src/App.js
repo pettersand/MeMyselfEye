@@ -123,12 +123,9 @@ function App() {
           </NameContainer>
           <AboutMe />
           <SkillsNew />
+          <ControlPanel />
         </MainContainer>
         <ColumnContainer>
-          <ControlContainer>
-            <ControlPanel />
-          </ControlContainer>
-
           <BottomContainer>
             <InfoContainer />
           </BottomContainer>

@@ -35,9 +35,9 @@ const CategoryHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 500;
-  width: 50%;
+  width: 60%;
   border-bottom: 1px solid var(--accent);
 
   svg {
@@ -87,7 +87,8 @@ const SubHeader = styled.div`
   font-size: 1.1em;
   font-weight: 500;
   width: 75%;
-  border-bottom: 1px solid var(--contrast);
+  border-bottom: 1px solid
+    ${(props) => (props.expanded ? "var(--accent)" : "var(--complement)")};
 
   svg {
     position: absolute;
@@ -118,9 +119,10 @@ const categorySkillsMap = {
     "quickLearner",
     "empathetic",
     "emotionalIntelligence",
+    "patient",
   ],
   professional: ["publicSpeaking", "accountable", "ambitious", "adaptive"],
-  teamwork: ["communicative", "amicable", "sociable", "leadership", "patient"],
+  teamwork: ["communicative", "amicable", "sociable", "leadership"],
 };
 
 const SoftSkillsEng = () => {
@@ -132,9 +134,14 @@ const SoftSkillsEng = () => {
   });
 
   const [skillState, setSkillState] = useState({
-    analytical: false,
-    innovative: false,
-    creative: false,
+    analytical: true,
+    innovative: true,
+    positive: true,
+    curious: true,
+    communicative: true,
+    amicable: true,
+    accountable: true,
+    adaptive: true,
   });
 
   const toggleCategory = (category) => {
@@ -176,7 +183,10 @@ const SoftSkillsEng = () => {
           </CategoryHeader>
           <CategorySkills>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("analytical")}>
+              <SubHeader
+                onClick={() => toggleSkill("analytical")}
+                expanded={skillState.analytical}
+              >
                 Analytical {skillState.analytical ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.analytical}>
@@ -194,7 +204,10 @@ const SoftSkillsEng = () => {
             </SkillContainer>
 
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("innovative")}>
+              <SubHeader
+                onClick={() => toggleSkill("innovative")}
+                expanded={skillState.innovative}
+              >
                 Innovative {skillState.innovative ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.innovative}>
@@ -211,7 +224,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("creative")}>
+              <SubHeader
+                onClick={() => toggleSkill("creative")}
+                expanded={skillState.creative}
+              >
                 Creative {skillState.creative ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.creative}>
@@ -228,7 +244,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("problemSolver")}>
+              <SubHeader
+                onClick={() => toggleSkill("problemSolver")}
+                expanded={skillState.problemSolver}
+              >
                 Problem Solver
                 {skillState.problemSolver ? <HiMinus /> : <HiPlus />}
               </SubHeader>
@@ -246,8 +265,11 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("criticalThinker")}>
-                Critical Thinker{" "}
+              <SubHeader
+                onClick={() => toggleSkill("criticalThinker")}
+                expanded={skillState.criticalThinker}
+              >
+                Critical Thinker
                 {skillState.criticalThinker ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.criticalThinker}>
@@ -264,7 +286,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("resourceful")}>
+              <SubHeader
+                onClick={() => toggleSkill("resourceful")}
+                expanded={skillState.resourceful}
+              >
                 Resourceful {skillState.resourceful ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.resourceful}>
@@ -290,7 +315,10 @@ const SoftSkillsEng = () => {
           </CategoryHeader>
           <CategorySkills>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("positive")}>
+              <SubHeader
+                onClick={() => toggleSkill("positive")}
+                expanded={skillState.positive}
+              >
                 Positive {skillState.positive ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.positive}>
@@ -308,7 +336,10 @@ const SoftSkillsEng = () => {
             </SkillContainer>
 
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("curious")}>
+              <SubHeader
+                onClick={() => toggleSkill("curious")}
+                expanded={skillState.curious}
+              >
                 Curious {skillState.curious ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.curious}>
@@ -325,7 +356,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("quickLearner")}>
+              <SubHeader
+                onClick={() => toggleSkill("quickLearner")}
+                expanded={skillState.quickLearner}
+              >
                 Quick Learner{" "}
                 {skillState.quickLearner ? <HiMinus /> : <HiPlus />}
               </SubHeader>
@@ -343,7 +377,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("empathetic")}>
+              <SubHeader
+                onClick={() => toggleSkill("empathetic")}
+                expanded={skillState.empathetic}
+              >
                 Empathetic
                 {skillState.empathetic ? <HiMinus /> : <HiPlus />}
               </SubHeader>
@@ -361,11 +398,35 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("emotionalIntelligence")}>
+              <SubHeader
+                onClick={() => toggleSkill("emotionalIntelligence")}
+                expanded={skillState.emotionalIntelligence}
+              >
                 Emotional Intelligence
                 {skillState.emotionalIntelligence ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.emotionalIntelligence}>
+                <SkillItem>
+                  Desc:<p>Description goes here</p>
+                </SkillItem>
+                <SkillItem>
+                  Demonstrated: <p>Demonstrate skill here</p>
+                </SkillItem>
+                <SkillItem>
+                  Application:
+                  <p>How I apply this trait in a job environment</p>
+                </SkillItem>
+              </SkillDetails>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader
+                onClick={() => toggleSkill("patient")}
+                expanded={skillState.patient}
+              >
+                Patient
+                {skillState.patient ? <HiMinus /> : <HiPlus />}
+              </SubHeader>
+              <SkillDetails expanded={skillState.patient}>
                 <SkillItem>
                   Desc:<p>Description goes here</p>
                 </SkillItem>
@@ -390,7 +451,10 @@ const SoftSkillsEng = () => {
           </CategoryHeader>
           <CategorySkills>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("communicative")}>
+              <SubHeader
+                onClick={() => toggleSkill("communicative")}
+                expanded={skillState.communicative}
+              >
                 Communicative{" "}
                 {skillState.communicative ? <HiMinus /> : <HiPlus />}
               </SubHeader>
@@ -409,7 +473,10 @@ const SoftSkillsEng = () => {
             </SkillContainer>
 
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("amicable")}>
+              <SubHeader
+                onClick={() => toggleSkill("amicable")}
+                expanded={skillState.amicable}
+              >
                 Amicable {skillState.amicable ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.amicable}>
@@ -426,7 +493,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("sociable")}>
+              <SubHeader
+                onClick={() => toggleSkill("sociable")}
+                expanded={skillState.sociable}
+              >
                 Sociable
                 {skillState.sociable ? <HiMinus /> : <HiPlus />}
               </SubHeader>
@@ -444,29 +514,14 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("leadership")}>
+              <SubHeader
+                onClick={() => toggleSkill("leadership")}
+                expanded={skillState.leadership}
+              >
                 Leadership
                 {skillState.leadership ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.leadership}>
-                <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
-                </SkillItem>
-                <SkillItem>
-                  Application:
-                  <p>How I apply this trait in a job environment</p>
-                </SkillItem>
-              </SkillDetails>
-            </SkillContainer>
-            <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("patient")}>
-                Patient
-                {skillState.patient ? <HiMinus /> : <HiPlus />}
-              </SubHeader>
-              <SkillDetails expanded={skillState.patient}>
                 <SkillItem>
                   Desc:<p>Description goes here</p>
                 </SkillItem>
@@ -489,7 +544,10 @@ const SoftSkillsEng = () => {
           </CategoryHeader>
           <CategorySkills>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("accountable")}>
+              <SubHeader
+                onClick={() => toggleSkill("accountable")}
+                expanded={skillState.accountable}
+              >
                 Accountable
                 {skillState.accountable ? <HiMinus /> : <HiPlus />}
               </SubHeader>
@@ -508,7 +566,10 @@ const SoftSkillsEng = () => {
             </SkillContainer>
 
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("adaptive")}>
+              <SubHeader
+                onClick={() => toggleSkill("adaptive")}
+                expanded={skillState.adaptive}
+              >
                 Adaptive {skillState.adaptive ? <HiMinus /> : <HiPlus />}
               </SubHeader>
               <SkillDetails expanded={skillState.adaptive}>
@@ -525,7 +586,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("publicSpeaking")}>
+              <SubHeader
+                onClick={() => toggleSkill("publicSpeaking")}
+                expanded={skillState.publicSpeaking}
+              >
                 Public Speaking
                 {skillState.publicSpeaking ? <HiMinus /> : <HiPlus />}
               </SubHeader>
@@ -543,7 +607,10 @@ const SoftSkillsEng = () => {
               </SkillDetails>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader onClick={() => toggleSkill("ambitious")}>
+              <SubHeader
+                onClick={() => toggleSkill("ambitious")}
+                expanded={skillState.ambitious}
+              >
                 Ambitious
                 {skillState.ambitious ? <HiMinus /> : <HiPlus />}
               </SubHeader>

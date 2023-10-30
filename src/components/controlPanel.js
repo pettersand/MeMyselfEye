@@ -18,7 +18,6 @@ const ControlContainer = styled.div`
   flex: 2;
   align-items: center;
   justify-content: space-evenly;
-  border-inline: 1px solid var(--bg);
 `;
 
 const LanguageContainer = styled.div`
@@ -101,46 +100,8 @@ const ControlPanel = () => {
 
   return (
     <ControlWrapper>
-      <LanguageContainer>
-        <ContainerHeader>Language</ContainerHeader>
-        <ControlToggle>
-          <RadioWrapper>
-            English
-            <ToggleButton
-              isSelected={state.language === "eng"}
-              onClick={() => toggleLanguage("eng")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="language"
-                id="english"
-                value="eng"
-                checked={state.language === "eng"}
-                onChange={handleLanguage}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-          <RadioWrapper>
-            Norsk
-            <ToggleButton
-              isSelected={state.language === "nor"}
-              onClick={() => toggleLanguage("nor")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="language"
-                id="norwegian"
-                value="nor"
-                checked={state.language === "nor"}
-                onChange={handleLanguage}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-        </ControlToggle>
-      </LanguageContainer>
-
       <ControlContainer>
-        <ContainerHeader>Topics</ContainerHeader>
+        <ContainerHeader>Control Panel</ContainerHeader>
         <ControlRow>
           <ControlToggle>
             <RadioWrapper>
@@ -228,7 +189,7 @@ const ControlPanel = () => {
               </ToggleButton>
             </RadioWrapper>
             <RadioWrapper>
-              Passions & Motivations
+              Timeline
               <ToggleButton
                 isSelected={state.activeInfo === "motivations"}
                 onClick={() => toggleActiveInfo("motivations")}
@@ -246,46 +207,6 @@ const ControlPanel = () => {
           </ControlToggle>
         </ControlRow>
       </ControlContainer>
-
-      <DetailContainer>
-        <ContainerHeader>Details</ContainerHeader>
-        <ControlToggle>
-          <RadioWrapper>
-            Minimal
-            <ToggleButton
-              isSelected={state.detailLevel === "minimal"}
-              onClick={() => toggleDetail("minimal")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="detailLevel"
-                id="minimal"
-                value="minimal"
-                checked={state.detailLevel === "minimal"}
-                onChange={handleDetail}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-
-          <RadioWrapper>
-            Detailed
-            <ToggleButton
-              isSelected={state.detailLevel === "detailed"}
-              onClick={() => toggleDetail("detailed")}
-            >
-              <HiddenRadio
-                $position="right"
-                type="radio"
-                name="detailLevel"
-                id="detailed"
-                value="detailed"
-                checked={state.detailLevel === "detailed"}
-                onChange={handleDetail}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-        </ControlToggle>
-      </DetailContainer>
     </ControlWrapper>
   );
 };
