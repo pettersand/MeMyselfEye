@@ -65,16 +65,17 @@ const SkillContainer = styled.div`
   align-items: flex-start;
   border-radius: 8px;
   background-color: var(--bg);
-  max-width: 45%;
+  max-width: 40%;
 `;
 
 const SkillItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 8px 0;
 
   p {
-    margin: 0;
+    margin: 4px 0;
     color: var(--paragraph);
   }
 `;
@@ -193,18 +194,18 @@ const SoftSkillsEng = () => {
                 <SkillItem>
                   Description:
                   <p>
-                    Analytical thinking involves breaking down complex
-                    information to draw informed conclusions and make decisions.
+                    Breaking down complex information to draw informed
+                    conclusions and make decisions.
                   </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
                   <p>
-                    Armed with a Master's in Exercise Science, I've used
-                    analytical tools to boost sales as a personal trainer. By
-                    interpreting performance data, I customize workout plans,
-                    ensuring data-driven results for clients and informed
-                    choices in my strategies.
+                    Leveraging the analytical mindset honed through my Master's
+                    in Exercise Science, I approach coding systematically, and
+                    always aim at improving programming solutions. This approach
+                    mirrors my use of performance data as a personal trainer,
+                    always aiming for optimized, data-driven outcomes.
                   </p>
                 </SkillItem>
               </SkillDetails>
@@ -219,14 +220,22 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.innovative}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Thinking outside the box to develop original solutions and
+                    improvements.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    In the realm of development, I continuously seek
+                    unconventional methods to enhance efficiency and user
+                    experience. My passion for breaking norms and improving
+                    systems propels me to create unique digital solutions,
+                    echoing my vision of pioneering innovative business
+                    ventures.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -239,14 +248,21 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.creative}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Imagine or invent something original, breaking away from
+                    established patterns to look at things in a novel way.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    As a developer, I leverage my creativity to design intuitive
+                    and unique user interfaces as well as to implement
+                    unconventional solutions to problems. My drive to imagine
+                    and invent has followed me in life through hobbies such as
+                    playing instruments, drawing, and 3D modeling.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
@@ -260,14 +276,21 @@ const SoftSkillsEng = () => {
               </SubHeader>
               <SkillDetails expanded={skillState.problemSolver}>
                 <SkillItem>
-                  Desc:<p>Description goes here</p>
-                </SkillItem>
-                <SkillItem>
-                  Demonstrated: <p>Demonstrate skill here</p>
+                  Description:
+                  <p>
+                    Finding solutions to challenges, by analyzing the situation
+                    and applying logical reasoning.
+                  </p>
                 </SkillItem>
                 <SkillItem>
                   Application:
-                  <p>How I apply this trait in a job environment</p>
+                  <p>
+                    I love the puzzle-like nature of coding. Each hurdle is an
+                    opportunity, and there's a unique thrill in orchestrating
+                    pieces of code to synchronize harmoniously. My love for this
+                    intricate dance is evident every time a solution falls into
+                    place, fueling my passion and ensuring effective outcomes.
+                  </p>
                 </SkillItem>
               </SkillDetails>
             </SkillContainer>
