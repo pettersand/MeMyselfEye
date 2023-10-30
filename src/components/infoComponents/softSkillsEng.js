@@ -15,6 +15,7 @@ const SoftSkillsWrapper = styled.div`
 const ContainerRow = styled.div`
   display: flex;
   flex-direction: row;
+  gap: 16px;
 `;
 
 const CategoryContainer = styled.div`
@@ -23,7 +24,7 @@ flex-flow: column wrap;
 align-items: center;
 justify-content: space-evenly;
 flex: 1;
-width 100%;
+width 90%;
 gap: 16px;
 
 `;
@@ -48,7 +49,7 @@ const CategorySkills = styled.div`
 
 const SkillContainer = styled.div`
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   gap: 16px;
   padding: 16px;
   justify-content: center;
@@ -86,7 +87,87 @@ const SoftSkillsEng = () => {
           <CategoryHeader>Problem Solving & Innovation</CategoryHeader>
           <CategorySkills>
             <SkillContainer>
-              <SubHeader>Communicative</SubHeader>
+              <SubHeader>Analytical</SubHeader>
+
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+
+            <SkillContainer>
+              <SubHeader>Innovative</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Creative</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Problem Solver</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Critical Thinker</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Resourceful</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+          </CategorySkills>
+        </CategoryContainer>
+
+        <CategoryContainer>
+          <CategoryHeader>Personal Attributes & Growth</CategoryHeader>
+          <CategorySkills>
+            <SkillContainer>
+              <SubHeader>Positive</SubHeader>
 
               <SkillItem>
                 Desc:<p>Description goes here</p>
@@ -112,7 +193,133 @@ const SoftSkillsEng = () => {
               </SkillItem>
             </SkillContainer>
             <SkillContainer>
-              <SubHeader>Adaptive & Accountable</SubHeader>
+              <SubHeader>Quick Learner</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Empathetic</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Emotional Intelligence</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+          </CategorySkills>
+        </CategoryContainer>
+      </ContainerRow>
+
+      <ContainerRow>
+        <CategoryContainer>
+          <CategoryHeader>Teamwork & Collaboration</CategoryHeader>
+          <CategorySkills>
+            <SkillContainer>
+              <SubHeader>Communicative</SubHeader>
+
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+
+            <SkillContainer>
+              <SubHeader>Amicable</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Sociable/Outgoing</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Leadership</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Patient</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+          </CategorySkills>
+        </CategoryContainer>
+
+        <CategoryContainer>
+          <CategoryHeader>Professional Attributes</CategoryHeader>
+          <CategorySkills>
+            <SkillContainer>
+              <SubHeader>Accountable</SubHeader>
+
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
+
+            <SkillContainer>
+              <SubHeader>Adaptive</SubHeader>
               <SkillItem>
                 Desc:<p>Description goes here</p>
               </SkillItem>
@@ -135,33 +342,21 @@ const SoftSkillsEng = () => {
                 Application: <p>How I apply this trait in a job environment</p>
               </SkillItem>
             </SkillContainer>
+            <SkillContainer>
+              <SubHeader>Public Speaking</SubHeader>
+              <SkillItem>
+                Desc:<p>Description goes here</p>
+              </SkillItem>
+              <SkillItem>
+                Demonstrated: <p>Demonstrate skill here</p>
+              </SkillItem>
+              <SkillItem>
+                Application: <p>How I apply this trait in a job environment</p>
+              </SkillItem>
+            </SkillContainer>
           </CategorySkills>
         </CategoryContainer>
-
-        <CategoryContainer>
-          <CategoryHeader>Personal Attributes & Growth</CategoryHeader>
-
-          <SkillContainer>Quick Learner</SkillContainer>
-          <SkillContainer>Analytical</SkillContainer>
-          <SkillContainer>Innovative</SkillContainer>
-          <SkillContainer>Resourcefull</SkillContainer>
-          <SkillContainer>Creative</SkillContainer>
-        </CategoryContainer>
       </ContainerRow>
-      <CategoryHeader>Professional Attributes</CategoryHeader>
-      <CategoryContainer>
-        <SkillContainer>Positive</SkillContainer>
-        <SkillContainer>Patient</SkillContainer>
-        <SkillContainer>Empathic</SkillContainer>
-        <SkillContainer>Sociable</SkillContainer>
-      </CategoryContainer>
-      <CategoryHeader>Teamwork & Collaboration</CategoryHeader>
-      <CategoryContainer>
-        <SkillContainer>Positive</SkillContainer>
-        <SkillContainer>Patient</SkillContainer>
-        <SkillContainer>Empathic</SkillContainer>
-        <SkillContainer>Sociable</SkillContainer>
-      </CategoryContainer>
     </SoftSkillsWrapper>
   );
 };
