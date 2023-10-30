@@ -191,7 +191,7 @@ const SoftSkillsEng = () => {
                   onClick={() => toggleSkill("analytical")}
                   expanded={skillState.analytical}
                 >
-                  Analytical {skillState.analytical ? <HiMinus /> : <HiPlus />}
+                  Analytics {skillState.analytical ? <HiMinus /> : <HiPlus />}
                 </SubHeader>
                 <SkillDetails expanded={skillState.analytical}>
                   <SkillItem>
