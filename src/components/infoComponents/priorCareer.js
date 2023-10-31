@@ -83,6 +83,7 @@ const EducationItem = styled.div`
   align-items: stretch;
   flex-flow: column wrap;
   background-color: var(--bg);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   padding: 16px;
   gap: 8px;

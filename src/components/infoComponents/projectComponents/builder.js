@@ -226,6 +226,7 @@ const Features = styled.div`
   justify-content: flex-start;
   gap: 8px;
   background-color: var(--bg);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   padding: 8px;
   margin: 0;

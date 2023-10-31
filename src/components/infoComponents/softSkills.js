@@ -72,6 +72,7 @@ const SkillContainer = styled.div`
   align-items: flex-start;
   border-radius: 8px;
   background-color: var(--bg);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.5);
 `;
 
 const SkillItem = styled.div`

@@ -28,8 +28,8 @@ const SocialsItem = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-weight: 400;
-  font-size: 1.1em;
+  font-weight: 300;
+  font-size: 1em;
 
   a {
     text-decoration: none;
@@ -40,7 +40,7 @@ const SocialsItem = styled.div`
   }
 
   svg {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: var(--accent);
     margin-right: 8px;
   }
