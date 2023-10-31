@@ -62,9 +62,10 @@ const NameContainer = styled.div`
   justify-content: center;
   color: var(--headline);
   gap: 8px;
+  width: 90%;
 
   h1 {
-    font-size: 2.7em;
+    font-size: 2.8em;
     margin: 8px 0 0;
   }
 
@@ -87,22 +88,23 @@ const SocialsContainer = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 100%;
   gap: 16px;
 `;
 
 const SocialsItem = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
+  font-weight: 400;
+  font-size: 1.1em;
 
   a {
     text-decoration: none;
-    font-weight: 400;
-    font-size: 1.1em;
     color: var(--headline);
     display: flex;
     align-items: center;
@@ -120,12 +122,42 @@ const SocialsItem = styled.div`
       transform: scale(1.2);
       filter: drop-shadow(0 0 5px rgba(0, 128, 128, 0.4));
   }
+
+`;
+const Tooltip = styled.div`
+  visibility: hidden;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  ${SocialsItem}:hover & {
+    visibility: visible;
+    opacity: 1;
+  }
 `;
 
 export const AppStateContext = createContext();
 
 export const useAppState = () => {
   return useContext(AppStateContext);
+};
+
+const copyToClipboard = async (content) => {
+  try {
+    await navigator.clipboard.writeText(content);
+    alert("Text copied to clipboard");
+  } catch (err) {
+    console.error("Error in copying text: ", err);
+  }
 };
 
 export const AppStateProvider = ({ children }) => {
@@ -152,25 +184,36 @@ function App() {
             <h2>Software Developer</h2>
             <SocialsContainer>
               <SocialsItem>
-                <a href="https://www.linkedin.com/in/petteraustnes/">
+                <a
+                  href="https://www.linkedin.com/in/petteraustnes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <SiLinkedin />
                   LinkedIn
                 </a>
               </SocialsItem>
               <SocialsItem>
-                <a href="https://github.com/pettersand">
-                  <SiGithub /> GitHub
+                <a
+                  href="https://github.com/pettersand"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiGithub />
+                  GitHub
                 </a>
               </SocialsItem>
-              <SocialsItem>
-                <a href="">
-                  <SiGmail /> Email
-                </a>
+              <SocialsItem
+                onClick={() => copyToClipboard("petter.sand@gmail.com")}
+              >
+                <SiGmail />
+                Email
+                <Tooltip>Click to copy email</Tooltip>
               </SocialsItem>
-              <SocialsItem>
-                <a href="">
-                  <HiPhone /> Phone
-                </a>
+              <SocialsItem onClick={() => copyToClipboard("+4790010136")}>
+                <HiPhone />
+                Phone
+                <Tooltip>Click to copy phone number</Tooltip>
               </SocialsItem>
             </SocialsContainer>
           </NameContainer>
