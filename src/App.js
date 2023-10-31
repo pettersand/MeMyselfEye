@@ -6,6 +6,7 @@ import ControlPanel from "./components/controlPanel";
 import InfoContainer from "./components/infoContainer";
 import SkillsNew from "./components/SkillsNew";
 import SocialsBox from "./components/socialsBox";
+import ThemeToggle from "./utils/ThemeToggle";
 
 const AppContainer = styled.div`
   background-color: var(--bg);
@@ -108,6 +109,7 @@ function App() {
             <h1>Petter Sand Austnes</h1>
             <h2>Software Developer</h2>
             <SocialsBox />
+            <ThemeToggle />
           </NameContainer>
 
           <Welcome />

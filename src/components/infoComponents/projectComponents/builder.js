@@ -73,18 +73,19 @@ const DetailsItem = styled.div`
   font-weight: 500;
 
   &.date {
+    color: var(--accent-text);
     font-size: 0.8em;
     font-style: italic;
   }
 
   &.link {
     font-size: 1.5em;
-    color: var(--accent);
+    color: var(--accent-text);
     a {
       font-size: 0.7em;
       font-weight: 500;
       text-decoration: none;
-      color: var(--headline);
+      color: var(--accent-text);
     }
   }
 `;
@@ -119,7 +120,7 @@ const TechIcon = styled.div`
   span {
     font-size: 0.6em;
     font-weight: 400;
-    color: var(--headline);
+    color: var(--accent-text);
     margin-right: 8px;
   }
 `;
@@ -136,7 +137,7 @@ const LinkIcon = styled.div`
   a {
     font-size: 0.7em;
     font-weight: 400;
-    color: var(--headline);
+    color: var(--accent-text);
     margin-left: 8px;
     text-decoration: none;
   }

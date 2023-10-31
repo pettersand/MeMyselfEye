@@ -30,7 +30,6 @@ const AboutMeHeader = styled.div`
 
 const AboutMeText = styled.div`
   width: 95%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: flex;
   flex-direction: column;

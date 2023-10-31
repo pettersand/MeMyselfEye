@@ -71,6 +71,7 @@ const DetailsItem = styled.div`
   &.date {
     font-size: 0.8em;
     font-style: italic;
+    color: var(--accent-text);
   }
 
   &.link {
@@ -115,7 +116,7 @@ const TechIcon = styled.div`
   span {
     font-size: 0.6em;
     font-weight: 400;
-    color: var(--headline);
+    color: var(--accent-text);
     margin-right: 8px;
   }
 `;
@@ -133,7 +134,7 @@ const LinkIcon = styled.div`
   a {
     font-size: 0.7em;
     font-weight: 400;
-    color: var(--headline);
+    color: var(--accent-text);
     margin-left: 8px;
     text-decoration: none;
   }

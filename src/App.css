@@ -1,28 +1,30 @@
 :root {
   --bg: #242629;
   --bg2: #16161a;
+  --divider: #242629;
   --headline: #e2e2e2;
   --paragraph: #94a1b2;
   --accent: #2cb67d;
   --complement: #b62c65;
   --accent-text: #fffffe;
-  --contrast: #7f5af0;
+  --contrast: #b62c65;
   --secondary: #010101;
 
-  --light-bg: #fffffe;
-  --light-bg2: #d8eefe;
-  --light-headline: #094067;
-  --light-paragraph: #5f6c7b;
-  --light-accent: #3da9fc;
-  --light-complement: #ef4565;
+  --light-bg: #f7f9fc;
+  --light-bg2: #e4e7eb;
+  --light-divider: #5b5e6e;
+  --light-headline: #1c1e21;
+  --light-paragraph: #5b5e6e;
+  --light-accent: #33a8a4;
+  --light-complement: #de4d4d;
   --light-accent-text: #fffffe;
-  --light-contrast: #a9fc3d;
-  --light-secondary: #90b4ce;
+  --light-contrast: #de4d4d;
+  --light-secondary: #f7f9fc;
 }
 
 .light-theme {
-  --bg: var(--light-bg);
-  --bg2: var(--light-bg2);
+  --bg: var(--light-bg2);
+  --bg2: var(--light-bg);
   --headline: var(--light-headline);
   --paragraph: var(--light-paragraph);
   --accent: var(--light-accent);
@@ -30,6 +32,7 @@
   --accent-text: var(--light-accent-text);
   --contrast: var(--light-contrast);
   --secondary: var(--light-secondary);
+  font-weight: 400;
 }
 
 .App {
