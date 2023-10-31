@@ -39,6 +39,7 @@ const CategoryHeader = styled.div`
   font-weight: 500;
   width: 60%;
   border-bottom: 1px solid var(--accent);
+  cursor: pointer;
 
   svg {
     position: absolute;

@@ -1,13 +1,4 @@
 :root {
-  /* Base colors */
-  --primary-dark: #bb86fc;
-  --primary-light: ;
-
-  --base-dark: #16161a;
-  --background: #242629;
-  --accent-neutral: #2cb67d;
-  --text-light: #fffffe;
-
   --bg: #242629;
   --bg2: #16161a;
   --headline: #e2e2e2;
@@ -17,6 +8,28 @@
   --accent-text: #fffffe;
   --contrast: #7f5af0;
   --secondary: #010101;
+
+  --light-bg: #fffffe;
+  --light-bg2: #d8eefe;
+  --light-headline: #094067;
+  --light-paragraph: #5f6c7b;
+  --light-accent: #3da9fc;
+  --light-complement: #ef4565;
+  --light-accent-text: #fffffe;
+  --light-contrast: #a9fc3d;
+  --light-secondary: #90b4ce;
+}
+
+.light-theme {
+  --bg: var(--light-bg);
+  --bg2: var(--light-bg2);
+  --headline: var(--light-headline);
+  --paragraph: var(--light-paragraph);
+  --accent: var(--light-accent);
+  --complement: var(--light-complement);
+  --accent-text: var(--light-accent-text);
+  --contrast: var(--light-contrast);
+  --secondary: var(--light-secondary);
 }
 
 .App {
