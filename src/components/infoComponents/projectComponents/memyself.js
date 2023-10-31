@@ -295,6 +295,7 @@ const MeMyself = () => {
               <a
                 href="https://github.com/pettersand/MeMyselfEye"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Repo
               </a>

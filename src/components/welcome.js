@@ -11,9 +11,7 @@ const AboutMeWrapper = styled.div`
   align-items: center;
 `;
 
-const AboutMeContainer = styled(({ isVisible, ...props }) => (
-  <div {...props} style={{ display: isVisible ? "flex" : "none" }} />
-))`
+const AboutMeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

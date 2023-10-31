@@ -1,13 +1,11 @@
 import "./App.css";
 import React, { createContext, useContext, useState } from "react";
-import AboutMe from "./components/welcome";
+import Welcome from "./components/welcome";
 import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
 import InfoContainer from "./components/infoContainer";
 import SkillsNew from "./components/SkillsNew";
 import SocialsBox from "./components/socialsBox";
-import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
-import { HiPhone } from "react-icons/hi2";
 
 const AppContainer = styled.div`
   background-color: var(--bg);
@@ -31,7 +29,7 @@ const ColumnContainer = styled.div`
 const MainContainer = styled.div`
   background-color: var(--bg2);
   height: fit-content;
-  min-width: 400px;
+  min-width: 475px;
   max-width: 25vw;
   padding: 16px;
   display: flex;
@@ -63,7 +61,7 @@ const NameContainer = styled.div`
   justify-content: center;
   color: var(--headline);
   gap: 8px;
-  width: 90%;
+  width: 100%;
 
   h1 {
     font-size: 2.8em;
@@ -91,7 +89,7 @@ export const useAppState = () => {
 
 export const AppStateProvider = ({ children }) => {
   const [state, setState] = useState({
-    activeInfo: "projects",
+    activeInfo: "aboutMe",
   });
 
   return (
@@ -112,7 +110,7 @@ function App() {
             <SocialsBox />
           </NameContainer>
 
-          <AboutMe />
+          <Welcome />
           <SkillsNew />
           <ControlPanel />
         </MainContainer>

@@ -11,9 +11,7 @@ const CoursesWrapper = styled.div`
   gap: 16px;
 `;
 
-const CoursesContainer = styled(({ isVisible, ...props }) => (
-  <div {...props} style={{ display: isVisible ? "flex" : "none" }} />
-))`
+const CoursesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -38,16 +36,6 @@ const CourseHeader = styled.div`
   font-weight: 600;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
-`;
-
-const HeaderTitle = styled.div`
-  font-size: 1.2em;
-  font-weight: 500;
-`;
-
-const HeaderItem = styled.div`
-  font-weight: 200;
-  font-size: 0.8em;
 `;
 
 const DescriptionContainer = styled.div`
@@ -88,9 +76,6 @@ const ListItem = styled.div`
 `;
 
 const Courses = () => {
-  const { state } = useAppState();
-  const { detailLevel } = state;
-
   return (
     <CoursesWrapper>
       <CoursesContainer>
@@ -128,9 +113,6 @@ const Courses = () => {
             </ul>
           </ListItem>
         </ListContainer>
-      </CoursesContainer>
-      <CoursesContainer>
-        <h4>Python for Everybody</h4>
       </CoursesContainer>
       <Divider />
 

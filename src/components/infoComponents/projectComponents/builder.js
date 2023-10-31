@@ -312,7 +312,11 @@ const Builder = () => {
           </TechColumn>
           <LinksColumn>
             <LinkIcon>
-              <a href="https://github.com/pettersand/builder" target="_blank">
+              <a
+                href="https://github.com/pettersand/builder"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Repo
               </a>
               <SiGithub />

@@ -283,7 +283,11 @@ const TrippleP = () => {
           </TechColumn>
           <LinksColumn>
             <LinkIcon>
-              <a href="https://github.com/pettersand/Tripple-P" target="_blank">
+              <a
+                href="https://github.com/pettersand/Tripple-P"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Repo
               </a>
               <SiGithub />

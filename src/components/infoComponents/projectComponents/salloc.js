@@ -301,13 +301,21 @@ const Salloc = () => {
           </TechColumn>
           <LinksColumn>
             <LinkIcon>
-              <a href="https://pettersa.com/salloc/" target="_blank">
+              <a
+                href="https://pettersa.com/salloc/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Visit
               </a>
               <HiLink />
             </LinkIcon>
             <LinkIcon>
-              <a href="https://github.com/pettersand/Salloc" target="_blank">
+              <a
+                href="https://github.com/pettersand/Salloc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Repo
               </a>
               <SiGithub />
