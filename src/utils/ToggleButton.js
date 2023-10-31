@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
-  width: 10px;
-  height: 10px;
-  border: 2px solid var(--contrast);
+  width: 14px;
+  height: 14px;
+  border: 4px solid var(--contrast);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -14,8 +14,8 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
 
   &:before {
     content: "";
-    width: 4px;
-    height: 4px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: silver;
     transition: background-color 0.3s;
@@ -50,7 +50,8 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
   ${(props) =>
     props.isSelected &&
     `
-    box-shadow: 0 0 5px 1px var(--contrast);
+    box-shadow: 0 0 4px 1px var(--accent);
+    border-color: var(--accent);
 `}
 `;
 

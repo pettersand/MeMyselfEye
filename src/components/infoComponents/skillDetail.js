@@ -15,7 +15,6 @@ import {
   SiCsharp,
   SiC,
   SiJavascript,
-  SiTypeform,
   SiTypescript,
 } from "react-icons/si";
 import { PiFileSql, PiArrowElbowLeftDownBold } from "react-icons/pi";
@@ -23,11 +22,11 @@ import { PiFileSql, PiArrowElbowLeftDownBold } from "react-icons/pi";
 const SkillDetailWrapper = styled.div`
   display: flex;
   width: 100%;
-  padding: 5px;
+  padding: 8px;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
-  border-bottom: 1px solid teal;
+  border-bottom: 1px solid var(--bg);
 `;
 
 const DetailsContainer = styled.div`
@@ -35,8 +34,8 @@ const DetailsContainer = styled.div`
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  padding: 5px;
   font-size: 0.8em;
+  margin-right: 16px;
 `;
 
 const Icon = styled.div`
@@ -52,50 +51,61 @@ const Icon = styled.div`
 
 const UsedInContainer = styled.div`
   display: flex;
-  flex: 2;
+  flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-right: 16px;
+
   h3 {
-    margin: 5px;
-    font-size: 0.9em;
+    margin: 0;
+    font-size: 1em;
   }
+
   ul {
     list-style-position: inside;
-    padding-left: 5px;
-    font-size: 0.8em;
+    padding-left: 4px;
+    font-size: 0.9em;
   }
 `;
 
 const UsedForContainer = styled.div`
   display: flex;
-  flex: 3;
+  flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+
   h3 {
-    margin: 5px;
-    font-size: 0.9em;
+    margin: 0;
+    font-size: 1em;
   }
+
   ul {
     list-style-position: inside;
-    padding-left: 5px;
-    font-size: 0.8em;
+    padding-left: 4px;
+    font-size: 0.9em;
   }
 `;
 
 const BoxHeader = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 100%;
   gap: 10px;
 `;
 
 const CloseButton = styled.div`
-  font-size: 1.6em;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
+  font-size: 1.4em;
   cursor: pointer;
+  color: var(--complement);
 `;
 
 export const detailMap = {
@@ -240,7 +250,7 @@ const SkillDetail = ({ skill, onClose }) => {
     <SkillDetailWrapper>
       <DetailsContainer>
         <Icon>
-          <skillDetail.icon size="2.5em" color="teal" />
+          <skillDetail.icon size="2.5em" color="var(--accent)" />
           <h2>{skillDetail.label}</h2>
         </Icon>
 
@@ -249,6 +259,7 @@ const SkillDetail = ({ skill, onClose }) => {
       </DetailsContainer>
       <UsedInContainer>
         <h3>Used In:</h3>
+
         <ul>
           {skillDetail.usedIn.map((item, index) => (
             <li key={index}>{item}</li>
@@ -256,16 +267,7 @@ const SkillDetail = ({ skill, onClose }) => {
         </ul>
       </UsedInContainer>
       <UsedForContainer>
-        <BoxHeader>
-          <h3>Used For:</h3>
-          <CloseButton>
-            <PiArrowElbowLeftDownBold
-              onClick={() => {
-                onClose();
-              }}
-            />
-          </CloseButton>
-        </BoxHeader>
+        <h3>Used For:</h3>
 
         <ul>
           {skillDetail.usedFor.map((item, index) => (
@@ -273,6 +275,14 @@ const SkillDetail = ({ skill, onClose }) => {
           ))}
         </ul>
       </UsedForContainer>
+      <CloseButton>
+        <PiArrowElbowLeftDownBold
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+        />
+      </CloseButton>
     </SkillDetailWrapper>
   );
 };

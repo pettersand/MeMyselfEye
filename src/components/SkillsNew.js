@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import styled, { css, keyframes } from "styled-components";
-import { HiOutlineDocumentText, HiCodeBracket } from "react-icons/hi2";
 import {
   SiFlask,
-  SiCsharp,
-  SiSqlite,
   SiSvelte,
   SiHtml5,
   SiCss3,
@@ -53,7 +50,7 @@ const SkillsRow = styled.div`
   flex-direction: row;
   flex: 1;
   font-size: 0.8em;
-  border-top: 1px solid var(--paragraph);
+  border-top: 1px solid var(--bg);
 `;
 
 const HeaderRow = styled.div`
@@ -106,7 +103,7 @@ const SkillsCell = styled.div`
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border-inline: 1px solid var(--paragraph);
+  border-inline: 1px solid var(--bg);
 `;
 
 const WorkingCell = styled.div`
@@ -148,50 +145,14 @@ const Icon = styled.div`
   }
 `;
 
-const DetailContainer = styled(({ isOpening, isClosing, isOpen, ...props }) => (
-  <div {...props} />
-))`
+const DetailContainer = styled(({ isOpen, ...props }) => <div {...props} />)`
   width: 100%;
   display: flex;
   flex-direction: column;
 
   overflow: hidden;
-  max-height: ${(props) => {
-    if (props.isOpening) return "0px";
-    if (props.isOpen) return "300px";
-    return "0px";
-  }};
-
-  animation: ${({ isOpening, isClosing }) => {
-    if (isOpening)
-      return css`
-        ${slideOpen} 0.8s ease-in-out forwards
-      `;
-    if (isClosing)
-      return css`
-        ${slideClose} 0.8s ease-in-out forwards
-      `;
-    return "none";
-  }};
-  transition: none;
-`;
-
-const slideOpen = keyframes`
-  from {
-    max-height: 0px;
-  }
-  to {
-    max-height: 300px;
-  }
-`;
-
-const slideClose = keyframes`
-  from {
-    max-height: 300px; 
-  }
-  to {
-    max-height: 0px; 
-  }
+  max-height: ${(props) => (props.isOpen ? "500px" : "0px")};
+  transition: max-height 0.5s ease-in-out;
 `;
 
 function TechIcon({ IconComponent, size, color, onMouseEnter, onClick }) {
@@ -214,7 +175,7 @@ const SkillsCellGroup = ({ icons, onIconClick }) => {
             key={icon.label}
             IconComponent={icon.component}
             size="2.1em"
-            color="var(--accent-neutral)"
+            color="var(--accent)"
             onMouseEnter={() => setCurrentLabel(icon.label)}
             onClick={() => {
               console.log("Icon clicked:", icon.label);
@@ -239,7 +200,7 @@ const WorkingCellGroup = ({ icons }) => {
             key={icon.label}
             IconComponent={icon.component}
             size="2.1em"
-            color="var(--accent-neutral)"
+            color="var(--accent)"
             onMouseEnter={() => setCurrentLabel(icon.label)}
           />
         ))}
@@ -250,41 +211,22 @@ const WorkingCellGroup = ({ icons }) => {
 
 const SkillsNew = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpening, setIsOpening] = useState(false);
   const [currentSkillDetail, setCurrentSkillDetail] = useState(null);
-  const [currentLabel, setCurrentLabel] = useState("Hover over an icon!");
-  const [isClosing, setIsClosing] = useState(false);
 
   const handleIconClick = (label) => {
     setCurrentSkillDetail(label.toLowerCase());
-    if (!isOpen) {
-      setIsClosing(false);
-      setIsOpening(true);
-      setTimeout(() => {
-        setIsOpen(true);
-        setIsOpening(false);
-      }, 800);
-    }
+    setIsOpen(true);
   };
 
   const handleCloseDetail = () => {
-    setIsOpening(false);
-    setIsClosing(true);
-    setTimeout(() => {
-      setIsOpen(false);
-      setIsClosing(false);
-    }, 725);
+    setIsOpen(false);
   };
 
   return (
     <SkillsWrapper>
       <SkillsContainer>
-        {(isOpen || isOpening || isClosing) && (
-          <DetailContainer
-            isOpening={isOpening}
-            isClosing={isClosing}
-            isOpen={isOpen}
-          >
+        {isOpen && (
+          <DetailContainer isOpen={isOpen}>
             <SkillDetail
               skill={currentSkillDetail}
               onClose={handleCloseDetail}
