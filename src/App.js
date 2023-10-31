@@ -92,8 +92,6 @@ export const useAppState = () => {
 export const AppStateProvider = ({ children }) => {
   const [state, setState] = useState({
     activeInfo: "projects",
-    detailLevel: "minimal",
-    language: "eng",
   });
 
   return (

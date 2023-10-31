@@ -46,46 +46,19 @@ const AboutMeText = styled.div`
   }
 `;
 
-const Toggle = styled.div`
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const RadioWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 5px;
-`;
-
-const HiddenRadio = styled.input.attrs({ type: "radio" })`
-  display: none;
-`;
 const AboutMe = () => {
-  const { state, setState } = useAppState();
-  const { activeInfo, language } = state;
 
-  const toggleActiveInfo = (value) => {
-    handleActiveInfo({ target: { value } });
-  };
-
-  const handleActiveInfo = (e) => {
-    setState((prevState) => ({ ...prevState, activeInfo: e.target.value }));
-  };
 
   return (
     <AboutMeWrapper>
-      <AboutMeContainer isVisible={language === "eng"}>
+      <AboutMeContainer>
         <AboutMeHeader>
           <h2>Hey! Over Here!</h2>
         </AboutMeHeader>
 
         <AboutMeText>
           <p>
-            Welcome to my interactive resume! This web app houses everything you
+            Welcome to my interactive resume! This website houses everything you
             might want to know about me; professionally, and personally.
           </p>
           <p>
@@ -95,67 +68,6 @@ const AboutMe = () => {
             information about individual topics.
           </p>
         </AboutMeText>
-      </AboutMeContainer>
-
-      <AboutMeContainer isVisible={language === "nor"}>
-        <AboutMeHeader>
-          <h2>Reisen Starter HER</h2>
-        </AboutMeHeader>
-
-        <AboutMeText>
-          <p>
-            Dette er historien on hvordan livet mitt ble snudd på hodet. Jeg
-            ønsker å ta et minutt, så sett deg til rette, så skal jeg fortelle
-            om hvordan jeg endte opp som en utvikler, med en dose flair.
-          </p>
-          <p>
-            Jeg ønsker deg velkommen! Følg kake-smulene for å finne veien
-            gjennom denne interaktive reisen.
-          </p>
-          <p>
-            Jeg er en selvlært utvikler med en appetitt for kunnskap og
-            ambisjoner om kontinuerlig faglig utvikling. Jeg er typen til å
-            ville utforske stien der de færreste har gått. Dette har ledet meg
-            på flere unike eventyr gjennom livet. Heng på deg, og la meg ta deg
-            med på reisen om meg, meg selv, og .. jeg. (Dette funker bedre på
-            engelsk...)
-          </p>
-        </AboutMeText>
-
-        <Toggle>
-          <RadioWrapper>
-            <ToggleButton
-              isSelected={state.activeInfo === "aboutMe"}
-              onClick={() => toggleActiveInfo("aboutMe")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="aboutMe"
-                value="aboutMe"
-                checked={state.activeInfo === "aboutMe"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-            Karriereskiftet
-          </RadioWrapper>
-          <RadioWrapper>
-            Motivasjon & Lidenskap
-            <ToggleButton
-              isSelected={state.activeInfo === "motivations"}
-              onClick={() => toggleActiveInfo("motivations")}
-            >
-              <HiddenRadio
-                type="radio"
-                name="info"
-                id="motivations"
-                value="motivations"
-                checked={state.activeInfo === "motivations"}
-                onChange={handleActiveInfo}
-              />
-            </ToggleButton>
-          </RadioWrapper>
-        </Toggle>
       </AboutMeContainer>
     </AboutMeWrapper>
   );
