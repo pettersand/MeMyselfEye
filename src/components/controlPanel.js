@@ -44,6 +44,7 @@ const ControlColumn = styled.div`
 
 const RadioWrapper = styled.div`
   font-size: 1.2em;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: flex-end;

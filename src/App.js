@@ -29,7 +29,7 @@ const ColumnContainer = styled.div`
 
 const MainContainer = styled.div`
   background-color: var(--bg2);
-  max-height: 100vh;
+  height: fit-content;
   min-width: 400px;
   max-width: 25vw;
   padding: 16px;
@@ -38,15 +38,6 @@ const MainContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 24px;
-  border-radius: 8px;
-  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
-`;
-
-const ControlContainer = styled.div`
-  background-color: var(--bg2);
-  width: 100%;
-  display: flex;
-  flex-direction: row;
   border-radius: 8px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
 `;
@@ -65,32 +56,38 @@ const BottomContainer = styled.div`
 
 const NameContainer = styled.div`
   font-family: "Nothing";
-  font-size: 1.3em;
-  border-bottom: 2px solid var(--accent);
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   color: var(--headline);
-  h1,
-  h2 {
-    margin: 5px;
+  gap: 8px;
+
+  h1 {
+    font-size: 2.7em;
+    margin: 8px 0 0;
   }
 
   h2 {
+    font-size: 2em;
     font-family: "Onest";
     font-weight: 500;
+    border-bottom: 2px solid var(--accent);
+    border-radius: 16px;
+    margin: 0 0 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 `;
 
 const SocialsContainer = styled.div`
+  font-family: "Onest";
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 95%;
   gap: 16px;
 `;
 
@@ -98,12 +95,30 @@ const SocialsItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   cursor: pointer;
 
+  a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: var(--headline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   svg {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: var(--accent);
+    margin-right: 8px;
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 5px rgba(0, 128, 128, 0.4));
   }
 `;
 
@@ -135,22 +150,31 @@ function App() {
           <NameContainer>
             <h1>Petter Sand Austnes</h1>
             <h2>Software Developer</h2>
+            <SocialsContainer>
+              <SocialsItem>
+                <a href="https://www.linkedin.com/in/petteraustnes/">
+                  <SiLinkedin />
+                  LinkedIn
+                </a>
+              </SocialsItem>
+              <SocialsItem>
+                <a href="https://github.com/pettersand">
+                  <SiGithub /> GitHub
+                </a>
+              </SocialsItem>
+              <SocialsItem>
+                <a href="">
+                  <SiGmail /> Email
+                </a>
+              </SocialsItem>
+              <SocialsItem>
+                <a href="">
+                  <HiPhone /> Phone
+                </a>
+              </SocialsItem>
+            </SocialsContainer>
           </NameContainer>
-          <SocialsContainer>
-            <SocialsItem>
-              <SiLinkedin />
-              LinkedIn
-            </SocialsItem>
-            <SocialsItem>
-              <SiGithub /> GitHub
-            </SocialsItem>
-            <SocialsItem>
-              <SiGmail /> Email
-            </SocialsItem>
-            <SocialsItem>
-              <HiPhone /> Phone
-            </SocialsItem>
-          </SocialsContainer>
+
           <AboutMe />
           <SkillsNew />
           <ControlPanel />
