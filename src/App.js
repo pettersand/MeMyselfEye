@@ -106,10 +106,10 @@ function App() {
       <AppContainer>
         <MainContainer>
           <NameContainer>
+            <ThemeToggle />
             <h1>Petter Sand Austnes</h1>
             <h2>Software Developer</h2>
             <SocialsBox />
-            <ThemeToggle />
           </NameContainer>
 
           <Welcome />
