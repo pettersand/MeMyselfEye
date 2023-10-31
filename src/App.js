@@ -111,8 +111,6 @@ function App() {
             <h2>Software Developer</h2>
             <SocialsBox />
           </NameContainer>
-
-          <Welcome />
           <SkillsNew />
           <ControlPanel />
         </MainContainer>

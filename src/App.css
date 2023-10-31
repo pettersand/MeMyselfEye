@@ -32,7 +32,6 @@
   --accent-text: var(--light-accent-text);
   --contrast: var(--light-contrast);
   --secondary: var(--light-secondary);
-  font-weight: 400;
 }
 
 .App {
@@ -81,7 +80,7 @@
 
 body {
   font-family: "Onest", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 @keyframes App-logo-spin {

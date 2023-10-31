@@ -17,7 +17,7 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
     height: 100%;
     border-radius: 50%;
     background-color: ${(props) =>
-      props.isSelected ? "silver" : "transparent"};
+      props.isSelected ? "var(--headline)" : "transparent"};
   }
 
   @keyframes spin {
