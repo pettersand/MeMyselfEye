@@ -143,10 +143,32 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
   font-size: 1em;
   font-weight: 600;
   padding: 4px;
-  border-bottom: 1px solid
-    ${(props) => (props.expanded ? "var(--accent)" : "var(--complement)")};
-  transition: border-color 0.5s ease-in-out;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: ${(props) =>
+      props.expanded ? "var(--accent)" : "var(--complement)"};
+  }
+
+  &:hover::before {
+    background: linear-gradient(
+      90deg,
+      var(--accent),
+      var(--contrast),
+      var(--complement),
+      var(--accent),
+      var(--contrast),
+      var(--complement)
+    );
+    background-size: 200% 100%;
+    animation: colorSlide 5s linear infinite;
+  }
 
   h4 {
     margin: 0;
@@ -156,6 +178,21 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
       right: 16px;
       top: 50%;
       transform: translateY(-50%);
+    }
+  }
+
+  &:hover {
+    svg {
+      font-size: 1.2em;
+    }
+  }
+
+  @keyframes colorSlide {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
     }
   }
 `;
@@ -206,8 +243,8 @@ const FeaturesContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  width: 100%;
-  gap: 8px;
+  width: 105%;
+  box-sizing: border-box;
 `;
 
 const Features = styled.div`
@@ -218,10 +255,11 @@ const Features = styled.div`
   justify-content: flex-start;
   gap: 8px;
   background-color: var(--bg);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 8px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.5);
   padding: 8px;
-  margin: 0;
+  box-sizing: border-box;
+  margin: 10px;
 
   h5 {
     margin: 0;
@@ -240,10 +278,11 @@ const FeaturesConditional = styled(({ expanded, ...props }) => (
   flex-flow: row wrap;
   justify-content: center;
   width: 100%;
-  gap: 8px;
   max-height: ${(props) => (props.expanded ? "500px" : "0")};
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
+  box-sizing: border-box;
+  margin-bottom: 8px;
 `;
 
 const TrippleP = () => {

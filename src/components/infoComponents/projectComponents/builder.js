@@ -162,7 +162,6 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
     height: 1px;
     background-color: ${(props) =>
       props.expanded ? "var(--accent)" : "var(--complement)"};
-    transition: background-color 0.5s ease-in-out;
   }
 
   &:hover::before {
@@ -291,6 +290,7 @@ const FeaturesConditional = styled(({ expanded, ...props }) => (
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
   box-sizing: border-box;
+  margin-bottom: 8px;
 `;
 
 const Builder = () => {
