@@ -41,7 +41,7 @@ const SkillsContainer = styled.div`
   justify-content: center;
   padding: 6px;
   border-radius: 8px;
-  box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
 `;
 
 const SkillsRow = styled.div`
