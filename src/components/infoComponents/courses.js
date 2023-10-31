@@ -87,13 +87,13 @@ const ListItem = styled.div`
   }
 `;
 
-const CoursesEng = () => {
+const Courses = () => {
   const { state } = useAppState();
   const { detailLevel } = state;
 
   return (
     <CoursesWrapper>
-      <CoursesContainer isVisible={detailLevel === "minimal"}>
+      <CoursesContainer>
         <CourseHeader>Python for Everybody Specialization</CourseHeader>
         <DescriptionContainer>
           <p>
@@ -129,12 +129,12 @@ const CoursesEng = () => {
           </ListItem>
         </ListContainer>
       </CoursesContainer>
-      <CoursesContainer isVisible={detailLevel === "detailed"}>
+      <CoursesContainer>
         <h4>Python for Everybody</h4>
       </CoursesContainer>
       <Divider />
 
-      <CoursesContainer isVisible={detailLevel === "minimal"}>
+      <CoursesContainer>
         <CourseHeader>Harvard CS50x</CourseHeader>
         <DescriptionContainer>
           <p>
@@ -176,11 +176,8 @@ const CoursesEng = () => {
           </ListItem>
         </ListContainer>
       </CoursesContainer>
-      <CoursesContainer isVisible={detailLevel === "detailed"}>
-        <h4>Harvard CS50x</h4>
-      </CoursesContainer>
     </CoursesWrapper>
   );
 };
 
-export default CoursesEng;
+export default Courses;

@@ -110,7 +110,7 @@ const ContentBox = styled.div`
   }
 `;
 
-const AboutMeEng = () => {
+const AboutMe = () => {
   return (
     <AboutMeWrapper>
       <TopRow>
@@ -279,4 +279,4 @@ const AboutMeEng = () => {
   );
 };
 
-export default AboutMeEng;
+export default AboutMe;

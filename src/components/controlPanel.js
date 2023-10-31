@@ -68,14 +68,6 @@ const ControlPanel = () => {
     setState((prevState) => ({ ...prevState, activeInfo: e.target.value }));
   };
 
-  const handleLanguage = (e) => {
-    setState((prevState) => ({ ...prevState, language: e.target.value }));
-  };
-
-  const handleDetail = (e) => {
-    setState((prevState) => ({ ...prevState, detailLevel: e.target.value }));
-  };
-
   return (
     <ControlWrapper>
       <ContainerHeader>Control Panel</ContainerHeader>

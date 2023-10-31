@@ -231,7 +231,7 @@ const experienceData = {
   ],
 };
 
-const PriorCareerEng = () => {
+const PriorCareer = () => {
   return (
     <PriorCareerWrapper>
       <TopicHeader>Prior Career</TopicHeader>
@@ -369,4 +369,4 @@ const PriorCareerEng = () => {
   );
 };
 
-export default PriorCareerEng;
+export default PriorCareer;

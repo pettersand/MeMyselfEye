@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { useAppState } from "../App";
-import ProjectsEng from "./infoComponents/projectsEng";
-import AboutMeEng from "./infoComponents/aboutMeEng";
-import CoursesEng from "./infoComponents/coursesEng";
-import SkillsEng from "./infoComponents/skillsEng";
-import PriorCareerEng from "./infoComponents/priorCareerEng";
-import SoftSkillsEng from "./infoComponents/softSkillsEng";
-import MotivationEng from "./infoComponents/motivationEng";
+import Projects from "./infoComponents/projects";
+import AboutMe from "./infoComponents/aboutMe";
+import Courses from "./infoComponents/courses";
+import PriorCareer from "./infoComponents/priorCareer";
+import SoftSkills from "./infoComponents/softSkills";
 
 const ContentContainer = styled.div`
   background-color: var(--bg2);
@@ -21,13 +19,11 @@ const ContentContainer = styled.div`
 `;
 
 const componentMap = {
-  projects: ProjectsEng,
-  aboutMe: AboutMeEng,
-  courses: CoursesEng,
-  skills: SkillsEng,
-  priorCareer: PriorCareerEng,
-  softSkills: SoftSkillsEng,
-  motivations: MotivationEng,
+  projects: Projects,
+  aboutMe: AboutMe,
+  courses: Courses,
+  priorCareer: PriorCareer,
+  softSkills: SoftSkills,
 };
 
 const InfoContainer = () => {

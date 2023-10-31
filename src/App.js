@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { createContext, useContext, useState } from "react";
-import AboutMe from "./components/aboutMe";
+import AboutMe from "./components/welcome";
 import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
 import InfoContainer from "./components/infoContainer";

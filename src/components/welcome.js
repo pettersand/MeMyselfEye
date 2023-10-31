@@ -46,9 +46,7 @@ const AboutMeText = styled.div`
   }
 `;
 
-const AboutMe = () => {
-
-
+const Welcome = () => {
   return (
     <AboutMeWrapper>
       <AboutMeContainer>
@@ -73,4 +71,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default Welcome;

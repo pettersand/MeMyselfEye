@@ -133,7 +133,7 @@ const categorySkillsMap = {
   teamwork: ["communicative", "amicable", "sociable", "leadership"],
 };
 
-const SoftSkillsEng = () => {
+const SoftSkills = () => {
   const [categoryState, setCategoryState] = useState({
     problemSolving: false,
     personal: false,
@@ -779,4 +779,4 @@ const SoftSkillsEng = () => {
   );
 };
 
-export default SoftSkillsEng;
+export default SoftSkills;

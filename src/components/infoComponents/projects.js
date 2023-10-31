@@ -25,9 +25,7 @@ const ProjectRow = styled.div`
   justify-content: center;
 `;
 
-const ProjectContainer = styled(({ isVisible, ...props }) => (
-  <div {...props} style={{ display: isVisible ? "flex" : "none" }} />
-))`
+const ProjectContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -52,43 +50,33 @@ const Divider = styled.div`
   margin-inline: 16px;
 `;
 
-const ProjectsEng = () => {
-  const { state } = useAppState();
-  const { detailLevel } = state;
-
+const Projects = () => {
   return (
     <ProjectWrapper>
       <ProjectRow>
-        <ProjectContainer isVisible={detailLevel === "minimal"}>
+        <ProjectContainer>
           <Builder />
         </ProjectContainer>
 
         <Divider />
 
-        <ProjectContainer isVisible={detailLevel === "minimal"}>
+        <ProjectContainer>
           <TrippleP />
         </ProjectContainer>
-        <ProjectContainer isVisible={detailLevel === "detailed"}>
-          <h4>Tripple-P</h4>
-        </ProjectContainer>
       </ProjectRow>
-
       <ProjectRow>
-        <ProjectContainer isVisible={detailLevel === "minimal"}>
+        <ProjectContainer>
           <Salloc />
         </ProjectContainer>
 
         <Divider />
 
-        <ProjectContainer isVisible={detailLevel === "minimal"}>
+        <ProjectContainer>
           <MeMyself />
-        </ProjectContainer>
-        <ProjectContainer isVisible={detailLevel === "detailed"}>
-          <h4>Portfolio</h4>
         </ProjectContainer>
       </ProjectRow>
     </ProjectWrapper>
   );
 };
 
-export default ProjectsEng;
+export default Projects;
