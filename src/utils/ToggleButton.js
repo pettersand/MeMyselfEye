@@ -8,17 +8,13 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
   border: 6px solid var(--contrast);
   border-radius: 50%;
   cursor: pointer;
-  margin: 5px;
+  margin: 0;
 
   &:before {
     content: "";
     display: block;
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background-color: ${(props) =>
       props.isSelected ? "silver" : "transparent"};
