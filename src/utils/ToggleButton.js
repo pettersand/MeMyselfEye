@@ -2,24 +2,26 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
-  width: 14px;
-  height: 14px;
-  border: 4px solid var(--contrast);
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 6px solid var(--contrast);
   border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   margin: 5px;
 
   &:before {
     content: "";
-    width: 8px;
-    height: 8px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: silver;
-    transition: background-color 0.3s;
-    display: ${(props) => (props.isSelected ? "block" : "none")};
+    background-color: ${(props) =>
+      props.isSelected ? "silver" : "transparent"};
   }
 
   @keyframes spin {
