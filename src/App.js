@@ -44,10 +44,8 @@ const MainContainer = styled.div`
 
 const BottomContainer = styled.div`
   background-color: var(--bg2);
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
-  grid-column: 2 / 4;
-  grid-row: 2 / 5;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -55,7 +53,6 @@ const BottomContainer = styled.div`
 `;
 
 const NameContainer = styled.div`
-  font-family: "Nothing";
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,18 +62,16 @@ const NameContainer = styled.div`
   width: 100%;
 
   h1 {
-    font-size: 2.8em;
+    font-family: "Nothing";
     margin: 8px 0 0;
   }
 
   h2 {
-    font-size: 2em;
-    font-family: "Onest";
     font-weight: 500;
     border-bottom: 2px solid var(--accent);
-    border-radius: 16px;
-    margin: 0 0 8px;
-    width: 100%;
+    border-radius: 8px;
+    padding: 0 0 16px;
+    width: 90%;
     display: flex;
     justify-content: center;
   }

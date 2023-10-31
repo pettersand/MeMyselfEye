@@ -33,6 +33,17 @@ const SkillsWrapper = styled.div`
   color: var(--text-light);
 `;
 
+const ContainerHeader = styled.div`
+  width: 90%;
+  border-bottom: 1px solid var(--accent);
+  font-size: 1.3em;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+`;
+
 const SkillsContainer = styled.div`
   display: flex;
   width: 95%;
@@ -41,6 +52,7 @@ const SkillsContainer = styled.div`
   justify-content: center;
   padding: 6px;
   border-radius: 8px;
+
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
 `;
 
@@ -224,6 +236,7 @@ const SkillsNew = () => {
 
   return (
     <SkillsWrapper>
+      <ContainerHeader>Languages</ContainerHeader>
       <SkillsContainer>
         {isOpen && (
           <DetailContainer isOpen={isOpen}>

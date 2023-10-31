@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import ToggleButton from "../utils/ToggleButton";
-import ThemeToggle from "../utils/ThemeToggle";
 import { useAppState } from "../App";
 
 const ControlWrapper = styled.div`

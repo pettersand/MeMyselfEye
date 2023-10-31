@@ -20,6 +20,12 @@
   --light-accent-text: #fffffe;
   --light-contrast: #de4d4d;
   --light-secondary: #f7f9fc;
+
+  --xs: 4px;
+  --sm: 8px;
+  --md: 16px;
+  --lg: 24px;
+  --xlg: 32px;
 }
 
 .light-theme {
@@ -76,6 +82,28 @@
   src: url("/public/NothingYouCouldDo-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+html {
+  font-size: 16px;
+  color: var(--headline);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--paragraph);
 }
 
 body {
