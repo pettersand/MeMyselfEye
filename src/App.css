@@ -91,6 +91,7 @@ html {
 
 h1 {
   font-size: 2.5rem;
+  margin: 8px;
 }
 
 h2 {
@@ -99,6 +100,7 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+  margin: 4px;
 }
 
 p {

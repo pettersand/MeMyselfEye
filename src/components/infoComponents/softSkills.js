@@ -16,7 +16,9 @@ const SoftSkillsWrapper = styled.div`
 const ContainerRow = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
   gap: 16px;
 `;
 
@@ -38,7 +40,7 @@ const CategoryHeader = styled.div`
   align-items: center;
   font-size: 1.3em;
   font-weight: 500;
-  width: 60%;
+  width: 80%;
   border-bottom: 1px solid var(--accent);
   cursor: pointer;
 
@@ -54,7 +56,6 @@ const CategorySkills = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-
   gap: 16px;
 `;
 
@@ -79,6 +80,7 @@ const SkillContainer = styled.div`
 
 const SkillItem = styled.div`
   display: flex;
+  width: fit;
   flex-direction: column;
   align-items: flex-start;
   margin: 8px 0;
