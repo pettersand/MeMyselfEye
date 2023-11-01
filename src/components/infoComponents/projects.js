@@ -45,11 +45,6 @@ const ProjectContainer = styled.div`
   }
 `;
 
-const Divider = styled.div`
-  height: 80%;
-  border: 1px solid var(--bg);
-  margin-inline: 16px;
-`;
 
 const Projects = () => {
   return (

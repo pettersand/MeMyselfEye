@@ -1,7 +1,6 @@
 import React from "react";
-import { useAppState } from "../../App";
 import styled from "styled-components";
-import { HorizontalDivider, VerticalDivider } from "../../utils/Dividers";
+import { VerticalDivider } from "../../utils/Dividers";
 
 const AboutMeWrapper = styled.div`
   display: flex;
@@ -29,15 +28,6 @@ const MainContent = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 45%;
-`;
-
-const Divider = styled.div`
-  height: 80%;
-  border: 1px solid var(--bg);
-  margin-inline: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const BottomRow = styled.div`
@@ -199,7 +189,7 @@ const AboutMe = () => {
           </TopContent>
         </MainContent>
       </TopRow>
-      
+
       <BottomRow>
         <ExtraContent>
           <ProjectHeader>My Learning Process</ProjectHeader>

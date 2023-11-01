@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppState } from "../../App";
 import styled from "styled-components";
 import { HorizontalDivider, VerticalDivider } from "../../utils/Dividers";
 
@@ -32,24 +31,6 @@ const Disclaimer = styled.div`
   width: 60%;
   font-size: 0.9em;
   color: var(--paragraph);
-`;
-
-const Divider = styled.div`
-  height: 80%;
-  border: 1px solid var(--bg);
-  margin-inline: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const DividerHorizontal = styled.div`
-  width: 80%;
-  border: 1px solid var(--bg);
-  margin: 16px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const RowContainer = styled.div`

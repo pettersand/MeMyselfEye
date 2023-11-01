@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppState } from "../../App";
 import styled from "styled-components";
 import { VerticalDivider } from "../../utils/Dividers";
 
@@ -20,11 +19,6 @@ const CoursesContainer = styled.div`
   padding: 16px;
   height: 100%;
   gap: 16px;
-`;
-
-const Divider = styled.div`
-  height: 80%;
-  border: 1px solid var(--bg);
 `;
 
 const CourseHeader = styled.div`
