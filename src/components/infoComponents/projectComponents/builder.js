@@ -128,18 +128,29 @@ const TechIcon = styled.div`
 const LinkIcon = styled.div`
   display: flex;
   align-items: center;
-  font-size: 1.5em;
-  margin-left: 4px;
-  color: var(--accent);
   background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
   border-radius: 12px;
   gap: 8px;
+
   a {
-    font-size: 0.7em;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--accent-text);
     margin-left: 8px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    margin-left: 8px;
+  }
+  
+  &:hover {
+    svg {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 5px rgba(0, 128, 128, 0.4));
   }
 `;
 
@@ -361,8 +372,8 @@ const Builder = () => {
                 rel="noopener noreferrer"
               >
                 Repo
+                <SiGithub />
               </a>
-              <SiGithub />
             </LinkIcon>
           </LinksColumn>
         </TechStack>

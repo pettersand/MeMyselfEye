@@ -12,9 +12,9 @@
 
   --light-bg: #f7f9fc;
   --light-bg2: #e4e7eb;
-  --light-divider: #5b5e6e;
+  --light-divider: #dfe1ed;
   --light-headline: #1c1e21;
-  --light-paragraph: #5b5e6e;
+  --light-paragraph: #444653;
   --light-accent: #33a8a4;
   --light-complement: #de4d4d;
   --light-accent-text: #fffffe;
@@ -29,7 +29,7 @@
 }
 
 .light-theme {
-  --bg: var(--light-bg2);
+  --bg: var(--light-divider);
   --bg2: var(--light-bg);
   --headline: var(--light-headline);
   --paragraph: var(--light-paragraph);
