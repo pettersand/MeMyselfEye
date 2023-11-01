@@ -197,6 +197,11 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
 `;
 
 const DescriptionContent = styled(({ expanded, ...props }) => (
