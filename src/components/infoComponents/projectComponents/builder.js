@@ -28,8 +28,6 @@ const ProjectHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
-  font-weight: 600;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
 `;
@@ -74,19 +72,8 @@ const DetailsItem = styled.div`
 
   &.date {
     color: var(--accent-text);
-    font-size: 0.8em;
+    font-size: 0.9rem;
     font-style: italic;
-  }
-
-  &.link {
-    font-size: 1.5em;
-    color: var(--accent-text);
-    a {
-      font-size: 0.7em;
-      font-weight: 500;
-      text-decoration: none;
-      color: var(--accent-text);
-    }
   }
 `;
 
@@ -110,7 +97,6 @@ const TechColumn = styled.div`
 const TechIcon = styled.div`
   display: flex;
   align-items: center;
-  font-size: 1.5em;
   margin-right: 4px;
   color: var(--accent);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
@@ -118,7 +104,7 @@ const TechIcon = styled.div`
   gap: 8px;
   padding: 1px 0;
   span {
-    font-size: 0.6em;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--accent-text);
     margin-right: 8px;
@@ -146,7 +132,7 @@ const LinkIcon = styled.div`
   svg {
     margin-left: 8px;
   }
-  
+
   &:hover {
     svg {
       transform: scale(1.2);
@@ -160,8 +146,6 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
   width: 50%;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
-  font-weight: 600;
   padding: 4px;
   cursor: pointer;
 
@@ -181,10 +165,9 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
       90deg,
       var(--accent),
       var(--contrast),
-      var(--complement),
       var(--accent),
       var(--contrast),
-      var(--complement)
+      var(--accent)
     );
     background-size: 200% 100%;
     animation: colorSlide 5s linear infinite;
@@ -223,9 +206,6 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  h4 {
-    margin: 0;
-  }
 `;
 
 const DescriptionContent = styled(({ expanded, ...props }) => (
@@ -258,7 +238,7 @@ const ConceptContent = styled(({ expanded, ...props }) => <div {...props} />)`
 const Concept = styled.div`
   display: flex;
   color: var(--paragraph);
-  font-size: 0.9em;
+  font-size: 1rem;
 `;
 
 const FeaturesContainer = styled.div`
@@ -289,7 +269,7 @@ const Features = styled.div`
 
   span {
     color: var(--paragraph);
-    font-size: 0.9em;
+    font-size: 1rem;
   }
 `;
 
