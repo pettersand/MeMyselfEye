@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppState } from "../../App";
 import styled from "styled-components";
+import { VerticalDivider } from "../../utils/Dividers";
 
 const CoursesWrapper = styled.div`
   display: flex;
@@ -114,7 +115,8 @@ const Courses = () => {
           </ListItem>
         </ListContainer>
       </CoursesContainer>
-      <Divider />
+
+      <VerticalDivider />
 
       <CoursesContainer>
         <CourseHeader>Harvard CS50x</CourseHeader>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useAppState } from "../../App";
 import styled from "styled-components";
 import { HiMinus, HiPlus } from "react-icons/hi2";
+import { VerticalDivider, HorizontalDivider } from "../../utils/Dividers";
 
 const SoftSkillsWrapper = styled.div`
   display: flex;
@@ -9,13 +9,14 @@ const SoftSkillsWrapper = styled.div`
   width: 100%;
   padding: 16px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
 `;
 
 const ContainerRow = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 16px;
 `;
 
@@ -365,6 +366,8 @@ const SoftSkills = () => {
           </CategorySkills>
         </CategoryContainer>
 
+        <VerticalDivider />
+
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("personal")}>
             Personal Attributes & Growth
@@ -521,6 +524,8 @@ const SoftSkills = () => {
         </CategoryContainer>
       </ContainerRow>
 
+      <HorizontalDivider />
+
       <ContainerRow>
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("teamwork")}>
@@ -649,6 +654,8 @@ const SoftSkills = () => {
             </CategoryColumn>
           </CategorySkills>
         </CategoryContainer>
+
+        <VerticalDivider />
 
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("professional")}>

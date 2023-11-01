@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppState } from "../../App";
 import styled from "styled-components";
+import { HorizontalDivider, VerticalDivider } from "../../utils/Dividers";
 
 const PriorCareerWrapper = styled.div`
   display: flex;
@@ -269,7 +270,7 @@ const PriorCareer = () => {
             </EducationTopics>
           </EducationItem>
 
-          <DividerHorizontal />
+          <HorizontalDivider />
 
           <EducationItem>
             <EducationDetails>
@@ -294,7 +295,7 @@ const PriorCareer = () => {
             </EducationTopics>
           </EducationItem>
 
-          <DividerHorizontal />
+          <HorizontalDivider />
 
           <EducationItem>
             <EducationDetails>
@@ -318,7 +319,9 @@ const PriorCareer = () => {
             </EducationTopics>
           </EducationItem>
         </EducationContainer>
-        <Divider />
+
+        <VerticalDivider />
+
         <WorkContainer>
           <SubHeader>Work Experience</SubHeader>
           <JsonLike>

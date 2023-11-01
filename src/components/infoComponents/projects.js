@@ -5,6 +5,7 @@ import Builder from "./projectComponents/builder";
 import TrippleP from "./projectComponents/trippleP";
 import Salloc from "./projectComponents/salloc";
 import MeMyself from "./projectComponents/memyself";
+import { HorizontalDivider, VerticalDivider } from "../../utils/Dividers";
 
 const ProjectWrapper = styled.div`
   display: flex;
@@ -58,18 +59,21 @@ const Projects = () => {
           <Builder />
         </ProjectContainer>
 
-        <Divider />
+        <VerticalDivider />
 
         <ProjectContainer>
           <TrippleP />
         </ProjectContainer>
       </ProjectRow>
+
+      <HorizontalDivider />
+
       <ProjectRow>
         <ProjectContainer>
           <Salloc />
         </ProjectContainer>
 
-        <Divider />
+        <VerticalDivider />
 
         <ProjectContainer>
           <MeMyself />
