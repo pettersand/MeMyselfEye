@@ -52,7 +52,7 @@ const ControlColumn = styled.div`
 `;
 
 const RadioWrapper = styled.div`
-  font-size: 1.2em;
+  font-size: 1.25rem;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -77,7 +77,9 @@ const ControlPanel = () => {
 
   return (
     <ControlWrapper>
-      <ContainerHeader>Control Panel</ContainerHeader>
+      <ContainerHeader>
+        <h3>Control Panel</h3>
+      </ContainerHeader>
       <ControlRow>
         <ControlColumn className="left">
           <RadioWrapper>

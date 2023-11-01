@@ -54,21 +54,24 @@ const ProjectHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
-  font-weight: 600;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
+  margin-bottom: 16px;
 `;
 
 const TopContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
 
   p {
-    color: var(--paragraph);
+    margin: 4px 0 8px;
+  }
+
+  h4 {
+    margin: 16px 0 8px;
   }
 `;
 
@@ -78,10 +81,6 @@ const BottomContent = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 24px;
-
-  p {
-    color: var(--paragraph);
-  }
 `;
 
 const ContentBox = styled.div`
@@ -93,11 +92,11 @@ const ContentBox = styled.div`
   gap: 8px;
 
   p {
-    margin: 0;
+    margin: 4px 0 8px;
   }
 
   h4 {
-    margin-bottom: 0;
+    margin: 16px 0 8px;
   }
 `;
 
@@ -106,7 +105,9 @@ const AboutMe = () => {
     <AboutMeWrapper>
       <TopRow>
         <MainContent>
-          <ProjectHeader>About Me</ProjectHeader>
+          <ProjectHeader>
+            <h3>About Me</h3>
+          </ProjectHeader>
           <TopContent>
             <p>
               From my early days of passionately creating and improving on
@@ -154,9 +155,13 @@ const AboutMe = () => {
             </p>
           </TopContent>
         </MainContent>
+
         <VerticalDivider />
+
         <MainContent>
-          <ProjectHeader>Changing Careers</ProjectHeader>
+          <ProjectHeader>
+            <h3>Changing Careers</h3>
+          </ProjectHeader>
           <TopContent>
             <p>
               Over a decade in exercise science and personal training gave me
@@ -192,7 +197,9 @@ const AboutMe = () => {
 
       <BottomRow>
         <ExtraContent>
-          <ProjectHeader>My Learning Process</ProjectHeader>
+          <ProjectHeader>
+            <h3>My Learning Process</h3>
+          </ProjectHeader>
           <BottomContent>
             <ContentBox>
               <h4>My Evolution in Tech</h4>
