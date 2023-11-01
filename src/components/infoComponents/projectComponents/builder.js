@@ -187,12 +187,14 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
       right: 16px;
       top: 50%;
       transform: translateY(-50%);
+      font-size: 1.25rem;
+      color: var(--paragraph);
     }
   }
 
   &:hover {
     svg {
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
   }
 
