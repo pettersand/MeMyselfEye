@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 import {
   SiFlask,
   SiSvelte,
@@ -19,10 +19,10 @@ import {
   SiPython,
   SiC,
 } from "react-icons/si";
-import { PiFileSql, PiArrowElbowLeftDownBold } from "react-icons/pi";
+import { PiFileSql } from "react-icons/pi";
 import { TbBrandCSharp } from "react-icons/tb";
 import SkillDetail from "./infoComponents/skillDetail";
-import { detailMap } from "./infoComponents/skillDetail";
+import { HiCode } from "react-icons/hi";
 
 const SkillsWrapper = styled.div`
   display: flex;
@@ -30,14 +30,11 @@ const SkillsWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  color: var(--text-light);
 `;
 
 const ContainerHeader = styled.div`
   width: 90%;
   border-bottom: 1px solid var(--accent);
-  font-size: 1.3em;
-  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,9 +47,8 @@ const SkillsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  padding: 8px;
   border-radius: 8px;
-
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
 `;
 
@@ -61,23 +57,19 @@ const SkillsRow = styled.div`
   width: 100%;
   flex-direction: row;
   flex: 1;
-  font-size: 0.8em;
   border-top: 1px solid var(--bg);
 `;
 
 const HeaderRow = styled.div`
   display: flex;
-  margin-top: 16px;
-  padding-bottom: 8px;
+  margin-top: 8px;
   width: 100%;
   flex-direction: row;
   flex: 1;
-  font-size: 1em;
-  font-weight: 600;
 `;
 
 const HeaderCat = styled.div`
-  flex: 1.5;
+  flex: 1.25;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,11 +93,10 @@ const HeaderWorking = styled.div`
 `;
 
 const CategoryCell = styled.div`
-  flex: 1.5;
+  flex: 1.25;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
 `;
 
 const SkillsCell = styled.div`
@@ -114,7 +105,7 @@ const SkillsCell = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
   border-inline: 1px solid var(--bg);
 `;
 
@@ -124,27 +115,28 @@ const WorkingCell = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
 `;
 
 const IconLabel = styled.div`
-  margin-top: 5px;
-  padding: 5px;
+  margin-top: 4px;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--paragraph);
 `;
 
 const IconRow = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 5px;
-  gap: 5px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95%;
+  padding: 4px;
 `;
 
 const Icon = styled.div`
-  height: ${(props) => props.size || "3em"};
-  width: ${(props) => props.size || "3em"};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,7 +145,7 @@ const Icon = styled.div`
   &:hover {
     transform: scale(1.1) translateY(-5px);
     cursor: pointer;
-    filter: drop-shadow(0 0 5px rgba(0, 128, 128, 0.4));
+    filter: drop-shadow(0 0 4px rgba(0, 128, 128, 0.4));
   }
 `;
 
@@ -167,10 +159,10 @@ const DetailContainer = styled(({ isOpen, ...props }) => <div {...props} />)`
   transition: max-height 0.5s ease-in-out;
 `;
 
-function TechIcon({ IconComponent, size, color, onMouseEnter, onClick }) {
+function TechIcon({ IconComponent, color, onMouseEnter, onClick }) {
   return (
-    <Icon size={size} onMouseEnter={onMouseEnter}>
-      <IconComponent size={size} color={color || "black"} onClick={onClick} />
+    <Icon onMouseEnter={onMouseEnter}>
+      <IconComponent color={color || "black"} onClick={onClick} />
     </Icon>
   );
 }
@@ -186,7 +178,6 @@ const SkillsCellGroup = ({ icons, onIconClick }) => {
           <TechIcon
             key={icon.label}
             IconComponent={icon.component}
-            size="2.1em"
             color="var(--accent)"
             onMouseEnter={() => setCurrentLabel(icon.label)}
             onClick={() => {
@@ -211,7 +202,6 @@ const WorkingCellGroup = ({ icons }) => {
           <TechIcon
             key={icon.label}
             IconComponent={icon.component}
-            size="2.1em"
             color="var(--accent)"
             onMouseEnter={() => setCurrentLabel(icon.label)}
           />
@@ -236,7 +226,9 @@ const SkillsNew = () => {
 
   return (
     <SkillsWrapper>
-      <ContainerHeader>Languages</ContainerHeader>
+      <ContainerHeader>
+        <h3>Languages</h3>
+      </ContainerHeader>
       <SkillsContainer>
         {isOpen && (
           <DetailContainer isOpen={isOpen}>
@@ -247,12 +239,22 @@ const SkillsNew = () => {
           </DetailContainer>
         )}
         <HeaderRow>
-          <HeaderCat>Category</HeaderCat>
-          <HeaderSkills>Skills</HeaderSkills>
-          <HeaderWorking>Working Exp</HeaderWorking>
+          <HeaderCat>
+            <h5>
+              <HiCode />
+            </h5>
+          </HeaderCat>
+          <HeaderSkills>
+            <h5>Skills</h5>
+          </HeaderSkills>
+          <HeaderWorking>
+            <h5>Used</h5>
+          </HeaderWorking>
         </HeaderRow>
         <SkillsRow>
-          <CategoryCell>Backend</CategoryCell>
+          <CategoryCell>
+            <h5>Backend</h5>
+          </CategoryCell>
           <SkillsCellGroup
             icons={[
               { component: SiPython, label: "Python" },
@@ -270,7 +272,9 @@ const SkillsNew = () => {
           />
         </SkillsRow>
         <SkillsRow>
-          <CategoryCell>Frontend</CategoryCell>
+          <CategoryCell>
+            <h5>Frontend</h5>
+          </CategoryCell>
           <SkillsCellGroup
             icons={[
               { component: SiSvelte, label: "Svelte" },
@@ -290,7 +294,9 @@ const SkillsNew = () => {
           />
         </SkillsRow>
         <SkillsRow>
-          <CategoryCell>Other</CategoryCell>
+          <CategoryCell>
+            <h5>Other</h5>
+          </CategoryCell>
           <SkillsCellGroup
             icons={[
               { component: SiGit, label: "Git" },

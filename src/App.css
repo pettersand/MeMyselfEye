@@ -91,20 +91,47 @@ html {
 
 h1 {
   font-size: 2.5rem;
-  margin: 8px;
+  margin: 16px;
+  font-weight: 900;
 }
 
 h2 {
   font-size: 2rem;
+  margin: 8px;
+  font-weight: 800;
 }
 
 h3 {
   font-size: 1.5rem;
   margin: 4px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin: 4px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1rem;
+  margin: 4px;
+  font-weight: 600;
+  color: var(--headline);
 }
 
 p {
   font-size: 1rem;
+  color: var(--paragraph);
+  font-weight: 500;
+}
+
+svg {
+  font-size: 1.75rem;
+  color: var(--accent);
+}
+
+li {
   color: var(--paragraph);
 }
 

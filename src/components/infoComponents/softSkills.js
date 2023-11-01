@@ -49,6 +49,8 @@ const CategoryHeader = styled.div`
     right: 16px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: var(--paragraph);
   }
 `;
 
@@ -105,9 +107,11 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
 
   svg {
     position: absolute;
-    right: 16px;
+    right: 4px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: var(--paragraph);
   }
 `;
 
