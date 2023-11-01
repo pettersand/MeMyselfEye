@@ -297,7 +297,9 @@ const TrippleP = () => {
 
   return (
     <TrippleWrapper>
-      <ProjectHeader>Tripple-P</ProjectHeader>
+      <ProjectHeader>
+        <h3>Tripple-P</h3>
+      </ProjectHeader>
       <ImageContainer bgImage="/tripplep1.png">
         <DetailsBar>
           <DetailsItem className="date">04/09 - Present</DetailsItem>

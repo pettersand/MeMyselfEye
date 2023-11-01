@@ -302,7 +302,9 @@ const MeMyself = () => {
 
   return (
     <MeMyselfWrapper>
-      <ProjectHeader>Me, Myself, & I</ProjectHeader>
+      <ProjectHeader>
+        <h3>Me, Myself, & I</h3>
+      </ProjectHeader>
       <ImageContainer bgImage="/memyself3.png">
         <DetailsBar>
           <DetailsItem className="date">18/10 - 02/11</DetailsItem>

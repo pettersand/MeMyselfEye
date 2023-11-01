@@ -306,7 +306,9 @@ const Builder = () => {
 
   return (
     <BuilderWrapper>
-      <ProjectHeader>Builder</ProjectHeader>
+      <ProjectHeader>
+        <h3>Builder</h3>
+      </ProjectHeader>
       <ImageContainer bgImage="/Builder1.png">
         <DetailsBar>
           <DetailsItem className="date">26/08 - Present</DetailsItem>

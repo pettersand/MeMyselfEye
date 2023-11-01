@@ -304,7 +304,9 @@ const Salloc = () => {
 
   return (
     <SallocWrapper>
-      <ProjectHeader>Salloc</ProjectHeader>
+      <ProjectHeader>
+        <h3>Salloc</h3>
+      </ProjectHeader>
       <ImageContainer bgImage="/salloc1.png">
         <DetailsBar>
           <DetailsItem className="date">02/08 - 25/08</DetailsItem>
