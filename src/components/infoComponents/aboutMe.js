@@ -36,7 +36,6 @@ const BottomRow = styled.div`
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  gap: 24px;
 `;
 
 const ExtraContent = styled.div`
@@ -56,7 +55,7 @@ const ProjectHeader = styled.div`
   justify-content: center;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 `;
 
 const TopContent = styled.div`
@@ -65,6 +64,7 @@ const TopContent = styled.div`
   width: 90%;
   align-items: flex-start;
   justify-content: flex-start;
+  padding-top: 16px;
 
   p {
     margin: 4px 0 8px;
@@ -79,7 +79,7 @@ const BottomContent = styled.div`
   display: flex;
   width: 90%;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 24px;
 `;
 
@@ -87,9 +87,8 @@ const ContentBox = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap: 8px;
 
   p {
     margin: 4px 0 8px;
