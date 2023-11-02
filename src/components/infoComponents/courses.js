@@ -18,10 +18,8 @@ const CoursesContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex: 1;
-  max-width: 45%;
-  padding: 16px;
+  max-width: 50%;
   height: 100%;
-  gap: 16px;
 `;
 
 const CourseHeader = styled.div`

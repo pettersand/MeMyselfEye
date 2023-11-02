@@ -1,57 +1,62 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const CourseWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+  justify-content: flex-start;
+  max-width: 100%;
 `;
 
 const DescriptionContainer = styled.div`
   display: flex;
+  align-items: start;
   width: 100%;
 `;
 
 const CarouselContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: start;
+  max-width: 100%;
 `;
 
 const Carousel = styled.div`
   display: flex;
   flex-direction: row;
-  overflow: hidden;
-  align-items: center;
-  align-content: center;
-  width: 100%;
-
-  padding: 16px;
+  overflow-x: hidden;
+  flex: 0 0 auto;
+  max-width: 100%;
+  align-items: start;
   border: 1px solid var(--bg);
+  box-sizing: border-box;
+  padding: 24px;
 `;
 
-const CarouselContent = styled.div`
+const CarouselContent = styled.div.attrs((props) => ({
+  animationSpeed: props.animationSpeed,
+}))`
   display: flex;
-  flex-wrap: nowrap;
-  max-width: 500px;
+  flex: 0 0 auto;
   gap: 24px;
   flex-direction: row;
-  animation: scrollCarousel ${(props) => props.animationSpeed} linear infinite;
+  animation: scrollCarousel ${(props) => props.animationSpeed}s linear infinite;
+  transition: transform 1s;
 
   @keyframes scrollCarousel {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
   }
 `;
 
 const CarouselItem = styled.div`
   display: flex;
+  white-space: nowrap;
 `;
 
 const TabsRow = styled.div`
@@ -65,8 +70,7 @@ const Tabs = styled.div`
   justify-content: center;
   padding: 4px 8px;
   flex: 1;
-  border: 1px solid var(--bg);
-  border-radius: 8px;
+  border: 1px solid var(--accent);
   cursor: pointer;
 `;
 
@@ -276,7 +280,10 @@ const categories = [
 
 const Harvard = () => {
   const [activeTabs, setActiveTabs] = useState(["All"]);
-  const [animationSpeed, setAnimationSpeed] = useState(["30s"]);
+  const topicsRef = useRef(null);
+  const toolboxRef = useRef(null);
+  const [animationSpeedToolbox, setAnimationSpeedToolbox] = useState(null);
+  const [animationSpeedTopics, setAnimationSpeedTopics] = useState(null);
 
   const toggleTab = (tab) => {
     if (tab === "All") {
@@ -296,18 +303,30 @@ const Harvard = () => {
     }
   };
 
+  const calculateSpeed = (ref) => {
+    if (!ref.current) return;
+    const contentWidth = ref.current.scrollWidth;
+    const desiredPixelsPerSecond = 50;
+    return contentWidth / desiredPixelsPerSecond;
+  };
+
+  useEffect(() => {
+    setAnimationSpeedToolbox(calculateSpeed(toolboxRef));
+    setAnimationSpeedTopics(calculateSpeed(topicsRef));
+  }, [activeTabs]);
+
   const filteredItems = (dataType) => {
     return courseData[dataType].filter((item) =>
       item.categories.some((category) => activeTabs.includes(category))
     );
   };
 
-  const handleMouseEnter = () => {
-    setAnimationSpeed("60s");
+  const handleMouseEnter = (setSpeed, initialSpeed) => {
+    setSpeed(initialSpeed * 2);
   };
 
-  const handleMouseLeave = () => {
-    setAnimationSpeed("30s");
+  const handleMouseLeave = (setSpeed, initialSpeed) => {
+    setSpeed(initialSpeed / 2);
   };
 
   return (
@@ -339,22 +358,44 @@ const Harvard = () => {
           ))}
         </TabsRow>
         <Carousel
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={() =>
+            handleMouseEnter(setAnimationSpeedToolbox, animationSpeedToolbox)
+          }
+          onMouseLeave={() =>
+            handleMouseLeave(setAnimationSpeedToolbox, animationSpeedToolbox)
+          }
         >
-          <CarouselContent animationSpeed={animationSpeed}>
+          <CarouselContent
+            ref={toolboxRef}
+            animationSpeed={animationSpeedToolbox}
+          >
             {filteredItems("toolbox").map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
+            ))}
+            {filteredItems("toolbox").map((tool) => (
+              <CarouselItem key={tool.id + "-clone"}>{tool.name}</CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
         <Carousel
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={() =>
+            handleMouseEnter(setAnimationSpeedTopics, animationSpeedTopics)
+          }
+          onMouseLeave={() =>
+            handleMouseLeave(setAnimationSpeedTopics, animationSpeedTopics)
+          }
         >
-          <CarouselContent animationSpeed={animationSpeed}>
+          <CarouselContent
+            ref={topicsRef}
+            animationSpeed={animationSpeedTopics}
+          >
             {filteredItems("topics").map((topic) => (
               <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
+            ))}
+            {filteredItems("topics").map((topic) => (
+              <CarouselItem key={topic.id + "-clone"}>
+                {topic.name}
+              </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
