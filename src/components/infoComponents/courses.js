@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { VerticalDivider } from "../../utils/Dividers";
+import Harvard from "./courseComponents/cs50";
 
 const CoursesWrapper = styled.div`
   display: flex;
@@ -12,10 +13,12 @@ const CoursesWrapper = styled.div`
 `;
 
 const CoursesContainer = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex: 1;
+  max-width: 45%;
   padding: 16px;
   height: 100%;
   gap: 16px;
@@ -74,6 +77,13 @@ const Courses = () => {
   return (
     <CoursesWrapper>
       <CoursesContainer>
+        <CourseHeader>Harvard CS50x</CourseHeader>
+        <Harvard />
+      </CoursesContainer>
+
+      <VerticalDivider />
+
+      <CoursesContainer>
         <CourseHeader>Python for Everybody Specialization</CourseHeader>
         <DescriptionContainer>
           <p>
@@ -105,51 +115,6 @@ const Courses = () => {
               <li>Data Visualization</li>
               <li>Web Scraping</li>
               <li>XML/JSON Handling</li>
-            </ul>
-          </ListItem>
-        </ListContainer>
-      </CoursesContainer>
-
-      <VerticalDivider />
-
-      <CoursesContainer>
-        <CourseHeader>Harvard CS50x</CourseHeader>
-        <DescriptionContainer>
-          <p>
-            Harvard University's introduction to the intellectual enterprises of
-            computer science and the art of programming for majors and
-            non-majors alike, with or without prior programming experience. An
-            entry-level course taught by David J. Malan, CS50x teaches students
-            how to think algorithmically and solve problems efficiently.
-          </p>
-          <p>Skills Used: C, Python, Flask, SQL, HTML, CSS, JavaScript</p>
-        </DescriptionContainer>
-        <ListContainer>
-          <ListItem>
-            <h3>Structure</h3>
-            <ul>
-              <li>Scratch</li>
-              <li>C</li>
-              <li>Arrays</li>
-              <li>Algorithms</li>
-              <li>Memory</li>
-              <li>Data Structures</li>
-              <li>Python</li>
-              <li>SQL</li>
-              <li>HTML, CSS, JavaScript</li>
-              <li>Flask</li>
-            </ul>
-          </ListItem>
-          <ListItem>
-            <h3>Topics</h3>
-            <ul>
-              <li>Problem Solving</li>
-              <li>Code Structure</li>
-              <li>Security</li>
-              <li>Web Development</li>
-              <li>Encapsulation</li>
-              <li>Computer Science</li>
-              <li>Resource Management</li>
             </ul>
           </ListItem>
         </ListContainer>
