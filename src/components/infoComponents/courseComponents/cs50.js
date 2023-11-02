@@ -41,17 +41,6 @@ const CarouselContent = styled.div.attrs((props) => ({
   flex: 0 0 auto;
   gap: 24px;
   flex-direction: row;
-  animation: scrollCarousel ${(props) => props.animationSpeed}s linear infinite;
-  transition: transform 1s;
-
-  @keyframes scrollCarousel {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
 `;
 
 const CarouselItem = styled.div`
@@ -282,8 +271,13 @@ const Harvard = () => {
   const [activeTabs, setActiveTabs] = useState(["All"]);
   const topicsRef = useRef(null);
   const toolboxRef = useRef(null);
-  const [animationSpeedToolbox, setAnimationSpeedToolbox] = useState(null);
-  const [animationSpeedTopics, setAnimationSpeedTopics] = useState(null);
+  const [translateValueToolbox, setTranslateValueToolbox] = useState(0);
+  const [translateValueTopics, setTranslateValueTopics] = useState(0);
+  const toolboxIntervalRef = useRef(null);
+  const topicsIntervalRef = useRef(null);
+
+  const baseSpeed = 0.02;
+  const hoverSpeed = baseSpeed / 2;
 
   const toggleTab = (tab) => {
     if (tab === "All") {
@@ -303,17 +297,30 @@ const Harvard = () => {
     }
   };
 
-  const calculateSpeed = (ref) => {
-    if (!ref.current) return;
-    const contentWidth = ref.current.scrollWidth;
-    const desiredPixelsPerSecond = 50;
-    return contentWidth / desiredPixelsPerSecond;
+  const createInterval = (setFunction, speed) => {
+    return setInterval(() => {
+      setFunction((prev) => {
+        if (prev <= -100) return 0;
+        return prev - speed;
+      });
+    }, 16.67);
   };
 
   useEffect(() => {
-    setAnimationSpeedToolbox(calculateSpeed(toolboxRef));
-    setAnimationSpeedTopics(calculateSpeed(topicsRef));
-  }, [activeTabs]);
+    toolboxIntervalRef.current = createInterval(
+      setTranslateValueToolbox,
+      baseSpeed
+    );
+    topicsIntervalRef.current = createInterval(
+      setTranslateValueTopics,
+      baseSpeed
+    );
+
+    return () => {
+      clearInterval(toolboxIntervalRef.current);
+      clearInterval(topicsIntervalRef.current);
+    };
+  }, []);
 
   const filteredItems = (dataType) => {
     return courseData[dataType].filter((item) =>
@@ -321,12 +328,36 @@ const Harvard = () => {
     );
   };
 
-  const handleMouseEnter = (setSpeed, initialSpeed) => {
-    setSpeed(initialSpeed * 2);
+  const handleMouseEnter = (carouselType) => {
+    if (carouselType === "toolbox") {
+      clearInterval(toolboxIntervalRef.current);
+      toolboxIntervalRef.current = createInterval(
+        setTranslateValueToolbox,
+        hoverSpeed
+      );
+    } else if (carouselType === "topics") {
+      clearInterval(topicsIntervalRef.current);
+      topicsIntervalRef.current = createInterval(
+        setTranslateValueTopics,
+        hoverSpeed
+      );
+    }
   };
 
-  const handleMouseLeave = (setSpeed, initialSpeed) => {
-    setSpeed(initialSpeed / 2);
+  const handleMouseLeave = (carouselType) => {
+    if (carouselType === "toolbox") {
+      clearInterval(toolboxIntervalRef.current);
+      toolboxIntervalRef.current = createInterval(
+        setTranslateValueToolbox,
+        baseSpeed
+      );
+    } else if (carouselType === "topics") {
+      clearInterval(topicsIntervalRef.current);
+      topicsIntervalRef.current = createInterval(
+        setTranslateValueTopics,
+        baseSpeed
+      );
+    }
   };
 
   return (
@@ -358,16 +389,12 @@ const Harvard = () => {
           ))}
         </TabsRow>
         <Carousel
-          onMouseEnter={() =>
-            handleMouseEnter(setAnimationSpeedToolbox, animationSpeedToolbox)
-          }
-          onMouseLeave={() =>
-            handleMouseLeave(setAnimationSpeedToolbox, animationSpeedToolbox)
-          }
+          onMouseEnter={() => handleMouseEnter("toolbox")}
+          onMouseLeave={() => handleMouseLeave("toolbox")}
         >
           <CarouselContent
             ref={toolboxRef}
-            animationSpeed={animationSpeedToolbox}
+            style={{ transform: `translateX(${translateValueToolbox}%)` }}
           >
             {filteredItems("toolbox").map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
@@ -378,16 +405,12 @@ const Harvard = () => {
           </CarouselContent>
         </Carousel>
         <Carousel
-          onMouseEnter={() =>
-            handleMouseEnter(setAnimationSpeedTopics, animationSpeedTopics)
-          }
-          onMouseLeave={() =>
-            handleMouseLeave(setAnimationSpeedTopics, animationSpeedTopics)
-          }
+          onMouseEnter={() => handleMouseEnter("topics")}
+          onMouseLeave={() => handleMouseLeave("topics")}
         >
           <CarouselContent
             ref={topicsRef}
-            animationSpeed={animationSpeedTopics}
+            style={{ transform: `translateX(${translateValueTopics}%)` }}
           >
             {filteredItems("topics").map((topic) => (
               <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
