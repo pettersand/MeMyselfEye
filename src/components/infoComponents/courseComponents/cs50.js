@@ -139,25 +139,14 @@ const infiniteScroll = keyframes`
 `;
 
 const CarouselContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: start;
   max-width: 100%;
-  gap: 16px;
-`;
-
-const Carousel = styled.div`
-  display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
-  width: 100%;
-  align-items: start;
-  background-color: var(--bg);
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.6);
-  position: relative;
   border-radius: 16px;
-  box-sizing: border-box;
-  padding: 24px 0;
+  padding: 8px;
 
   // Left shadow red)
   &::before {
@@ -196,6 +185,17 @@ const Carousel = styled.div`
   }
 `;
 
+const Carousel = styled.div`
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  width: 100%;
+  align-items: start;
+  border-radius: 16px;
+  box-sizing: border-box;
+  padding: 16px;
+`;
+
 const CarouselContent = styled.div.attrs((props) => ({
   animationSpeed: props.animationSpeed || 30,
 }))`
@@ -207,7 +207,7 @@ const CarouselContent = styled.div.attrs((props) => ({
 const CarouselItem = styled.div`
   display: flex;
   white-space: nowrap;
-  padding-right: 48px;
+  padding-right: 56px;
   font-size: 1.1rem;
   font-weight: 800;
   opacity: 0.9;
@@ -234,9 +234,7 @@ const courseData = {
     { id: 5, name: "Databases" },
     { id: 6, name: "APIs" },
     { id: 7, name: "Object Oriented Programming" },
-    { id: 8, name: "Computer Languages" },
-    { id: 9, name: "Software Best Practices" },
-    { id: 10, name: "Command Line Interface" },
+    { id: 8, name: "Command Line Interface" },
   ],
 };
 
@@ -258,7 +256,11 @@ const Harvard = () => {
             <DetailsItem className="date">05/06 - 04/08</DetailsItem>
             <DetailsItem className="date">Completed</DetailsItem>
             <LinkIcon>
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://cs50.harvard.edu/x/2023/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <HiLink />
                 Link
               </a>
@@ -280,9 +282,8 @@ const Harvard = () => {
             ))}
           </CarouselContent>
         </Carousel>
-
         <Carousel>
-          <CarouselContent animationSpeed={55}>
+          <CarouselContent animationSpeed={45}>
             {courseData.topics.map((topic) => (
               <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
             ))}
