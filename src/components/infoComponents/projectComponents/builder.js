@@ -355,8 +355,7 @@ const Builder = () => {
             <LinkIcon>
               <a
                 href="https://github.com/pettersand/builder"
-                target="_blank"
-                rel="noopener noreferrer"
+                
               >
                 Repo
                 <SiGithub />
