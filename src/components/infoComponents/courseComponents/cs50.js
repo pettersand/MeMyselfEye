@@ -1,20 +1,34 @@
 import React from "react";
 import { HiLink } from "react-icons/hi2";
 import styled, { keyframes } from "styled-components";
+import { HorizontalDivider } from "../../../utils/Dividers";
 
 const CourseWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  max-width: 95%;
+  max-width: 90%;
+  gap: 16px;
 `;
 
 const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: start;
+  width: 100%;
   padding: 16px 0;
   gap: 16px;
+`;
+
+const ColumnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  h5 {
+    margin: 4px 0;
+  }
 `;
 
 const ImageContainer = styled(({ bgImage, ...props }) => <div {...props} />)`
@@ -100,6 +114,15 @@ const DescriptionContainer = styled.div`
   width: 100%;
 `;
 
+const SubHeader = styled.div`
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-bottom: 1px solid var(--accent);
+`;
+
 const Logo = styled(({ logoImage, ...props }) => <div {...props} />)`
   background-image: url(${(props) => props.logoImage});
   background-size: contain;
@@ -107,6 +130,7 @@ const Logo = styled(({ logoImage, ...props }) => <div {...props} />)`
   background-position: center;
   min-height: 150px;
   min-width: 150px;
+  margin-right: 24px;
 `;
 
 const infiniteScroll = keyframes`
@@ -119,6 +143,7 @@ const CarouselContainer = styled.div`
   flex-direction: column;
   align-items: start;
   max-width: 100%;
+  gap: 16px;
 `;
 
 const Carousel = styled.div`
@@ -127,13 +152,52 @@ const Carousel = styled.div`
   overflow-x: hidden;
   width: 100%;
   align-items: start;
-  border: 1px solid var(--bg);
+  background-color: var(--bg);
+  box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.6);
+  position: relative;
+  border-radius: 16px;
   box-sizing: border-box;
   padding: 24px 0;
+
+  // Left shadow red)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 16px;
+    opacity: 0.3;
+    background: linear-gradient(
+      to right,
+      var(--contrast),
+      rgba(0, 0, 0, 0) 80%
+    );
+    box-shadow: inset 1px 0px 0px 0px var(--contrast);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 2;
+  }
+
+  // Right shadow green)
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 16px;
+    opacity: 0.3;
+    background: linear-gradient(to left, var(--accent), rgba(0, 0, 0, 0) 80%);
+    box-shadow: inset -1px 0px 0px 0px var(--accent);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 2;
+  }
 `;
 
 const CarouselContent = styled.div.attrs((props) => ({
-  animationSpeed: props.animationSpeed || 20,
+  animationSpeed: props.animationSpeed || 30,
 }))`
   display: flex;
   animation: ${infiniteScroll} ${(props) => props.animationSpeed}s infinite
@@ -143,7 +207,10 @@ const CarouselContent = styled.div.attrs((props) => ({
 const CarouselItem = styled.div`
   display: flex;
   white-space: nowrap;
-  padding-right: 32px;
+  padding-right: 48px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  opacity: 0.9;
 `;
 
 const courseData = {
@@ -185,11 +252,10 @@ const Harvard = () => {
             entry-level course taught by David J. Malan, CS50x teaches students
             how to think algorithmically and solve problems efficiently.
           </p>
-          <Logo logoImage={"/harvardLogo.png"} />
         </DescriptionContainer>
         <ImageContainer bgImage="/harvardcs50duck.png">
           <DetailsBar className="top">
-            <DetailsItem className="date">date</DetailsItem>
+            <DetailsItem className="date">05/06 - 04/08</DetailsItem>
             <DetailsItem className="date">Completed</DetailsItem>
             <LinkIcon>
               <a href="" target="_blank" rel="noopener noreferrer">
@@ -200,7 +266,9 @@ const Harvard = () => {
           </DetailsBar>
         </ImageContainer>
       </RowContainer>
-
+      <SubHeader>
+        <h4>Topics & Toolbox</h4>
+      </SubHeader>
       <CarouselContainer>
         <Carousel>
           <CarouselContent>
@@ -214,7 +282,7 @@ const Harvard = () => {
         </Carousel>
 
         <Carousel>
-          <CarouselContent>
+          <CarouselContent animationSpeed={55}>
             {courseData.topics.map((topic) => (
               <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
             ))}
@@ -226,6 +294,18 @@ const Harvard = () => {
           </CarouselContent>
         </Carousel>
       </CarouselContainer>
+
+      <HorizontalDivider />
+
+      <RowContainer>
+        <Logo logoImage={"/harvardLogo.png"} />
+        <ColumnContainer>
+          <h5>Key Takeaways</h5>
+          <DescriptionContainer>
+            <p>These were my key takeaways from this course.</p>
+          </DescriptionContainer>
+        </ColumnContainer>
+      </RowContainer>
     </CourseWrapper>
   );
 };

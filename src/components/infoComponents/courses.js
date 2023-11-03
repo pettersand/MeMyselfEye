@@ -9,7 +9,6 @@ const CoursesWrapper = styled.div`
   padding: 24px;
   align-items: center;
   justify-content: center;
-  gap: 16px;
 `;
 
 const CoursesContainer = styled.div`
@@ -41,6 +40,9 @@ const Courses = () => {
         <CourseHeader>Harvard CS50x</CourseHeader>
         <Harvard />
       </CoursesContainer>
+
+      <VerticalDivider />
+
       <CoursesContainer>
         <Harvard />
       </CoursesContainer>
