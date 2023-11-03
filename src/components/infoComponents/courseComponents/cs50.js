@@ -15,7 +15,7 @@ const CourseWrapper = styled.div`
 const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: center;
   width: 100%;
   padding: 16px 0;
   gap: 16px;
@@ -27,7 +27,7 @@ const ColumnContainer = styled.div`
   align-items: start;
 
   h5 {
-    margin: 4px 0;
+    margin: 0 0 16px;
   }
 `;
 
@@ -41,7 +41,7 @@ const ImageContainer = styled(({ bgImage, ...props }) => <div {...props} />)`
   justify-content: flex-start;
   padding: 8px;
   gap: 16px;
-  height: 250px;
+  height: 300px;
   width: 100%;
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
 `;
@@ -79,6 +79,7 @@ const DetailsItem = styled.div`
 const LinkIcon = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
   border-radius: 12px;
   gap: 8px;
@@ -112,6 +113,10 @@ const DescriptionContainer = styled.div`
   align-items: start;
   justify-content: center;
   width: 100%;
+
+  p {
+    margin: 0 0 16px;
+  }
 `;
 
 const SubHeader = styled.div`
@@ -128,8 +133,8 @@ const Logo = styled(({ logoImage, ...props }) => <div {...props} />)`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 150px;
-  min-width: 150px;
+  min-height: 175px;
+  min-width: 175px;
   margin-right: 24px;
 `;
 
@@ -246,9 +251,12 @@ const Harvard = () => {
           <p>
             Harvard University's introduction to the intellectual enterprises of
             computer science and the art of programming for majors and
-            non-majors alike, with or without prior programming experience. An
-            entry-level course taught by David J. Malan, CS50x teaches students
-            how to think algorithmically and solve problems efficiently.
+            non-majors alike, with or without prior programming experience. Led
+            by the dynamic and esteemed Professor David J. Malan, CS50x has
+            gained global recognition, often hailed as one of the best online
+            computer science courses available. With a comprehensive curriculum,
+            CS50x imparts knowledge on algorithmic thinking and offers the tools
+            needed to efficiently solve problems.
           </p>
         </DescriptionContainer>
         <ImageContainer bgImage="/harvardcs50duck.png">
@@ -303,7 +311,21 @@ const Harvard = () => {
         <ColumnContainer>
           <h5>Key Takeaways</h5>
           <DescriptionContainer>
-            <p>These were my key takeaways from this course.</p>
+            <p>
+              CS50x served as a great introduction to computer science and
+              fullstack development. The combination of lectures, problem sets,
+              and hands-on projects ensured that I not only understood
+              theoretical concepts but also learned how to apply them
+              practically.
+            </p>
+
+            <p>
+              Most notably I valued learning the basics of algorithms and memory
+              management. It was an eye-opening course that exceeded my
+              expectations and has served as the foundation for all my projects.
+              This is the course that actually taught me how to create, and how
+              to go from idea to something tangible and shareable.
+            </p>
           </DescriptionContainer>
         </ColumnContainer>
       </RowContainer>
