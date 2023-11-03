@@ -1,5 +1,5 @@
 import React from "react";
-import { HiLink, HiStar } from "react-icons/hi2";
+import { HiLink, HiOutlineStar, HiStar } from "react-icons/hi2";
 import styled, { keyframes } from "styled-components";
 import { HorizontalDivider } from "../../../utils/Dividers";
 
@@ -173,53 +173,18 @@ const CarouselContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  max-width: 90%;
+  max-width: 80%;
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.6);
   border-radius: 16px;
   padding: 8px;
-
-  // Left shadow red)
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 16px;
-    opacity: 0.3;
-    background: linear-gradient(
-      to right,
-      var(--contrast),
-      rgba(0, 0, 0, 0) 80%
-    );
-    box-shadow: inset 1px 0px 0px 0px var(--contrast);
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    z-index: 2;
-  }
-
-  // Right shadow green)
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 16px;
-    opacity: 0.3;
-    background: linear-gradient(to left, var(--accent), rgba(0, 0, 0, 0) 80%);
-    box-shadow: inset -1px 0px 0px 0px var(--accent);
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    z-index: 2;
-  }
+  box-sizing: border-box;
 `;
 
 const Carousel = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: hidden;
-  width: 100%;
+  max-width: 100%;
   align-items: start;
   border-radius: 16px;
   box-sizing: border-box;
@@ -230,6 +195,7 @@ const CarouselContent = styled.div.attrs((props) => ({
   animationSpeed: props.animationSpeed || 20,
 }))`
   display: flex;
+  max-width: 90%;
   animation-play-state: paused;
 
   ${CourseWrapper}:hover & {
@@ -240,7 +206,6 @@ const CarouselContent = styled.div.attrs((props) => ({
 `;
 
 const CarouselItem = styled.div`
-  display: flex;
   white-space: nowrap;
   padding-right: 56px;
   font-size: 1.1rem;
@@ -250,16 +215,9 @@ const CarouselItem = styled.div`
 
 const courseData = {
   toolbox: [
-    { id: 1, name: "C" },
-    { id: 2, name: "Python" },
-    { id: 3, name: "SQL" },
-    { id: 4, name: "HTML/CSS" },
-    { id: 5, name: "JavaScript" },
-    { id: 6, name: "Flask" },
-    { id: 7, name: "SQLite" },
-    { id: 8, name: "Bootstrap" },
-    { id: 9, name: "Jinja2" },
-    { id: 10, name: "Clang" },
+    { id: 1, name: "Python" },
+    { id: 2, name: "Beautiful Soup" },
+    { id: 3, name: "Pandas" },
   ],
   topics: [
     { id: 1, name: "Data Structures & Algorithms" },
@@ -310,7 +268,7 @@ const Python = () => {
             <HiStar />
             <HiStar />
             <HiStar />
-            <HiStar />
+            <HiOutlineStar />
           </DetailsBar>
         </ImageContainer>
       </RowContainer>

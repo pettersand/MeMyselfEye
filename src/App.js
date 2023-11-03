@@ -12,19 +12,11 @@ const AppContainer = styled.div`
   background-color: var(--bg);
   color: var(--headline);
   min-height: 100vh;
+  max-width: 100vw;
   padding: 32px;
   gap: 24px;
   display: flex;
   flex-direction: row;
-`;
-
-const ColumnContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  width: 75vw;
-  gap: 16px;
 `;
 
 const MainContainer = styled.div`
@@ -46,10 +38,7 @@ const BottomContainer = styled.div`
   background-color: var(--bg2);
   border-radius: 8px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  width: 70vw;
 `;
 
 const NameContainer = styled.div`
@@ -109,11 +98,10 @@ function App() {
           <SkillsNew />
           <ControlPanel />
         </MainContainer>
-        <ColumnContainer>
-          <BottomContainer>
-            <InfoContainer />
-          </BottomContainer>
-        </ColumnContainer>
+
+        <BottomContainer>
+          <InfoContainer />
+        </BottomContainer>
       </AppContainer>
     </AppStateProvider>
   );

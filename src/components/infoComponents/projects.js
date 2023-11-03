@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppState } from "../../App";
 import styled from "styled-components";
 import Builder from "./projectComponents/builder";
 import TrippleP from "./projectComponents/trippleP";
@@ -27,6 +26,7 @@ const ProjectRow = styled.div`
 `;
 
 const ProjectContainer = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -44,7 +44,6 @@ const ProjectContainer = styled.div`
     color: var(--headline);
   }
 `;
-
 
 const Projects = () => {
   return (
