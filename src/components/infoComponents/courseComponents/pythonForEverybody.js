@@ -288,14 +288,12 @@ const Python = () => {
         </Carousel>
         <Carousel>
           <CarouselContent animationSpeed={29}>
-            {courseData.topics.map((topic) => (
-              <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
-            ))}
-            {courseData.topics.map((topic) => (
-              <CarouselItem key={topic.id + "-clone"}>
-                {topic.name}
-              </CarouselItem>
-            ))}
+            <CarouselItem>1</CarouselItem>
+            <CarouselItem>2</CarouselItem>
+            <CarouselItem>3</CarouselItem>
+            <CarouselItem>4</CarouselItem>
+            <CarouselItem>5</CarouselItem>
+            <CarouselItem>6</CarouselItem>
           </CarouselContent>
         </Carousel>
       </CarouselContainer>

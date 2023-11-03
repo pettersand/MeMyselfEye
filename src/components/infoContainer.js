@@ -8,12 +8,7 @@ import PriorCareer from "./infoComponents/priorCareer";
 import SoftSkills from "./infoComponents/softSkills";
 
 const ContentContainer = styled.div`
-  background-color: var(--bg2);
-  color: var(--headline);
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  min-height: 20vh;
   display: flex;
   flex-direction: row;
 `;

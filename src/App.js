@@ -35,10 +35,13 @@ const MainContainer = styled.div`
 `;
 
 const BottomContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
   background-color: var(--bg2);
   border-radius: 8px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
-  width: 70vw;
+  width: 100%;
+  height: fit-content;
 `;
 
 const NameContainer = styled.div`

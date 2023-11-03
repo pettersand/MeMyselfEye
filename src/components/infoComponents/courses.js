@@ -6,22 +6,19 @@ import Python from "./courseComponents/pythonForEverybody";
 
 const CoursesWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-direction: row;
+  max-width: 70vw;
   padding: 16px;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
 `;
 
 const CoursesContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   flex: 1;
-  width: 45%;
+  max-width: 45%;
   height: 100%;
 `;
 

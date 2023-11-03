@@ -11,6 +11,7 @@ const CourseWrapper = styled.div`
   max-width: 100%;
   gap: 16px;
   border-radius: 16px;
+  overflow: hidden;
 
   transition: box-shadow 0.3s ease-in-out;
 
@@ -165,7 +166,7 @@ const Logo = styled(({ logoImage, ...props }) => <div {...props} />)`
 
 const infiniteScroll = keyframes`
   from {transform: translateX(0)}
-  to {transform: translateX(-50%)}
+  to {transform: translateX(-100%)}
 `;
 
 const CarouselContainer = styled.div`
@@ -173,29 +174,31 @@ const CarouselContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  max-width: 80%;
+  max-width: 90%;
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.6);
   border-radius: 16px;
   padding: 8px;
   box-sizing: border-box;
+  overflow: hidden;
 `;
 
 const Carousel = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: hidden;
-  max-width: 100%;
+  width: 100%;
   align-items: start;
   border-radius: 16px;
   box-sizing: border-box;
   padding: 16px;
 `;
 
-const CarouselContent = styled.div.attrs((props) => ({
-  animationSpeed: props.animationSpeed || 20,
-}))`
+const CarouselContent = styled(({ animationSpeed, ...props }) => (
+  <div {...props} />
+))`
   display: flex;
-  max-width: 90%;
+  flex-wrap: nowrap;
+  max-width: 100%;
   animation-play-state: paused;
 
   ${CourseWrapper}:hover & {
@@ -285,7 +288,7 @@ const Harvard = () => {
       </SubHeader>
       <CarouselContainer>
         <Carousel>
-          <CarouselContent>
+          <CarouselContent animationSpeed={20}>
             {courseData.toolbox.map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
             ))}
