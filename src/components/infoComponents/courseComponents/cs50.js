@@ -1,18 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const CourseWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  max-width: 100%;
+  max-width: 95%;
 `;
 
 const DescriptionContainer = styled.div`
   display: flex;
   align-items: start;
   width: 100%;
+`;
+
+const infiniteScroll = keyframes`
+  from {transform: translateX(0)}
+  to {transform: translateX(-50%)}
 `;
 
 const CarouselContainer = styled.div`
@@ -26,8 +31,7 @@ const Carousel = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: hidden;
-  flex: 0 0 auto;
-  max-width: 100%;
+  width: 100%;
   align-items: start;
   border: 1px solid var(--bg);
   box-sizing: border-box;
@@ -35,285 +39,47 @@ const Carousel = styled.div`
 `;
 
 const CarouselContent = styled.div.attrs((props) => ({
-  animationSpeed: props.animationSpeed,
+  animationSpeed: props.animationSpeed || 20,
 }))`
   display: flex;
-  flex: 0 0 auto;
-  gap: 24px;
-  flex-direction: row;
+  animation: ${infiniteScroll} ${(props) => props.animationSpeed}s infinite
+    linear;
 `;
 
 const CarouselItem = styled.div`
   display: flex;
   white-space: nowrap;
-`;
-
-const TabsRow = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const Tabs = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  flex: 1;
-  border: 1px solid var(--accent);
-  cursor: pointer;
+  padding-right: 32px;
 `;
 
 const courseData = {
   toolbox: [
-    {
-      id: 1,
-      name: "C",
-      categories: ["Languages", "Backend", "Computer Science", "All"],
-    },
-    {
-      id: 2,
-      name: "Python",
-      categories: [
-        "Languages",
-        "Backend",
-        "Data Analysis",
-        "Computer Science",
-        "All",
-      ],
-    },
-    {
-      id: 3,
-      name: "SQL",
-      categories: ["Languages", "Backend", "Data Analysis", "All"],
-    },
-    {
-      id: 4,
-      name: "HTML/CSS",
-      categories: ["Languages", "Frontend", "Fullstack", "All"],
-    },
-    {
-      id: 5,
-      name: "JavaScript",
-      categories: ["Languages", "Frontend", "Fullstack", "All"],
-    },
-    {
-      id: 6,
-      name: "Flask",
-      categories: ["Backend", "Fullstack", "All"],
-    },
-    {
-      id: 7,
-      name: "SQLite",
-      categories: ["Languages", "Backend", "Data Analysis", "All"],
-    },
-    {
-      id: 8,
-      name: "Bootstrap",
-      categories: ["Frontend", "Fullstack", "All"],
-    },
-    {
-      id: 9,
-      name: "Jinja2",
-      categories: ["Backend", "Fullstack", "All"],
-    },
-    {
-      id: 10,
-      name: "Clang",
-      categories: ["Languages", "Backend", "Computer Science", "All"],
-    },
+    { id: 1, name: "C" },
+    { id: 2, name: "Python" },
+    { id: 3, name: "SQL" },
+    { id: 4, name: "HTML/CSS" },
+    { id: 5, name: "JavaScript" },
+    { id: 6, name: "Flask" },
+    { id: 7, name: "SQLite" },
+    { id: 8, name: "Bootstrap" },
+    { id: 9, name: "Jinja2" },
+    { id: 10, name: "Clang" },
   ],
   topics: [
-    {
-      id: 1,
-      name: "Data Sanitizing",
-      categories: ["Security", "Fullstack", "All"],
-    },
-    {
-      id: 2,
-      name: "Data Structures",
-      categories: ["Computer Science", "Backend", "All"],
-    },
-    {
-      id: 3,
-      name: "Memory",
-      categories: ["Computer Science", "All"],
-    },
-    {
-      id: 4,
-      name: "Web Development",
-      categories: ["Frontend", "Backend", "Fullstack", "All"],
-    },
-    {
-      id: 5,
-      name: "Relational Databases",
-      categories: ["Backend", "Data Analysis", "Computer Science", "All"],
-    },
-    {
-      id: 6,
-      name: "Web Security",
-      categories: ["Security", "Backend", "All"],
-    },
-    {
-      id: 7,
-      name: "Algorithms",
-      categories: ["Backend", "Computer Science", "All"],
-    },
-    {
-      id: 8,
-      name: "Web Protocols & Standards",
-      categories: ["Frontend", "Backend", "Fullstack", "All"],
-    },
-    {
-      id: 9,
-      name: "Object Oriented Programming",
-      categories: ["Computer Science", "Backend", "All"],
-    },
-    {
-      id: 10,
-      name: "Compiled Languages",
-      categories: ["Languages", "Computer Science", "All"],
-    },
-    {
-      id: 11,
-      name: "File I/O",
-      categories: ["Backend", "Computer Science", "All"],
-    },
-    {
-      id: 12,
-      name: "SQL Injections",
-      categories: ["Security", "Backend", "All"],
-    },
-    {
-      id: 13,
-      name: "Authentication",
-      categories: ["Security", "Backend", "All"],
-    },
-    {
-      id: 14,
-      name: "API & Rest API",
-      categories: ["Backend", "Frontend", "Fullstack", "All"],
-    },
-    {
-      id: 15,
-      name: "Refactoring",
-      categories: ["Backend", "Frontend", "Fullstack", "All"],
-    },
-    {
-      id: 16,
-      name: "Documentation",
-      categories: ["Computer Science", "All"],
-    },
-    {
-      id: 17,
-      name: "External APIs",
-      categories: ["Backend", "Frontend", "Fullstack", "All"],
-    },
-    {
-      id: 18,
-      name: "Input Validation",
-      categories: ["Security", "Backend", "All"],
-    },
-    {
-      id: 19,
-      name: "Passwords & Security",
-      categories: ["Security", "Backend", "All"],
-    },
-    {
-      id: 20,
-      name: "Brute Force Attacks",
-      categories: ["Security", "All"],
-    },
-    {
-      id: 21,
-      name: "DDOS & Rate Limiting",
-      categories: ["Security", "Backend", "All"],
-    },
-    {
-      id: 22,
-      name: "Args/Kwargs",
-      categories: ["Languages", "Backend", "Computer Science", "All"],
-    },
-    {
-      id: 23,
-      name: "Memory Management & Malloc",
-      categories: ["Computer Science", "All"],
-    },
-    {
-      id: 24,
-      name: "Pointers",
-      categories: ["Languages", "Computer Science", "All"],
-    },
-    {
-      id: 25,
-      name: "Command Line Interface",
-      categories: ["Languages", "Computer Science", "All"],
-    },
-    {
-      id: 26,
-      name: "Interpreted Languages",
-      categories: ["Languages", "Computer Science", "All"],
-    },
+    { id: 1, name: "Data Structures & Algorithms" },
+    { id: 2, name: "Web Development" },
+    { id: 3, name: "Memory Management" },
+    { id: 4, name: "Security" },
+    { id: 5, name: "Databases" },
+    { id: 6, name: "APIs" },
+    { id: 7, name: "Object Oriented Programming" },
+    { id: 8, name: "Computer Languages" },
+    { id: 9, name: "Software Best Practices" },
+    { id: 10, name: "Command Line Interface" },
   ],
 };
 
-const categories = [
-  "All",
-  "Languages",
-  "Fullstack",
-  "Backend",
-  "Frontend",
-  "Data Analysis",
-  "Computer Science",
-  "Security",
-];
-
 const Harvard = () => {
-  const [activeTabs, setActiveTabs] = useState(["All"]);
-  const baseSpeed = 1;
-  const hoverSpeed = 0.5;
-  const [scrollSpeed, setScrollSpeed] = useState(baseSpeed);
-  const [translateValue, setTranslateValue] = useState(0);
-
-  const toggleTab = (tab) => {
-    if (tab === "All") {
-      setActiveTabs(["All"]);
-    } else {
-      // If any tab other than "All" is clicked, add or remove it
-      if (activeTabs.includes(tab)) {
-        setActiveTabs((prev) => prev.filter((t) => t !== tab));
-      } else {
-        setActiveTabs((prev) => [...prev, tab]);
-      }
-
-      // If "All" is in the activeTabs array and another tab is clicked, remove "All"
-      if (activeTabs.includes("All")) {
-        setActiveTabs((prev) => prev.filter((t) => t !== "All"));
-      }
-    }
-  };
-
-  const filteredItems = (dataType) => {
-    return courseData[dataType].filter((item) =>
-      item.categories.some((category) => activeTabs.includes(category))
-    );
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTranslateValue((prev) => prev - scrollSpeed);
-    }, 1000 / 60);
-
-    return () => clearInterval(interval);
-  }, [scrollSpeed]);
-
-  const handleMouseEnter = () => {
-    setScrollSpeed(hoverSpeed);
-  };
-
-  const handleMouseLeave = () => {
-    setScrollSpeed(baseSpeed);
-  };
-
   return (
     <CourseWrapper>
       <DescriptionContainer>
@@ -327,47 +93,23 @@ const Harvard = () => {
       </DescriptionContainer>
 
       <CarouselContainer>
-        <TabsRow>
-          {categories.map((category) => (
-            <Tabs
-              key={category}
-              onClick={() => toggleTab(category)}
-              style={{
-                backgroundColor: activeTabs.includes(category)
-                  ? "var(--accent)"
-                  : "var(--bg)",
-              }}
-            >
-              {category}
-            </Tabs>
-          ))}
-        </TabsRow>
-        <Carousel
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <CarouselContent
-            style={{ transform: `translateX(${translateValue}px)` }}
-          >
-            {filteredItems("toolbox").map((tool) => (
+        <Carousel>
+          <CarouselContent>
+            {courseData.toolbox.map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
             ))}
-            {filteredItems("toolbox").map((tool) => (
+            {courseData.toolbox.map((tool) => (
               <CarouselItem key={tool.id + "-clone"}>{tool.name}</CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
-        <Carousel
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <CarouselContent
-            style={{ transform: `translateX(${translateValue}px)` }}
-          >
-            {filteredItems("topics").map((topic) => (
+
+        <Carousel>
+          <CarouselContent>
+            {courseData.topics.map((topic) => (
               <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
             ))}
-            {filteredItems("topics").map((topic) => (
+            {courseData.topics.map((topic) => (
               <CarouselItem key={topic.id + "-clone"}>
                 {topic.name}
               </CarouselItem>
