@@ -40,7 +40,7 @@ const BottomContainer = styled.div`
   background-color: var(--bg2);
   border-radius: 8px;
   box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
-  max-width: 90vw;
+  flex-grow: 1;
   height: fit-content;
 `;
 

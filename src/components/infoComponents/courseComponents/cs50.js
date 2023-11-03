@@ -313,7 +313,7 @@ const Harvard = () => {
 
       <CarouselContainer>
         <Carousel>
-          <CarouselContent animationSpeed={20}>
+          <CarouselContent animationSpeed={18}>
             {combinedToolbox.map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
             ))}

@@ -230,16 +230,15 @@ const courseData = {
     { id: 1, name: "Python" },
     { id: 2, name: "Beautiful Soup" },
     { id: 3, name: "Pandas" },
+    { id: 4, name: "SQLite" },
   ],
   topics: [
-    { id: 1, name: "Data Structures & Algorithms" },
-    { id: 2, name: "Web Development" },
-    { id: 3, name: "Memory Management" },
-    { id: 4, name: "Security" },
-    { id: 5, name: "Databases" },
-    { id: 6, name: "APIs" },
-    { id: 7, name: "Object Oriented Programming" },
-    { id: 8, name: "Command Line Interface" },
+    { id: 1, name: "Programming Fundamentals" },
+    { id: 2, name: "Data Structures" },
+    { id: 3, name: "Networked Application APIs" },
+    { id: 4, name: "Databases" },
+    { id: 5, name: "File I/O" },
+    { id: 6, name: "Web Crawling" },
   ],
 };
 
@@ -262,10 +261,16 @@ const combinedTopics = [
 const Python = () => {
   return (
     <CourseWrapper>
-      <CourseHeader>Python for Everybody</CourseHeader>
+      <CourseHeader>Python for Everybody Specialization</CourseHeader>
       <RowContainer>
         <DescriptionContainer>
-          <p>University of Michigan's introduction to</p>
+          <p>
+            Python for Everybody Specialization from the University of Michigan
+            on Coursera delves into programming fundamentals using Python. It
+            covers data structures, networked application program interfaces,
+            and databases. Designed for beginners, the course equips learners
+            with essential Python skills for data science and web development.
+          </p>
         </DescriptionContainer>
         <ImageContainer bgImage="/pythonBackground.png">
           <DetailsBar className="top">
@@ -273,7 +278,7 @@ const Python = () => {
             <DetailsItem className="date">Completed</DetailsItem>
             <LinkIcon>
               <a
-                href="https://cs50.harvard.edu/x/2023/"
+                href="https://www.coursera.org/specializations/python"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -296,14 +301,14 @@ const Python = () => {
       </SubHeader>
       <CarouselContainer>
         <Carousel>
-          <CarouselContent animationSpeed={20}>
+          <CarouselContent animationSpeed={10}>
             {combinedToolbox.map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
         <Carousel>
-          <CarouselContent animationSpeed={29}>
+          <CarouselContent animationSpeed={25}>
             {combinedTopics.map((topic) => (
               <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
             ))}
@@ -314,24 +319,21 @@ const Python = () => {
       <HorizontalDivider />
 
       <RowContainer>
-        <Logo logoImage={"/harvardLogo.png"} />
+        <Logo logoImage={"/UM_Logo.png"} />
         <ColumnContainer>
           <h5>Key Takeaways</h5>
           <DescriptionContainer>
             <p>
-              CS50x served as a great introduction to computer science and
-              fullstack development. The combination of lectures, problem sets,
-              and hands-on projects ensured that I not only understood
-              theoretical concepts but also learned how to apply them
-              practically.
+              This course was a solid starting point in my coding journey. It
+              laid the groundwork for my understanding of basic programming
+              syntax and principles.
             </p>
 
             <p>
-              Most notably I valued learning the basics of algorithms and memory
-              management. It was an eye-opening course that exceeded my
-              expectations and has served as the foundation for all my projects.
-              This is the course that actually taught me how to create, and how
-              to go from idea to something tangible and shareable.
+              What stood out most for me was the section on File I/O. Delving
+              into reading and writing operations, I gained hands-on experience
+              in analyzing data from various file formats like CSV, XML, and
+              JSON.
             </p>
           </DescriptionContainer>
         </ColumnContainer>
