@@ -7,19 +7,23 @@ import Python from "./courseComponents/pythonForEverybody";
 const CoursesWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 70vw;
+  width: 100%;
   padding: 16px;
   align-items: center;
   justify-content: center;
+  gap: 8px;
 `;
 
 const CoursesContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   flex: 1;
-  max-width: 45%;
+  max-width: 30vw;
   height: 100%;
+  padding: 16px;
+  gap: 16px;
 `;
 
 const Courses = () => {

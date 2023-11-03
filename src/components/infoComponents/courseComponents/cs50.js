@@ -7,12 +7,13 @@ const CourseWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  max-width: 100%;
+  justify-content: center;
+  
+  width: 100%;
   gap: 16px;
+  padding: 16px;
   border-radius: 16px;
-  overflow: hidden;
-
+  box-sizing: border-box;
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
@@ -36,7 +37,7 @@ const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 90%;
+  justify-content: center;
   padding: 16px 0;
   gap: 16px;
 `;
@@ -136,7 +137,7 @@ const LinkIcon = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   width: 95%;
 
@@ -164,29 +165,23 @@ const Logo = styled(({ logoImage, ...props }) => <div {...props} />)`
   margin-right: 24px;
 `;
 
-const infiniteScroll = keyframes`
-  from {transform: translateX(0)}
-  to {transform: translateX(-100%)}
-`;
-
 const CarouselContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  box-sizing: border-box;
   max-width: 90%;
+  flex-shrink: 1;
+  overflow: hidden;
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.6);
   border-radius: 16px;
   padding: 8px;
-  box-sizing: border-box;
-  overflow: hidden;
 `;
 
 const Carousel = styled.div`
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
-  width: 100%;
+  overflow: hidden;
+
   align-items: start;
   border-radius: 16px;
   box-sizing: border-box;
@@ -197,21 +192,34 @@ const CarouselContent = styled(({ animationSpeed, ...props }) => (
   <div {...props} />
 ))`
   display: flex;
-  flex-wrap: nowrap;
-  max-width: 100%;
+  gap: 40px;
+  box-sizing: border-box;
+
   animation-play-state: paused;
 
+  @keyframes infiniteScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   ${CourseWrapper}:hover & {
-    animation: ${infiniteScroll} ${(props) => props.animationSpeed}s infinite
+    animation: infiniteScroll ${(props) => props.animationSpeed}s infinite
       linear;
     animation-play-state: running;
+  }
+
+  @media screen and (max-width: 600px) {
   }
 `;
 
 const CarouselItem = styled.div`
   display: flex;
+  flex-shrink: 1;
   white-space: nowrap;
-  padding-right: 56px;
   font-size: 1.1rem;
   font-weight: 800;
   opacity: 0.9;
@@ -241,6 +249,22 @@ const courseData = {
     { id: 8, name: "Command Line Interface" },
   ],
 };
+
+const combinedToolbox = [
+  ...courseData.toolbox,
+  ...courseData.toolbox.map((tool) => ({
+    ...tool,
+    id: tool.id + "-clone",
+  })),
+];
+
+const combinedTopics = [
+  ...courseData.topics,
+  ...courseData.topics.map((topic) => ({
+    ...topic,
+    id: topic.id + "-clone",
+  })),
+];
 
 const Harvard = () => {
   return (
@@ -286,26 +310,19 @@ const Harvard = () => {
       <SubHeader>
         <h4>Topics & Toolbox</h4>
       </SubHeader>
+
       <CarouselContainer>
         <Carousel>
           <CarouselContent animationSpeed={20}>
-            {courseData.toolbox.map((tool) => (
+            {combinedToolbox.map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
-            ))}
-            {courseData.toolbox.map((tool) => (
-              <CarouselItem key={tool.id + "-clone"}>{tool.name}</CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
         <Carousel>
           <CarouselContent animationSpeed={29}>
-            {courseData.topics.map((topic) => (
+            {combinedTopics.map((topic) => (
               <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
-            ))}
-            {courseData.topics.map((topic) => (
-              <CarouselItem key={topic.id + "-clone"}>
-                {topic.name}
-              </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>

@@ -7,11 +7,13 @@ const CourseWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  max-width: 100%;
-  gap: 16px;
-  border-radius: 16px;
+  justify-content: center;
 
+  width: 100%;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  box-sizing: border-box;
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
@@ -35,7 +37,7 @@ const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 90%;
+  justify-content: center;
   padding: 16px 0;
   gap: 16px;
 `;
@@ -135,9 +137,9 @@ const LinkIcon = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 95%;
 
   p {
     margin: 0 0 16px;
@@ -163,51 +165,61 @@ const Logo = styled(({ logoImage, ...props }) => <div {...props} />)`
   margin-right: 24px;
 `;
 
-const infiniteScroll = keyframes`
-  from {transform: translateX(0)}
-  to {transform: translateX(-50%)}
-`;
-
 const CarouselContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  max-width: 80%;
+  box-sizing: border-box;
+  max-width: 90%;
+  flex-shrink: 1;
+  overflow: hidden;
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.6);
   border-radius: 16px;
   padding: 8px;
-  box-sizing: border-box;
 `;
 
 const Carousel = styled.div`
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
-  max-width: 100%;
+  overflow: hidden;
+
   align-items: start;
   border-radius: 16px;
   box-sizing: border-box;
   padding: 16px;
 `;
 
-const CarouselContent = styled.div.attrs((props) => ({
-  animationSpeed: props.animationSpeed || 20,
-}))`
+const CarouselContent = styled(({ animationSpeed, ...props }) => (
+  <div {...props} />
+))`
   display: flex;
-  max-width: 90%;
+  gap: 40px;
+  box-sizing: border-box;
+
   animation-play-state: paused;
 
+  @keyframes infiniteScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   ${CourseWrapper}:hover & {
-    animation: ${infiniteScroll} ${(props) => props.animationSpeed}s infinite
+    animation: infiniteScroll ${(props) => props.animationSpeed}s infinite
       linear;
     animation-play-state: running;
+  }
+
+  @media screen and (max-width: 600px) {
   }
 `;
 
 const CarouselItem = styled.div`
+  display: flex;
+  flex-shrink: 1;
   white-space: nowrap;
-  padding-right: 56px;
   font-size: 1.1rem;
   font-weight: 800;
   opacity: 0.9;
@@ -231,22 +243,29 @@ const courseData = {
   ],
 };
 
+const combinedToolbox = [
+  ...courseData.toolbox,
+  ...courseData.toolbox.map((tool) => ({
+    ...tool,
+    id: tool.id + "-clone",
+  })),
+];
+
+const combinedTopics = [
+  ...courseData.topics,
+  ...courseData.topics.map((topic) => ({
+    ...topic,
+    id: topic.id + "-clone",
+  })),
+];
+
 const Python = () => {
   return (
     <CourseWrapper>
       <CourseHeader>Python for Everybody</CourseHeader>
       <RowContainer>
         <DescriptionContainer>
-          <p>
-            Harvard University's introduction to the intellectual enterprises of
-            computer science and the art of programming for majors and
-            non-majors alike, with or without prior programming experience. Led
-            by the dynamic and esteemed Professor David J. Malan, CS50x has
-            gained global recognition, often hailed as one of the best online
-            computer science courses available. With a comprehensive curriculum,
-            CS50x imparts knowledge on algorithmic thinking and offers the tools
-            needed to efficiently solve problems.
-          </p>
+          <p>University of Michigan's introduction to</p>
         </DescriptionContainer>
         <ImageContainer bgImage="/pythonBackground.png">
           <DetailsBar className="top">
@@ -277,23 +296,17 @@ const Python = () => {
       </SubHeader>
       <CarouselContainer>
         <Carousel>
-          <CarouselContent>
-            {courseData.toolbox.map((tool) => (
+          <CarouselContent animationSpeed={20}>
+            {combinedToolbox.map((tool) => (
               <CarouselItem key={tool.id}>{tool.name}</CarouselItem>
-            ))}
-            {courseData.toolbox.map((tool) => (
-              <CarouselItem key={tool.id + "-clone"}>{tool.name}</CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
         <Carousel>
           <CarouselContent animationSpeed={29}>
-            <CarouselItem>1</CarouselItem>
-            <CarouselItem>2</CarouselItem>
-            <CarouselItem>3</CarouselItem>
-            <CarouselItem>4</CarouselItem>
-            <CarouselItem>5</CarouselItem>
-            <CarouselItem>6</CarouselItem>
+            {combinedTopics.map((topic) => (
+              <CarouselItem key={topic.id}>{topic.name}</CarouselItem>
+            ))}
           </CarouselContent>
         </Carousel>
       </CarouselContainer>

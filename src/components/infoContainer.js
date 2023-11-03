@@ -10,7 +10,7 @@ import SoftSkills from "./infoComponents/softSkills";
 const ContentContainer = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
 `;
 
 const componentMap = {
