@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { VerticalDivider } from "../../utils/Dividers";
 import Harvard from "./courseComponents/cs50";
+import Python from "./courseComponents/pythonForEverybody";
 
 const CoursesWrapper = styled.div`
   display: flex;
@@ -37,14 +38,13 @@ const Courses = () => {
   return (
     <CoursesWrapper>
       <CoursesContainer>
-        <CourseHeader>Harvard CS50x</CourseHeader>
         <Harvard />
       </CoursesContainer>
 
       <VerticalDivider />
 
       <CoursesContainer>
-        <Harvard />
+        <Python />
       </CoursesContainer>
     </CoursesWrapper>
   );

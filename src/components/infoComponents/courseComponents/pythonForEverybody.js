@@ -273,10 +273,10 @@ const courseData = {
   ],
 };
 
-const Harvard = () => {
+const Python = () => {
   return (
     <CourseWrapper>
-      <CourseHeader>Harvard CS50x</CourseHeader>
+      <CourseHeader>Python for Everybody</CourseHeader>
       <RowContainer>
         <DescriptionContainer>
           <p>
@@ -290,7 +290,7 @@ const Harvard = () => {
             needed to efficiently solve problems.
           </p>
         </DescriptionContainer>
-        <ImageContainer bgImage="/harvardcs50duck.png">
+        <ImageContainer bgImage="/pythonBackground.png">
           <DetailsBar className="top">
             <DetailsItem className="date">05/06 - 04/08</DetailsItem>
             <DetailsItem className="date">Completed</DetailsItem>
@@ -371,4 +371,4 @@ const Harvard = () => {
   );
 };
 
-export default Harvard;
+export default Python;
