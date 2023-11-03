@@ -150,7 +150,7 @@ const SocialsBox = () => {
           Email
           <Tooltip text={emailTooltipText}>{emailTooltipText}</Tooltip>
         </SocialsItem>
-        <SocialsItem onClick={() => copyToClipboard("+4790010136", "phone")}>
+        <SocialsItem onClick={() => copyToClipboard("90010136", "phone")}>
           <HiPhone />
           Phone
           <Tooltip text={phoneTooltipText}>{phoneTooltipText}</Tooltip>
