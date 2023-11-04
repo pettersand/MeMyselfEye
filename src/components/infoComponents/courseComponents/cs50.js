@@ -22,7 +22,7 @@ const CourseWrapper = styled.div`
 
 const CourseHeader = styled.div`
   display: flex;
-  width: 90%;
+  width: 80%;
   flex-direction: row;
   align-items: center;
   justify-content: center;

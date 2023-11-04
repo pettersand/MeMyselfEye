@@ -9,9 +9,7 @@ import { HorizontalDivider, VerticalDivider } from "../../utils/Dividers";
 const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   width: 100%;
-  padding: 16px;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -34,6 +32,7 @@ const ProjectContainer = styled.div`
   height: 100%;
   padding: 16px;
   gap: 16px;
+
   p {
     font-size: 0.9em;
     margin: 0;

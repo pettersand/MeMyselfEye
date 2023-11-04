@@ -202,7 +202,7 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  
+
   p {
     font-size: 1rem;
     font-weight: 400;
@@ -312,7 +312,7 @@ const MeMyself = () => {
       </ProjectHeader>
       <ImageContainer bgImage="/memyself3.png">
         <DetailsBar>
-          <DetailsItem className="date">18/10 - 02/11</DetailsItem>
+          <DetailsItem className="date">18/10 - 06/11</DetailsItem>
         </DetailsBar>
         <TechStack>
           <TechColumn>
