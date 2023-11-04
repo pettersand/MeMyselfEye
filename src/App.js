@@ -24,22 +24,22 @@ const MainContainer = styled.div`
   height: fit-content;
   min-width: 475px;
   max-width: 25vw;
-  padding: 16px;
+  padding: 24px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   gap: 24px;
-  border-radius: 8px;
-  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
+  border-radius: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 8px rgba(0, 0, 0, 0.5);
 `;
 
 const BottomContainer = styled.div`
   display: flex;
   align-items: flex-start;
   background-color: var(--bg2);
-  border-radius: 8px;
-  box-shadow: -10px 10px 16px rgba(0, 0, 0, 0.75);
+  border-radius: 16px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5), -8px 8px 20px rgba(0, 0, 0, 0.5);
   flex-grow: 1;
   height: fit-content;
 `;

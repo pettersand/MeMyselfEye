@@ -17,7 +17,7 @@ const CourseWrapper = styled.div`
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
-    box-shadow: 0px 0px 15px 2px rgba(128, 128, 128, 0.6);
+    box-shadow: 0px 0px 15px 2px rgba(128, 128, 128, 0.2);
   }
 `;
 
@@ -27,8 +27,6 @@ const CourseHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
-  font-weight: 600;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
 `;
@@ -36,8 +34,7 @@ const CourseHeader = styled.div`
 const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+
   padding: 16px 0;
   gap: 16px;
 `;
@@ -137,7 +134,7 @@ const LinkIcon = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+
   justify-content: center;
   width: 95%;
 
@@ -261,7 +258,9 @@ const combinedTopics = [
 const Python = () => {
   return (
     <CourseWrapper>
-      <CourseHeader>Python for Everybody Specialization</CourseHeader>
+      <CourseHeader>
+        <h3>Python for Everybody Specialization</h3>
+      </CourseHeader>
       <RowContainer>
         <DescriptionContainer>
           <p>
@@ -274,7 +273,7 @@ const Python = () => {
         </DescriptionContainer>
         <ImageContainer bgImage="/pythonBackground.png">
           <DetailsBar className="top">
-            <DetailsItem className="date">05/06 - 04/08</DetailsItem>
+            <DetailsItem className="date">01/05 - 04/06</DetailsItem>
             <DetailsItem className="date">Completed</DetailsItem>
             <LinkIcon>
               <a

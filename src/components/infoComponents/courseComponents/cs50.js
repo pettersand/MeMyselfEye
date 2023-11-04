@@ -8,7 +8,7 @@ const CourseWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   width: 100%;
   gap: 16px;
   padding: 16px;
@@ -17,7 +17,7 @@ const CourseWrapper = styled.div`
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
-    box-shadow: 0px 0px 15px 2px rgba(128, 128, 128, 0.6);
+    box-shadow: 0px 0px 15px 2px rgba(128, 128, 128, 0.2);
   }
 `;
 
@@ -27,8 +27,6 @@ const CourseHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
-  font-weight: 600;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
 `;
@@ -36,8 +34,6 @@ const CourseHeader = styled.div`
 const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   padding: 16px 0;
   gap: 16px;
 `;
@@ -269,7 +265,9 @@ const combinedTopics = [
 const Harvard = () => {
   return (
     <CourseWrapper>
-      <CourseHeader>Harvard CS50x</CourseHeader>
+      <CourseHeader>
+        <h3>Harvard CS50x</h3>
+      </CourseHeader>
       <RowContainer>
         <DescriptionContainer>
           <p>
