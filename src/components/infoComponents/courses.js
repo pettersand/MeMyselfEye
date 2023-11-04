@@ -8,10 +8,9 @@ const CoursesWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 16px;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
 `;
 
 const CoursesContainer = styled.div`
@@ -19,9 +18,9 @@ const CoursesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  flex-grow: 1;
   max-width: 30vw;
   height: 100%;
-  padding: 16px;
   gap: 16px;
 `;
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { HiLink, HiStar } from "react-icons/hi2";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { HorizontalDivider } from "../../../utils/Dividers";
 
 const CourseWrapper = styled.div`
@@ -11,7 +11,6 @@ const CourseWrapper = styled.div`
 
   width: 100%;
   gap: 16px;
-  padding: 16px;
   border-radius: 16px;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease-in-out;
