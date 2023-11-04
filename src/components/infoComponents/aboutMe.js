@@ -6,18 +6,16 @@ const AboutMeWrapper = styled.div`
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  padding: 10px;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
-  padding: 24px;
+  gap: 32px;
 `;
 
 const TopRow = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
   gap: 16px;
 `;
@@ -27,7 +25,8 @@ const MainContent = styled.div`
   flex-flow: column wrap;
   align-items: center;
   justify-content: flex-start;
-  width: 45%;
+  flex: 1;
+  width: auto;
 `;
 
 const BottomRow = styled.div`
@@ -61,7 +60,7 @@ const ProjectHeader = styled.div`
 const TopContent = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   align-items: flex-start;
   justify-content: flex-start;
   padding-top: 16px;
@@ -77,8 +76,8 @@ const TopContent = styled.div`
 
 const BottomContent = styled.div`
   display: flex;
-  width: 90%;
-  align-items: flex-start;
+  width: 100%;
+  align-items: center;
   justify-content: flex-start;
   gap: 24px;
 `;
@@ -201,7 +200,6 @@ const AboutMe = () => {
           </ProjectHeader>
           <BottomContent>
             <ContentBox>
-              <h4>My Evolution in Tech</h4>
               <p>
                 Central to my ethos is the principle of accountability.
                 Recognizing that growth is a product of both vision and effort,

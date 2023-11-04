@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { createContext, useContext, useState } from "react";
-import Welcome from "./components/welcome";
 import styled from "styled-components";
 import ControlPanel from "./components/controlPanel";
 import InfoContainer from "./components/infoContainer";
@@ -24,7 +23,7 @@ const MainContainer = styled.div`
   height: fit-content;
   min-width: 475px;
   max-width: 25vw;
-  padding: 24px;
+  padding: 24px 32px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -39,6 +38,7 @@ const BottomContainer = styled.div`
   align-items: flex-start;
   background-color: var(--bg2);
   border-radius: 16px;
+  padding: 24px 32px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5), -8px 8px 20px rgba(0, 0, 0, 0.5);
   flex-grow: 1;
   height: fit-content;
