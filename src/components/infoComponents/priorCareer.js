@@ -7,17 +7,14 @@ const PriorCareerWrapper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  padding: 16px;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 24px;
 `;
 
 const TopicHeader = styled.div`
-  width: 90%;
+  width: 80%;
   display: flex;
-  font-size: 1.5em;
-  font-weight: 600;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--accent);
@@ -37,14 +34,13 @@ const RowContainer = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
+  gap: 24px;
 `;
 
 const SubHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2em;
-  font-weight: 500;
   width: 50%;
   border-bottom: 1px solid var(--accent);
 `;
@@ -55,7 +51,6 @@ const EducationContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  padding: 16px;
   gap: 16px;
 `;
 
@@ -142,14 +137,15 @@ const WorkContainer = styled.div`
   width: 100%;
   align-items: center;
   justify-content: flex-start;
-  padding: 16px;
   gap: 16px;
 `;
 
 const JsonLike = styled.div`
   font-family: "Courier New", Courier, monospace;
   width: 90%;
-  background-color: #030303;
+  background-color: var(--codebg);
+  box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+  font-weight: 500;
   padding: 16px;
   border-radius: 8px;
   overflow-x: auto;
@@ -217,7 +213,9 @@ const experienceData = {
 const PriorCareer = () => {
   return (
     <PriorCareerWrapper>
-      <TopicHeader>Prior Career</TopicHeader>
+      <TopicHeader>
+        <h3>Prior Career</h3>
+      </TopicHeader>
       <Disclaimer>
         Disclaimer: Not all of the contents of this section are relevant to the
         developer field. Therefore the specific contents of each section will
@@ -225,7 +223,9 @@ const PriorCareer = () => {
       </Disclaimer>
       <RowContainer>
         <EducationContainer>
-          <SubHeader>Education</SubHeader>
+          <SubHeader>
+            <h3>Education</h3>
+          </SubHeader>
           <EducationItem>
             <EducationDetails>
               <ItemRow>
@@ -292,7 +292,7 @@ const PriorCareer = () => {
               <h5>Topics of Relevance:</h5>
               <ul>
                 <li>Psychology 101</li>
-                <li>Behvavioural Psychology</li>
+                <li>Behavioural Psychology</li>
                 <li>Scientific Method</li>
                 <li>Social Psychology</li>
                 <li>Motivation Psychology</li>
@@ -304,7 +304,9 @@ const PriorCareer = () => {
         <VerticalDivider />
 
         <WorkContainer>
-          <SubHeader>Work Experience</SubHeader>
+          <SubHeader>
+            <h3>Work Experience</h3>
+          </SubHeader>
           <JsonLike>
             {"{"}
             <br />

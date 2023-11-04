@@ -7,7 +7,6 @@ const SoftSkillsWrapper = styled.div`
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  padding: 16px;
   align-items: center;
   justify-content: center;
   gap: 16px;
@@ -18,19 +17,16 @@ const ContainerRow = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: 16px;
-  gap: 16px;
+  gap: 32px;
 `;
 
 const CategoryContainer = styled.div`
-display: flex;
-flex-flow: column wrap;
-align-items: center;
-justify-content: flex-start;
-flex: 1;
-width 90%;
-gap: 16px;
-
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  gap: 32px;
 `;
 
 const CategoryHeader = styled.div`
@@ -38,8 +34,6 @@ const CategoryHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3em;
-  font-weight: 500;
   width: 80%;
   border-bottom: 1px solid var(--accent);
   cursor: pointer;
@@ -190,7 +184,7 @@ const SoftSkills = () => {
       <ContainerRow>
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("problemSolving")}>
-            Problem Solving & Innovation
+            <h3>Problem Solving & Innovation</h3>
             {categoryState.problemSolving ? <HiMinus /> : <HiPlus />}
           </CategoryHeader>
           <CategorySkills>
@@ -376,7 +370,7 @@ const SoftSkills = () => {
 
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("personal")}>
-            Personal Attributes & Growth
+            <h3>Personal Attributes & Growth</h3>
             {categoryState.personal ? <HiMinus /> : <HiPlus />}
           </CategoryHeader>
           <CategorySkills>
@@ -535,7 +529,7 @@ const SoftSkills = () => {
       <ContainerRow>
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("teamwork")}>
-            Teamwork & Collaboration
+            <h3>Teamwork & Collaboration</h3>
             {categoryState.teamwork ? <HiMinus /> : <HiPlus />}
           </CategoryHeader>
           <CategorySkills>
@@ -665,7 +659,7 @@ const SoftSkills = () => {
 
         <CategoryContainer>
           <CategoryHeader onClick={() => toggleCategory("professional")}>
-            Professional Attributes
+            <h3>Professional Attributes</h3>
             {categoryState.professional ? <HiMinus /> : <HiPlus />}
           </CategoryHeader>
           <CategorySkills>

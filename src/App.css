@@ -9,6 +9,7 @@
   --accent-text: #fffffe;
   --contrast: #b62c65;
   --secondary: #010101;
+  --codebg: #0b0b0b;
 
   --light-bg: #f7f9fc;
   --light-bg2: #e4e7eb;
@@ -20,6 +21,7 @@
   --light-accent-text: #fffffe;
   --light-contrast: #de4d4d;
   --light-secondary: #f7f9fc;
+  --light-codebg: #eceef1;
 
   --xs: 4px;
   --sm: 8px;
@@ -38,6 +40,7 @@
   --accent-text: var(--light-accent-text);
   --contrast: var(--light-contrast);
   --secondary: var(--light-secondary);
+  --codebg: var(--light-codebg);
 }
 
 .App {

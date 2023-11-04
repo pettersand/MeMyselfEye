@@ -31,22 +31,17 @@ const SkillDetailWrapper = styled.div`
 
 const DetailsContainer = styled.div`
   display: flex;
-  flex: 1;
+  flex: 0.5;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 0.8em;
   margin-right: 16px;
 `;
 
 const Icon = styled.div`
-  margin-right: 10px;
+  margin-right: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  h2 {
-    font-size: 1.1em;
-  }
 `;
 
 const UsedInContainer = styled.div`
@@ -57,44 +52,23 @@ const UsedInContainer = styled.div`
   justify-content: flex-start;
   margin-right: 16px;
 
-  h3 {
-    margin: 0;
-    font-size: 1em;
-  }
-
   ul {
     list-style-position: inside;
     padding-left: 4px;
-    font-size: 0.9em;
   }
 `;
 
 const UsedForContainer = styled.div`
   display: flex;
-  flex: 1;
+  flex: 1.5;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 
-  h3 {
-    margin: 0;
-    font-size: 1em;
-  }
-
   ul {
     list-style-position: inside;
     padding-left: 4px;
-    font-size: 0.9em;
   }
-`;
-
-const BoxHeader = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  gap: 10px;
 `;
 
 const CloseButton = styled.div`
@@ -103,9 +77,11 @@ const CloseButton = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding-right: 16px;
-  font-size: 1.4em;
   cursor: pointer;
-  color: var(--complement);
+
+  svg {
+    color: var(--contrast);
+  }
 `;
 
 export const detailMap = {
@@ -250,15 +226,15 @@ const SkillDetail = ({ skill, onClose }) => {
     <SkillDetailWrapper>
       <DetailsContainer>
         <Icon>
-          <skillDetail.icon size="2.5em" color="var(--accent)" />
-          <h2>{skillDetail.label}</h2>
+          <skillDetail.icon />
+          <h3>{skillDetail.label}</h3>
         </Icon>
 
-        <p>Since: {skillDetail.startDate}</p>
-        <p>With: {skillDetail.frameworks.join(", ")}</p>
+        <p>{skillDetail.startDate}</p>
+        <p>{skillDetail.frameworks.join(", ")}</p>
       </DetailsContainer>
       <UsedInContainer>
-        <h3>Used In:</h3>
+        <h4>Used In:</h4>
 
         <ul>
           {skillDetail.usedIn.map((item, index) => (
@@ -267,7 +243,7 @@ const SkillDetail = ({ skill, onClose }) => {
         </ul>
       </UsedInContainer>
       <UsedForContainer>
-        <h3>Used For:</h3>
+        <h4>Used For:</h4>
 
         <ul>
           {skillDetail.usedFor.map((item, index) => (
