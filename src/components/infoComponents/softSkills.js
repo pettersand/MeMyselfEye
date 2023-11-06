@@ -242,10 +242,9 @@ const SoftSkills = () => {
                     <p>
                       In the realm of development, I continuously seek
                       unconventional methods to enhance efficiency and user
-                      experience. My passion for breaking norms and improving
-                      systems propels me to create unique digital solutions,
-                      echoing my vision of pioneering innovative business
-                      ventures.
+                      experience. My passion for breaking norms and creating
+                      unique digital solutions, echoes my vision of developing
+                      innovative business ventures.
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -271,7 +270,7 @@ const SoftSkills = () => {
                       As a developer, I leverage my creativity to design
                       intuitive and unique user interfaces as well as to
                       implement unconventional solutions to problems. My drive
-                      to imagine and invent has followed me in life through
+                      to imagine and create has followed me in life through
                       hobbies such as playing instruments, drawing, and 3D
                       modeling.
                     </p>
@@ -302,7 +301,7 @@ const SoftSkills = () => {
                       I love the puzzle-like nature of coding. Each hurdle is an
                       opportunity for learning, and there's a unique
                       satisfaction when all the pieces assemble and you're met
-                      with a completely new error.
+                      with a completely new error!
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -327,7 +326,7 @@ const SoftSkills = () => {
                     Application:
                     <p>
                       I always question and evaluate new concepts and ideas,
-                      ensuring no glaring mistakes, and for my own
+                      ensuring no glaring mistakes, as well as for my own
                       understanding. Every choice should be approached with
                       critical reflection and based on solid reasoning. If you
                       cannot explain the thought process of your choices, there
@@ -355,13 +354,13 @@ const SoftSkills = () => {
                   <SkillItem>
                     Application:
                     <p>
-                      Whether diving into documentation, reading articles, or
-                      tapping into the knowledge of peers, I ensure that I have
-                      the tools and understanding necessary to move forward with
-                      a challenge. This approach ensures I always have a
-                      starting point and path forward. I believe anything can be
-                      learned if you simply define the end result and figure out
-                      its components.
+                      Whether through diving into documentation, reading
+                      articles, or tapping into the knowledge of peers, I ensure
+                      that I have the tools and understanding necessary to move
+                      forward with a challenge. This approach ensures I always
+                      have a starting point and path forward. I believe anything
+                      can be learned if you simply define the end result and
+                      understand its components.
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -401,7 +400,7 @@ const SoftSkills = () => {
                       with a "glass half full" mindset. Recognizing the
                       downsides of negativity, I choose to focus on the
                       potential and uplift those around me, ensuring enhanced
-                      performance and fostering a collaborative environment.
+                      performance and collaborative environment.
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -422,12 +421,11 @@ const SoftSkills = () => {
                   <SkillItem>
                     Application:
                     <p>
-                      In my role as a developer, my innate curiosity pushes me
-                      to delve deeper than just solutions. I seek to understand
-                      the "why" behind them. This drive not only bolsters my own
-                      understanding but also prompts peers to re-evaluate
-                      processes, potentially unveiling inefficiencies and
-                      fostering improvement.
+                      My innate curiosity pushes me to dive deeper than just
+                      solutions. I seek to understand the "why" behind them.
+                      This drive not only bolsters my own understanding but also
+                      prompts peers to re-evaluate processes, potentially
+                      unveiling inefficiencies and fostering improvement.
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -456,7 +454,7 @@ const SoftSkills = () => {
                       piece. Having mastered diverse fields like stock market
                       speculation, 3D modeling, and special needs education, I
                       can quickly adapt and become proficient in new domains,
-                      ensuring I keep up with any requirements.
+                      ensuring I deliver on any requirements.
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -515,10 +513,9 @@ const SoftSkills = () => {
                       In software development, patience is crucial when tackling
                       complex challenges or debugging intricate code. My ability
                       to remain patient ensures a thorough and meticulous
-                      approach. A skill honed through my work with hundreds of
-                      personal training clients from all walks of life, and
-                      through my work as a teaching assistant for youth with
-                      special needs.
+                      approach. A skill acquired through my work with hundreds
+                      of clients from all walks of life, and through my work as
+                      a teaching assistant for youth with special needs.
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -587,10 +584,10 @@ const SoftSkills = () => {
                   <SkillItem>
                     Application:
                     <p>
-                      As an outgoing person I build relationships quickly,
-                      bolstering team synergy. My knack for making strong first
-                      impressions allows for smooth interactions with
-                      stakeholders, clients, and team members alike.
+                      As an outgoing person I build relationships quickly. My
+                      knack for making strong first impressions allows for
+                      smooth interactions with stakeholders, clients, and team
+                      members alike.
                     </p>
                   </SkillItem>
                 </SkillDetails>
@@ -776,9 +773,9 @@ const SoftSkills = () => {
                     Application:
                     <p>
                       My ambition fuels my journey into the tech industry. Not
-                      content with the mediocrity, I'm always seeking ways to
-                      grow, innovate, and achieve more. This drive ensures I'm
-                      not just meeting expectations but consistently aiming to
+                      content with mediocrity, I'm always seeking ways to grow,
+                      innovate, and achieve more. This drive ensures I'm not
+                      just meeting expectations but consistently aiming to
                       surpass them.
                     </p>
                   </SkillItem>
