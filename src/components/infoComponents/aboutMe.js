@@ -81,9 +81,13 @@ const TopContent = styled.div`
 const BottomContent = styled.div`
   display: flex;
   width: 100%;
-  align-items: center;
+  align-items: start;
   justify-content: flex-start;
   gap: 24px;
+
+  @media (max-width: 1599px) {
+    flex-direction: column;
+  }
 `;
 
 const ContentBox = styled.div`
