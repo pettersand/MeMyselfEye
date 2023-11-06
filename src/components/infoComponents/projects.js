@@ -21,6 +21,10 @@ const ProjectRow = styled.div`
   flex: 1;
   align-items: center;
   justify-content: center;
+  
+  @media (max-width: 1599px) {
+    flex-direction: column;
+  }
 `;
 
 const ProjectContainer = styled.div`

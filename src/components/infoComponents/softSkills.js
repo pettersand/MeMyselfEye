@@ -18,6 +18,10 @@ const ContainerRow = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 32px;
+
+  @media (max-width: 1599px) {
+    flex-direction: column;
+  }
 `;
 
 const CategoryContainer = styled.div`

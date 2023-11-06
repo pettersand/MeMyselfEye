@@ -35,6 +35,10 @@ const RowContainer = styled.div`
   width: 100%;
   flex-direction: row;
   gap: 24px;
+
+  @media (max-width: 1599px) {
+    flex-direction: column;
+  }
 `;
 
 const SubHeader = styled.div`
