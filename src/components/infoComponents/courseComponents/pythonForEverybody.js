@@ -263,8 +263,8 @@ const Python = () => {
       <RowContainer>
         <DescriptionContainer>
           <p>
-            Python for Everybody Specialization from the University of Michigan
-            on Coursera delves into programming fundamentals using Python. It
+            Python for Everybody Specialization, from the University of Michigan
+            on Coursera, delves into programming fundamentals using Python. It
             covers data structures, networked application program interfaces,
             and databases. Designed for beginners, the course equips learners
             with essential Python skills for data science and web development.
@@ -324,14 +324,16 @@ const Python = () => {
             <p>
               This course was a solid starting point in my coding journey. It
               laid the groundwork for my understanding of basic programming
-              syntax and principles.
+              syntax and principles. Though it is a very introductory course, it
+              teaches the basics in an efficient and entertaining way.
             </p>
 
             <p>
-              What stood out most for me was the section on File I/O. Delving
-              into reading and writing operations, I gained hands-on experience
+              What stood out most for me was the section on File I/O. Learning
+              about reading and writing operations, I gained hands-on experience
               in analyzing data from various file formats like CSV, XML, and
-              JSON.
+              JSON. This was the first time I truly understood the power of
+              programming, data, and information.
             </p>
           </DescriptionContainer>
         </ColumnContainer>

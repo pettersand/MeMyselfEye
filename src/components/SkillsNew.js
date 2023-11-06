@@ -245,10 +245,10 @@ const SkillsNew = () => {
             </h5>
           </HeaderCat>
           <HeaderSkills>
-            <h5>Skills</h5>
+            <h4>Primary</h4>
           </HeaderSkills>
           <HeaderWorking>
-            <h5>Used</h5>
+            <h4>Secondary</h4>
           </HeaderWorking>
         </HeaderRow>
         <SkillsRow>
