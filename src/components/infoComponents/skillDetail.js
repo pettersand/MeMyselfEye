@@ -115,7 +115,7 @@ export const detailMap = {
     icon: SiFlask,
     label: "Flask",
     startDate: "July '23",
-    frameworks: ["-"],
+    frameworks: ["Jinja2"],
     usedIn: ["Salloc", "Web Portfolio"],
     usedFor: ["API", "Backend SQL", "Authentication"],
   },
@@ -172,7 +172,7 @@ export const detailMap = {
     label: "CSS",
     startDate: "June '23",
     frameworks: ["Tailwind", "Styled-Components"],
-    usedIn: ["Web Portfolio"],
+    usedIn: ["Web Portfolio", "This Page!"],
     usedFor: ["Frontend", "Styling", "Animations"],
   },
   "tailwind css": {
@@ -187,7 +187,7 @@ export const detailMap = {
     icon: SiJavascript,
     label: "JavaScript",
     startDate: "June '23",
-    frameworks: ["TypeScript"],
+    frameworks: ["TypeScript", "React"],
     usedIn: ["Salloc", "Web Portfolio"],
     usedFor: ["Frontend", "Reactive UI"],
   },
@@ -221,7 +221,7 @@ export const detailMap = {
     startDate: "May '23",
     frameworks: ["CS50x"],
     usedIn: ["Course Work"],
-    usedFor: ["Learning", "Terminal"],
+    usedFor: ["Learning", "CLI"],
   },
 };
 
