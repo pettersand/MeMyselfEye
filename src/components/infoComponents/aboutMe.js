@@ -108,36 +108,47 @@ const AboutMe = () => {
           </ProjectHeader>
           <TopContent>
             <p>
-              From my early days of passionately creating and improving on
-              existing ideas, to my more recent endeavors in software
-              development, my journey has always been fueled by a desire to
-              innovate and make an impact. My experiences aren’t limited to the
-              realm of tech. Over the past few years, I’ve worked diligently
-              with special needs youth in a school setting and as a personal
-              trainer, balancing these roles with grace. These experiences have
-              fortified my empathy, resilience, and unwavering work ethic.
+              Curiosity has always been a fitting word to describe who I am, and
+              how I interact with the world around me. With an innate need to
+              understand the why and how, I have acquired a lot of knowledge
+              about a lot of things. A constant quest for improvement in myself
+              and the results of my work has acted as a driving force in pushing
+              me to further innovate and make an impact in peoples lives. I am a
+              multi-passionate person, with a natural ability to understand
+              complex concepts and how I can affect it with my unique world-view
+              and problem solving abilities.
             </p>
             <p>
-              While software development is where my heart currently lies, I
-              remain open to the boundless possibilities the tech world offers.
-              Be it data analysis or roles that resonate more deeply with my
-              previous experiences, my goal is to be a part of meaningful
-              projects that make a difference.
+              While software development is where my focus currently lies, I
+              remain open to the other possibilities the tech world has to
+              offer. Roles within data analysis or more hybrid IT-roles
+              involving interpersonal communication definitely do pique my
+              interest as well. In short; my goal is to be a part of meaningful
+              projects that make a difference, while challenging me to become
+              better along the way.
             </p>
           </TopContent>
           <TopContent>
             <h4>Skills Beyond Code</h4>
             <p>
-              Having had the privilege to interact with diverse individuals from
-              various backgrounds, I’ve cultivated a keen sense for
-              understanding people. This ability, coupled with my strong
-              communication skills, allows me to grasp concepts and articulate
-              them in a manner that’s clear and comprehensible. My knack for
-              needs analysis ensures that I have a holistic understanding of
-              requirements, be it from a client or a project perspective. This
-              approach guarantees that my work, whether in software development
-              or any other field, meets the highest standards of quality and
-              precision.
+              I've had to privilege to engage with a diverse group of
+              inidividuals through my work as a personal trainer, and as a
+              teaching assistant for youth with special needs. This journey has
+              both played on my ability to understand people, as well as further
+              fostered it. With a keen sense for the human mind I excel in
+              reading people and understanding their motivations and
+              personality. This allows me to adapt my approach in how I
+              communicate with them, and ensures my work aligns with their
+              requests.
+            </p>
+
+            <p>
+              My academic background has provided me with skills in data
+              analysis and experience in making data driven decisions.
+              Furthermore, I understand the importance of the nuances between
+              data, and client needs analysis. My expertise lies in
+              understanding both aspects, and combining them to provide the best
+              solution possible.
             </p>
           </TopContent>
           <TopContent>
@@ -162,32 +173,36 @@ const AboutMe = () => {
           </ProjectHeader>
           <TopContent>
             <p>
-              Over a decade in exercise science and personal training gave me
-              invaluable experiences, life lessons, and a deep understanding of
-              human potential. However, as years passed, an innate restlessness
-              burgeoned. The realization struck that perhaps I was destined for
-              a different path. The world of technology beckoned, and when I
-              delved into the realm of development, the pieces of the puzzle
-              fell into place.
+              After over 13 years in the exercise industry, I finally realized
+              that I had to move on. There are aspects of the industry that
+              simply didn't align with my ambitions and preferences. Though I
+              take with me invaluable experiences, life lessons, and a deep
+              understanding of the human psyche. The world of technology and
+              development struck me as the perfect career path for me to embark
+              on. It plays to my strengths as a person, and fills my need for
+              creation, challenge, and enjoyment. 
             </p>
           </TopContent>
           <TopContent>
             <p>
               While the conventional path of a bachelors degree tempted me,
               practicalities, responsibilities, and an underlying sense of
-              immediacy nudged me towards self-learning. The journey of
+              immediacy pushed me towards self-learning. The journey of
               educating myself in the nuanced world of code, on evenings and
-              weekends, became an exhilarating challenge. It wasn’t just a phase
-              – it was a rediscovery, the kind that lights up one's life.
+              weekends, became an exhilarating challenge. I quickly felt a sense
+              of clarity that I had made the correct decision, and have since
+              not looked back.
             </p>
           </TopContent>
           <TopContent>
             <p>
-              Today, I stand at a juncture where I've bid adieu to my past
-              career to fully immerse myself in development. This isn't a
-              fleeting passion, but a testament to my tenacity and dedication.
-              With an ever-burning desire to learn and evolve, I’m poised and
-              determined to make a significant mark in the tech landscape.
+              Today, I stand at a juncture where I've left my past career to
+              fully immerse myself in development. Juggling the responsibilities
+              of work as well as learning on my spare time felt
+              counter-intuitive to my ambitions of breaking into the IT-field.
+              So I decided that I'd rather take the plunge, and free up more
+              time to truly delve into this new path. Now I'm approaching this
+              new line of work with vigor and a need to prove my worth.
             </p>
           </TopContent>
         </MainContent>
@@ -201,71 +216,86 @@ const AboutMe = () => {
           <BottomContent>
             <ContentBox>
               <p>
-                Central to my ethos is the principle of accountability.
+                My core belief in life is the principle of accountability.
                 Recognizing that growth is a product of both vision and effort,
                 I've persistently worked to turn gaps in knowledge into mastery.
-                I am the captain of my learning journey, and every project,
+                One cannot decide the outcome of things not within my control;
+                so I choose to focus my efforts on the things I have agency
+                over. I am the captain of my own journey, and every project,
                 every course, every challenge faced is a testament to my drive
                 and adaptability.
               </p>
               <h4>Beginning Steps</h4>
               <p>
-                My quest commenced with diligent research, seeking the best
-                foundational programming language. Understanding the
-                effectiveness of structured education for my learning style, I
-                embarked on the "Python for Everybody" course from the
-                University of Michigan. Soon after, I navigated the complexities
-                of Harvard's CS50x. But theory was just the start; I'm a firm
-                believer in learning through creation.
+                You cannot build a house without a foundation. My learning
+                process commenced with thorough research, seeking insight into
+                the best foundational programming language, and how to learn it.
+                I started with a course of basic Pythong programming called
+                "Python for Everybody" on coursera, hosted by the University of
+                Michigan. Soon after, I jumped into Harvard's CS50x course.
+                Though the theoretical foundation was just the start; I'm a firm
+                believer in learning by doing.
               </p>
               <h4>Hands-On Experience</h4>
+
               <p>
-                Salloc emerged as my maiden voyage into full-stack development.
-                It was more than a project; it was the metamorphosis of an old
-                excel spreadsheet into a dynamic web application, utilizing SQL
-                and Python in the backend and delivering an aesthetic frontend.
+                My first foray into full-stack development was spearheaded by
+                Salloc, a project I had been wanting to create for a while.
+                Based on an old Excel spreadsheet, I sought to improve upon the
+                initial idea for my own personal use, while also learning the
+                basics of creating a web app from scratch.
               </p>
               <p>
                 Recognizing the need for a digital portfolio, I designed a
                 personal site to house my projects. This initiative led me to
-                explore the domains of hosting, diving deep into the workings of
+                explore the domains of hosting, diving into the workings of
                 Linux, Ubuntu, and Nginx with a VPS on Hostinger.
               </p>
             </ContentBox>
             <ContentBox>
               <h4>Innovations & Challenges</h4>
               <p>
-                Builder, my capstone endeavor, stood as the amalgamation of my
-                roots in exercise science and my blossoming programming acumen.
-                Originating from a sophisticated Excel tool, the project evolved
-                into an ambitious personal trainer management application.
-                Prioritizing clean code, security, and robust testing, I
-                ventured into DevOps, acquainting myself with containers and
-                CI/CD pipelines.
+                Builder, my capstone project, and brain-child, stood as the
+                bridge between my roots in exercise science and my newfound
+                programming path. Also originating from a comprehensive Excel
+                tool, the project evolved into an ambitious personal trainer
+                management application. Prioritizing clean code, security, and
+                robust testing, I ventured into DevOps, utilizing containers and
+                CI/CD pipelines. This project is not something I will rush, but
+                rather something I hope to work on for a while in order to
+                ensure a high quality product at the end of development.
               </p>
               <p>
-                Tripple-P, influenced by my affinity for Excel, emerged as a
-                brainchild during the development of Builder. Venturing into C#
-                and the .NET framework, this tool epitomized my commitment to
-                efficiency, organization, and quality in the software
-                development process.
+                Tripple-P, influenced by my affinity for Excel as well, emerged
+                as a natural step during the development of Builder. I found
+                myself with a mess of Excel spreadsheets for all of my projects
+                planning, so I thought why not create my own planning tool?
+                Venturing into C# and the .NET framework, this tool highlights
+                my commitment to efficiency, organization, and quality in the
+                software development process.
               </p>
               <h4>Standing Out</h4>
               <p>
-                The challenge of pivoting careers in a tumultuous economic
-                climate made it clear: I had to be distinctive. This interactive
-                resume is not just a testament to my determination but also my
-                maiden voyage with React. It reflects my proactive approach to
-                obstacles, always seeking unique solutions while expanding my
-                tech repertoire.
+                The challenge of pivoting careers in a turbulent economic
+                climate made it clear that I had to stand out from the crowd.
+                This interactive resume, built in React, is the response.
+                Providing an interactive way for potential employers to get to
+                know me felt like a great way to get their attention. This
+                project reflects my proactive approach to obstacles, always
+                seeking unique solutions while expanding my tech repertoire.
               </p>
               <h4>A Guiding Hand</h4>
               <p>
-                Along this journey, I found an ally in ChatGPT. However, instead
-                of being a crutch, I harnessed it as a pocket mentor – a
-                sounding board for brainstorming and a guide for queries. Used
-                judiciously, it's been an instrumental companion in my
-                self-taught voyage.
+                The world of AI and how developers should utilize it is the
+                source of much discord these days. Many claiming it to be
+                nothing but hype, while others praising it was the second
+                coming. I chose to approach it with curiosity and care. Being
+                mindful of the dangers of becoming a copy paste developer, I
+                focused on rather using ChatGPT as a "pocket senior developer".
+                Meaning I used it as a guide in tackling new concepts, and a
+                mentor in brainstorming and learning as I went along. I believe
+                it has been instrumental in my ability to quickly learn
+                programming to the degree I currently hold.
               </p>
             </ContentBox>
           </BottomContent>
