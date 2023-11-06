@@ -37,6 +37,10 @@ const ControlRow = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const ControlColumn = styled.div`

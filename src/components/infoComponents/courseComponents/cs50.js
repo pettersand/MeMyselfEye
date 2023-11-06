@@ -132,7 +132,7 @@ const LinkIcon = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 95%;
 

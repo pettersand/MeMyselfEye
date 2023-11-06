@@ -8,9 +8,13 @@ const CoursesWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 32px;
+
+  @media (max-width: 1899px) {
+    flex-direction: column;
+  }
 `;
 
 const CoursesContainer = styled.div`
@@ -18,10 +22,25 @@ const CoursesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  flex-grow: 1;
   max-width: 30vw;
   height: 100%;
   gap: 16px;
+
+  @media (max-width: 1899px) {
+    max-width: 60vw;
+  }
+
+  @media (max-width: 1699px) {
+    max-width: 50vw;
+  }
+
+  @media (max-width: 1355px) {
+    max-width: 40vw;
+  }
+
+  @media (max-width: 1199px) {
+    max-width: 80vw;
+  }
 `;
 
 const Courses = () => {

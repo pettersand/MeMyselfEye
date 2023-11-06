@@ -56,6 +56,11 @@ const UsedInContainer = styled.div`
     list-style-position: inside;
     padding-left: 4px;
   }
+
+  @media (max-width: 1199px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const UsedForContainer = styled.div`
@@ -68,6 +73,11 @@ const UsedForContainer = styled.div`
   ul {
     list-style-position: inside;
     padding-left: 4px;
+  }
+
+  @media (max-width: 1199px) {
+    justify-content: center;
+    align-items: center;
   }
 `;
 
