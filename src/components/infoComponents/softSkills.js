@@ -62,7 +62,7 @@ const CategorySkills = styled.div`
 const CategoryColumn = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 300px;
   gap: 16px;
 `;
 
@@ -80,7 +80,6 @@ const SkillContainer = styled.div`
 
 const SkillItem = styled.div`
   display: flex;
-  width: fit;
   flex-direction: column;
   align-items: flex-start;
   margin: 8px 0;
@@ -96,7 +95,7 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  font-size: 1.1em;
+  font-size: 1.2rem;
   font-weight: 500;
   width: 75%;
   cursor: pointer;
@@ -233,33 +232,6 @@ const SoftSkills = () => {
                   <SkillItem>
                     Description:
                     <p>
-                      Thinking outside the box to develop original solutions and
-                      improvements.
-                    </p>
-                  </SkillItem>
-                  <SkillItem>
-                    Application:
-                    <p>
-                      In the realm of development, I continuously seek
-                      unconventional methods to enhance efficiency and user
-                      experience. My passion for breaking norms and creating
-                      unique digital solutions, echoes my vision of developing
-                      innovative business ventures.
-                    </p>
-                  </SkillItem>
-                </SkillDetails>
-              </SkillContainer>
-              <SkillContainer>
-                <SubHeader
-                  onClick={() => toggleSkill("creative")}
-                  expanded={skillState.creative}
-                >
-                  Creativity {skillState.creative ? <HiMinus /> : <HiPlus />}
-                </SubHeader>
-                <SkillDetails expanded={skillState.creative}>
-                  <SkillItem>
-                    Description:
-                    <p>
                       Imagine or invent something original, breaking away from
                       established patterns to look at things in a novel way.
                     </p>
@@ -268,7 +240,7 @@ const SoftSkills = () => {
                     Application:
                     <p>
                       As a developer, I leverage my creativity to design
-                      intuitive and unique user interfaces as well as to
+                      intuitive and unique user experiences as well as to
                       implement unconventional solutions to problems. My drive
                       to imagine and create has followed me in life through
                       hobbies such as playing instruments, drawing, and 3D
@@ -340,7 +312,7 @@ const SoftSkills = () => {
                   onClick={() => toggleSkill("resourceful")}
                   expanded={skillState.resourceful}
                 >
-                  Resourceful
+                  Resourcefulness
                   {skillState.resourceful ? <HiMinus /> : <HiPlus />}
                 </SubHeader>
                 <SkillDetails expanded={skillState.resourceful}>
