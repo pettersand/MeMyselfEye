@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import ToggleButton from "../utils/ToggleButton";
 import { useAppState } from "../App";
-import { VerticalDivider } from "../utils/Dividers";
 
 const ControlWrapper = styled.div`
   color: var(--headline);

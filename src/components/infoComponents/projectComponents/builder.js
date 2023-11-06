@@ -353,10 +353,7 @@ const Builder = () => {
           </TechColumn>
           <LinksColumn>
             <LinkIcon>
-              <a
-                href="https://github.com/pettersand/builder"
-                
-              >
+              <a href="https://github.com/pettersand/builder">
                 Repo
                 <SiGithub />
               </a>
@@ -379,15 +376,15 @@ const Builder = () => {
         </p>
         <DescriptionContent expanded={descriptionExpanded}>
           <p>
-            This project will likely be in development for while, seeing as it
-            is quite the undertaking and ambitions are set high. The vision is
-            for Builder to be a staple in every fitness professional's toolbox.
-            It will allow them to efficiently create custom workout programs for
-            their clients, track their progress, make adjustments, and improve
-            their client management.
+            This project will likely be in development for a while, seeing as it
+            is quite the undertaking and ambitions are set high. The vision for
+            Builder is to become a staple in every fitness professional's
+            toolbox, enabling them to efficiently create custom workout programs
+            for their clients, track their progress, make adjustments, and
+            improve their client management.
           </p>
           <p>
-            Coming from a long career as a personal trainer, i was stuck with
+            Coming from a long career as a personal trainer, I was stuck with
             endless Excel spreadsheets that got the job done, though not to the
             full potential of my vision. This project aims to fix that.
           </p>

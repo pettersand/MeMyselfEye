@@ -387,7 +387,7 @@ const Salloc = () => {
           </p>
           <p>
             This project was based on an old excel spreadsheet I've been using
-            to track the state of my savings. The idea is to really define what
+            to track the state of my savings. The idea is to clearly define what
             your savings are for, and how much you can spend on certain "posts"
             such as vacation, gadgets, or home improvement.
           </p>

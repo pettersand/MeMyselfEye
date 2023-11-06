@@ -364,7 +364,7 @@ const MeMyself = () => {
           <p>
             For this project I wanted to remove the guess-work of what to
             include in my application process. You never know exactly what a
-            recruiter or hiring manager are looking for. So I thought; why not
+            recruiter or hiring manager is looking for. So I thought; why not
             make all the information available, and let them, or you, make the
             decisions on what to view.
           </p>
@@ -398,7 +398,7 @@ const MeMyself = () => {
         <Features>
           <h5>Get to Know Me!</h5>
           <span>
-            Dive into my present, past, and become the future. Topics include my
+            Dive into my present, past, and become my future. Topics include my
             previous career and experiences, projects, soft skills, and more!
           </span>
         </Features>

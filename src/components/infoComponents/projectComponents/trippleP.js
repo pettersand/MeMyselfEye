@@ -358,7 +358,7 @@ const TrippleP = () => {
           </p>
           <p>
             Progress: Track your projects progress with To Do lists, progress
-            tracker, file references and dependencies.
+            tracker, file references, and dependencies.
           </p>
           <p>
             Production: Ensure production ready code with comprehensive
@@ -383,7 +383,7 @@ const TrippleP = () => {
           <Concept>Tabular Design</Concept>
           <Concept>Local Folder Storage</Concept>
           <Concept>Maintainable Code</Concept>
-          <Concept>Clean Code</Concept>
+          <Concept>Interfaces</Concept>
         </ConceptContainer>
       </ConceptContent>
 
@@ -404,22 +404,23 @@ const TrippleP = () => {
           <h5>Production Ready Code</h5>
           <span>
             Use customizable checklists to ensure all files are production
-            ready. Step by step watch your project get closer to release.
+            ready. Watch your project get closer to release, step by step.
           </span>
         </Features>
         <FeaturesConditional expanded={featuresExpanded}>
           <Features>
             <h5>Track Your Progress</h5>
             <span>
-              Setup your expandable To Do list, and never forget what the next
-              step is.
+              Create your own expandable To-Do list, and never get stuck not
+              knowing what to work on next!
             </span>
           </Features>
           <Features>
             <h5>User Stories</h5>
             <span>
-              Define your user stories to improve your understanding of how your
-              users would explore the product.
+              Define user stories to improve your understanding of how your
+              users would explore the product. Don't leave anything up to
+              chance!
             </span>
           </Features>
           <Features>
@@ -433,8 +434,8 @@ const TrippleP = () => {
             <h5>Architecture</h5>
             <span>
               Vizualize your data flow and how elements interact. Stay on top of
-              what files and functions are referenced where. Also plan your
-              folder structure and what goes where.
+              what files and functions are referenced elsewhere. Plan your
+              folder structure and "what goes where".
             </span>
           </Features>
         </FeaturesConditional>

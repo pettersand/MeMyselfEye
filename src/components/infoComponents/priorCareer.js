@@ -221,9 +221,9 @@ const PriorCareer = () => {
         <h3>Prior Career</h3>
       </TopicHeader>
       <Disclaimer>
-        Disclaimer: Not all of the contents of this section are relevant to the
-        developer field. Therefore the specific contents of each section will
-        not be explored in-depth.
+        Disclaimer: The contents of this section are not directly relevant to
+        the developer field. Therefore the specific contents of each section
+        will not be presented in-depth.
       </Disclaimer>
       <RowContainer>
         <EducationContainer>
