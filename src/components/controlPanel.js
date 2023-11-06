@@ -32,6 +32,11 @@ const ControlRow = styled.div`
   justify-content: space-evenly;
   width: 90%;
   gap: 8px;
+
+  @media (max-width: 1199px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const ControlColumn = styled.div`
@@ -49,6 +54,21 @@ const ControlColumn = styled.div`
   &.right {
     align-items: flex-start;
   }
+
+  @media (max-width: 1199px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: 16px 0;
+
+    &.left {
+      justify-content: flex-end;
+    }
+
+    &.right {
+      justify-content: flex-start;
+    }
+  }
 `;
 
 const RadioWrapper = styled.div`
@@ -58,6 +78,14 @@ const RadioWrapper = styled.div`
   align-items: center;
   gap: 8px;
   margin: 5px;
+  white-space: nowrap;
+
+  &.reverse {
+    flex-direction: row-reverse;
+    @media (max-width: 1199px) {
+      flex-direction: row;
+    }
+  }
 `;
 
 const HiddenRadio = styled.input.attrs({ type: "radio" })`
@@ -134,7 +162,8 @@ const ControlPanel = () => {
         </ControlColumn>
 
         <ControlColumn className="right">
-          <RadioWrapper>
+          <RadioWrapper className="reverse">
+            Projects
             <ToggleButton
               isSelected={state.activeInfo === "projects"}
               onClick={() => toggleActiveInfo("projects")}
@@ -148,10 +177,10 @@ const ControlPanel = () => {
                 onChange={handleActiveInfo}
               />
             </ToggleButton>
-            Projects
           </RadioWrapper>
 
-          <RadioWrapper>
+          <RadioWrapper className="reverse">
+            Soft Skills
             <ToggleButton
               isSelected={state.activeInfo === "softSkills"}
               onClick={() => toggleActiveInfo("softSkills")}
@@ -165,7 +194,6 @@ const ControlPanel = () => {
                 onChange={handleActiveInfo}
               />
             </ToggleButton>
-            Soft Skills
           </RadioWrapper>
         </ControlColumn>
       </ControlRow>

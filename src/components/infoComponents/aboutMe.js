@@ -13,11 +13,15 @@ const AboutMeWrapper = styled.div`
 
 const TopRow = styled.div`
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row wrap
   align-items: flex-start;
   justify-content: center;
   width: 100%;
   gap: 16px;
+
+  @media (max-width: 1599px) {
+    flex-direction: column;
+  }
 `;
 
 const MainContent = styled.div`
@@ -180,7 +184,7 @@ const AboutMe = () => {
               understanding of the human psyche. The world of technology and
               development struck me as the perfect career path for me to embark
               on. It plays to my strengths as a person, and fills my need for
-              creation, challenge, and enjoyment. 
+              creation, challenge, and enjoyment.
             </p>
           </TopContent>
           <TopContent>

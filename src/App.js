@@ -16,6 +16,10 @@ const AppContainer = styled.div`
   gap: 24px;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -31,6 +35,10 @@ const MainContainer = styled.div`
   gap: 24px;
   border-radius: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5), 0 6px 8px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 1199px) {
+    max-width: 90vw;
+  }
 `;
 
 const BottomContainer = styled.div`
