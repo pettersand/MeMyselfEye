@@ -35,6 +35,10 @@ const RowContainer = styled.div`
   flex-direction: row;
   padding: 16px 0;
   gap: 16px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const ColumnContainer = styled.div`

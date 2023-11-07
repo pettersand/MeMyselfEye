@@ -39,6 +39,10 @@ const MainContainer = styled.div`
   @media (max-width: 1199px) {
     max-width: 90vw;
   }
+
+  @media (max-width: 600px) {
+    min-width: fit-content;
+  }
 `;
 
 const BottomContainer = styled.div`
