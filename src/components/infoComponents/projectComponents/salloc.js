@@ -204,7 +204,7 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  
+
   p {
     font-size: 1rem;
     font-weight: 400;
@@ -312,7 +312,7 @@ const Salloc = () => {
       <ProjectHeader>
         <h3>Salloc</h3>
       </ProjectHeader>
-      <ImageContainer bgImage="/salloc1.png">
+      <ImageContainer bgImage={`${process.env.PUBLIC_URL}/salloc1.png`}>
         <DetailsBar>
           <DetailsItem className="date">02/08 - 25/08</DetailsItem>
         </DetailsBar>

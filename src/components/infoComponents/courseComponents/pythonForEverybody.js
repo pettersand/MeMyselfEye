@@ -317,7 +317,7 @@ const Python = () => {
       <HorizontalDivider />
 
       <RowContainer>
-        <Logo logoImage={"/UM_Logo.png"} />
+        <Logo logoImage={`${process.env.PUBLIC_URL}/UM_Logo.png`} />
         <ColumnContainer>
           <h5>Key Takeaways</h5>
           <DescriptionContainer>

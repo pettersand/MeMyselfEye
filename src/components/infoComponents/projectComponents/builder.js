@@ -314,7 +314,7 @@ const Builder = () => {
       <ProjectHeader>
         <h3>Builder</h3>
       </ProjectHeader>
-      <ImageContainer bgImage="/Builder1.png">
+      <ImageContainer bgImage={`${process.env.PUBLIC_URL}/Builder1.png`}>
         <DetailsBar>
           <DetailsItem className="date">26/08 - Present</DetailsItem>
         </DetailsBar>

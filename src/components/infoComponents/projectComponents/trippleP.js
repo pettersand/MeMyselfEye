@@ -305,7 +305,7 @@ const TrippleP = () => {
       <ProjectHeader>
         <h3>Tripple-P</h3>
       </ProjectHeader>
-      <ImageContainer bgImage="/tripplep1.png">
+      <ImageContainer bgImage={`${process.env.PUBLIC_URL}/tripplep1.png`}>
         <DetailsBar>
           <DetailsItem className="date">04/09 - Present</DetailsItem>
         </DetailsBar>

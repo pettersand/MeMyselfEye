@@ -280,7 +280,9 @@ const Harvard = () => {
             needed to efficiently solve problems.
           </p>
         </DescriptionContainer>
-        <ImageContainer bgImage="/harvardcs50duck.png">
+        <ImageContainer
+          bgImage={`${process.env.PUBLIC_URL}/harvardcs50duck.png`}
+        >
           <DetailsBar className="top">
             <DetailsItem className="date">05/06 - 04/08</DetailsItem>
             <DetailsItem className="date">Completed</DetailsItem>
@@ -328,7 +330,7 @@ const Harvard = () => {
       <HorizontalDivider />
 
       <RowContainer>
-        <Logo logoImage={"/harvardLogo.png"} />
+        <Logo logoImage={`${process.env.PUBLIC_URL}/harvardLogo.png`} />
         <ColumnContainer>
           <h5>Key Takeaways</h5>
           <DescriptionContainer>

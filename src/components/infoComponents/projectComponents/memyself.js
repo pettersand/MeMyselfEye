@@ -310,7 +310,7 @@ const MeMyself = () => {
       <ProjectHeader>
         <h3>Me, Myself, & I</h3>
       </ProjectHeader>
-      <ImageContainer bgImage="/memyself3.png">
+      <ImageContainer bgImage={`${process.env.PUBLIC_URL}/memyself3.png`}>
         <DetailsBar>
           <DetailsItem className="date">18/10 - 06/11</DetailsItem>
         </DetailsBar>
