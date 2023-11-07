@@ -37,7 +37,7 @@ const RowContainer = styled.div`
   gap: 16px;
 
   @media (max-width: 600px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -64,6 +64,10 @@ const ImageContainer = styled(({ bgImage, ...props }) => <div {...props} />)`
   height: 300px;
   width: 100%;
   box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+
+  @media (max-width: 600px) {
+    max-width: 350px;
+  }
 `;
 
 const DetailsBar = styled.div`

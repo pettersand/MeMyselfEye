@@ -89,6 +89,10 @@ const RadioWrapper = styled.div`
       flex-direction: row;
     }
   }
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
 `;
 
 const HiddenRadio = styled.input.attrs({ type: "radio" })`

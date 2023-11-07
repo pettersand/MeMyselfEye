@@ -20,6 +20,10 @@ const AppContainer = styled.div`
   @media (max-width: 1199px) {
     flex-direction: column;
   }
+
+  @media (max-width: 600px) {
+    padding: 8px;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -41,7 +45,8 @@ const MainContainer = styled.div`
   }
 
   @media (max-width: 600px) {
-    min-width: fit-content;
+    min-width: 90vw;
+    padding: 16px 8px;
   }
 `;
 

@@ -82,6 +82,12 @@ const HeaderSkills = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  h4 {
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const HeaderWorking = styled.div`
@@ -90,6 +96,12 @@ const HeaderWorking = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  h4 {
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const CategoryCell = styled.div`
@@ -97,6 +109,12 @@ const CategoryCell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  h5 {
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 const SkillsCell = styled.div`
@@ -146,6 +164,11 @@ const Icon = styled.div`
     transform: scale(1.1) translateY(-5px);
     cursor: pointer;
     filter: drop-shadow(0 0 4px rgba(0, 128, 128, 0.4));
+  }
+  svg {
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
   }
 `;
 

@@ -51,6 +51,12 @@ const StyledRadio = styled(({ isSelected, ...props }) => <div {...props} />)`
     box-shadow: 0 0 4px 1px var(--accent);
     border-color: var(--accent);
 `}
+
+  @media (max-width: 600px) {
+    width: 8px;
+    height: 8px;
+    border: 4px solid var(--contrast);
+  }
 `;
 
 const ToggleButton = ({ isSelected, onClick }) => (
