@@ -35,6 +35,12 @@ const DetailsContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-right: 16px;
+
+  p {
+    @media (max-width: 600px) {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 const Icon = styled.div`
@@ -42,6 +48,18 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  h3 {
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const UsedInContainer = styled.div`
@@ -55,11 +73,21 @@ const UsedInContainer = styled.div`
   ul {
     list-style-position: inside;
     padding-left: 4px;
+    white-space: nowrap;
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
   }
 
   @media (max-width: 1199px) {
     justify-content: center;
     align-items: center;
+  }
+
+  h4 {
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -73,11 +101,23 @@ const UsedForContainer = styled.div`
   ul {
     list-style-position: inside;
     padding-left: 4px;
+    li {
+      white-space: nowrap;
+    }
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
   }
 
   @media (max-width: 1199px) {
     justify-content: center;
     align-items: center;
+  }
+
+  h4 {
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -91,6 +131,9 @@ const CloseButton = styled.div`
 
   svg {
     color: var(--contrast);
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
   }
 `;
 

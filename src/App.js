@@ -74,7 +74,7 @@ const NameContainer = styled.div`
     font-family: "Nothing";
     margin: 8px 0 0;
     @media (max-width: 600px) {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -88,7 +88,7 @@ const NameContainer = styled.div`
     justify-content: center;
 
     @media (max-width: 600px) {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
     }
   }
 `;

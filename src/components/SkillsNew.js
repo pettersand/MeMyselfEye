@@ -112,7 +112,7 @@ const CategoryCell = styled.div`
 
   h5 {
     @media (max-width: 600px) {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 `;
