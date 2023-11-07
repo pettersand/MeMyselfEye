@@ -73,6 +73,9 @@ const NameContainer = styled.div`
   h1 {
     font-family: "Nothing";
     margin: 8px 0 0;
+    @media (max-width: 600px) {
+      font-size: 2.5rem;
+    }
   }
 
   h2 {
@@ -83,6 +86,10 @@ const NameContainer = styled.div`
     width: 90%;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 600px) {
+      font-size: 1.75rem;
+    }
   }
 `;
 

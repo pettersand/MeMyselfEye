@@ -112,7 +112,7 @@ const CategoryCell = styled.div`
 
   h5 {
     @media (max-width: 600px) {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -167,7 +167,7 @@ const Icon = styled.div`
   }
   svg {
     @media (max-width: 600px) {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
   }
 `;
