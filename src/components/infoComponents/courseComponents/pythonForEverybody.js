@@ -270,7 +270,9 @@ const Python = () => {
             with essential Python skills for data science and web development.
           </p>
         </DescriptionContainer>
-        <ImageContainer bgImage="/pythonBackground.png">
+        <ImageContainer
+          bgImage={`${process.env.PUBLIC_URL}/pythonBackground.png`}
+        >
           <DetailsBar className="top">
             <DetailsItem className="date">01/05 - 04/06</DetailsItem>
             <DetailsItem className="date">Completed</DetailsItem>
