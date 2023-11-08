@@ -328,7 +328,10 @@ const Salloc = () => {
       <ProjectHeader>
         <h3>Salloc</h3>
       </ProjectHeader>
-      <ImageContainer bgImage={`${process.env.PUBLIC_URL}/salloc1.png`}>
+      <ImageContainer
+        bgImage={`${process.env.PUBLIC_URL}/salloc1.png`}
+        loading="lazy"
+      >
         <DetailsBar>
           <DetailsItem className="date">02/08 - 25/08</DetailsItem>
         </DetailsBar>
