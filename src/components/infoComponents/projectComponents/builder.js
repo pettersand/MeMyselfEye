@@ -200,6 +200,14 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
       background-position: -100% 0;
     }
   }
+
+  @media (max-width: 600px) {
+    width: 80%;
+
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 const DescriptionContainer = styled.div`

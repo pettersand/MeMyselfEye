@@ -90,6 +90,7 @@ const ItemRow = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
+  white-space: nowrap;
 
   h4 {
     color: var(--headline);
@@ -101,7 +102,11 @@ const ItemRow = styled.div`
 
   p {
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 0.9rem;
+
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
   }
 `;
 

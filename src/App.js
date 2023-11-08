@@ -59,6 +59,10 @@ const BottomContainer = styled.div`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5), -8px 8px 20px rgba(0, 0, 0, 0.5);
   flex-grow: 1;
   height: fit-content;
+
+  @media (max-width: 600px) {
+    padding: 8px 16px;
+  }
 `;
 
 const NameContainer = styled.div`

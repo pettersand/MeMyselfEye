@@ -28,6 +28,13 @@ const CourseHeader = styled.div`
   justify-content: center;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
+
+  @media (max-width: 600px) {
+    h3 {
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+  }
 `;
 
 const RowContainer = styled.div`
@@ -156,6 +163,14 @@ const SubHeader = styled.div`
   justify-content: center;
   padding: 4px;
   border-bottom: 1px solid var(--accent);
+
+  @media (max-width: 600px) {
+    width: 70%;
+    h4 {
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+  }
 `;
 
 const Logo = styled(({ logoImage, ...props }) => <div {...props} />)`
@@ -238,7 +253,7 @@ const courseData = {
   topics: [
     { id: 1, name: "Programming Fundamentals" },
     { id: 2, name: "Data Structures" },
-    { id: 3, name: "Networked Application APIs" },
+    { id: 3, name: "Networked APIs" },
     { id: 4, name: "Databases" },
     { id: 5, name: "File I/O" },
     { id: 6, name: "Web Crawling" },
