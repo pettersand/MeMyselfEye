@@ -191,6 +191,14 @@ const SubHeader = styled(({ expanded, ...props }) => <div {...props} />)`
       background-position: -100% 0;
     }
   }
+
+  @media (max-width: 600px) {
+    width: 80%;
+
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 const DescriptionContainer = styled.div`
@@ -243,6 +251,10 @@ const FeaturesContainer = styled.div`
   justify-content: center;
   width: 105%;
   box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Features = styled.div`
@@ -276,11 +288,15 @@ const FeaturesConditional = styled(({ expanded, ...props }) => (
   flex-flow: row wrap;
   justify-content: center;
   width: 100%;
-  max-height: ${(props) => (props.expanded ? "500px" : "0")};
+  max-height: ${(props) => (props.expanded ? "700px" : "0")};
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
   box-sizing: border-box;
   margin-bottom: 8px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const TrippleP = () => {

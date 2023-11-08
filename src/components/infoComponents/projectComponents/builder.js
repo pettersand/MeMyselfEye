@@ -260,6 +260,10 @@ const FeaturesContainer = styled.div`
   justify-content: center;
   width: 105%;
   box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Features = styled.div`
@@ -298,6 +302,10 @@ const FeaturesConditional = styled(({ expanded, ...props }) => (
   transition: max-height 0.5s ease-in-out;
   box-sizing: border-box;
   margin-bottom: 8px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Builder = () => {
